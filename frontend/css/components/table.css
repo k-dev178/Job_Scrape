@@ -1,5 +1,4 @@
 #result-box {
-  margin-top: 36px;
   display: none;
 }
 
@@ -7,22 +6,65 @@ table {
   width: 100%;
   border-collapse: collapse;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
-thead { background: #36f; color: #fff; }
+thead {
+  background: #4361ee;
+  color: #fff;
+}
 
-th, td {
-  padding: 11px 16px;
+th {
+  padding: 13px 18px;
   text-align: left;
-  font-size: 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-tbody tr:nth-child(even) { background: #f9f9f9; }
-tbody tr:hover           { background: #eef3ff; }
+td {
+  padding: 12px 18px;
+  font-size: 0.9rem;
+  color: #1f2937;
+  border-bottom: 1px solid #f3f4f6;
+}
 
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover td     { background: #f5f7ff; }
+
+/* 순위 배지 */
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.rank-badge.gold   { background: #fef3c7; color: #92400e; }
+.rank-badge.silver { background: #e5e7eb; color: #374151; }
+.rank-badge.bronze { background: #fde8d8; color: #9a3412; }
+
+/* 언어 이름 */
+.lang-name {
+  font-weight: 500;
+}
+
+/* 공고 수 */
+.count-cell {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+/* 바 차트 */
 .bar-cell {
   display: flex;
   align-items: center;
@@ -30,14 +72,20 @@ tbody tr:hover           { background: #eef3ff; }
 }
 
 .bar {
-  background: #cde;
-  height: 10px;
+  background: linear-gradient(90deg, #c7d2fe, #818cf8);
+  height: 8px;
   border-radius: 99px;
   min-width: 2px;
 }
 
+.bar.gold   { background: linear-gradient(90deg, #fde68a, #f59e0b); }
+.bar.silver { background: linear-gradient(90deg, #d1d5db, #9ca3af); }
+.bar.bronze { background: linear-gradient(90deg, #fed7aa, #f97316); }
+
 .pct {
-  color: #555;
+  color: #6b7280;
   white-space: nowrap;
-  font-size: 0.85rem;
+  font-size: 0.83rem;
+  font-variant-numeric: tabular-nums;
+  min-width: 42px;
 }

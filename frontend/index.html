@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>원티드 백엔드 언어 분석</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/components/button.css">
   <link rel="stylesheet" href="/css/components/progress.css">
@@ -11,24 +14,37 @@
 </head>
 <body>
 <div class="container">
-  <h1>원티드 백엔드 언어 분석</h1>
-  <p class="subtitle">데이터/AI/인프라 공고 제외 · 백엔드 공고만 분석</p>
+  <header class="hero">
+    <div class="hero-badge">Wanted · 백엔드</div>
+    <h1>기술 스택 트렌드 분석</h1>
+    <p class="subtitle">데이터·AI·인프라 공고 제외 &mdash; 백엔드 공고만 실시간 분석</p>
+    <button id="btn" onclick="startScrape()">
+      <span id="btn-text">분석 시작</span>
+    </button>
+  </header>
 
-  <button id="btn" onclick="startScrape()">스크래핑 시작</button>
-
-  <div id="status-box">
+  <div id="status-box" style="display:none">
     <p class="status-text" id="status-text">준비 중...</p>
     <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
-    <p class="eta" id="eta-text"></p>
-    <p class="meta" id="meta-text"></p>
+    <div class="status-footer">
+      <span class="eta" id="eta-text"></span>
+      <span class="meta" id="meta-text"></span>
+    </div>
   </div>
 
   <div id="error-box"></div>
 
-  <div id="result-box">
+  <div id="summary-box"></div>
+
+  <div id="result-box" style="display:none">
     <table>
       <thead>
-        <tr><th>#</th><th>언어 / 기술</th><th>언급 공고수</th><th>비율</th></tr>
+        <tr>
+          <th style="width:52px">#</th>
+          <th>언어 / 기술</th>
+          <th style="width:120px">공고 수</th>
+          <th>비율</th>
+        </tr>
       </thead>
       <tbody id="result-body"></tbody>
     </table>

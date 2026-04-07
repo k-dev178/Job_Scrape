@@ -1,13 +1,14 @@
-from fastapi import FastAPI
+import threading
+import webbrowser
+import uvicorn
 
-app = FastAPI(title="Job Scrape API", version="0.1.0")
-
-
-@app.get("/")
-def root():
-    return {"message": "Job Scrape API is running"}
+from backend.app import app  # noqa: F401
 
 
-@app.get("/health")
-def health_check():
-    return {"status": "ok"}
+def open_browser():
+    webbrowser.open("http://localhost:8000")
+
+
+if __name__ == "__main__":
+    threading.Timer(1.0, open_browser).start()
+    uvicorn.run("backend.app:app", host="0.0.0.0", port=8000, reload=True)

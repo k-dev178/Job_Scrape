@@ -1,14 +1,50 @@
 #btn {
-  background: #36f;
+  background: #4361ee;
   color: #fff;
   border: none;
-  padding: 12px 28px;
-  font-size: 1rem;
+  padding: 12px 32px;
+  font-size: 0.95rem;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+  box-shadow: 0 2px 8px rgba(67, 97, 238, 0.35);
+  letter-spacing: 0.01em;
 }
 
-#btn:hover    { background: #24d; }
-#btn:disabled { background: #aaa; cursor: not-allowed; }
+#btn:hover {
+  background: #3451d1;
+  box-shadow: 0 4px 14px rgba(67, 97, 238, 0.45);
+  transform: translateY(-1px);
+}
+
+#btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(67, 97, 238, 0.3);
+}
+
+#btn:disabled {
+  background: #9ca3af;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 로딩 스피너 */
+#btn.loading #btn-text::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
