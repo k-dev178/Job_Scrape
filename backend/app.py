@@ -29,9 +29,12 @@ except ImportError:
     )
 
 FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
-CACHE_TTL = 3600  # 1시간
+CACHE_FILE = Path(__file__).parent / "cache.json"
 
 _cache: dict = {}
+if CACHE_FILE.exists():
+    with open(CACHE_FILE) as f:
+        _cache.update(json.load(f))
 
 app = FastAPI()
 
@@ -39,7 +42,7 @@ app = FastAPI()
 @app.get("/scrape")
 def scrape(refresh: bool = False):
     # 캐시 유효 시 즉시 반환
-    if not refresh and _cache and time.time() - _cache["ts"] < CACHE_TTL:
+    if not refresh and _cache:
         def generate_cached():
             yield f"data: {json.dumps({'type': 'cached', 'ts': _cache['ts']}, ensure_ascii=False)}\n\n"
             yield f"data: {json.dumps({'type': 'complete', 'results': _cache['results'], 'analyzed': _cache['analyzed'], 'skipped': _cache['skipped']}, ensure_ascii=False)}\n\n"
@@ -90,6 +93,8 @@ def scrape(refresh: bool = False):
             ]
             ts = time.time()
             _cache.update({"results": results, "analyzed": len(texts), "skipped": skipped, "ts": ts})
+            with open(CACHE_FILE, "w", encoding="utf-8") as f:
+                json.dump(_cache, f, ensure_ascii=False, indent=2)
             q.put({"type": "complete", "results": results, "analyzed": len(texts), "skipped": skipped, "ts": ts})
 
         except Exception as e:
