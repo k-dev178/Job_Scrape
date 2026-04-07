@@ -78,13 +78,22 @@ tbody tr:nth-child(3):hover td { background: #fff0e8; }
   display: flex;
   align-items: center;
   gap: 10px;
+  width: 100%;
+}
+
+.bar-wrap {
+  flex: 1;
+  height: 7px;
+  border-radius: 99px;
+  background: #e9ecf5;
+  overflow: hidden;
+  min-width: 40px;
 }
 
 .bar {
   background: linear-gradient(90deg, #c7d2fe, #818cf8);
-  height: 7px;
+  height: 100%;
   border-radius: 99px;
-  min-width: 2px;
 }
 
 .bar.gold   { background: linear-gradient(90deg, #fde68a, #f59e0b); }
@@ -97,4 +106,49 @@ tbody tr:nth-child(3):hover td { background: #fff0e8; }
   font-size: 0.82rem;
   font-variant-numeric: tabular-nums;
   min-width: 42px;
+}
+
+/* ── 태블릿 (iPad) ── */
+@media (min-width: 481px) and (max-width: 1400px) {
+  th {
+    padding: 18px 24px;
+    font-size: 0.8rem;
+  }
+
+  td {
+    padding: 18px 24px;
+    font-size: 0.95rem;
+  }
+
+  .rank-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  .bar-wrap {
+    height: 9px;
+  }
+
+  .pct {
+    font-size: 0.88rem;
+  }
+}
+
+/* ── 모바일 ── */
+@media (max-width: 480px) {
+  th, td {
+    padding: 10px 12px;
+    font-size: 0.84rem;
+  }
+
+  th {
+    font-size: 0.72rem;
+  }
+
+  /* 바 숨기고 % 만 표시 */
+  .bar-wrap { display: none; }
+
+  .bar-cell { gap: 0; }
 }

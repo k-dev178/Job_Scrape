@@ -8,12 +8,56 @@ body {
 }
 
 .container {
-  max-width: 780px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 52px 20px 80px;
+  padding: 52px 40px 80px;
   display: flex;
   flex-direction: column;
   gap: 14px;
+}
+
+/* ── 태블릿 (iPad) ── */
+@media (min-width: 481px) and (max-width: 1400px) {
+  html {
+    font-size: 22px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 40px 28px 80px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  th {
+    padding: 14px 20px;
+    font-size: 0.85rem;
+  }
+
+  td {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding: 40px 44px 36px;
+  }
+
+  .notice {
+    font-size: 0.95rem;
+    padding: 16px 24px;
+  }
+
+  #summary-box {
+    font-size: 1rem;
+    padding: 16px 24px;
+  }
 }
 
 /* Hero */
@@ -123,10 +167,44 @@ h1 {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .last-refreshed {
   margin-top: 12px;
   font-size: 0.8rem;
   color: #9ca3af;
+}
+
+/* ── 모바일 ── */
+@media (max-width: 480px) {
+  .container {
+    padding: 24px 14px 60px;
+    gap: 12px;
+  }
+
+  .hero {
+    padding: 24px 20px 20px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .subtitle {
+    font-size: 0.83rem;
+    margin-bottom: 20px;
+  }
+
+  #summary-box {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .summary-item + .summary-item {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid #f3f4f6;
+    padding-top: 6px;
+  }
 }

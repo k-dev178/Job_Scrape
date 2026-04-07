@@ -24,7 +24,7 @@
         <span id="btn-text">분석 시작</span>
       </button>
       <button id="btn-refresh" class="btn-secondary" onclick="startScrape(true)" style="display:none">
-        새로 분석
+        새로고침
       </button>
       <button id="btn-career" class="btn-filter" onclick="openCareerModal()">
         <span id="btn-career-text">경력 전체</span>
@@ -72,6 +72,7 @@
       <span class="eta" id="eta-text"></span>
       <span class="meta" id="meta-text"></span>
     </div>
+    <button id="btn-dismiss" onclick="document.getElementById('status-box').style.display='none'" style="display:none">확인</button>
   </div>
 
   <div id="error-box"></div>

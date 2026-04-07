@@ -17,10 +17,11 @@ function startScrape(refresh = false) {
   errorBox.style.display   = 'none';
   summaryBox.style.display = 'none';
 
-  document.getElementById('result-body').innerHTML   = '';
+  document.getElementById('result-body').innerHTML    = '';
   document.getElementById('progress-bar').style.width = '0%';
-  document.getElementById('eta-text').textContent    = '';
-  document.getElementById('meta-text').textContent   = '';
+  document.getElementById('eta-text').textContent     = '';
+  document.getElementById('meta-text').textContent    = '';
+  document.getElementById('btn-dismiss').style.display = 'none';
 
   let startTime = null;
   const scrapeStart = Date.now();
@@ -67,15 +68,15 @@ function startScrape(refresh = false) {
     }
 
     else if (data.type === 'complete') {
-      document.getElementById('progress-bar').style.width = '100%';
-      document.getElementById('status-text').textContent  = '분석 완료!';
-      document.getElementById('eta-text').textContent     = '';
-      document.getElementById('meta-text').textContent = `총 ${data.analyzed.toLocaleString()}개 분석 완료`;
-
       const elapsed = ((Date.now() - scrapeStart) / 1000).toFixed(1);
       const fromCache = elapsed < 2;
+
+      document.getElementById('progress-bar').style.width = '100%';
+      document.getElementById('status-text').textContent  = '새로고침 완료!';
+      document.getElementById('eta-text').textContent     = '';
+      document.getElementById('meta-text').textContent = `총 ${data.analyzed.toLocaleString()}개 분석 완료`;
       const refreshedAt = data.ts
-        ? new Date(data.ts * 1000).toLocaleString('ko-KR', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+        ? new Date(data.ts * 1000).toLocaleString('ko-KR', { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })
         : '';
       summaryBox.innerHTML = `
         <span class="summary-item">분석 공고 <strong>${data.analyzed.toLocaleString()}개</strong></span>
@@ -91,8 +92,8 @@ function startScrape(refresh = false) {
       const tbody      = document.getElementById('result-body');
 
       data.results.forEach(row => {
-        const medal    = row.rank <= 3 ? medalClass[row.rank - 1] : '';
-        const barWidth = Math.round(row.count / maxCount * 160);
+        const medal   = row.rank <= 3 ? medalClass[row.rank - 1] : '';
+        const barPct  = Math.round(row.count / maxCount * 100);
         tbody.innerHTML += `
           <tr>
             <td><span class="rank-badge ${medal}">${row.rank}</span></td>
@@ -100,7 +101,7 @@ function startScrape(refresh = false) {
             <td class="count-cell">${row.count.toLocaleString()}</td>
             <td>
               <div class="bar-cell">
-                <div class="bar ${medal}" style="width:${barWidth}px"></div>
+                <div class="bar-wrap"><div class="bar ${medal}" style="width:${barPct}%"></div></div>
                 <span class="pct">${row.ratio}%</span>
               </div>
             </td>
@@ -109,12 +110,17 @@ function startScrape(refresh = false) {
 
       if (data.ts) {
         const timeStr = new Date(data.ts * 1000).toLocaleString('ko-KR', {
-          month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'
+          year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'
         });
         document.getElementById('last-refreshed-time').textContent = timeStr;
         document.getElementById('last-refreshed').style.display = 'block';
       }
 
+      if (fromCache) {
+        statusBox.style.display = 'none';
+      } else {
+        document.getElementById('btn-dismiss').style.display = 'block';
+      }
       resultBox.style.display = 'block';
       btn.disabled = false;
       btnRefresh.disabled = false;
