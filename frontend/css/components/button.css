@@ -1,0 +1,14 @@
+#btn {
+  background: #36f;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+#btn:hover    { background: #24d; }
+#btn:disabled { background: #aaa; cursor: not-allowed; }
