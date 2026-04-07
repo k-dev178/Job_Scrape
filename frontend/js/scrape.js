@@ -1,12 +1,14 @@
-function startScrape() {
+function startScrape(refresh = false) {
   const btn      = document.getElementById('btn');
   const btnText  = document.getElementById('btn-text');
+  const btnRefresh = document.getElementById('btn-refresh');
   const statusBox  = document.getElementById('status-box');
   const resultBox  = document.getElementById('result-box');
   const errorBox   = document.getElementById('error-box');
   const summaryBox = document.getElementById('summary-box');
 
   btn.disabled = true;
+  btnRefresh.disabled = true;
   btn.classList.add('loading');
   btnText.textContent = '분석 중...';
 
@@ -23,12 +25,17 @@ function startScrape() {
   let startTime = null;
   const scrapeStart = Date.now();
 
-  const es = new EventSource('/scrape');
+  const es = new EventSource(refresh ? '/scrape?refresh=true' : '/scrape');
 
   es.onmessage = (e) => {
     const data = JSON.parse(e.data);
 
-    if (data.type === 'status') {
+    if (data.type === 'cached') {
+      const age = Math.round((Date.now() / 1000 - data.ts) / 60);
+      document.getElementById('status-text').textContent = `캐시된 데이터 불러오는 중... (${age}분 전 분석)`;
+    }
+
+    else if (data.type === 'status') {
       document.getElementById('status-text').textContent = data.msg;
       if (data.total) {
         document.getElementById('meta-text').textContent = `총 ${data.total.toLocaleString()}개 공고`;
@@ -64,10 +71,17 @@ function startScrape() {
         `분석: ${data.analyzed.toLocaleString()}개 · 제외: ${data.skipped.toLocaleString()}개`;
 
       const elapsed = ((Date.now() - scrapeStart) / 1000).toFixed(1);
+      const fromCache = elapsed < 2;
+      const refreshedAt = data.ts
+        ? new Date(data.ts * 1000).toLocaleString('ko-KR', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+        : '';
       summaryBox.innerHTML = `
         <span class="summary-item">분석 공고 <strong>${data.analyzed.toLocaleString()}개</strong></span>
         <span class="summary-item">제외 공고 <strong>${data.skipped.toLocaleString()}개</strong></span>
-        <span class="summary-item">소요 시간 <strong>${elapsed}초</strong></span>
+        ${fromCache
+          ? `<span class="summary-item">캐시 데이터 · 마지막 분석 <strong>${refreshedAt}</strong></span>`
+          : `<span class="summary-item">소요 시간 <strong>${elapsed}초</strong></span><span class="summary-item">분석 시각 <strong>${refreshedAt}</strong></span>`
+        }
       `;
       summaryBox.style.display = 'flex';
 
@@ -92,8 +106,18 @@ function startScrape() {
           </tr>`;
       });
 
+      if (data.ts) {
+        const timeStr = new Date(data.ts * 1000).toLocaleString('ko-KR', {
+          month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'
+        });
+        document.getElementById('last-refreshed-time').textContent = timeStr;
+        document.getElementById('last-refreshed').style.display = 'block';
+      }
+
       resultBox.style.display = 'block';
       btn.disabled = false;
+      btnRefresh.disabled = false;
+      btnRefresh.style.display = 'inline-block';
       btn.classList.remove('loading');
       btnText.textContent = '다시 분석';
       es.close();
@@ -104,6 +128,7 @@ function startScrape() {
       errorBox.style.display  = 'block';
       statusBox.style.display = 'none';
       btn.disabled = false;
+      btnRefresh.disabled = false;
       btn.classList.remove('loading');
       btnText.textContent = '다시 시도';
       es.close();
@@ -113,6 +138,7 @@ function startScrape() {
   es.onerror = () => {
     es.close();
     btn.disabled = false;
+    btnRefresh.disabled = false;
     btn.classList.remove('loading');
     btnText.textContent = '다시 시도';
   };

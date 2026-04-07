@@ -1,6 +1,7 @@
 import json
 import queue
 import threading
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -28,12 +29,26 @@ except ImportError:
     )
 
 FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
+CACHE_TTL = 3600  # 1시간
+
+_cache: dict = {}
 
 app = FastAPI()
 
 
 @app.get("/scrape")
-def scrape():
+def scrape(refresh: bool = False):
+    # 캐시 유효 시 즉시 반환
+    if not refresh and _cache and time.time() - _cache["ts"] < CACHE_TTL:
+        def generate_cached():
+            yield f"data: {json.dumps({'type': 'cached', 'ts': _cache['ts']}, ensure_ascii=False)}\n\n"
+            yield f"data: {json.dumps({'type': 'complete', 'results': _cache['results'], 'analyzed': _cache['analyzed'], 'skipped': _cache['skipped']}, ensure_ascii=False)}\n\n"
+        return StreamingResponse(
+            generate_cached(),
+            media_type="text/event-stream",
+            headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+        )
+
     q: queue.Queue = queue.Queue()
 
     def run():
@@ -73,7 +88,9 @@ def scrape():
                 }
                 for i, (lang, cnt) in enumerate(sorted(counts.items(), key=lambda x: x[1], reverse=True))
             ]
-            q.put({"type": "complete", "results": results, "analyzed": len(texts), "skipped": skipped})
+            ts = time.time()
+            _cache.update({"results": results, "analyzed": len(texts), "skipped": skipped, "ts": ts})
+            q.put({"type": "complete", "results": results, "analyzed": len(texts), "skipped": skipped, "ts": ts})
 
         except Exception as e:
             q.put({"type": "error", "msg": str(e)})
