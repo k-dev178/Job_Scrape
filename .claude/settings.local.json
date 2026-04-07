@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(python3 -m flake8 backend/app.py)",
+      "Bash(python3 -m pylint backend/app.py)",
+      "Bash(git add:*)",
+      "Bash(python3:*)"
     ]
   }
 }

@@ -12,16 +12,16 @@ from fastapi.staticfiles import StaticFiles
 try:
     from .scraper import (
         MAX_WORKERS,
-        collect_all_job_ids,
-        count_languages,
+        aggregate_results,
+        collect_all_jobs,
         init_session,
         process_job,
     )
 except ImportError:
     from scraper import (
         MAX_WORKERS,
-        collect_all_job_ids,
-        count_languages,
+        aggregate_results,
+        collect_all_jobs,
         init_session,
         process_job,
     )
@@ -29,21 +29,32 @@ except ImportError:
 FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
 CACHE_FILE   = Path(__file__).parent / "cache.json"
 
+# 캐시 구조: {"ts": float, "jobs": [{annual_from, annual_to, langs: [...]}, ...]}
 _cache: dict = {}
 if CACHE_FILE.exists():
-    with open(CACHE_FILE) as f:
-        _cache.update(json.load(f))
+    try:
+        with open(CACHE_FILE) as f:
+            _cache.update(json.load(f))
+    except (json.JSONDecodeError, ValueError):
+        CACHE_FILE.unlink()  # 깨진 캐시 파일 삭제
+
+
+def save_cache():
+    with open(CACHE_FILE, "w", encoding="utf-8") as f:
+        json.dump(_cache, f, ensure_ascii=False, indent=2)
+
 
 app = FastAPI()
 
 
 @app.get("/scrape")
-def scrape(refresh: bool = False):
-    # 캐시 유효 시 즉시 반환
-    if not refresh and _cache:
+def scrape(refresh: bool = False, years_min: int = 0, years_max: int = 10):
+    # 캐시 있고 새로고침 요청이 아니면 → 재집계만 수행
+    if not refresh and _cache.get("jobs"):
+        results, analyzed = aggregate_results(_cache["jobs"], years_min, years_max)
         def generate_cached():
             yield f"data: {json.dumps({'type': 'cached', 'ts': _cache['ts']}, ensure_ascii=False)}\n\n"
-            yield f"data: {json.dumps({'type': 'complete', 'results': _cache['results'], 'analyzed': _cache['analyzed']}, ensure_ascii=False)}\n\n"
+            yield f"data: {json.dumps({'type': 'complete', 'results': results, 'analyzed': analyzed, 'ts': _cache['ts']}, ensure_ascii=False)}\n\n"
         return StreamingResponse(
             generate_cached(),
             media_type="text/event-stream",
@@ -57,41 +68,30 @@ def scrape(refresh: bool = False):
             init_session()
             q.put({"type": "status", "msg": "공고 목록 수집 중..."})
 
-            job_ids = collect_all_job_ids()
+            job_metas = collect_all_jobs()
             q.put({
-                "type": "status",
-                "msg": f"총 {len(job_ids):,}개 공고 발견, 상세 분석 시작...",
-                "total": len(job_ids),
+                "type":  "status",
+                "msg":   f"총 {len(job_metas):,}개 공고 발견, 상세 분석 시작...",
+                "total": len(job_metas),
             })
 
-            texts = []
             done = 0
             with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-                futures = {executor.submit(process_job, jid): jid for jid in job_ids}
-                for future in as_completed(futures):
-                    text = future.result()
+                futures = {executor.submit(process_job, j["id"]): j for j in job_metas}
+                for future, job_meta in futures.items():
+                    langs = future.result()
+                    job_meta["langs"] = langs
                     done += 1
-                    if text.strip():
-                        texts.append(text)
-                    if done % 10 == 0 or done == len(job_ids):
-                        q.put({"type": "progress", "done": done, "total": len(job_ids)})
+                    if done % 10 == 0 or done == len(job_metas):
+                        q.put({"type": "progress", "done": done, "total": len(job_metas)})
 
-            counts = count_languages(texts)
-            results = [
-                {
-                    "rank":  i + 1,
-                    "lang":  lang,
-                    "count": cnt,
-                    "ratio": round(cnt / len(texts) * 100, 1) if texts else 0,
-                }
-                for i, (lang, cnt) in enumerate(sorted(counts.items(), key=lambda x: x[1], reverse=True))
-            ]
             ts = time.time()
-            _cache.update({"results": results, "analyzed": len(texts), "ts": ts})
-            with open(CACHE_FILE, "w", encoding="utf-8") as f:
-                json.dump(_cache, f, ensure_ascii=False, indent=2)
+            _cache.clear()
+            _cache.update({"ts": ts, "jobs": job_metas})
+            save_cache()
 
-            q.put({"type": "complete", "results": results, "analyzed": len(texts), "ts": ts})
+            results, analyzed = aggregate_results(job_metas, years_min, years_max)
+            q.put({"type": "complete", "results": results, "analyzed": analyzed, "ts": ts})
 
         except Exception as e:
             q.put({"type": "error", "msg": str(e)})

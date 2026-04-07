@@ -21,7 +21,6 @@ HEADERS = {
 
 CATEGORY    = 518
 TAG_TYPE_ID = 872
-SKILL_TAG   = 1541
 
 LANGUAGES = {
     "Python":     r"\bpython\b",
@@ -85,15 +84,14 @@ def init_session():
 
 def fetch_job_list(offset: int, limit: int = 100) -> dict:
     params = {
-        "job_sort":    "job.latest_order",
-        "years":       -1,
-        "country":     "kr",
-        "locations":   "all",
-        "category":    CATEGORY,
+        "job_sort":     "job.latest_order",
+        "years":        -1,
+        "country":      "kr",
+        "locations":    "all",
+        "category":     CATEGORY,
         "tag_type_ids": TAG_TYPE_ID,
-        "skill_tags":  SKILL_TAG,
-        "limit":       limit,
-        "offset":      offset,
+        "limit":        limit,
+        "offset":       offset,
     }
     for attempt in range(3):
         try:
@@ -126,24 +124,33 @@ def fetch_job_detail(job_id: int) -> dict:
     return {}
 
 
-def collect_all_job_ids() -> list[int]:
-    """백엔드/서버 키워드가 제목에 포함된 공고 ID만 수집"""
-    job_ids = []
+def collect_all_jobs() -> list[dict]:
+    """백엔드/서버 키워드 공고 전체 수집 (annual_from, annual_to 포함)"""
+    jobs = []
     offset = 0
     limit = 100
 
     while True:
         data = fetch_job_list(offset, limit)
-        jobs = data.get("data", [])
-        if not jobs:
+        items = data.get("data", [])
+        if not items:
             break
 
-        for job in jobs:
-            title = job.get("position", "")
+        for item in items:
+            title = item.get("position", "")
             if INCLUDE_TITLE_KEYWORDS.search(title):
-                jid = job.get("id")
+                jid = item.get("id")
                 if jid:
-                    job_ids.append(jid)
+                    annual_from = item.get("annual_from") or 0
+                    annual_to   = item.get("annual_to")
+                    # None이나 -1이면 상한 없음 → 10으로 처리
+                    if annual_to is None or annual_to < 0:
+                        annual_to = 10
+                    jobs.append({
+                        "id":           jid,
+                        "annual_from":  annual_from,
+                        "annual_to":    annual_to,
+                    })
 
         has_next = bool(data.get("links", {}).get("next"))
         if not has_next:
@@ -152,11 +159,11 @@ def collect_all_job_ids() -> list[int]:
         offset += limit
         time.sleep(0.2)
 
-    return job_ids
+    return jobs
 
 
-def extract_text_from_job(detail_data: dict) -> str:
-    """공고 상세에서 분석용 전체 텍스트 반환"""
+def extract_langs(detail_data: dict) -> list[str]:
+    """공고 상세에서 감지된 언어/기술 목록 반환"""
     job = detail_data.get("job", {})
     parts = [job.get("title", "")]
 
@@ -169,19 +176,38 @@ def extract_text_from_job(detail_data: dict) -> str:
         text = re.sub(r"<[^>]+>", " ", text)
         parts.append(text)
 
-    return " ".join(parts)
+    full_text = " ".join(parts)
+    return [lang for lang, pat in COMPILED.items() if pat.search(full_text)]
 
 
-def process_job(job_id: int) -> str:
+def process_job(job_id: int) -> list[str]:
+    """공고 상세를 가져와 감지된 언어 목록 반환"""
     detail = fetch_job_detail(job_id)
-    return extract_text_from_job(detail)
+    return extract_langs(detail)
 
 
-def count_languages(texts: list[str]) -> dict[str, int]:
-    """각 공고당 언급된 언어/기술을 카운트 (공고 수 기준)"""
-    counts = defaultdict(int)
-    for text in texts:
-        for lang, pattern in COMPILED.items():
-            if pattern.search(text):
-                counts[lang] += 1
-    return counts
+def aggregate_results(jobs: list[dict],
+                      years_min: int = 0,
+                      years_max: int = 10) -> tuple[list[dict], int]:
+    """경력 범위로 jobs 필터링 후 언어 카운트 집계.
+    반환: (results 리스트, 분석 공고 수)"""
+    filtered = [
+        j for j in jobs
+        if j["annual_from"] <= years_max and j["annual_to"] >= years_min
+    ]
+
+    counts: dict[str, int] = defaultdict(int)
+    for job in filtered:
+        for lang in job.get("langs", []):
+            counts[lang] += 1
+
+    results = [
+        {
+            "rank":  i + 1,
+            "lang":  lang,
+            "count": cnt,
+            "ratio": round(cnt / len(filtered) * 100, 1) if filtered else 0,
+        }
+        for i, (lang, cnt) in enumerate(sorted(counts.items(), key=lambda x: x[1], reverse=True))
+    ]
+    return results, len(filtered)

@@ -25,7 +25,10 @@ function startScrape(refresh = false) {
   let startTime = null;
   const scrapeStart = Date.now();
 
-  const es = new EventSource(refresh ? '/scrape?refresh=true' : '/scrape');
+  const { years_min, years_max } = (typeof getCareerParams === 'function') ? getCareerParams() : { years_min: 0, years_max: 10 };
+  const params = new URLSearchParams({ years_min, years_max });
+  if (refresh) params.set('refresh', 'true');
+  const es = new EventSource(`/scrape?${params}`);
 
   es.onmessage = (e) => {
     const data = JSON.parse(e.data);

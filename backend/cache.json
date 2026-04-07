@@ -1,139 +1,4198 @@
 {
-  "results": [
+  "ts": 1775571454.814311,
+  "jobs": [
     {
-      "rank": 1,
-      "lang": "AWS",
-      "count": 35,
-      "ratio": 67.3
+      "id": 353202,
+      "annual_from": 2,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Go",
+        "TypeScript",
+        "PHP",
+        "Django",
+        "FastAPI",
+        "Flask",
+        "NestJS",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "AWS"
+      ]
     },
     {
-      "rank": 2,
-      "lang": "Java",
-      "count": 28,
-      "ratio": 53.8
+      "id": 353174,
+      "annual_from": 10,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Java",
+        "Spring",
+        "Django",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "AWS"
+      ]
     },
     {
-      "rank": 3,
-      "lang": "Spring",
-      "count": 26,
-      "ratio": 50.0
+      "id": 353065,
+      "annual_from": 0,
+      "annual_to": 1,
+      "langs": [
+        "Python",
+        "Go",
+        "TypeScript",
+        "Rust",
+        "PostgreSQL",
+        "Kubernetes",
+        "AWS"
+      ]
     },
     {
-      "rank": 4,
-      "lang": "Redis",
-      "count": 23,
-      "ratio": 44.2
+      "id": 353056,
+      "annual_from": 5,
+      "annual_to": 11,
+      "langs": [
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
     },
     {
-      "rank": 5,
-      "lang": "Docker",
-      "count": 19,
-      "ratio": 36.5
+      "id": 352936,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "JavaScript",
+        "Django",
+        "FastAPI",
+        "Flask",
+        "AWS"
+      ]
     },
     {
-      "rank": 6,
-      "lang": "MySQL",
-      "count": 18,
-      "ratio": 34.6
+      "id": 352825,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Python",
+        "Java",
+        "Go",
+        "TypeScript",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
     },
     {
-      "rank": 7,
-      "lang": "Python",
-      "count": 16,
-      "ratio": 30.8
+      "id": 352823,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Python",
+        "Java",
+        "Go",
+        "TypeScript",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
     },
     {
-      "rank": 8,
-      "lang": "Kubernetes",
-      "count": 15,
-      "ratio": 28.8
+      "id": 352796,
+      "annual_from": 9,
+      "annual_to": 16,
+      "langs": [
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Redis",
+        "AWS"
+      ]
     },
     {
-      "rank": 9,
-      "lang": "JavaScript",
-      "count": 15,
-      "ratio": 28.8
+      "id": 352795,
+      "annual_from": 8,
+      "annual_to": 16,
+      "langs": [
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Redis",
+        "AWS"
+      ]
     },
     {
-      "rank": 10,
-      "lang": "Kotlin",
-      "count": 13,
-      "ratio": 25.0
+      "id": 352794,
+      "annual_from": 4,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Spring",
+        "Redis",
+        "AWS"
+      ]
     },
     {
-      "rank": 11,
-      "lang": "PostgreSQL",
-      "count": 13,
-      "ratio": 25.0
+      "id": 352696,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "TypeScript",
+        "Django",
+        "AWS"
+      ]
     },
     {
-      "rank": 12,
-      "lang": "TypeScript",
-      "count": 12,
-      "ratio": 23.1
+      "id": 352667,
+      "annual_from": 2,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
     },
     {
-      "rank": 13,
-      "lang": "NestJS",
-      "count": 11,
-      "ratio": 21.2
+      "id": 352651,
+      "annual_from": 5,
+      "annual_to": 11,
+      "langs": []
     },
     {
-      "rank": 14,
-      "lang": "Node.js",
-      "count": 11,
-      "ratio": 21.2
+      "id": 352640,
+      "annual_from": 2,
+      "annual_to": 7,
+      "langs": [
+        "Python",
+        "Go",
+        "FastAPI",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes"
+      ]
     },
     {
-      "rank": 15,
-      "lang": "MongoDB",
-      "count": 6,
-      "ratio": 11.5
+      "id": 352588,
+      "annual_from": 10,
+      "annual_to": 19,
+      "langs": [
+        "AWS"
+      ]
     },
     {
-      "rank": 16,
-      "lang": "FastAPI",
-      "count": 6,
-      "ratio": 11.5
+      "id": 352376,
+      "annual_from": 10,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Spring",
+        "Redis"
+      ]
     },
     {
-      "rank": 17,
-      "lang": "Django",
-      "count": 5,
-      "ratio": 9.6
+      "id": 352175,
+      "annual_from": 0,
+      "annual_to": 1,
+      "langs": [
+        "Python",
+        "Kotlin",
+        "Node.js",
+        "JavaScript",
+        "Spring",
+        "NestJS",
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "AWS"
+      ]
     },
     {
-      "rank": 18,
-      "lang": "Go",
-      "count": 5,
-      "ratio": 9.6
+      "id": 352167,
+      "annual_from": 3,
+      "annual_to": 15,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "PostgreSQL",
+        "MongoDB",
+        "Kubernetes",
+        "AWS"
+      ]
     },
     {
-      "rank": 19,
-      "lang": "PHP",
-      "count": 2,
-      "ratio": 3.8
+      "id": 352104,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Spring"
+      ]
     },
     {
-      "rank": 20,
-      "lang": "Rust",
-      "count": 1,
-      "ratio": 1.9
+      "id": 352089,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Kubernetes"
+      ]
     },
     {
-      "rank": 21,
-      "lang": "Flask",
-      "count": 1,
-      "ratio": 1.9
+      "id": 352071,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Java",
+        "Spring",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
     },
     {
-      "rank": 22,
-      "lang": "Laravel",
-      "count": 1,
-      "ratio": 1.9
+      "id": 351976,
+      "annual_from": 3,
+      "annual_to": 15,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 351855,
+      "annual_from": 2,
+      "annual_to": 100,
+      "langs": [
+        "Go",
+        "TypeScript"
+      ]
+    },
+    {
+      "id": 351833,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Go",
+        "Rust",
+        "AWS"
+      ]
+    },
+    {
+      "id": 351769,
+      "annual_from": 10,
+      "annual_to": 19,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 351735,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "AWS"
+      ]
+    },
+    {
+      "id": 351721,
+      "annual_from": 7,
+      "annual_to": 15,
+      "langs": [
+        "Java",
+        "Spring"
+      ]
+    },
+    {
+      "id": 351596,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Spring",
+        "Redis"
+      ]
+    },
+    {
+      "id": 351335,
+      "annual_from": 2,
+      "annual_to": 8,
+      "langs": [
+        "Java",
+        "Spring"
+      ]
+    },
+    {
+      "id": 351328,
+      "annual_from": 0,
+      "annual_to": 1,
+      "langs": [
+        "Java",
+        "Scala"
+      ]
+    },
+    {
+      "id": 351323,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Go",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "PHP",
+        "MySQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 351232,
+      "annual_from": 5,
+      "annual_to": 15,
+      "langs": [
+        "Python",
+        "Kotlin",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "Swift",
+        "NestJS",
+        "MySQL",
+        "MongoDB",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 351203,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Python",
+        "Node.js",
+        "JavaScript",
+        "Rust",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 351198,
+      "annual_from": 2,
+      "annual_to": 5,
+      "langs": [
+        "Python",
+        "Spring",
+        "MySQL",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 351104,
+      "annual_from": 0,
+      "annual_to": 1,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 350992,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Spring",
+        "MySQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 350947,
+      "annual_from": 0,
+      "annual_to": 1,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "Spring",
+        "NestJS",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis"
+      ]
+    },
+    {
+      "id": 350946,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "Spring",
+        "NestJS",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis"
+      ]
+    },
+    {
+      "id": 350944,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "Spring",
+        "NestJS",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis"
+      ]
+    },
+    {
+      "id": 350866,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "TypeScript",
+        "Spring",
+        "MySQL",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 350811,
+      "annual_from": 5,
+      "annual_to": 11,
+      "langs": [
+        "Python",
+        "Go",
+        "Rust",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 350666,
+      "annual_from": 5,
+      "annual_to": 8,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "PostgreSQL",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 350624,
+      "annual_from": 4,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Django",
+        "FastAPI",
+        "AWS"
+      ]
+    },
+    {
+      "id": 350573,
+      "annual_from": 7,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Java",
+        "Spring",
+        "MySQL",
+        "Redis",
+        "Docker"
+      ]
+    },
+    {
+      "id": 350572,
+      "annual_from": 7,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "PostgreSQL",
+        "Redis"
+      ]
+    },
+    {
+      "id": 350520,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Kotlin",
+        "Spring",
+        "Redis"
+      ]
+    },
+    {
+      "id": 350485,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 350464,
+      "annual_from": 3,
+      "annual_to": 20,
+      "langs": [
+        "Python",
+        "Java",
+        "Django",
+        "PostgreSQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 350421,
+      "annual_from": 8,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Django",
+        "FastAPI",
+        "AWS"
+      ]
+    },
+    {
+      "id": 350188,
+      "annual_from": 2,
+      "annual_to": 5,
+      "langs": [
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "PostgreSQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 350182,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Go",
+        "MySQL",
+        "Redis",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 350178,
+      "annual_from": 5,
+      "annual_to": 7,
+      "langs": [
+        "Java",
+        "Spring",
+        "AWS"
+      ]
+    },
+    {
+      "id": 350155,
+      "annual_from": 2,
+      "annual_to": 15,
+      "langs": [
+        "Django",
+        "FastAPI",
+        "Flask",
+        "MySQL",
+        "PostgreSQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 350096,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "TypeScript",
+        "NestJS",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 350058,
+      "annual_from": 2,
+      "annual_to": 7,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 349994,
+      "annual_from": 7,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Node.js",
+        "JavaScript",
+        "Spring",
+        "MySQL",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 349969,
+      "annual_from": 7,
+      "annual_to": 14,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 349879,
+      "annual_from": 1,
+      "annual_to": 5,
+      "langs": [
+        "Node.js",
+        "JavaScript"
+      ]
+    },
+    {
+      "id": 349866,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Node.js",
+        "JavaScript",
+        "FastAPI",
+        "MySQL",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 349831,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Kotlin",
+        "Rust",
+        "Spring",
+        "MongoDB"
+      ]
+    },
+    {
+      "id": 349654,
+      "annual_from": 2,
+      "annual_to": 7,
+      "langs": []
+    },
+    {
+      "id": 349624,
+      "annual_from": 2,
+      "annual_to": 5,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "NestJS",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "id": 349481,
+      "annual_from": 5,
+      "annual_to": 11,
+      "langs": [
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "FastAPI",
+        "NestJS",
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 349393,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Kotlin",
+        "NestJS",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 349384,
+      "annual_from": 3,
+      "annual_to": 5,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "AWS"
+      ]
+    },
+    {
+      "id": 349256,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MongoDB",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 349186,
+      "annual_from": 2,
+      "annual_to": 5,
+      "langs": [
+        "Python",
+        "Java",
+        "Spring",
+        "PostgreSQL",
+        "Docker"
+      ]
+    },
+    {
+      "id": 348894,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 348758,
+      "annual_from": 6,
+      "annual_to": 11,
+      "langs": [
+        "Python",
+        "Django",
+        "MySQL",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 348718,
+      "annual_from": 3,
+      "annual_to": 20,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "PostgreSQL",
+        "Redis"
+      ]
+    },
+    {
+      "id": 348612,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "JavaScript",
+        "MySQL",
+        "PostgreSQL",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 348590,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Java",
+        "Go",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 348459,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 348365,
+      "annual_from": 1,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Kotlin",
+        "Spring",
+        "Django",
+        "MySQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 348104,
+      "annual_from": 3,
+      "annual_to": 6,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "AWS"
+      ]
+    },
+    {
+      "id": 348041,
+      "annual_from": 3,
+      "annual_to": 6,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "id": 347947,
+      "annual_from": 2,
+      "annual_to": 10,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 347610,
+      "annual_from": 2,
+      "annual_to": 100,
+      "langs": []
+    },
+    {
+      "id": 347561,
+      "annual_from": 1,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "JavaScript",
+        "Spring",
+        "MySQL",
+        "MongoDB",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 347509,
+      "annual_from": 3,
+      "annual_to": 18,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 347287,
+      "annual_from": 5,
+      "annual_to": 15,
+      "langs": [
+        "Go",
+        "AWS"
+      ]
+    },
+    {
+      "id": 346875,
+      "annual_from": 7,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Spring",
+        "MySQL",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 346715,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Python",
+        "MySQL",
+        "PostgreSQL",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 346702,
+      "annual_from": 10,
+      "annual_to": 19,
+      "langs": []
+    },
+    {
+      "id": 346590,
+      "annual_from": 0,
+      "annual_to": 4,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "PHP",
+        "MySQL",
+        "Redis",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 346448,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "FastAPI",
+        "AWS"
+      ]
+    },
+    {
+      "id": 346356,
+      "annual_from": 6,
+      "annual_to": 13,
+      "langs": [
+        "Java",
+        "Spring",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 346343,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Node.js",
+        "JavaScript",
+        "FastAPI",
+        "NestJS",
+        "AWS"
+      ]
+    },
+    {
+      "id": 346231,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Node.js",
+        "JavaScript",
+        "FastAPI",
+        "NestJS",
+        "AWS"
+      ]
+    },
+    {
+      "id": 346151,
+      "annual_from": 5,
+      "annual_to": 5,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 346144,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "AWS"
+      ]
+    },
+    {
+      "id": 346141,
+      "annual_from": 2,
+      "annual_to": 100,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "PHP",
+        "MySQL",
+        "Redis",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 345859,
+      "annual_from": 7,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "Redis"
+      ]
+    },
+    {
+      "id": 345804,
+      "annual_from": 2,
+      "annual_to": 5,
+      "langs": [
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 345499,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Python",
+        "FastAPI",
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 345498,
+      "annual_from": 0,
+      "annual_to": 7,
+      "langs": [
+        "Python",
+        "FastAPI",
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 345365,
+      "annual_from": 0,
+      "annual_to": 1,
+      "langs": [
+        "Python",
+        "Go",
+        "TypeScript",
+        "Rust",
+        "PostgreSQL",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 345314,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "MySQL",
+        "PostgreSQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 345173,
+      "annual_from": 4,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "MySQL",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 345162,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Python",
+        "Django",
+        "FastAPI"
+      ]
+    },
+    {
+      "id": 344874,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Spring",
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 344506,
+      "annual_from": 0,
+      "annual_to": 3,
+      "langs": [
+        "Python",
+        "NestJS",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 344198,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": []
+    },
+    {
+      "id": 344103,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 344084,
+      "annual_from": 5,
+      "annual_to": 8,
+      "langs": [
+        "Spring",
+        "FastAPI",
+        "AWS"
+      ]
+    },
+    {
+      "id": 344051,
+      "annual_from": 8,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Go",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 343931,
+      "annual_from": 10,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "AWS"
+      ]
+    },
+    {
+      "id": 343902,
+      "annual_from": 1,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "FastAPI"
+      ]
+    },
+    {
+      "id": 343798,
+      "annual_from": 4,
+      "annual_to": 7,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "NestJS"
+      ]
+    },
+    {
+      "id": 343614,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Python",
+        "Java",
+        "Django",
+        "Flask"
+      ]
+    },
+    {
+      "id": 343279,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Python",
+        "Go",
+        "TypeScript",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 343272,
+      "annual_from": 7,
+      "annual_to": 14,
+      "langs": [
+        "Redis"
+      ]
+    },
+    {
+      "id": 343139,
+      "annual_from": 7,
+      "annual_to": 14,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Go",
+        "PostgreSQL",
+        "MongoDB",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 343138,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "Spring",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 342888,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Java",
+        "Spring",
+        "Redis",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 342820,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Java",
+        "Spring"
+      ]
+    },
+    {
+      "id": 342762,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Go",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 342757,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Go",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 342678,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "FastAPI",
+        "Flask",
+        "MySQL",
+        "Redis"
+      ]
+    },
+    {
+      "id": 342675,
+      "annual_from": 4,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Java",
+        "Node.js",
+        "JavaScript",
+        "Spring",
+        "Redis"
+      ]
+    },
+    {
+      "id": 342644,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Go",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "MySQL"
+      ]
+    },
+    {
+      "id": 342614,
+      "annual_from": 1,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "MongoDB",
+        "Docker"
+      ]
+    },
+    {
+      "id": 342523,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "TypeScript",
+        "FastAPI",
+        "NestJS",
+        "AWS"
+      ]
+    },
+    {
+      "id": 342471,
+      "annual_from": 3,
+      "annual_to": 20,
+      "langs": [
+        "Python",
+        "PostgreSQL",
+        "MongoDB",
+        "Docker"
+      ]
+    },
+    {
+      "id": 342363,
+      "annual_from": 3,
+      "annual_to": 15,
+      "langs": [
+        "Python",
+        "Java",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "Ruby",
+        "Rails",
+        "AWS"
+      ]
+    },
+    {
+      "id": 342328,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Django",
+        "FastAPI",
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB",
+        "AWS"
+      ]
+    },
+    {
+      "id": 342006,
+      "annual_from": 2,
+      "annual_to": 7,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "MongoDB",
+        "Redis"
+      ]
+    },
+    {
+      "id": 341943,
+      "annual_from": 3,
+      "annual_to": 6,
+      "langs": [
+        "Python",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 341889,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 341660,
+      "annual_from": 5,
+      "annual_to": 11,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "PostgreSQL",
+        "MongoDB",
+        "AWS"
+      ]
+    },
+    {
+      "id": 341585,
+      "annual_from": 7,
+      "annual_to": 15,
+      "langs": [
+        "Python",
+        "AWS"
+      ]
+    },
+    {
+      "id": 341582,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Python",
+        "AWS"
+      ]
+    },
+    {
+      "id": 341448,
+      "annual_from": 4,
+      "annual_to": 8,
+      "langs": [
+        "Java",
+        "Spring"
+      ]
+    },
+    {
+      "id": 341010,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Python",
+        "TypeScript",
+        "Spring",
+        "NestJS",
+        "Redis",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 340940,
+      "annual_from": 5,
+      "annual_to": 9,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin"
+      ]
+    },
+    {
+      "id": 340229,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 340133,
+      "annual_from": 3,
+      "annual_to": 15,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Redis",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 339859,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "TypeScript"
+      ]
+    },
+    {
+      "id": 339841,
+      "annual_from": 0,
+      "annual_to": 1,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "AWS"
+      ]
+    },
+    {
+      "id": 339837,
+      "annual_from": 7,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "Spring",
+        "Express",
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 339238,
+      "annual_from": 5,
+      "annual_to": 12,
+      "langs": [
+        "AWS"
+      ]
+    },
+    {
+      "id": 339037,
+      "annual_from": 3,
+      "annual_to": 15,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Redis"
+      ]
+    },
+    {
+      "id": 338765,
+      "annual_from": 5,
+      "annual_to": 11,
+      "langs": [
+        "Java",
+        "Spring",
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 338756,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Go",
+        "Node.js",
+        "JavaScript",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 338706,
+      "annual_from": 2,
+      "annual_to": 100,
+      "langs": [
+        "Go",
+        "MySQL",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 338570,
+      "annual_from": 7,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "AWS"
+      ]
+    },
+    {
+      "id": 338495,
+      "annual_from": 1,
+      "annual_to": 3,
+      "langs": [
+        "Java",
+        "Go",
+        "Spring",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 338476,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Spring",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 338214,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Spring",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 338078,
+      "annual_from": 8,
+      "annual_to": 12,
+      "langs": [
+        "Python",
+        "FastAPI",
+        "MySQL",
+        "PostgreSQL",
+        "Docker"
+      ]
+    },
+    {
+      "id": 337958,
+      "annual_from": 3,
+      "annual_to": 6,
+      "langs": [
+        "Java",
+        "Spring",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 337939,
+      "annual_from": 0,
+      "annual_to": 8,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "MySQL",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 337445,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "JavaScript",
+        "C#",
+        "AWS"
+      ]
+    },
+    {
+      "id": 337437,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 337280,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Django",
+        "FastAPI",
+        "Flask",
+        "AWS"
+      ]
+    },
+    {
+      "id": 337130,
+      "annual_from": 2,
+      "annual_to": 7,
+      "langs": [
+        "Java",
+        "Go",
+        "Spring",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 336971,
+      "annual_from": 7,
+      "annual_to": 100,
+      "langs": [
+        "Kotlin"
+      ]
+    },
+    {
+      "id": 336859,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Java",
+        "Go",
+        "Spring",
+        "MySQL"
+      ]
+    },
+    {
+      "id": 336834,
+      "annual_from": 7,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Go",
+        "Ruby",
+        "FastAPI",
+        "Flask",
+        "Rails",
+        "PostgreSQL",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 336822,
+      "annual_from": 3,
+      "annual_to": 20,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Spring",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 336807,
+      "annual_from": 3,
+      "annual_to": 20,
+      "langs": [
+        "Python",
+        "Java",
+        "Spring",
+        "FastAPI",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 336564,
+      "annual_from": 1,
+      "annual_to": 3,
+      "langs": [
+        "Python",
+        "Java",
+        "Node.js",
+        "JavaScript",
+        "Spring",
+        "FastAPI",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 336054,
+      "annual_from": 2,
+      "annual_to": 15,
+      "langs": [
+        "Go",
+        "Redis",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 335658,
+      "annual_from": 4,
+      "annual_to": 5,
+      "langs": [
+        "Java",
+        "Spring",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 335619,
+      "annual_from": 5,
+      "annual_to": 11,
+      "langs": [
+        "Java",
+        "Spring",
+        "MySQL",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 335463,
+      "annual_from": 4,
+      "annual_to": 10,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "MySQL",
+        "Redis"
+      ]
+    },
+    {
+      "id": 335131,
+      "annual_from": 3,
+      "annual_to": 20,
+      "langs": [
+        "Python",
+        "AWS"
+      ]
+    },
+    {
+      "id": 335018,
+      "annual_from": 1,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "AWS"
+      ]
+    },
+    {
+      "id": 334951,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "TypeScript",
+        "Spring",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 334745,
+      "annual_from": 5,
+      "annual_to": 7,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "AWS"
+      ]
+    },
+    {
+      "id": 334330,
+      "annual_from": 2,
+      "annual_to": 7,
+      "langs": [
+        "Java",
+        "Spring",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 334147,
+      "annual_from": 5,
+      "annual_to": 13,
+      "langs": [
+        "TypeScript",
+        "NestJS",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 334101,
+      "annual_from": 3,
+      "annual_to": 15,
+      "langs": [
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 333992,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "NestJS",
+        "MySQL",
+        "PostgreSQL",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 333968,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "PostgreSQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 333966,
+      "annual_from": 0,
+      "annual_to": 2,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "TypeScript",
+        "AWS"
+      ]
+    },
+    {
+      "id": 333847,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Go",
+        "TypeScript",
+        "NestJS"
+      ]
+    },
+    {
+      "id": 333293,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "FastAPI",
+        "Flask",
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "Docker"
+      ]
+    },
+    {
+      "id": 333105,
+      "annual_from": 5,
+      "annual_to": 11,
+      "langs": [
+        "MongoDB",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 332901,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "NestJS",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 332817,
+      "annual_from": 2,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "JavaScript",
+        "TypeScript",
+        "Spring",
+        "NestJS",
+        "MySQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 332791,
+      "annual_from": 0,
+      "annual_to": 100,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "NestJS",
+        "MySQL",
+        "Redis"
+      ]
+    },
+    {
+      "id": 332599,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Python",
+        "MongoDB",
+        "AWS"
+      ]
+    },
+    {
+      "id": 332588,
+      "annual_from": 7,
+      "annual_to": 25,
+      "langs": [
+        "Spring",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 332249,
+      "annual_from": 1,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Spring",
+        "FastAPI",
+        "Flask",
+        "MySQL",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 331914,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 331639,
+      "annual_from": 4,
+      "annual_to": 7,
+      "langs": [
+        "Python",
+        "TypeScript",
+        "Django",
+        "AWS"
+      ]
+    },
+    {
+      "id": 331214,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Python",
+        "Java",
+        "Go",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 331077,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "MongoDB",
+        "Redis"
+      ]
+    },
+    {
+      "id": 331006,
+      "annual_from": 2,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Ruby",
+        "Spring",
+        "Rails",
+        "MySQL",
+        "PostgreSQL",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 330977,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Kotlin",
+        "Go",
+        "AWS"
+      ]
+    },
+    {
+      "id": 329517,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": []
+    },
+    {
+      "id": 329269,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "JavaScript",
+        "FastAPI",
+        "Redis",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 329206,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": []
+    },
+    {
+      "id": 329003,
+      "annual_from": 2,
+      "annual_to": 15,
+      "langs": [
+        "Java"
+      ]
+    },
+    {
+      "id": 328695,
+      "annual_from": 0,
+      "annual_to": 5,
+      "langs": [
+        "JavaScript",
+        "NestJS",
+        "Express",
+        "MongoDB",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 328643,
+      "annual_from": 5,
+      "annual_to": 15,
+      "langs": [
+        "Python",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "PostgreSQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 328600,
+      "annual_from": 7,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "MongoDB",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 328596,
+      "annual_from": 7,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Spring",
+        "MySQL",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 328573,
+      "annual_from": 5,
+      "annual_to": 11,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 328549,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Redis"
+      ]
+    },
+    {
+      "id": 328449,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "PostgreSQL",
+        "MongoDB",
+        "Docker"
+      ]
+    },
+    {
+      "id": 328431,
+      "annual_from": 0,
+      "annual_to": 5,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring"
+      ]
+    },
+    {
+      "id": 328134,
+      "annual_from": 4,
+      "annual_to": 8,
+      "langs": [
+        "Java",
+        "Spring",
+        "AWS"
+      ]
+    },
+    {
+      "id": 328130,
+      "annual_from": 7,
+      "annual_to": 14,
+      "langs": []
+    },
+    {
+      "id": 327545,
+      "annual_from": 5,
+      "annual_to": 12,
+      "langs": [
+        "JavaScript",
+        "MySQL"
+      ]
+    },
+    {
+      "id": 327385,
+      "annual_from": 4,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Spring"
+      ]
+    },
+    {
+      "id": 326711,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Spring",
+        "Django",
+        "MySQL",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 326661,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Django",
+        "FastAPI",
+        "Flask",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 326655,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "FastAPI",
+        "Flask",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 326389,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "FastAPI",
+        "Flask",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 325490,
+      "annual_from": 5,
+      "annual_to": 15,
+      "langs": [
+        "Java",
+        "Spring",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 324762,
+      "annual_from": 4,
+      "annual_to": 7,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Go",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "Spring",
+        "NestJS",
+        "MySQL",
+        "MongoDB",
+        "Redis"
+      ]
+    },
+    {
+      "id": 324645,
+      "annual_from": 7,
+      "annual_to": 100,
+      "langs": [
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 324171,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Go",
+        "JavaScript"
+      ]
+    },
+    {
+      "id": 323996,
+      "annual_from": 2,
+      "annual_to": 15,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 323558,
+      "annual_from": 5,
+      "annual_to": 15,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Go",
+        "MongoDB",
+        "AWS"
+      ]
+    },
+    {
+      "id": 322178,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "PostgreSQL",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 321958,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "AWS"
+      ]
+    },
+    {
+      "id": 321594,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "JavaScript",
+        "Spring",
+        "MySQL",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 321030,
+      "annual_from": 7,
+      "annual_to": 7,
+      "langs": [
+        "Kotlin",
+        "Spring",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 320743,
+      "annual_from": 1,
+      "annual_to": 4,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 320193,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "Spring",
+        "Django",
+        "NestJS",
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 320187,
+      "annual_from": 0,
+      "annual_to": 3,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "NestJS",
+        "MySQL",
+        "PostgreSQL",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 320161,
+      "annual_from": 7,
+      "annual_to": 12,
+      "langs": []
+    },
+    {
+      "id": 320037,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Go",
+        "Node.js",
+        "JavaScript",
+        "FastAPI",
+        "Flask",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 319346,
+      "annual_from": 0,
+      "annual_to": 3,
+      "langs": [
+        "Java",
+        "Spring",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 319120,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 318841,
+      "annual_from": 7,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 317565,
+      "annual_from": 5,
+      "annual_to": 7,
+      "langs": [
+        "JavaScript",
+        "Spring",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 317185,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "AWS"
+      ]
+    },
+    {
+      "id": 317126,
+      "annual_from": 3,
+      "annual_to": 5,
+      "langs": [
+        "Python",
+        "PHP",
+        "Django",
+        "MySQL",
+        "PostgreSQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 317125,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "AWS"
+      ]
+    },
+    {
+      "id": 316785,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "PHP",
+        "NestJS",
+        "PostgreSQL",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 315866,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "JavaScript",
+        "Spring",
+        "NestJS",
+        "MySQL"
+      ]
+    },
+    {
+      "id": 315428,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "FastAPI",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 314893,
+      "annual_from": 2,
+      "annual_to": 7,
+      "langs": [
+        "Java",
+        "Spring"
+      ]
+    },
+    {
+      "id": 313868,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "TypeScript",
+        "NestJS",
+        "MongoDB",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 313717,
+      "annual_from": 5,
+      "annual_to": 15,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 312419,
+      "annual_from": 5,
+      "annual_to": 12,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Go",
+        "Node.js",
+        "JavaScript",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 312223,
+      "annual_from": 2,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Spring",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 311992,
+      "annual_from": 7,
+      "annual_to": 14,
+      "langs": [
+        "Python",
+        "FastAPI",
+        "AWS"
+      ]
+    },
+    {
+      "id": 311193,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "NestJS",
+        "MySQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 310253,
+      "annual_from": 2,
+      "annual_to": 100,
+      "langs": [
+        "TypeScript",
+        "Rust"
+      ]
+    },
+    {
+      "id": 309970,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Python",
+        "Go",
+        "MySQL",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 309055,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Spring"
+      ]
+    },
+    {
+      "id": 308908,
+      "annual_from": 3,
+      "annual_to": 15,
+      "langs": [
+        "Python",
+        "Node.js",
+        "FastAPI",
+        "PostgreSQL",
+        "MongoDB",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 307904,
+      "annual_from": 3,
+      "annual_to": 12,
+      "langs": [
+        "Java",
+        "Spring",
+        "AWS"
+      ]
+    },
+    {
+      "id": 307462,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "AWS"
+      ]
+    },
+    {
+      "id": 307033,
+      "annual_from": 2,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Spring"
+      ]
+    },
+    {
+      "id": 305972,
+      "annual_from": 6,
+      "annual_to": 13,
+      "langs": [
+        "MySQL",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 303815,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "JavaScript",
+        "TypeScript",
+        "Spring",
+        "NestJS",
+        "MySQL",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "id": 301207,
+      "annual_from": 5,
+      "annual_to": 15,
+      "langs": [
+        "Spring",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 300610,
+      "annual_from": 5,
+      "annual_to": 15,
+      "langs": [
+        "Spring"
+      ]
+    },
+    {
+      "id": 299660,
+      "annual_from": 7,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Spring",
+        "MySQL",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 299607,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Java",
+        "Node.js",
+        "JavaScript",
+        "NestJS",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 299586,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Scala"
+      ]
+    },
+    {
+      "id": 299355,
+      "annual_from": 5,
+      "annual_to": 14,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 299145,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Spring",
+        "Django",
+        "AWS"
+      ]
+    },
+    {
+      "id": 297702,
+      "annual_from": 7,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "PHP",
+        "Spring",
+        "Laravel",
+        "MySQL",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 297098,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Go",
+        "MySQL",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 296984,
+      "annual_from": 2,
+      "annual_to": 100,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "NestJS",
+        "MongoDB",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 295915,
+      "annual_from": 0,
+      "annual_to": 1,
+      "langs": [
+        "Python",
+        "Node.js",
+        "JavaScript",
+        "TypeScript"
+      ]
+    },
+    {
+      "id": 295597,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Spring",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 293488,
+      "annual_from": 3,
+      "annual_to": 12,
+      "langs": [
+        "Go",
+        "Node.js",
+        "JavaScript",
+        "PHP",
+        "MySQL",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 292845,
+      "annual_from": 2,
+      "annual_to": 7,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "NestJS"
+      ]
+    },
+    {
+      "id": 292659,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Kotlin",
+        "Node.js",
+        "JavaScript",
+        "Spring",
+        "PostgreSQL",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 291969,
+      "annual_from": 8,
+      "annual_to": 30,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "MySQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 291963,
+      "annual_from": 4,
+      "annual_to": 7,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "MySQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 291698,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Spring",
+        "Django",
+        "FastAPI",
+        "AWS"
+      ]
+    },
+    {
+      "id": 289392,
+      "annual_from": 8,
+      "annual_to": 100,
+      "langs": [
+        "AWS"
+      ]
+    },
+    {
+      "id": 289348,
+      "annual_from": 5,
+      "annual_to": 7,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Node.js",
+        "TypeScript",
+        "Ruby",
+        "Spring",
+        "NestJS",
+        "MySQL",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 287859,
+      "annual_from": 3,
+      "annual_to": 5,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "AWS"
+      ]
+    },
+    {
+      "id": 287699,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Python",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "Rust",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 285291,
+      "annual_from": 0,
+      "annual_to": 100,
+      "langs": [
+        "Go",
+        "MongoDB",
+        "Redis"
+      ]
+    },
+    {
+      "id": 284501,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Spring",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 284486,
+      "annual_from": 10,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Spring",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 284183,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "JavaScript",
+        "Spring",
+        "MySQL",
+        "MongoDB",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 283093,
+      "annual_from": 3,
+      "annual_to": 5,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "AWS"
+      ]
+    },
+    {
+      "id": 281843,
+      "annual_from": 7,
+      "annual_to": 14,
+      "langs": [
+        "Go",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 281772,
+      "annual_from": 0,
+      "annual_to": 1,
+      "langs": [
+        "Python",
+        "Go",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 281357,
+      "annual_from": 2,
+      "annual_to": 7,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "JavaScript",
+        "TypeScript",
+        "Spring",
+        "Express",
+        "MongoDB",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 279560,
+      "annual_from": 6,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Go",
+        "Spring",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 278395,
+      "annual_from": 7,
+      "annual_to": 14,
+      "langs": [
+        "Java",
+        "Spring",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 274162,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 273728,
+      "annual_from": 0,
+      "annual_to": 3,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 273609,
+      "annual_from": 3,
+      "annual_to": 3,
+      "langs": [
+        "Python",
+        "Java",
+        "Go",
+        "JavaScript",
+        "MongoDB",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 272871,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 272016,
+      "annual_from": 5,
+      "annual_to": 15,
+      "langs": [
+        "Python",
+        "Java",
+        "Go",
+        "Node.js",
+        "JavaScript",
+        "Rust",
+        "Spring",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 271840,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Java",
+        "Docker"
+      ]
+    },
+    {
+      "id": 270013,
+      "annual_from": 2,
+      "annual_to": 5,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Redis",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 269925,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Python",
+        "Java",
+        "PostgreSQL",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 268315,
+      "annual_from": 4,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Go",
+        "Spring",
+        "MySQL",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 268215,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring"
+      ]
+    },
+    {
+      "id": 264022,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Java",
+        "Spring",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 263476,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "AWS"
+      ]
+    },
+    {
+      "id": 260951,
+      "annual_from": 0,
+      "annual_to": 1,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "Spring",
+        "NestJS",
+        "AWS"
+      ]
+    },
+    {
+      "id": 259710,
+      "annual_from": 5,
+      "annual_to": 7,
+      "langs": [
+        "TypeScript",
+        "NestJS",
+        "AWS"
+      ]
+    },
+    {
+      "id": 252452,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "TypeScript",
+        "Django"
+      ]
+    },
+    {
+      "id": 246427,
+      "annual_from": 0,
+      "annual_to": 10,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 244304,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Kotlin",
+        "Go",
+        "JavaScript",
+        "TypeScript",
+        "Spring",
+        "NestJS",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 243234,
+      "annual_from": 3,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Spring",
+        "AWS"
+      ]
+    },
+    {
+      "id": 239334,
+      "annual_from": 1,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Spring",
+        "Flask",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 238973,
+      "annual_from": 7,
+      "annual_to": 14,
+      "langs": [
+        "Python",
+        "Django",
+        "FastAPI",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "Docker"
+      ]
+    },
+    {
+      "id": 234830,
+      "annual_from": 1,
+      "annual_to": 5,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Spring",
+        "FastAPI",
+        "MySQL",
+        "Redis"
+      ]
+    },
+    {
+      "id": 234466,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Django",
+        "FastAPI",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 231846,
+      "annual_from": 5,
+      "annual_to": 15,
+      "langs": [
+        "Python",
+        "Java",
+        "Spring",
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 231479,
+      "annual_from": 2,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 231478,
+      "annual_from": 2,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 231440,
+      "annual_from": 3,
+      "annual_to": 20,
+      "langs": [
+        "Django",
+        "FastAPI",
+        "Flask",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 230448,
+      "annual_from": 5,
+      "annual_to": 100,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 222550,
+      "annual_from": 1,
+      "annual_to": 4,
+      "langs": [
+        "Python",
+        "Java",
+        "FastAPI",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 222038,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "NestJS",
+        "MySQL",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 218542,
+      "annual_from": 6,
+      "annual_to": 9,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Ruby",
+        "Spring",
+        "Rails"
+      ]
+    },
+    {
+      "id": 215761,
+      "annual_from": 5,
+      "annual_to": 15,
+      "langs": [
+        "Kotlin",
+        "PHP",
+        "Spring",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 214338,
+      "annual_from": 0,
+      "annual_to": 1,
+      "langs": [
+        "Python",
+        "TypeScript",
+        "Django"
+      ]
+    },
+    {
+      "id": 206658,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "Java",
+        "Kotlin",
+        "Go",
+        "FastAPI",
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 206209,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "JavaScript",
+        "TypeScript",
+        "Rust",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 203743,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 202870,
+      "annual_from": 3,
+      "annual_to": 8,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Go",
+        "Spring",
+        "MySQL",
+        "Redis",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 199386,
+      "annual_from": 2,
+      "annual_to": 4,
+      "langs": [
+        "Python",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "MySQL",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 198604,
+      "annual_from": 3,
+      "annual_to": 7,
+      "langs": [
+        "Python",
+        "AWS"
+      ]
+    },
+    {
+      "id": 196059,
+      "annual_from": 0,
+      "annual_to": 4,
+      "langs": [
+        "Java",
+        "Spring",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 185153,
+      "annual_from": 4,
+      "annual_to": 10,
+      "langs": [
+        "Java",
+        "Spring",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 182714,
+      "annual_from": 0,
+      "annual_to": 1,
+      "langs": []
+    },
+    {
+      "id": 181318,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "JavaScript",
+        "TypeScript"
+      ]
+    },
+    {
+      "id": 171849,
+      "annual_from": 5,
+      "annual_to": 15,
+      "langs": [
+        "Java",
+        "Spring",
+        "Docker"
+      ]
+    },
+    {
+      "id": 169285,
+      "annual_from": 5,
+      "annual_to": 17,
+      "langs": [
+        "Python",
+        "TypeScript",
+        "Django"
+      ]
+    },
+    {
+      "id": 139191,
+      "annual_from": 4,
+      "annual_to": 100,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "Spring",
+        "Django",
+        "NestJS",
+        "MySQL",
+        "Docker",
+        "AWS"
+      ]
+    },
+    {
+      "id": 116149,
+      "annual_from": 7,
+      "annual_to": 20,
+      "langs": [
+        "Java",
+        "Node.js",
+        "JavaScript",
+        "Spring",
+        "MySQL",
+        "Redis"
+      ]
+    },
+    {
+      "id": 109188,
+      "annual_from": 3,
+      "annual_to": 10,
+      "langs": [
+        "AWS"
+      ]
+    },
+    {
+      "id": 107200,
+      "annual_from": 7,
+      "annual_to": 15,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MySQL",
+        "Redis",
+        "AWS"
+      ]
+    },
+    {
+      "id": 99189,
+      "annual_from": 1,
+      "annual_to": 3,
+      "langs": []
+    },
+    {
+      "id": 95315,
+      "annual_from": 1,
+      "annual_to": 100,
+      "langs": [
+        "TypeScript",
+        "Spring"
+      ]
+    },
+    {
+      "id": 91665,
+      "annual_from": 1,
+      "annual_to": 5,
+      "langs": [
+        "Java",
+        "Spring",
+        "MySQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 64350,
+      "annual_from": 3,
+      "annual_to": 6,
+      "langs": [
+        "Python",
+        "Java",
+        "Go",
+        "TypeScript",
+        "PHP",
+        "Laravel",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 59335,
+      "annual_from": 4,
+      "annual_to": 8,
+      "langs": [
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 51700,
+      "annual_from": 5,
+      "annual_to": 15,
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 46260,
+      "annual_from": 5,
+      "annual_to": 10,
+      "langs": [
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "Django",
+        "Flask",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 23303,
+      "annual_from": 3,
+      "annual_to": 15,
+      "langs": [
+        "Java",
+        "Spring",
+        "Kubernetes",
+        "AWS"
+      ]
+    },
+    {
+      "id": 17243,
+      "annual_from": 1,
+      "annual_to": 10,
+      "langs": [
+        "Node.js",
+        "JavaScript",
+        "AWS"
+      ]
     }
-  ],
-  "analyzed": 52,
-  "skipped": 0,
-  "ts": 1775569531.878033
+  ]
 }

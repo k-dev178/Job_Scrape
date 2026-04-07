@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/components/button.css">
   <link rel="stylesheet" href="/css/components/progress.css">
+  <link rel="stylesheet" href="/css/components/modal.css">
   <link rel="stylesheet" href="/css/components/table.css">
 </head>
 <body>
@@ -25,8 +26,39 @@
       <button id="btn-refresh" class="btn-secondary" onclick="startScrape(true)" style="display:none">
         새로 분석
       </button>
+      <button id="btn-career" class="btn-filter" onclick="openCareerModal()">
+        <span id="btn-career-text">경력 전체</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
     </div>
     <p id="last-refreshed" class="last-refreshed" style="display:none">최근 새로고침: <strong id="last-refreshed-time"></strong></p>
+
+<!-- 경력 모달 -->
+<div id="career-overlay" class="modal-overlay" onclick="closeCareerModal()" style="display:none"></div>
+<div id="career-modal" class="modal" style="display:none">
+  <div class="modal-header">
+    <span class="modal-title">경력</span>
+    <button class="modal-close" onclick="closeCareerModal()">✕</button>
+  </div>
+  <div class="modal-body">
+    <p id="career-label" class="career-label">경력 전체</p>
+    <div class="range-wrap">
+      <div class="range-track">
+        <div class="range-fill" id="range-fill"></div>
+      </div>
+      <input type="range" id="range-min" min="0" max="10" value="0" oninput="onRangeChange()">
+      <input type="range" id="range-max" min="0" max="10" value="10" oninput="onRangeChange()">
+    </div>
+    <div class="range-labels">
+      <span>신입</span>
+      <span>10년 이상</span>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn-secondary" onclick="resetCareer()">초기화</button>
+    <button id="btn-apply" onclick="applyCareer()">적용</button>
+  </div>
+</div>
   </header>
 
   <div class="notice">
@@ -62,5 +94,6 @@
 </div>
 
 <script src="/js/scrape.js"></script>
+<script src="/js/career.js"></script>
 </body>
 </html>
