@@ -1,0 +1,139 @@
+{
+  "results": [
+    {
+      "rank": 1,
+      "lang": "AWS",
+      "count": 35,
+      "ratio": 67.3
+    },
+    {
+      "rank": 2,
+      "lang": "Java",
+      "count": 28,
+      "ratio": 53.8
+    },
+    {
+      "rank": 3,
+      "lang": "Spring",
+      "count": 26,
+      "ratio": 50.0
+    },
+    {
+      "rank": 4,
+      "lang": "Redis",
+      "count": 23,
+      "ratio": 44.2
+    },
+    {
+      "rank": 5,
+      "lang": "Docker",
+      "count": 19,
+      "ratio": 36.5
+    },
+    {
+      "rank": 6,
+      "lang": "MySQL",
+      "count": 18,
+      "ratio": 34.6
+    },
+    {
+      "rank": 7,
+      "lang": "Python",
+      "count": 16,
+      "ratio": 30.8
+    },
+    {
+      "rank": 8,
+      "lang": "Kubernetes",
+      "count": 15,
+      "ratio": 28.8
+    },
+    {
+      "rank": 9,
+      "lang": "JavaScript",
+      "count": 15,
+      "ratio": 28.8
+    },
+    {
+      "rank": 10,
+      "lang": "Kotlin",
+      "count": 13,
+      "ratio": 25.0
+    },
+    {
+      "rank": 11,
+      "lang": "PostgreSQL",
+      "count": 13,
+      "ratio": 25.0
+    },
+    {
+      "rank": 12,
+      "lang": "TypeScript",
+      "count": 12,
+      "ratio": 23.1
+    },
+    {
+      "rank": 13,
+      "lang": "NestJS",
+      "count": 11,
+      "ratio": 21.2
+    },
+    {
+      "rank": 14,
+      "lang": "Node.js",
+      "count": 11,
+      "ratio": 21.2
+    },
+    {
+      "rank": 15,
+      "lang": "MongoDB",
+      "count": 6,
+      "ratio": 11.5
+    },
+    {
+      "rank": 16,
+      "lang": "FastAPI",
+      "count": 6,
+      "ratio": 11.5
+    },
+    {
+      "rank": 17,
+      "lang": "Django",
+      "count": 5,
+      "ratio": 9.6
+    },
+    {
+      "rank": 18,
+      "lang": "Go",
+      "count": 5,
+      "ratio": 9.6
+    },
+    {
+      "rank": 19,
+      "lang": "PHP",
+      "count": 2,
+      "ratio": 3.8
+    },
+    {
+      "rank": 20,
+      "lang": "Rust",
+      "count": 1,
+      "ratio": 1.9
+    },
+    {
+      "rank": 21,
+      "lang": "Flask",
+      "count": 1,
+      "ratio": 1.9
+    },
+    {
+      "rank": 22,
+      "lang": "Laravel",
+      "count": 1,
+      "ratio": 1.9
+    }
+  ],
+  "analyzed": 52,
+  "skipped": 0,
+  "ts": 1775569531.878033
+}

@@ -33,9 +33,6 @@ Thumbs.db
 *.log
 logs/
 
-# Cache
-backend/cache.json
-
 # pytest
 .pytest_cache/
 .coverage

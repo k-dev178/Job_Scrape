@@ -19,8 +19,9 @@ HEADERS = {
     "x-wanted-platform": "pcweb",
 }
 
-# 백엔드 카테고리 ID
-BACKEND_CATEGORY = 518
+CATEGORY    = 518
+TAG_TYPE_ID = 872
+SKILL_TAG   = 1541
 
 LANGUAGES = {
     "Python":     r"\bpython\b",
@@ -56,19 +57,9 @@ LANGUAGES = {
 
 COMPILED = {lang: re.compile(pat, re.IGNORECASE) for lang, pat in LANGUAGES.items()}
 
-# 제목에 이 키워드가 포함되면 제외 (데이터/AI/인프라 직군)
-EXCLUDE_TITLE_KEYWORDS = re.compile(
-    r"데이터\s*(엔지니어|사이언티스트|분석|플랫폼|파이프라인|리드|팀장|아키텍트)"
-    r"|data\s*(engineer|scientist|analyst|platform|pipeline)"
-    r"|머신\s*러닝|machine\s*learning|딥\s*러닝|deep\s*learning"
-    r"|\bML\b|\bMLOps\b|\bMLops\b"
-    r"|\bAI\s*(엔지니어|개발|리서처|연구|플랫폼)"
-    r"|인공\s*지능"
-    r"|플랫폼\s*(엔지니어|개발자|팀)"
-    r"|인프라\s*(엔지니어|개발자|팀)"
-    r"|DevOps|SRE|클라우드\s*(엔지니어|아키텍트)"
-    r"|빅\s*데이터",
-    re.IGNORECASE,
+# 제목에 아래 키워드가 있는 공고만 분석 (화이트리스트)
+INCLUDE_TITLE_KEYWORDS = re.compile(
+    r"백엔드|백 엔드|[Bb]ack.?[Ee]nd|서버|[Ss]erver",
 )
 
 MAX_WORKERS = 10
@@ -94,13 +85,15 @@ def init_session():
 
 def fetch_job_list(offset: int, limit: int = 100) -> dict:
     params = {
-        "job_sort": "job.latest_order",
-        "years": -1,
-        "country": "kr",
-        "locations": "all",
-        "category": BACKEND_CATEGORY,
-        "limit": limit,
-        "offset": offset,
+        "job_sort":    "job.latest_order",
+        "years":       -1,
+        "country":     "kr",
+        "locations":   "all",
+        "category":    CATEGORY,
+        "tag_type_ids": TAG_TYPE_ID,
+        "skill_tags":  SKILL_TAG,
+        "limit":       limit,
+        "offset":      offset,
     }
     for attempt in range(3):
         try:
@@ -134,7 +127,7 @@ def fetch_job_detail(job_id: int) -> dict:
 
 
 def collect_all_job_ids() -> list[int]:
-    """전체 백엔드 공고 ID 수집"""
+    """백엔드/서버 키워드가 제목에 포함된 공고 ID만 수집"""
     job_ids = []
     offset = 0
     limit = 100
@@ -144,46 +137,48 @@ def collect_all_job_ids() -> list[int]:
         jobs = data.get("data", [])
         if not jobs:
             break
+
         for job in jobs:
-            jid = job.get("id")
-            if jid:
-                job_ids.append(jid)
+            title = job.get("position", "")
+            if INCLUDE_TITLE_KEYWORDS.search(title):
+                jid = job.get("id")
+                if jid:
+                    job_ids.append(jid)
+
         has_next = bool(data.get("links", {}).get("next"))
         if not has_next:
             break
+
         offset += limit
         time.sleep(0.2)
 
     return job_ids
 
 
-def extract_text_from_job(detail_data: dict) -> tuple[str, str]:
-    """공고 상세에서 (제목, 전체텍스트) 반환"""
+def extract_text_from_job(detail_data: dict) -> str:
+    """공고 상세에서 분석용 전체 텍스트 반환"""
     job = detail_data.get("job", {})
-    title = job.get("title", "")
-    parts = [title]
+    parts = [job.get("title", "")]
+
     for tag in job.get("tags", []):
         parts.append(tag.get("title", ""))
+
     detail = job.get("detail", {})
     for field in ("intro", "main_tasks", "requirements", "preferred_points", "benefits"):
         text = detail.get(field, "") or ""
         text = re.sub(r"<[^>]+>", " ", text)
         parts.append(text)
-    return title, " ".join(parts)
+
+    return " ".join(parts)
 
 
-def is_backend_job(title: str) -> bool:
-    """데이터/AI/인프라 직군 제외"""
-    return not EXCLUDE_TITLE_KEYWORDS.search(title)
-
-
-def process_job(job_id: int) -> tuple[str, str]:
+def process_job(job_id: int) -> str:
     detail = fetch_job_detail(job_id)
     return extract_text_from_job(detail)
 
 
 def count_languages(texts: list[str]) -> dict[str, int]:
-    """각 공고당 언급된 언어를 카운트 (공고 수 기준)"""
+    """각 공고당 언급된 언어/기술을 카운트 (공고 수 기준)"""
     counts = defaultdict(int)
     for text in texts:
         for lang, pattern in COMPILED.items():
