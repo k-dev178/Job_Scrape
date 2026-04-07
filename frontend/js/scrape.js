@@ -50,7 +50,7 @@ function startScrape(refresh = false) {
       document.getElementById('status-text').textContent =
         `상세 분석 중... ${data.done.toLocaleString()} / ${data.total.toLocaleString()} (${pct}%)`;
       document.getElementById('meta-text').textContent =
-        `필터 제외: ${data.skipped.toLocaleString()}개`;
+        `${data.done.toLocaleString()} / ${data.total.toLocaleString()}개`;
 
       const elapsed   = (Date.now() - startTime) / 1000;
       const rate      = data.done / elapsed;
@@ -67,8 +67,7 @@ function startScrape(refresh = false) {
       document.getElementById('progress-bar').style.width = '100%';
       document.getElementById('status-text').textContent  = '분석 완료!';
       document.getElementById('eta-text').textContent     = '';
-      document.getElementById('meta-text').textContent    =
-        `분석: ${data.analyzed.toLocaleString()}개 · 제외: ${data.skipped.toLocaleString()}개`;
+      document.getElementById('meta-text').textContent = `총 ${data.analyzed.toLocaleString()}개 분석 완료`;
 
       const elapsed = ((Date.now() - scrapeStart) / 1000).toFixed(1);
       const fromCache = elapsed < 2;
@@ -77,7 +76,6 @@ function startScrape(refresh = false) {
         : '';
       summaryBox.innerHTML = `
         <span class="summary-item">분석 공고 <strong>${data.analyzed.toLocaleString()}개</strong></span>
-        <span class="summary-item">제외 공고 <strong>${data.skipped.toLocaleString()}개</strong></span>
         ${fromCache
           ? `<span class="summary-item">캐시 데이터 · 마지막 분석 <strong>${refreshedAt}</strong></span>`
           : `<span class="summary-item">소요 시간 <strong>${elapsed}초</strong></span><span class="summary-item">분석 시각 <strong>${refreshedAt}</strong></span>`

@@ -15,7 +15,6 @@ try:
         collect_all_job_ids,
         count_languages,
         init_session,
-        is_backend_job,
         process_job,
     )
 except ImportError:
@@ -24,12 +23,11 @@ except ImportError:
         collect_all_job_ids,
         count_languages,
         init_session,
-        is_backend_job,
         process_job,
     )
 
 FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
-CACHE_FILE = Path(__file__).parent / "cache.json"
+CACHE_FILE   = Path(__file__).parent / "cache.json"
 
 _cache: dict = {}
 if CACHE_FILE.exists():
@@ -45,7 +43,7 @@ def scrape(refresh: bool = False):
     if not refresh and _cache:
         def generate_cached():
             yield f"data: {json.dumps({'type': 'cached', 'ts': _cache['ts']}, ensure_ascii=False)}\n\n"
-            yield f"data: {json.dumps({'type': 'complete', 'results': _cache['results'], 'analyzed': _cache['analyzed'], 'skipped': _cache['skipped']}, ensure_ascii=False)}\n\n"
+            yield f"data: {json.dumps({'type': 'complete', 'results': _cache['results'], 'analyzed': _cache['analyzed']}, ensure_ascii=False)}\n\n"
         return StreamingResponse(
             generate_cached(),
             media_type="text/event-stream",
@@ -67,35 +65,33 @@ def scrape(refresh: bool = False):
             })
 
             texts = []
-            skipped = 0
             done = 0
             with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
                 futures = {executor.submit(process_job, jid): jid for jid in job_ids}
                 for future in as_completed(futures):
-                    title, text = future.result()
+                    text = future.result()
                     done += 1
-                    if not is_backend_job(title):
-                        skipped += 1
-                    elif text.strip():
+                    if text.strip():
                         texts.append(text)
-                    if done % 30 == 0 or done == len(job_ids):
-                        q.put({"type": "progress", "done": done, "total": len(job_ids), "skipped": skipped})
+                    if done % 10 == 0 or done == len(job_ids):
+                        q.put({"type": "progress", "done": done, "total": len(job_ids)})
 
             counts = count_languages(texts)
             results = [
                 {
-                    "rank": i + 1,
-                    "lang": lang,
+                    "rank":  i + 1,
+                    "lang":  lang,
                     "count": cnt,
                     "ratio": round(cnt / len(texts) * 100, 1) if texts else 0,
                 }
                 for i, (lang, cnt) in enumerate(sorted(counts.items(), key=lambda x: x[1], reverse=True))
             ]
             ts = time.time()
-            _cache.update({"results": results, "analyzed": len(texts), "skipped": skipped, "ts": ts})
+            _cache.update({"results": results, "analyzed": len(texts), "ts": ts})
             with open(CACHE_FILE, "w", encoding="utf-8") as f:
                 json.dump(_cache, f, ensure_ascii=False, indent=2)
-            q.put({"type": "complete", "results": results, "analyzed": len(texts), "skipped": skipped, "ts": ts})
+
+            q.put({"type": "complete", "results": results, "analyzed": len(texts), "ts": ts})
 
         except Exception as e:
             q.put({"type": "error", "msg": str(e)})
