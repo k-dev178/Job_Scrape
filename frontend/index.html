@@ -18,9 +18,15 @@
     <div class="hero-badge">Wanted · 백엔드</div>
     <h1>기술 스택 트렌드 분석</h1>
     <p class="subtitle">데이터·AI·인프라 공고 제외 &mdash; 백엔드 공고만 실시간 분석</p>
-    <button id="btn" onclick="startScrape()">
-      <span id="btn-text">분석 시작</span>
-    </button>
+    <div class="btn-row">
+      <button id="btn" onclick="startScrape(false)">
+        <span id="btn-text">분석 시작</span>
+      </button>
+      <button id="btn-refresh" class="btn-secondary" onclick="startScrape(true)" style="display:none">
+        새로 분석
+      </button>
+    </div>
+    <p id="last-refreshed" class="last-refreshed" style="display:none">최근 새로고침: <strong id="last-refreshed-time"></strong></p>
   </header>
 
   <div id="status-box" style="display:none">
