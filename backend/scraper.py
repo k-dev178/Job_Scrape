@@ -1,9 +1,7 @@
 import re
 import time
-import sys
 import threading
 from collections import defaultdict
-from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 
@@ -112,7 +110,7 @@ def fetch_job_list(offset: int, limit: int = 100) -> dict:
                 continue
             resp.raise_for_status()
             return resp.json()
-        except requests.RequestException as e:
+        except requests.RequestException:
             if attempt == 2:
                 raise
             time.sleep(2)
@@ -144,26 +142,18 @@ def collect_all_job_ids() -> list[int]:
     while True:
         data = fetch_job_list(offset, limit)
         jobs = data.get("data", [])
-
         if not jobs:
             break
-
         for job in jobs:
             jid = job.get("id")
             if jid:
                 job_ids.append(jid)
-
-        fetched = len(job_ids)
         has_next = bool(data.get("links", {}).get("next"))
-        print(f"  목록 수집 중: {fetched}개", end="\r", flush=True)
-
         if not has_next:
             break
-
         offset += limit
         time.sleep(0.2)
 
-    print(f"  목록 수집 완료: {len(job_ids)}개          ")
     return job_ids
 
 
@@ -172,16 +162,13 @@ def extract_text_from_job(detail_data: dict) -> tuple[str, str]:
     job = detail_data.get("job", {})
     title = job.get("title", "")
     parts = [title]
-
     for tag in job.get("tags", []):
         parts.append(tag.get("title", ""))
-
     detail = job.get("detail", {})
     for field in ("intro", "main_tasks", "requirements", "preferred_points", "benefits"):
         text = detail.get(field, "") or ""
         text = re.sub(r"<[^>]+>", " ", text)
         parts.append(text)
-
     return title, " ".join(parts)
 
 
@@ -203,64 +190,3 @@ def count_languages(texts: list[str]) -> dict[str, int]:
             if pattern.search(text):
                 counts[lang] += 1
     return counts
-
-
-def print_results(counts: dict[str, int], total: int):
-    print()
-    print("=" * 52)
-    print("   원티드 백엔드 공고 언어/기술스택 분석 결과")
-    print("=" * 52)
-    print(f"   총 분석 공고 수: {total:,}개")
-    print("=" * 52)
-    print(f"{'순위':>4}  {'언어/기술':<14}  {'언급 공고수':>10}  {'비율':>6}")
-    print("-" * 44)
-
-    sorted_items = sorted(counts.items(), key=lambda x: x[1], reverse=True)
-    for rank, (lang, count) in enumerate(sorted_items, 1):
-        ratio = count / total * 100 if total else 0
-        print(f"{rank:>4}  {lang:<14}  {count:>10,}  {ratio:>5.1f}%")
-
-    print("=" * 52)
-
-
-def main():
-    print("원티드 백엔드 공고 스크래퍼 시작\n")
-
-    print("세션 초기화 중...")
-    init_session()
-
-    print("[1/2] 공고 목록 수집 중...")
-    job_ids = collect_all_job_ids()
-
-    if not job_ids:
-        print("공고를 가져오지 못했습니다. 네트워크 또는 API 상태를 확인하세요.")
-        sys.exit(1)
-
-    print(f"\n[2/2] 공고 상세 분석 중 (총 {len(job_ids):,}개, 병렬 {MAX_WORKERS}개)...")
-    texts = []
-    skipped_titles = []
-    done = 0
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(process_job, jid): jid for jid in job_ids}
-        for future in as_completed(futures):
-            title, text = future.result()
-            done += 1
-            if not is_backend_job(title):
-                skipped_titles.append(title)
-            elif text.strip():
-                texts.append(text)
-            if done % 50 == 0 or done == len(job_ids):
-                print(f"  분석 중: {done}/{len(job_ids)} (필터 제외: {len(skipped_titles)}개)", end="\r", flush=True)
-
-    print(f"  분석 완료: {len(texts)}개 (데이터/AI/인프라 {len(skipped_titles)}개 제외)          ")
-    if skipped_titles:
-        print("\n[제외된 공고 샘플 (최대 10개)]")
-        for t in skipped_titles[:10]:
-            print(f"  - {t}")
-
-    counts = count_languages(texts)
-    print_results(counts, len(texts))
-
-
-if __name__ == "__main__":
-    main()

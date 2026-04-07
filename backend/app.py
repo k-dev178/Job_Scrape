@@ -98,7 +98,3 @@ def scrape():
 
 # API 라우트 등록 후 프론트엔드 정적 파일 마운트 (순서 중요)
 app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True, app_dir=str(Path(__file__).parent))
