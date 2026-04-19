@@ -5,7 +5,12 @@
       "Bash(python3 -m flake8 backend/app.py)",
       "Bash(python3 -m pylint backend/app.py)",
       "Bash(git add:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(curl *)",
+      "Bash(python3.14 -c \"import playwright; print\\(playwright.__version__\\)\")",
+      "Bash(python3.14 -m pip install playwright)",
+      "Bash(python3.14 -m playwright install chromium)",
+      "Bash(python3.14 *)"
     ]
   }
 }

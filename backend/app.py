@@ -9,22 +9,13 @@ from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
-try:
-    from .scraper import (
-        MAX_WORKERS,
-        aggregate_results,
-        collect_all_jobs,
-        init_session,
-        process_job,
-    )
-except ImportError:
-    from scraper import (
-        MAX_WORKERS,
-        aggregate_results,
-        collect_all_jobs,
-        init_session,
-        process_job,
-    )
+from .backend_scraper import (
+    MAX_WORKERS,
+    aggregate_results,
+    collect_all_jobs,
+    init_session,
+    process_job,
+)
 
 FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
 CACHE_FILE   = Path(__file__).parent / "cache.json"
@@ -66,9 +57,12 @@ def scrape(refresh: bool = False, years_min: int = 0, years_max: int = 10):
     def run():
         try:
             init_session()
-            q.put({"type": "status", "msg": "공고 목록 수집 중..."})
+            q.put({"type": "status", "msg": "공고 목록 수집 중... (Playwright)"})
 
-            job_metas = collect_all_jobs()
+            def list_progress(n):
+                q.put({"type": "status", "msg": f"공고 목록 수집 중... {n:,}개"})
+
+            job_metas = collect_all_jobs(progress_cb=list_progress)
             q.put({
                 "type":  "status",
                 "msg":   f"총 {len(job_metas):,}개 공고 발견, 상세 분석 시작...",
@@ -79,8 +73,7 @@ def scrape(refresh: bool = False, years_min: int = 0, years_max: int = 10):
             with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
                 futures = {executor.submit(process_job, j["id"]): j for j in job_metas}
                 for future, job_meta in futures.items():
-                    langs = future.result()
-                    job_meta["langs"] = langs
+                    job_meta.update(future.result())
                     done += 1
                     if done % 10 == 0 or done == len(job_metas):
                         q.put({"type": "progress", "done": done, "total": len(job_metas)})
