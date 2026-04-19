@@ -6,7 +6,6 @@ __pycache__
 *.pyc
 *.pyo
 .DS_Store
-backend/cache.json
 backend/data/backend/titles.txt
 backend/data/backend/backend_title.txt
 backend/data/backend/backend_explanation.txt
