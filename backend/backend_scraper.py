@@ -297,7 +297,7 @@ def extract_langs(detail_data: dict) -> list[str]:
         parts.append(tag.get("title", ""))
 
     detail = job.get("detail", {})
-    for field in ("intro", "main_tasks", "requirements", "preferred_points", "benefits"):
+    for field in ("intro", "main_tasks", "requirements", "benefits"):
         text = detail.get(field, "") or ""
         text = re.sub(r"<[^>]+>", " ", text)
         parts.append(text)
@@ -333,9 +333,17 @@ def aggregate_results(jobs: list[dict],
     ]
 
     counts: dict[str, int] = defaultdict(int)
+    jobs_by_lang: dict[str, list[dict]] = defaultdict(list)
     for job in filtered:
         for lang in job.get("langs", []):
             counts[lang] += 1
+            jobs_by_lang[lang].append({
+                "id":          job.get("id"),
+                "title":       job.get("title", "제목 없음"),
+                "annual_from": job.get("annual_from", 0),
+                "annual_to":   job.get("annual_to", 10),
+                "url":         f"https://www.wanted.co.kr/wd/{job.get('id')}",
+            })
 
     results = [
         {
@@ -343,6 +351,7 @@ def aggregate_results(jobs: list[dict],
             "lang":  lang,
             "count": cnt,
             "ratio": round(cnt / len(filtered) * 100, 1) if filtered else 0,
+            "jobs":  jobs_by_lang[lang],
         }
         for i, (lang, cnt) in enumerate(sorted(counts.items(), key=lambda x: x[1], reverse=True))
     ]

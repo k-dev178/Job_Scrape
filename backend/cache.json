@@ -1,6 +1,117 @@
 {
-  "ts": 1776595043.5856519,
+  "ts": 1776659814.816962,
   "jobs": [
+    {
+      "id": 342879,
+      "title": "5~10년차 웹/백엔드 개발자 (AWS유경험자 우대)",
+      "langs": [
+        "Java",
+        "Spring",
+        "Spring Batch",
+        "Redis",
+        "RabbitMQ",
+        "AWS",
+        "EC2",
+        "RDS"
+      ],
+      "annual_from": 5,
+      "annual_to": 10
+    },
+    {
+      "id": 349484,
+      "title": "[매출180억] 백엔드 엔지니어",
+      "langs": [
+        "Python",
+        "Go"
+      ],
+      "annual_from": 5,
+      "annual_to": 10
+    },
+    {
+      "id": 355634,
+      "title": "Server Platform Engineer",
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "Spring Boot",
+        "WebFlux",
+        "MySQL",
+        "Redis",
+        "DynamoDB",
+        "Elasticsearch",
+        "Aurora",
+        "Kafka",
+        "EKS",
+        "Kubernetes",
+        "Helm",
+        "Istio",
+        "GitHub Actions",
+        "ArgoCD",
+        "Grafana",
+        "Datadog"
+      ],
+      "annual_from": 3,
+      "annual_to": 15
+    },
+    {
+      "id": 234466,
+      "title": "백엔드 개발자",
+      "langs": [
+        "Django",
+        "FastAPI",
+        "AWS",
+        "GCP",
+        "ECS",
+        "EKS",
+        "Docker"
+      ],
+      "annual_from": 3,
+      "annual_to": 10
+    },
+    {
+      "id": 272871,
+      "title": "서버 백엔드 개발자(Java/Kotlin)",
+      "langs": [
+        "Java",
+        "Spring",
+        "MySQL"
+      ],
+      "annual_from": 5,
+      "annual_to": 10
+    },
+    {
+      "id": 356003,
+      "title": "백엔드 개발자",
+      "langs": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "SNS",
+        "AWS",
+        "GCP",
+        "Docker",
+        "Kubernetes",
+        "WebSocket"
+      ],
+      "annual_from": 0,
+      "annual_to": 5
+    },
+    {
+      "id": 354423,
+      "title": "시니어 팀리드 (Backend Lead)  (10년 이상)",
+      "langs": [
+        "Java",
+        "Python",
+        "Node.js",
+        "Elasticsearch",
+        "AWS",
+        "GCP",
+        "Azure"
+      ],
+      "annual_from": 3,
+      "annual_to": 8
+    },
     {
       "id": 355998,
       "title": "[하나금융그룹 자회사] 서버개발자",
@@ -20,8 +131,7 @@
       "title": "Backend Engineer",
       "langs": [
         "NestJS",
-        "Aurora",
-        "Kafka"
+        "Aurora"
       ],
       "annual_from": 7,
       "annual_to": 100
@@ -32,17 +142,9 @@
       "langs": [
         "Java",
         "Kotlin",
-        "Rust",
         "Spring Boot",
-        "Airflow",
-        "MySQL",
-        "PostgreSQL",
         "Redis",
-        "Kafka",
-        "Docker",
-        "Kubernetes",
-        "Grafana",
-        "ELK"
+        "Kafka"
       ],
       "annual_from": 5,
       "annual_to": 100
@@ -58,9 +160,7 @@
         "Kafka",
         "SQS",
         "AWS",
-        "Kubernetes",
-        "Grafana",
-        "Prometheus"
+        "Kubernetes"
       ],
       "annual_from": 8,
       "annual_to": 16
@@ -81,9 +181,6 @@
       "id": 355970,
       "title": "그로스 백엔드 개발자",
       "langs": [
-        "Java",
-        "Kotlin",
-        "Spring Boot",
         "MySQL",
         "MongoDB",
         "Kafka"
@@ -97,16 +194,7 @@
       "langs": [
         "Java",
         "Spring",
-        "Spring Boot",
-        "WebFlux",
-        "PostgreSQL",
-        "MongoDB",
-        "Redis",
-        "DynamoDB",
-        "OpenSearch",
-        "AWS",
-        "CloudWatch",
-        "Datadog"
+        "AWS"
       ],
       "annual_from": 7,
       "annual_to": 14
@@ -117,15 +205,7 @@
       "langs": [
         "Java",
         "Spring",
-        "WebFlux",
-        "PostgreSQL",
-        "MongoDB",
-        "Redis",
-        "DynamoDB",
-        "OpenSearch",
-        "AWS",
-        "CloudWatch",
-        "Datadog"
+        "AWS"
       ],
       "annual_from": 3,
       "annual_to": 6
@@ -136,13 +216,11 @@
       "langs": [
         "Java",
         "Kotlin",
-        "Go",
         "Spring",
         "Spring Boot",
         "JPA",
         "MySQL",
         "PostgreSQL",
-        "Kafka",
         "AWS",
         "Docker",
         "Kubernetes"
@@ -156,7 +234,6 @@
       "langs": [
         "Java",
         "Go",
-        "Spring",
         "Spring Boot",
         "PostgreSQL",
         "Redis",
@@ -213,7 +290,6 @@
       "title": "Backend Engineer (Java)",
       "langs": [
         "Java",
-        "Ruby",
         "Spring Boot",
         "AWS"
       ],
@@ -235,8 +311,6 @@
         "EKS",
         "CloudFront",
         "CloudWatch",
-        "Docker",
-        "Kubernetes",
         "GitHub Actions",
         "Terraform",
         "OpenAI"
@@ -262,15 +336,11 @@
       "id": 355848,
       "title": "[AISURFER] 백엔드 개발자(3년 이상)",
       "langs": [
-        "Python",
         "Spring",
         "Spring Boot",
-        "FastAPI",
-        "Flask",
         "PostgreSQL",
         "MSSQL",
-        "Redis",
-        "Elasticsearch"
+        "Redis"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -278,19 +348,7 @@
     {
       "id": 355839,
       "title": "[챌린저스] 백엔드 리드(5년차 이상)",
-      "langs": [
-        "Python",
-        "Go",
-        "FastAPI",
-        "MySQL",
-        "PostgreSQL",
-        "Redis",
-        "Elasticsearch",
-        "Docker",
-        "Kubernetes",
-        "Istio",
-        "ArgoCD"
-      ],
+      "langs": [],
       "annual_from": 5,
       "annual_to": 10
     },
@@ -305,9 +363,7 @@
         "Airflow",
         "AWS",
         "GCP",
-        "Azure",
-        "Docker",
-        "Kubernetes"
+        "Azure"
       ],
       "annual_from": 3,
       "annual_to": 7
@@ -323,9 +379,7 @@
         "Airflow",
         "AWS",
         "GCP",
-        "Azure",
-        "Docker",
-        "Kubernetes"
+        "Azure"
       ],
       "annual_from": 3,
       "annual_to": 7
@@ -337,10 +391,6 @@
         "Python",
         "PostgreSQL",
         "Redis",
-        "Kafka",
-        "RabbitMQ",
-        "Docker",
-        "Kubernetes",
         "GitLab CI"
       ],
       "annual_from": 0,
@@ -353,9 +403,7 @@
         "Python",
         "Django",
         "FastAPI",
-        "Flask",
-        "Docker",
-        "Kubernetes"
+        "Flask"
       ],
       "annual_from": 7,
       "annual_to": 14
@@ -365,9 +413,7 @@
       "title": "Staff, Back-end Engineer (풀필먼트)",
       "langs": [
         "Java",
-        "Spring",
-        "JPA",
-        "Redis"
+        "Spring"
       ],
       "annual_from": 10,
       "annual_to": 100
@@ -378,13 +424,10 @@
       "langs": [
         "Java",
         "Python",
-        "Django",
-        "FastAPI",
         "Node.js",
         "AWS",
         "GCP",
-        "Docker",
-        "OpenAI"
+        "Docker"
       ],
       "annual_from": 5,
       "annual_to": 11
@@ -402,9 +445,6 @@
         "AWS",
         "EC2",
         "ECS",
-        "CloudWatch",
-        "Docker",
-        "GitHub Actions",
         "Sentry",
         "Kibana"
       ],
@@ -424,8 +464,6 @@
         "Oracle",
         "Redis",
         "Kafka",
-        "SNS",
-        "AWS",
         "Docker",
         "Kubernetes",
         "Grafana",
@@ -449,8 +487,7 @@
         "SNS",
         "AWS",
         "Docker",
-        "GitHub Actions",
-        "Terraform"
+        "GitHub Actions"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -472,9 +509,7 @@
         "CloudWatch",
         "GitHub Actions",
         "Terraform",
-        "Datadog",
-        "New Relic",
-        "OpenAI"
+        "Datadog"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -487,27 +522,10 @@
         "Python",
         "Kotlin",
         "Spring",
-        "Spring Boot",
-        "Elasticsearch",
-        "Docker",
-        "Kubernetes"
+        "Spring Boot"
       ],
       "annual_from": 7,
       "annual_to": 14
-    },
-    {
-      "id": 272871,
-      "title": "서버 백엔드 개발자(Java/Kotlin)",
-      "langs": [
-        "Java",
-        "Kotlin",
-        "Spring",
-        "MySQL",
-        "Kafka",
-        "AWS"
-      ],
-      "annual_from": 5,
-      "annual_to": 10
     },
     {
       "id": 332670,
@@ -523,13 +541,7 @@
       "id": 332671,
       "title": "Backend Engineer",
       "langs": [
-        "Spring",
-        "Airflow",
-        "Kafka",
-        "AWS",
-        "Docker",
-        "Kubernetes",
-        "Jenkins"
+        "Spring"
       ],
       "annual_from": 4,
       "annual_to": 10
@@ -544,18 +556,7 @@
         "MySQL",
         "PostgreSQL",
         "MongoDB",
-        "Redis",
-        "DynamoDB",
-        "Spark",
-        "AWS",
-        "Lambda",
-        "EKS",
-        "Kubernetes",
-        "GitHub Actions",
-        "ArgoCD",
-        "Terraform",
-        "Grafana",
-        "Prometheus"
+        "Redis"
       ],
       "annual_from": 5,
       "annual_to": 8
@@ -564,10 +565,7 @@
       "id": 354013,
       "title": "Backend Engineer (5년 이상)",
       "langs": [
-        "Spring Boot",
-        "Neo4j",
-        "LangChain",
-        "LangGraph"
+        "Spring Boot"
       ],
       "annual_from": 5,
       "annual_to": 100
@@ -584,13 +582,11 @@
         "Express",
         "MySQL",
         "PostgreSQL",
-        "Redis",
         "AWS",
         "EC2",
         "RDS",
         "ECS",
         "ElastiCache",
-        "Docker",
         "WebSocket"
       ],
       "annual_from": 2,
@@ -603,10 +599,7 @@
         "TypeScript",
         "Node.js",
         "NestJS",
-        "MySQL",
-        "Kafka",
-        "RabbitMQ",
-        "GCP"
+        "MySQL"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -628,11 +621,7 @@
         "TypeScript",
         "Node.js",
         "NestJS",
-        "MySQL",
-        "Redis",
-        "Kafka",
-        "RabbitMQ",
-        "GCP"
+        "MySQL"
       ],
       "annual_from": 4,
       "annual_to": 10
@@ -645,10 +634,7 @@
         "Kotlin",
         "Spring",
         "JPA",
-        "Hibernate",
-        "Redis",
-        "Elasticsearch",
-        "Kafka"
+        "Hibernate"
       ],
       "annual_from": 4,
       "annual_to": 100
@@ -660,12 +646,8 @@
         "Java",
         "Kotlin",
         "Spring",
-        "Spring Boot",
         "JPA",
-        "Hibernate",
-        "Kafka",
-        "Docker",
-        "Kubernetes"
+        "Hibernate"
       ],
       "annual_from": 5,
       "annual_to": 100
@@ -680,111 +662,24 @@
         "NestJS",
         "TypeORM",
         "MySQL",
-        "MongoDB",
-        "DynamoDB",
-        "Kafka",
-        "SQS",
         "AWS",
         "Naver Cloud",
-        "Docker",
         "Kubernetes"
       ],
       "annual_from": 4,
       "annual_to": 10
     },
     {
-      "id": 355637,
-      "title": "Server Engineer : Business Tribe Leader",
-      "langs": [
-        "Kotlin",
-        "Spring",
-        "Spring Boot",
-        "Spring Data",
-        "Spring Security",
-        "JPA",
-        "Hibernate",
-        "Gradle",
-        "MySQL",
-        "Redis",
-        "Elasticsearch",
-        "BigQuery",
-        "Aurora",
-        "Kafka",
-        "AWS",
-        "GCP",
-        "Lambda",
-        "EKS",
-        "Docker",
-        "Kubernetes",
-        "Istio",
-        "ArgoCD",
-        "Terraform",
-        "Grafana",
-        "Prometheus",
-        "Datadog"
-      ],
-      "annual_from": 7,
-      "annual_to": 100
-    },
-    {
       "id": 347070,
       "title": "Product Engineer (Back-End)",
       "langs": [
         "Go",
-        "Rust",
         "MySQL",
         "Redis",
-        "Kafka",
-        "AWS",
-        "Docker",
-        "Kubernetes",
-        "gRPC",
-        "WebSocket"
+        "Kafka"
       ],
       "annual_from": 5,
       "annual_to": 100
-    },
-    {
-      "id": 355636,
-      "title": "Server Engineer",
-      "langs": [
-        "Java",
-        "Kotlin",
-        "Spring",
-        "MySQL",
-        "Redis",
-        "Elasticsearch",
-        "Kafka"
-      ],
-      "annual_from": 3,
-      "annual_to": 15
-    },
-    {
-      "id": 355634,
-      "title": "Server Platform Engineer",
-      "langs": [
-        "Java",
-        "Kotlin",
-        "Spring",
-        "Spring Boot",
-        "WebFlux",
-        "MySQL",
-        "Redis",
-        "DynamoDB",
-        "Elasticsearch",
-        "Aurora",
-        "Kafka",
-        "EKS",
-        "Kubernetes",
-        "Helm",
-        "Istio",
-        "GitHub Actions",
-        "ArgoCD",
-        "Grafana",
-        "Datadog"
-      ],
-      "annual_from": 3,
-      "annual_to": 15
     },
     {
       "id": 328134,
@@ -814,7 +709,6 @@
       "langs": [
         "Java",
         "Kotlin",
-        "Spring",
         "AWS",
         "EKS"
       ],
@@ -827,8 +721,6 @@
       "langs": [
         "Java",
         "Kotlin",
-        "Spring",
-        "JPA",
         "AWS",
         "EKS"
       ],
@@ -840,8 +732,6 @@
       "title": "솔루션개발실 백엔드개발자",
       "langs": [
         "Go",
-        "PostgreSQL",
-        "Redis",
         "AWS",
         "Docker"
       ],
@@ -889,12 +779,7 @@
       "id": 354208,
       "title": "Backend Engineer",
       "langs": [
-        "Python",
-        "Airflow",
-        "Redis",
-        "AWS",
-        "Lambda",
-        "Datadog"
+        "Python"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -966,10 +851,7 @@
         "Python",
         "Django",
         "FastAPI",
-        "MySQL",
-        "PostgreSQL",
-        "RabbitMQ",
-        "Kubernetes"
+        "PostgreSQL"
       ],
       "annual_from": 5,
       "annual_to": 11
@@ -1007,23 +889,7 @@
         "Kotlin",
         "TypeScript",
         "Spring Boot",
-        "Node.js",
-        "Express",
-        "MySQL",
-        "PostgreSQL",
-        "MongoDB",
-        "Redis",
-        "Elasticsearch",
-        "AWS",
-        "EC2",
-        "Lambda",
-        "CloudFront",
-        "Docker",
-        "Kubernetes",
-        "GitHub Actions",
-        "ArgoCD",
-        "Datadog",
-        "Sentry"
+        "Node.js"
       ],
       "annual_from": 7,
       "annual_to": 100
@@ -1060,10 +926,7 @@
     {
       "id": 355168,
       "title": "연구소 서버 및 보안솔루션 개발자",
-      "langs": [
-        "C++",
-        "Rust"
-      ],
+      "langs": [],
       "annual_from": 3,
       "annual_to": 8
     },
@@ -1071,7 +934,6 @@
       "id": 355433,
       "title": "PHP 웹개발자",
       "langs": [
-        "JavaScript",
         "PHP",
         "MariaDB"
       ],
@@ -1086,22 +948,7 @@
         "Python",
         "Kotlin",
         "Ruby",
-        "Spring",
-        "Airflow",
-        "Rails",
-        "MariaDB",
-        "Redis",
-        "OpenSearch",
-        "Aurora",
-        "Kafka",
-        "SQS",
-        "SNS",
-        "AWS",
-        "EKS",
-        "ElastiCache",
-        "Jenkins",
-        "ArgoCD",
-        "LangChain"
+        "Spring"
       ],
       "annual_from": 10,
       "annual_to": 100
@@ -1112,20 +959,7 @@
       "langs": [
         "Java",
         "Kotlin",
-        "Spring",
-        "JPA",
-        "WebFlux",
-        "Airflow",
-        "MariaDB",
-        "Redis",
-        "OpenSearch",
-        "SQS",
-        "SNS",
-        "AWS",
-        "Docker",
-        "Kubernetes",
-        "Jenkins",
-        "ArgoCD"
+        "Spring"
       ],
       "annual_from": 10,
       "annual_to": 100
@@ -1136,20 +970,7 @@
       "langs": [
         "Java",
         "Kotlin",
-        "Spring",
-        "JPA",
-        "WebFlux",
-        "Airflow",
-        "MariaDB",
-        "Redis",
-        "OpenSearch",
-        "SQS",
-        "SNS",
-        "AWS",
-        "Docker",
-        "Kubernetes",
-        "Jenkins",
-        "ArgoCD"
+        "Spring"
       ],
       "annual_from": 10,
       "annual_to": 100
@@ -1163,20 +984,7 @@
         "Kotlin",
         "Ruby",
         "Spring",
-        "Airflow",
-        "Rails",
-        "MariaDB",
-        "Redis",
-        "OpenSearch",
-        "Aurora",
-        "Kafka",
-        "SQS",
-        "SNS",
-        "AWS",
-        "EKS",
-        "ElastiCache",
-        "Jenkins",
-        "ArgoCD"
+        "Rails"
       ],
       "annual_from": 3,
       "annual_to": 7
@@ -1199,11 +1007,6 @@
         "Kafka",
         "RabbitMQ",
         "AWS",
-        "Docker",
-        "Kubernetes",
-        "Grafana",
-        "Prometheus",
-        "ELK",
         "Swagger",
         "OpenAPI",
         "JUnit"
@@ -1227,7 +1030,6 @@
         "AWS",
         "GCP",
         "Azure",
-        "Kubernetes",
         "Grafana",
         "OpenAI"
       ],
@@ -1238,12 +1040,7 @@
       "id": 354730,
       "title": "[개발] 백엔드 서비스 개발 매니저",
       "langs": [
-        "Go",
-        "TypeScript",
-        ".NET",
-        "RDS",
-        "GraphQL",
-        "gRPC"
+        ".NET"
       ],
       "annual_from": 2,
       "annual_to": 100
@@ -1253,9 +1050,7 @@
       "title": "시니어 백엔드 개발자(5~10년)",
       "langs": [
         "Kotlin",
-        "Spring",
-        "Redis",
-        "Kafka"
+        "Spring"
       ],
       "annual_from": 5,
       "annual_to": 10
@@ -1271,7 +1066,6 @@
         "Node.js",
         "MySQL",
         "MongoDB",
-        "Redis",
         "AWS",
         "Docker",
         "Kubernetes",
@@ -1291,9 +1085,7 @@
         "MySQL",
         "Redis",
         "AWS",
-        "S3",
         "Docker",
-        "Prometheus",
         "Swagger"
       ],
       "annual_from": 1,
@@ -1321,47 +1113,32 @@
       "annual_to": 10
     },
     {
-      "id": 355144,
-      "title": "Java 백엔드/웹 개발자(7년 이상)",
-      "langs": [
-        "Java",
-        "Kotlin",
-        "Spring",
-        "JPA",
-        "QueryDSL",
-        "ECS",
-        "Docker",
-        "Kubernetes"
-      ],
-      "annual_from": 7,
-      "annual_to": 14
-    },
-    {
       "id": 355145,
       "title": "Java 백엔드/웹 개발자 (신입)",
       "langs": [
         "Java",
         "Kotlin",
-        "Spring",
-        "JPA",
-        "QueryDSL",
-        "ECS",
-        "Docker",
-        "Kubernetes"
+        "Spring"
       ],
       "annual_from": 0,
       "annual_to": 1
     },
     {
+      "id": 355144,
+      "title": "Java 백엔드/웹 개발자(7년 이상)",
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring"
+      ],
+      "annual_from": 7,
+      "annual_to": 14
+    },
+    {
       "id": 354385,
       "title": "AI Native Engineer (백엔드 기반/7년+)",
       "langs": [
-        "Python",
-        "MySQL",
-        "PostgreSQL",
-        "Oracle",
-        "AWS",
-        "GCP"
+        "Python"
       ],
       "annual_from": 5,
       "annual_to": 100
@@ -1373,8 +1150,7 @@
         "Java",
         "JavaScript",
         "C#",
-        ".NET",
-        "AWS"
+        ".NET"
       ],
       "annual_from": 5,
       "annual_to": 100
@@ -1440,16 +1216,11 @@
       "langs": [
         "TypeScript",
         "Node.js",
-        "PostgreSQL",
         "MSSQL",
         "AWS",
         "EC2",
         "RDS",
-        "ECS",
-        "Docker",
-        "Kubernetes",
-        "GitHub Actions",
-        "OpenAI"
+        "Docker"
       ],
       "annual_from": 2,
       "annual_to": 7
@@ -1500,9 +1271,6 @@
         "Spring Boot",
         "MySQL",
         "MariaDB",
-        "Elasticsearch",
-        "OpenSearch",
-        "Azure",
         "Kubernetes"
       ],
       "annual_from": 7,
@@ -1550,23 +1318,8 @@
       "title": "백엔드 시니어 개발자(10년 이상)",
       "langs": [
         "Java",
-        "Python",
         "Spring Boot",
-        "JPA",
-        "Hibernate",
-        "Django",
-        "MySQL",
-        "MongoDB",
-        "Redis",
-        "OpenSearch",
-        "RabbitMQ",
-        "AWS",
-        "Docker",
-        "Jenkins",
-        "Grafana",
-        "Prometheus",
-        "Datadog",
-        "ELK"
+        "JPA"
       ],
       "annual_from": 10,
       "annual_to": 100
@@ -1580,10 +1333,6 @@
         "JPA",
         "QueryDSL",
         "Redis",
-        "SQS",
-        "SNS",
-        "AWS",
-        "RDS",
         "WebSocket"
       ],
       "annual_from": 3,
@@ -1594,10 +1343,7 @@
       "title": "Software Engineer (Back-end) - 3년 이상",
       "langs": [
         "Java",
-        "Spring",
-        "AWS",
-        "Docker",
-        "Kubernetes"
+        "Spring"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -1613,11 +1359,8 @@
         "Redis",
         "Elasticsearch",
         "Kafka",
-        "RabbitMQ",
         "SQS",
-        "AWS",
-        "Jenkins",
-        "JUnit"
+        "Jenkins"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -1636,7 +1379,6 @@
         "NestJS",
         "MySQL",
         "Kafka",
-        "Spark",
         "AWS",
         "Kubernetes",
         "GraphQL"
@@ -1649,11 +1391,7 @@
       "title": "Backend Engineer (Data Service Team)",
       "langs": [
         "Python",
-        "AWS",
-        "Kubernetes",
-        "Datadog",
-        "Sentry",
-        "ELK"
+        "AWS"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -1668,34 +1406,10 @@
         "SQLAlchemy",
         "BigQuery",
         "Snowflake",
-        "Redshift",
         "Spark"
       ],
       "annual_from": 3,
       "annual_to": 8
-    },
-    {
-      "id": 309970,
-      "title": "[버즈베네핏] 백엔드 개발자 (3년 이상)",
-      "langs": [
-        "Python",
-        "Go",
-        "Airflow",
-        "MySQL",
-        "Redis",
-        "DynamoDB",
-        "Elasticsearch",
-        "Kafka",
-        "AWS",
-        "CloudWatch",
-        "Kubernetes",
-        "ArgoCD",
-        "Grafana",
-        "Prometheus",
-        "Datadog"
-      ],
-      "annual_from": 3,
-      "annual_to": 7
     },
     {
       "id": 297098,
@@ -1721,14 +1435,34 @@
       "annual_to": 7
     },
     {
+      "id": 309970,
+      "title": "[버즈베네핏] 백엔드 개발자 (3년 이상)",
+      "langs": [
+        "Python",
+        "Go",
+        "Airflow",
+        "MySQL",
+        "Redis",
+        "DynamoDB",
+        "Elasticsearch",
+        "Kafka",
+        "AWS",
+        "CloudWatch",
+        "Kubernetes",
+        "ArgoCD",
+        "Grafana",
+        "Prometheus",
+        "Datadog"
+      ],
+      "annual_from": 3,
+      "annual_to": 7
+    },
+    {
       "id": 230402,
       "title": "비즈니스 로직 백엔드 개발자",
       "langs": [
         "Java",
         "Kotlin",
-        "AWS",
-        "GCP",
-        "Azure",
         "Docker",
         "Kubernetes"
       ],
@@ -1741,9 +1475,7 @@
       "langs": [
         "Java",
         "Go",
-        "Spring Boot",
-        "SQS",
-        "AWS"
+        "Spring Boot"
       ],
       "annual_from": 8,
       "annual_to": 13
@@ -1753,33 +1485,9 @@
       "title": "백엔드 개발자 (Backend Developer)",
       "langs": [
         "Spring Boot",
-        "MyBatis",
-        "MySQL",
-        "MongoDB",
-        "Redis",
-        "AWS",
-        "EC2",
-        "Lambda",
-        "CloudFront",
-        "Jenkins",
-        "Datadog",
-        "ELK",
         "GraphQL"
       ],
       "annual_from": 5,
-      "annual_to": 7
-    },
-    {
-      "id": 352728,
-      "title": "웹서비스(백엔드) 개발자",
-      "langs": [
-        "PHP",
-        "Spring",
-        "Spring Boot",
-        "MySQL",
-        "MSSQL"
-      ],
-      "annual_from": 3,
       "annual_to": 7
     },
     {
@@ -1793,8 +1501,6 @@
         "MariaDB",
         "Redis",
         "AWS",
-        "Docker",
-        "Kubernetes",
         "Jenkins",
         "Grafana",
         "Prometheus"
@@ -1809,18 +1515,7 @@
         "Java",
         "Kotlin",
         "Spring",
-        "JPA",
-        "Hibernate",
-        "MySQL",
-        "MongoDB",
-        "Redis",
-        "Elasticsearch",
         "Kafka",
-        "Kubernetes",
-        "Istio",
-        "ArgoCD",
-        "Grafana",
-        "Prometheus",
         "ELK"
       ],
       "annual_from": 3,
@@ -1829,23 +1524,7 @@
     {
       "id": 323996,
       "title": "Server Developer (Product)",
-      "langs": [
-        "Java",
-        "Kotlin",
-        "Spring",
-        "JPA",
-        "Hibernate",
-        "MySQL",
-        "MongoDB",
-        "Redis",
-        "Elasticsearch",
-        "Kafka",
-        "Kubernetes",
-        "Istio",
-        "ArgoCD",
-        "Grafana",
-        "Prometheus"
-      ],
+      "langs": [],
       "annual_from": 2,
       "annual_to": 15
     },
@@ -1884,9 +1563,7 @@
         "Neo4j",
         "Docker",
         "Kubernetes",
-        "GraphQL",
-        "LangChain",
-        "LangGraph"
+        "GraphQL"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -1897,11 +1574,7 @@
       "langs": [
         "Python",
         "Django",
-        "PostgreSQL",
-        "BigQuery",
-        "AWS",
-        "Docker",
-        "Kubernetes"
+        "Docker"
       ],
       "annual_from": 4,
       "annual_to": 8
@@ -1976,8 +1649,6 @@
         ".NET",
         "MySQL",
         "MariaDB",
-        "MongoDB",
-        "Redis",
         "AWS"
       ],
       "annual_from": 3,
@@ -1988,38 +1659,9 @@
       "title": "서버 개발자(7년 이상)",
       "langs": [
         "Java",
-        "Spring",
-        "Kafka"
+        "Spring"
       ],
       "annual_from": 7,
-      "annual_to": 15
-    },
-    {
-      "id": 354421,
-      "title": "[토스] Server Developer(Platform)",
-      "langs": [
-        "Java",
-        "Kotlin",
-        "Spring",
-        "Spring Boot",
-        "JPA",
-        "Hibernate",
-        "WebFlux",
-        "Gradle",
-        "MySQL",
-        "MongoDB",
-        "Redis",
-        "Kafka",
-        "Docker",
-        "Kubernetes",
-        "Istio",
-        "Jenkins",
-        "ArgoCD",
-        "Grafana",
-        "Prometheus",
-        "ELK"
-      ],
-      "annual_from": 3,
       "annual_to": 15
     },
     {
@@ -2075,28 +1717,6 @@
       "annual_to": 100
     },
     {
-      "id": 354423,
-      "title": "시니어 백엔드 팀리드 (Backend Lead)  (5년 이상)",
-      "langs": [
-        "Java",
-        "Python",
-        "Airflow",
-        "Node.js",
-        "Elasticsearch",
-        "OpenSearch",
-        "Kafka",
-        "AWS",
-        "GCP",
-        "Azure",
-        "Docker",
-        "Kubernetes",
-        "Jenkins",
-        "GitHub Actions"
-      ],
-      "annual_from": 3,
-      "annual_to": 8
-    },
-    {
       "id": 352167,
       "title": "Backend Engineer (Vehicle Service Platform)",
       "langs": [
@@ -2106,12 +1726,9 @@
         "Spring Boot",
         "WebFlux",
         "PostgreSQL",
-        "MongoDB",
-        "ClickHouse",
         "Kafka",
         "AWS",
-        "Kubernetes",
-        "gRPC"
+        "Kubernetes"
       ],
       "annual_from": 3,
       "annual_to": 15
@@ -2122,11 +1739,7 @@
       "langs": [
         "Python",
         "Django",
-        "AWS",
-        "Docker",
-        "Kubernetes",
-        "Terraform",
-        "OpenAI"
+        "AWS"
       ],
       "annual_from": 7,
       "annual_to": 14
@@ -2135,14 +1748,8 @@
       "id": 354268,
       "title": "앱 서비스 백엔드 개발자",
       "langs": [
-        "TypeScript",
         "Node.js",
-        "Express",
-        "MySQL",
-        "Redis",
-        "Elasticsearch",
-        "Docker",
-        "Kubernetes"
+        "Express"
       ],
       "annual_from": 2,
       "annual_to": 4
@@ -2175,14 +1782,11 @@
         "NestJS",
         "MySQL",
         "MongoDB",
-        "Elasticsearch",
         "AWS",
         "S3",
         "RDS",
         "ECS",
         "CloudWatch",
-        "Docker",
-        "Kubernetes",
         "Jenkins",
         "GitHub Actions",
         "Sentry",
@@ -2199,25 +1803,11 @@
         "Java",
         "Spring",
         "Spring Boot",
-        "Redis",
         "AWS",
-        "Docker",
-        "GitHub Actions"
+        "Docker"
       ],
       "annual_from": 5,
       "annual_to": 11
-    },
-    {
-      "id": 328431,
-      "title": "백엔드 개발자",
-      "langs": [
-        "Java",
-        "Kotlin",
-        "Spring",
-        "JUnit"
-      ],
-      "annual_from": 5,
-      "annual_to": 15
     },
     {
       "id": 353354,
@@ -2234,16 +1824,6 @@
       ],
       "annual_from": 0,
       "annual_to": 100
-    },
-    {
-      "id": 349484,
-      "title": "[광고기업] 백엔드 엔지니어",
-      "langs": [
-        "Python",
-        "Go"
-      ],
-      "annual_from": 5,
-      "annual_to": 10
     },
     {
       "id": 292845,
@@ -2293,7 +1873,6 @@
         "Spring Boot",
         "MySQL",
         "Redis",
-        "AWS",
         "Docker"
       ],
       "annual_from": 5,
@@ -2316,11 +1895,9 @@
       "langs": [
         "Java",
         "Kotlin",
-        "Spring",
         "Spring Boot",
         "JPA",
         "QueryDSL",
-        "WebFlux",
         "Redis",
         "AWS"
       ],
@@ -2336,9 +1913,7 @@
         "Spring Boot",
         "MySQL",
         "Redis",
-        "Kafka",
-        "Docker",
-        "Kubernetes"
+        "Kafka"
       ],
       "annual_from": 8,
       "annual_to": 18
@@ -2352,14 +1927,7 @@
         "Go",
         "Spring Boot",
         "Redis",
-        "Kafka",
-        "AWS",
-        "GCP",
-        "Docker",
-        "Kubernetes",
-        "Grafana",
-        "Prometheus",
-        "ELK"
+        "Kafka"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -2372,15 +1940,10 @@
         "Python",
         "Kotlin",
         "Go",
-        "Rust",
         "Spring Boot",
         "MySQL",
         "Redis",
-        "Kafka",
-        "AWS",
-        "GCP",
-        "Docker",
-        "Kubernetes"
+        "Kafka"
       ],
       "annual_from": 3,
       "annual_to": 7
@@ -2390,8 +1953,7 @@
       "title": "백엔드 개발자(AI Agent) - 디스터",
       "langs": [
         "TypeScript",
-        "PostgreSQL",
-        "OpenAI"
+        "PostgreSQL"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -2402,11 +1964,7 @@
       "langs": [
         "Java",
         "Python",
-        "TypeScript",
-        "AWS",
-        "Docker",
-        "Kubernetes",
-        "OpenAI"
+        "TypeScript"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -2414,9 +1972,7 @@
     {
       "id": 351735,
       "title": "[Cre8orClub] 백엔드 개발자",
-      "langs": [
-        "AWS"
-      ],
+      "langs": [],
       "annual_from": 3,
       "annual_to": 8
     },
@@ -2443,10 +1999,7 @@
       "title": "백엔드 엔지니어",
       "langs": [
         "Kotlin",
-        "Spring Boot",
-        "Airflow",
-        "Redshift",
-        "AWS"
+        "Spring Boot"
       ],
       "annual_from": 5,
       "annual_to": 11
@@ -2456,8 +2009,6 @@
       "title": "B2B 백엔드 개발자",
       "langs": [
         "Java",
-        "Spring",
-        "WebFlux",
         "Elasticsearch"
       ],
       "annual_from": 2,
@@ -2467,15 +2018,8 @@
       "id": 256240,
       "title": "백엔드 개발_사이버보안 테스트 솔루션 7년 이상",
       "langs": [
-        "Java",
         "Python",
-        "Go",
-        "JavaScript",
-        "Rust",
-        "Docker",
-        "ELK",
-        "gRPC",
-        "WebSocket"
+        "gRPC"
       ],
       "annual_from": 7,
       "annual_to": 100
@@ -2485,11 +2029,7 @@
       "title": "클라우드 개발자 (백엔드/DevOps)",
       "langs": [
         "Python",
-        "Go",
-        "Kubernetes",
-        "Jenkins",
-        "ArgoCD",
-        "Ansible"
+        "Go"
       ],
       "annual_from": 2,
       "annual_to": 7
@@ -2498,10 +2038,7 @@
       "id": 353613,
       "title": ".Net(닷넷)백엔드 개발자 [계약직/ 3년 이상]",
       "langs": [
-        "Java",
         "C#",
-        "Spring Boot",
-        "Spring Batch",
         "ASP.NET",
         ".NET",
         "MSSQL",
@@ -2530,26 +2067,20 @@
       "annual_to": 11
     },
     {
+      "id": 352089,
+      "title": "Backend Engineer (Open Platform Engineering)",
+      "langs": [],
+      "annual_from": 3,
+      "annual_to": 100
+    },
+    {
       "id": 281843,
       "title": "Senior Backend Engineer (OTA Platform)",
       "langs": [
-        "Go",
-        "Redis",
-        "AWS",
-        "S3"
+        "Go"
       ],
       "annual_from": 7,
       "annual_to": 14
-    },
-    {
-      "id": 352089,
-      "title": "Backend Engineer (Open Platform Engineering)",
-      "langs": [
-        "Kubernetes",
-        "Istio"
-      ],
-      "annual_from": 3,
-      "annual_to": 100
     },
     {
       "id": 353511,
@@ -2559,14 +2090,11 @@
         "TypeScript",
         "Spring Boot",
         "Spring Data",
-        "Spring Security",
         "JPA",
         "MyBatis",
         "NestJS",
-        "Laravel",
         "MySQL",
         "PostgreSQL",
-        "Redis",
         "AWS",
         "GCP",
         "Azure",
@@ -2583,14 +2111,11 @@
         "TypeScript",
         "Spring Boot",
         "Spring Data",
-        "Spring Security",
         "JPA",
         "MyBatis",
         "NestJS",
-        "Laravel",
         "MySQL",
         "PostgreSQL",
-        "Redis",
         "AWS",
         "GCP",
         "Azure",
@@ -2611,10 +2136,7 @@
     {
       "id": 353410,
       "title": "[쿠팡] 백엔드 개발 팀장",
-      "langs": [
-        "JPA",
-        "Redis"
-      ],
+      "langs": [],
       "annual_from": 8,
       "annual_to": 25
     },
@@ -2623,30 +2145,10 @@
       "title": "[쿠팡] 백엔드 개발자 8년 이상",
       "langs": [
         "Java",
-        "Spring",
-        "JPA",
-        "Redis"
+        "Spring"
       ],
       "annual_from": 7,
       "annual_to": 14
-    },
-    {
-      "id": 234466,
-      "title": "백엔드 개발자",
-      "langs": [
-        "Python",
-        "Django",
-        "FastAPI",
-        "Elasticsearch",
-        "OpenSearch",
-        "AWS",
-        "GCP",
-        "ECS",
-        "EKS",
-        "Docker"
-      ],
-      "annual_from": 3,
-      "annual_to": 10
     },
     {
       "id": 352270,
@@ -2655,10 +2157,6 @@
         "Java",
         "Spring",
         "Spring Boot",
-        "JPA",
-        "Gradle",
-        "MySQL",
-        "Redis",
         "AWS",
         "Docker"
       ],
@@ -2670,23 +2168,8 @@
       "title": "백엔드팀 팀장 ",
       "langs": [
         "Java",
-        "Python",
         "Spring Boot",
-        "JPA",
-        "Hibernate",
-        "Django",
-        "MySQL",
-        "MongoDB",
-        "Redis",
-        "OpenSearch",
-        "RabbitMQ",
-        "AWS",
-        "Docker",
-        "Jenkins",
-        "Grafana",
-        "Prometheus",
-        "Datadog",
-        "ELK"
+        "JPA"
       ],
       "annual_from": 10,
       "annual_to": 100
@@ -2725,13 +2208,9 @@
       "title": "관제시스템개발팀 백엔드 시니어 개발자(평촌)",
       "langs": [
         "PostgreSQL",
-        "Redis",
         "Kafka",
         "AWS",
-        "Docker",
-        "Kubernetes",
         "GraphQL",
-        "gRPC",
         "WebSocket"
       ],
       "annual_from": 5,
@@ -2743,41 +2222,10 @@
       "langs": [
         "Python",
         "Docker",
-        "Kubernetes",
-        "Grafana",
-        "Prometheus"
+        "Kubernetes"
       ],
       "annual_from": 2,
       "annual_to": 7
-    },
-    {
-      "id": 353143,
-      "title": "Back-end Developer (Senior)",
-      "langs": [
-        "Java",
-        "Kotlin",
-        "Spring",
-        "Spring Boot",
-        "JPA",
-        "Hibernate",
-        "MyBatis",
-        "Gradle",
-        "MySQL",
-        "PostgreSQL",
-        "MongoDB",
-        "Redis",
-        "Snowflake",
-        "Kafka",
-        "RabbitMQ",
-        "AWS",
-        "Lambda",
-        "Docker",
-        "Jenkins",
-        "Sentry",
-        "ELK"
-      ],
-      "annual_from": 5,
-      "annual_to": 9
     },
     {
       "id": 353015,
@@ -2794,15 +2242,7 @@
         "Kotlin",
         "Spring Boot",
         "Django",
-        "DRF",
-        "MySQL",
-        "SQS",
-        "AWS",
-        "Lambda",
-        "RDS",
-        "ECS",
-        "GitHub Actions",
-        "Datadog"
+        "DRF"
       ],
       "annual_from": 1,
       "annual_to": 100
@@ -2814,12 +2254,7 @@
         "Python",
         "JavaScript",
         "C++",
-        "Django",
-        "FastAPI",
-        "Flask",
-        "AWS",
-        "Azure",
-        "GraphQL"
+        "FastAPI"
       ],
       "annual_from": 3,
       "annual_to": 10
@@ -2840,7 +2275,6 @@
       "id": 346715,
       "title": "[리텐틱스] 백엔드 개발자 (3년 이상)",
       "langs": [
-        "Python",
         "MySQL",
         "PostgreSQL",
         "DynamoDB",
@@ -2850,11 +2284,7 @@
         "Lambda",
         "RDS",
         "ECS",
-        "CloudWatch",
-        "Docker",
-        "GitHub Actions",
-        "Terraform",
-        "GraphQL"
+        "Docker"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -2934,7 +2364,6 @@
       "langs": [
         "TypeScript",
         "JavaScript",
-        "PHP",
         "Node.js",
         "NestJS",
         "PostgreSQL",
@@ -2982,7 +2411,6 @@
         "Snowflake",
         "AWS",
         "Lambda",
-        "Docker",
         "Kubernetes",
         "Prometheus",
         "New Relic"
@@ -2996,7 +2424,6 @@
       "langs": [
         "Node.js",
         "NestJS",
-        "PostgreSQL",
         "LangChain",
         "LangGraph"
       ],
@@ -3050,17 +2477,6 @@
         "TypeORM",
         "PostgreSQL",
         "RabbitMQ",
-        "SQS",
-        "AWS",
-        "RDS",
-        "EKS",
-        "ElastiCache",
-        "Docker",
-        "Kubernetes",
-        "GitHub Actions",
-        "ArgoCD",
-        "Datadog",
-        "Sentry",
         "OpenAPI",
         "JWT"
       ],
@@ -3075,13 +2491,7 @@
         "FastAPI",
         "PostgreSQL",
         "MongoDB",
-        "Redis",
-        "Kafka",
-        "RabbitMQ",
-        "Docker",
-        "GitHub Actions",
-        "Grafana",
-        "Prometheus"
+        "Docker"
       ],
       "annual_from": 5,
       "annual_to": 15
@@ -3097,31 +2507,6 @@
         "GCP"
       ],
       "annual_from": 5,
-      "annual_to": 10
-    },
-    {
-      "id": 352795,
-      "title": "Senior Backend Engineer",
-      "langs": [
-        "Kotlin",
-        "Spring",
-        "MySQL",
-        "Redis",
-        "AWS"
-      ],
-      "annual_from": 8,
-      "annual_to": 16
-    },
-    {
-      "id": 352794,
-      "title": "Backend Engineer",
-      "langs": [
-        "Java",
-        "Spring",
-        "Redis",
-        "AWS"
-      ],
-      "annual_from": 4,
       "annual_to": 10
     },
     {
@@ -3153,8 +2538,8 @@
       "annual_to": 19
     },
     {
-      "id": 317125,
-      "title": "[글로벌 앱 플랫폼] 날씨 앱 Back-end 개발자 (3년 이상)",
+      "id": 317185,
+      "title": "[글로벌 앱 플랫폼] 유틸리티 앱 Back-end 개발자 (3년 이상)",
       "langs": [
         "Java",
         "Kotlin",
@@ -3164,8 +2549,8 @@
       "annual_to": 100
     },
     {
-      "id": 317185,
-      "title": "[글로벌 앱 플랫폼] 유틸리티 앱 Back-end 개발자 (3년 이상)",
+      "id": 317125,
+      "title": "[글로벌 앱 플랫폼] 날씨 앱 Back-end 개발자 (3년 이상)",
       "langs": [
         "Java",
         "Kotlin",
@@ -3200,16 +2585,9 @@
       "title": "Backend 개발자",
       "langs": [
         "Java",
-        "Python",
         "Kotlin",
         "TypeScript",
-        "Spring Boot",
-        "MongoDB",
-        "Redis",
-        "AWS",
-        "GCP",
-        "Azure",
-        "Docker"
+        "Spring Boot"
       ],
       "annual_from": 2,
       "annual_to": 100
@@ -3231,15 +2609,7 @@
         "Python",
         "Go",
         "FastAPI",
-        "PostgreSQL",
-        "Redis",
         "Docker",
-        "Kubernetes",
-        "GitHub Actions",
-        "GitLab CI",
-        "Grafana",
-        "Prometheus",
-        "ELK",
         "WebSocket"
       ],
       "annual_from": 2,
@@ -3264,9 +2634,7 @@
       "id": 352588,
       "title": "백엔드 엔지니어[하이브리드 근무]",
       "langs": [
-        "AWS",
-        "CloudWatch",
-        "Datadog"
+        "AWS"
       ],
       "annual_from": 10,
       "annual_to": 19
@@ -3296,18 +2664,11 @@
       "langs": [
         "Java",
         "Python",
-        "Airflow",
         "Node.js",
         "Elasticsearch",
-        "OpenSearch",
-        "Kafka",
         "AWS",
         "GCP",
-        "Azure",
-        "Docker",
-        "Kubernetes",
-        "Jenkins",
-        "GitHub Actions"
+        "Azure"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -3321,9 +2682,7 @@
         "DRF",
         "FastAPI",
         "PostgreSQL",
-        "Docker",
         "Kubernetes",
-        "Jenkins",
         "gRPC",
         "JWT"
       ],
@@ -3338,10 +2697,7 @@
         "Kotlin",
         "Spring Boot",
         "Spring Batch",
-        "MySQL",
-        "Kafka",
-        "RabbitMQ",
-        "Kubernetes"
+        "MySQL"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -3382,10 +2738,7 @@
         "Spring Boot",
         "MySQL",
         "PostgreSQL",
-        "Kafka",
-        "AWS",
-        "EKS",
-        "Kubernetes"
+        "AWS"
       ],
       "annual_from": 7,
       "annual_to": 15
@@ -3396,10 +2749,8 @@
       "langs": [
         "Python",
         "FastAPI",
-        "Celery",
         "MySQL",
         "PostgreSQL",
-        "Redis",
         "AWS",
         "EC2",
         "RDS",
@@ -3419,10 +2770,7 @@
         "Spring",
         "Spring Boot",
         "MySQL",
-        "PostgreSQL",
-        "AWS",
-        "Docker",
-        "Kubernetes"
+        "PostgreSQL"
       ],
       "annual_from": 5,
       "annual_to": 15
@@ -3433,7 +2781,6 @@
       "langs": [
         "Python",
         "FastAPI",
-        "AWS",
         "Datadog",
         "Sentry"
       ],
@@ -3445,7 +2792,6 @@
       "title": "Server/Infra/Web Engineer",
       "langs": [
         "TypeScript",
-        "C++",
         "Spring"
       ],
       "annual_from": 1,
@@ -3479,8 +2825,7 @@
       "id": 341585,
       "title": "Senior Backend Engineer",
       "langs": [
-        "Python",
-        "AWS"
+        "Python"
       ],
       "annual_from": 7,
       "annual_to": 15
@@ -3489,8 +2834,7 @@
       "id": 341582,
       "title": "Backend Engineer",
       "langs": [
-        "Python",
-        "AWS"
+        "Python"
       ],
       "annual_from": 3,
       "annual_to": 7
@@ -3500,8 +2844,6 @@
       "title": "Backend Engineer Lead",
       "langs": [
         "Python",
-        "Django",
-        "FastAPI",
         "AWS"
       ],
       "annual_from": 8,
@@ -3523,24 +2865,7 @@
     {
       "id": 352175,
       "title": "[인턴] Product Engineer (Back-End) (전환형)",
-      "langs": [
-        "Python",
-        "Kotlin",
-        "JavaScript",
-        "Spring Boot",
-        "Spring Batch",
-        "JPA",
-        "QueryDSL",
-        "Airflow",
-        "Node.js",
-        "NestJS",
-        "TypeORM",
-        "MySQL",
-        "PostgreSQL",
-        "Redis",
-        "Kafka",
-        "AWS"
-      ],
+      "langs": [],
       "annual_from": 0,
       "annual_to": 1
     },
@@ -3550,9 +2875,7 @@
       "langs": [
         "Python",
         "Docker",
-        "Kubernetes",
-        "GitHub Actions",
-        "GitLab CI"
+        "Kubernetes"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -3563,8 +2886,7 @@
       "langs": [
         "Python",
         "Go",
-        "Kubernetes",
-        "Istio"
+        "Kubernetes"
       ],
       "annual_from": 5,
       "annual_to": 100
@@ -3591,9 +2913,7 @@
         "Spring Boot",
         "Spring Batch",
         "MyBatis",
-        "MySQL",
-        "Docker",
-        "Jenkins"
+        "MySQL"
       ],
       "annual_from": 5,
       "annual_to": 10
@@ -3602,7 +2922,6 @@
       "id": 352084,
       "title": "백엔드 개발자(2~6년)",
       "langs": [
-        "Java",
         "Node.js",
         "NestJS"
       ],
@@ -3616,11 +2935,7 @@
         "Java",
         "Spring Boot",
         "PostgreSQL",
-        "Oracle",
-        "Kafka",
-        "AWS",
-        "Docker",
-        "Kubernetes"
+        "Oracle"
       ],
       "annual_from": 3,
       "annual_to": 7
@@ -3631,11 +2946,9 @@
       "langs": [
         "Java",
         "Python",
-        "Go",
         "TypeScript",
         "JavaScript",
         "C#",
-        "Rust",
         "Node.js",
         "AWS",
         "GCP",
@@ -3652,25 +2965,10 @@
         "TypeScript",
         "JavaScript",
         "Node.js",
-        "NestJS",
-        "MySQL",
-        "PostgreSQL",
-        "MongoDB",
-        "Redis",
-        "Elasticsearch",
-        "Kafka",
-        "SQS",
         "AWS",
-        "EC2",
-        "Lambda",
-        "RDS",
-        "CloudWatch",
         "Kubernetes",
-        "GitHub Actions",
-        "Grafana",
         "GraphQL",
-        "gRPC",
-        "OpenAI"
+        "gRPC"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -3693,13 +2991,10 @@
         "Spring",
         "Django",
         "FastAPI",
-        "Celery",
         "PostgreSQL",
         "MongoDB",
         "Redis",
         "AWS",
-        "RDS",
-        "ECS",
         "GitLab CI"
       ],
       "annual_from": 3,
@@ -3733,8 +3028,7 @@
         "Spring Boot",
         "MySQL",
         "PostgreSQL",
-        "MSSQL",
-        "Elasticsearch"
+        "MSSQL"
       ],
       "annual_from": 10,
       "annual_to": 12
@@ -3746,9 +3040,6 @@
         "Java",
         "Go",
         "Spring Boot",
-        "JPA",
-        "Hibernate",
-        "MyBatis",
         "MySQL"
       ],
       "annual_from": 3,
@@ -3789,9 +3080,7 @@
       "langs": [
         "Java",
         "Kotlin",
-        "Spring Boot",
-        "Docker",
-        "Kubernetes"
+        "Spring Boot"
       ],
       "annual_from": 10,
       "annual_to": 19
@@ -3802,9 +3091,7 @@
       "langs": [
         "AWS",
         "GCP",
-        "Azure",
-        "ECS",
-        "EKS"
+        "Azure"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -3831,14 +3118,9 @@
         "Node.js",
         "Rails",
         "Elasticsearch",
-        "OpenSearch",
-        "BigQuery",
         "Snowflake",
         "AWS",
-        "Prometheus",
-        "Datadog",
-        "OpenAPI",
-        "OpenAI"
+        "OpenAPI"
       ],
       "annual_from": 3,
       "annual_to": 15
@@ -3848,10 +3130,7 @@
       "title": "백엔드 엔지니어(Team Lead)",
       "langs": [
         "Spring Boot",
-        "MariaDB",
-        "Redis",
-        "Kafka",
-        "WebSocket"
+        "MariaDB"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -3863,7 +3142,6 @@
         "Python",
         "Kotlin",
         "TypeScript",
-        "Spring",
         "Spring Boot",
         "Django",
         "Celery",
@@ -3934,8 +3212,7 @@
         "Node.js",
         "NestJS",
         "PostgreSQL",
-        "AWS",
-        "GCP"
+        "AWS"
       ],
       "annual_from": 1,
       "annual_to": 5
@@ -3968,11 +3245,7 @@
       "langs": [
         "Java",
         "Kotlin",
-        "Go",
-        "MongoDB",
-        "AWS",
-        "GCP",
-        "Azure"
+        "Go"
       ],
       "annual_from": 5,
       "annual_to": 15
@@ -3989,14 +3262,11 @@
         "NestJS",
         "MySQL",
         "MongoDB",
-        "Elasticsearch",
         "AWS",
         "S3",
         "RDS",
         "ECS",
         "CloudWatch",
-        "Docker",
-        "Kubernetes",
         "Jenkins",
         "GitHub Actions",
         "Sentry",
@@ -4010,20 +3280,7 @@
       "id": 351323,
       "title": "[부산/ 경력 3년 이상] 서버셀- 서버 프로그래머",
       "langs": [
-        "Go",
-        "TypeScript",
-        "JavaScript",
-        "PHP",
-        "Node.js",
-        "MySQL",
-        "Redis",
-        "AWS",
-        "Docker",
-        "Kubernetes",
-        "Jenkins",
-        "GitHub Actions",
-        "ArgoCD",
-        "Terraform"
+        "Go"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -4033,9 +3290,7 @@
       "title": "Staff Back-end Engineer (New Fintech)",
       "langs": [
         "Java",
-        "Scala",
-        "Spring",
-        "JPA"
+        "Spring"
       ],
       "annual_from": 10,
       "annual_to": 17
@@ -4078,14 +3333,9 @@
         "MySQL",
         "MongoDB",
         "Redis",
-        "Elasticsearch",
-        "ClickHouse",
         "Kafka",
         "Docker",
-        "Jenkins",
-        "Grafana",
-        "Sentry",
-        "Kibana"
+        "Jenkins"
       ],
       "annual_from": 7,
       "annual_to": 14
@@ -4099,10 +3349,7 @@
         "Spring",
         "Spring Boot",
         "PostgreSQL",
-        "AWS",
-        "GCP",
-        "Docker",
-        "Kubernetes"
+        "AWS"
       ],
       "annual_from": 0,
       "annual_to": 1
@@ -4112,11 +3359,8 @@
       "title": "AI솔루션엔진 백엔드 개발(3년이상)",
       "langs": [
         "Python",
-        "Rust",
-        "PyTorch",
         "Node.js",
-        "Kubernetes",
-        "LangChain"
+        "Kubernetes"
       ],
       "annual_from": 3,
       "annual_to": 7
@@ -4125,51 +3369,13 @@
       "id": 351198,
       "title": "웹어플리케이션 백엔드 개발(2년이상)",
       "langs": [
-        "Python",
         "Spring",
         "Spring Boot",
-        "JPA",
-        "Hibernate",
         "MySQL",
-        "Oracle",
-        "Docker",
-        "Kubernetes"
+        "Oracle"
       ],
       "annual_from": 2,
       "annual_to": 5
-    },
-    {
-      "id": 350342,
-      "title": "3~5년차 웹/백엔드 개발자 (AWS유경험자 우대)",
-      "langs": [
-        "Java",
-        "Spring",
-        "Spring Batch",
-        "MySQL",
-        "Redis",
-        "RabbitMQ",
-        "AWS",
-        "EC2",
-        "RDS"
-      ],
-      "annual_from": 3,
-      "annual_to": 5
-    },
-    {
-      "id": 342879,
-      "title": "5~10년차 웹/백엔드 개발자 (AWS유경험자 우대)",
-      "langs": [
-        "Java",
-        "Spring",
-        "Spring Batch",
-        "Redis",
-        "RabbitMQ",
-        "AWS",
-        "EC2",
-        "RDS"
-      ],
-      "annual_from": 5,
-      "annual_to": 10
     },
     {
       "id": 350992,
@@ -4179,8 +3385,7 @@
         "Spring",
         "Spring Security",
         "MyBatis",
-        "MySQL",
-        "AWS"
+        "MySQL"
       ],
       "annual_from": 3,
       "annual_to": 10
@@ -4192,23 +3397,14 @@
         "Java",
         "Python",
         "MySQL",
-        "Redis",
-        "OpenSearch",
         "AWS",
         "EC2",
         "Lambda",
-        "RDS",
         "EKS",
         "CloudWatch",
-        "ElastiCache",
         "IAM",
-        "Kubernetes",
-        "Jenkins",
-        "GitHub Actions",
         "Terraform",
-        "Ansible",
-        "Grafana",
-        "Prometheus"
+        "Ansible"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -4225,10 +3421,8 @@
         "Kafka",
         "RabbitMQ",
         "SQS",
-        "Kubernetes",
         "Datadog",
-        "New Relic",
-        "WebSocket"
+        "New Relic"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -4248,7 +3442,6 @@
       "title": "데이터 플랫폼 엔지니어",
       "langs": [
         "Python",
-        "Snowflake",
         "Spark",
         "Azure",
         "OpenAI"
@@ -4260,8 +3453,7 @@
       "id": 350590,
       "title": "[B2B SaaS] 백엔드 개발자",
       "langs": [
-        "TypeScript",
-        "Kubernetes"
+        "TypeScript"
       ],
       "annual_from": 5,
       "annual_to": 100
@@ -4272,15 +3464,7 @@
       "langs": [
         "TypeScript",
         "Node.js",
-        "NestJS",
-        "Express",
-        "PostgreSQL",
-        "MariaDB",
-        "MongoDB",
-        "Redis",
-        "AWS",
-        "GCP",
-        "GitHub Actions"
+        "AWS"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -4292,8 +3476,7 @@
         "Java",
         "Kotlin",
         "Spring",
-        "Spring Boot",
-        "AWS"
+        "Spring Boot"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -4346,12 +3529,7 @@
       "id": 342678,
       "title": "백엔드 개발자(장애인 우대)",
       "langs": [
-        "Python",
-        "FastAPI",
-        "Flask",
-        "MySQL",
-        "Redis",
-        "Elasticsearch"
+        "Python"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -4361,14 +3539,8 @@
       "title": "[서비스개발센터] 백엔드 개발자 (7~10년, 과장급)",
       "langs": [
         "Java",
-        "Python",
         "Spring",
-        "MySQL",
-        "Redis",
-        "Kafka",
-        "Docker",
-        "Jenkins",
-        "GitHub Actions"
+        "MySQL"
       ],
       "annual_from": 7,
       "annual_to": 10
@@ -4377,9 +3549,7 @@
       "id": 338042,
       "title": "소프트웨어 엔지니어 (Backend)",
       "langs": [
-        "AWS",
-        "LangChain",
-        "LangGraph"
+        "AWS"
       ],
       "annual_from": 1,
       "annual_to": 8
@@ -4389,14 +3559,7 @@
       "title": "커머스 백엔드 개발자(홈/전시/광고)",
       "langs": [
         "Java",
-        "Spring Boot",
-        "Redis",
-        "Elasticsearch",
-        "BigQuery",
-        "Kafka",
-        "AWS",
-        "Kubernetes",
-        "Datadog"
+        "Spring Boot"
       ],
       "annual_from": 5,
       "annual_to": 15
@@ -4409,8 +3572,6 @@
         "Kotlin",
         "Go",
         "Node.js",
-        "Redis",
-        "Kafka",
         "AWS",
         "GCP",
         "Kubernetes"
@@ -4424,7 +3585,6 @@
       "langs": [
         "Java",
         "Python",
-        "Django",
         "PostgreSQL",
         "AWS",
         "RDS",
@@ -4474,14 +3634,11 @@
       "id": 328643,
       "title": "풀스택/백엔드 엔지니어 (5년 이상)",
       "langs": [
-        "Python",
         "TypeScript",
-        "C++",
         "Node.js",
         "NestJS",
         "PostgreSQL",
         "ClickHouse",
-        "Kafka",
         "Kinesis",
         "AWS"
       ],
@@ -4493,7 +3650,6 @@
       "title": "백엔드 개발자(PHP, JAVA)",
       "langs": [
         "Java",
-        "Python",
         "PHP",
         "Spring",
         "MariaDB",
@@ -4504,8 +3660,7 @@
         "AWS",
         "Docker",
         "Jenkins",
-        "Datadog",
-        "OpenAI"
+        "Datadog"
       ],
       "annual_from": 3,
       "annual_to": 10
@@ -4537,14 +3692,11 @@
         "QueryDSL",
         "MySQL",
         "Redis",
-        "RabbitMQ",
-        "SQS",
         "AWS",
         "Kubernetes",
         "GitHub Actions",
         "Sentry",
         "Swagger",
-        "LangChain",
         "LangGraph"
       ],
       "annual_from": 5,
@@ -4556,11 +3708,8 @@
       "langs": [
         "Kotlin",
         "Go",
-        "Kafka",
         "AWS",
-        "GCP",
-        "Grafana",
-        "New Relic"
+        "GCP"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -4571,7 +3720,6 @@
       "langs": [
         "Java",
         "Python",
-        "PostgreSQL",
         "AWS",
         "EC2",
         "Kubernetes",
@@ -4588,8 +3736,7 @@
         "FastAPI",
         "Flask",
         "MySQL",
-        "PostgreSQL",
-        "AWS"
+        "PostgreSQL"
       ],
       "annual_from": 2,
       "annual_to": 15
@@ -4601,10 +3748,6 @@
         "TypeScript",
         "NestJS",
         "Kafka",
-        "AWS",
-        "GCP",
-        "Azure",
-        "IAM",
         "Docker"
       ],
       "annual_from": 5,
@@ -4617,11 +3760,8 @@
         "Django",
         "FastAPI",
         "Flask",
-        "SQLAlchemy",
         "PostgreSQL",
-        "MariaDB",
-        "Docker",
-        "Kubernetes"
+        "MariaDB"
       ],
       "annual_from": 3,
       "annual_to": 20
@@ -4630,12 +3770,7 @@
       "id": 326389,
       "title": "Service Backend 개발자",
       "langs": [
-        "Python",
-        "FastAPI",
-        "Flask",
-        "SQLAlchemy",
-        "Docker",
-        "Kubernetes"
+        "Python"
       ],
       "annual_from": 3,
       "annual_to": 10
@@ -4644,12 +3779,7 @@
       "id": 326655,
       "title": "Core Backend 개발자",
       "langs": [
-        "Python",
-        "FastAPI",
-        "Flask",
-        "SQLAlchemy",
-        "Docker",
-        "Kubernetes"
+        "Python"
       ],
       "annual_from": 3,
       "annual_to": 10
@@ -4661,32 +3791,10 @@
         "Python",
         "Django",
         "FastAPI",
-        "Flask",
-        "Docker",
-        "Kubernetes"
+        "Flask"
       ],
       "annual_from": 3,
       "annual_to": 10
-    },
-    {
-      "id": 350058,
-      "title": "백엔드 개발자",
-      "langs": [
-        "TypeScript",
-        "Node.js",
-        "NestJS",
-        "PostgreSQL",
-        "Redis",
-        "Kafka",
-        "RabbitMQ",
-        "AWS",
-        "GCP",
-        "Azure",
-        "Docker",
-        "Kubernetes"
-      ],
-      "annual_from": 2,
-      "annual_to": 7
     },
     {
       "id": 349994,
@@ -4695,14 +3803,11 @@
         "Java",
         "Python",
         "Kotlin",
-        "Spring Boot",
         "Node.js",
         "MySQL",
         "PostgreSQL",
         "Oracle",
-        "AWS",
-        "Docker",
-        "Kubernetes"
+        "AWS"
       ],
       "annual_from": 7,
       "annual_to": 100
@@ -4712,9 +3817,7 @@
       "title": "백엔드 개발자",
       "langs": [
         "Python",
-        "Kotlin",
         "TypeScript",
-        "Spring",
         "FastAPI",
         "NestJS"
       ],
@@ -4727,9 +3830,7 @@
       "langs": [
         "Java",
         "Kotlin",
-        "Spring Boot",
-        "Docker",
-        "Kubernetes"
+        "Spring Boot"
       ],
       "annual_from": 7,
       "annual_to": 14
@@ -4740,15 +3841,9 @@
       "langs": [
         "Python",
         "FastAPI",
-        "Airflow",
         "Node.js",
-        "MySQL",
-        "PostgreSQL",
         "AWS",
-        "GCP",
-        "Azure",
-        "Docker",
-        "Kubernetes"
+        "GCP"
       ],
       "annual_from": 5,
       "annual_to": 100
@@ -4800,11 +3895,7 @@
         "Kotlin",
         "Spring",
         "JPA",
-        "Hibernate",
-        "AWS",
-        "RDS",
-        "EKS",
-        "ElastiCache"
+        "Hibernate"
       ],
       "annual_from": 3,
       "annual_to": 5
@@ -4815,11 +3906,7 @@
       "langs": [
         "Java",
         "Python",
-        "Go",
-        "AWS",
-        "GCP",
-        "Docker",
-        "Kubernetes"
+        "Go"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -4847,10 +3934,7 @@
         "MySQL",
         "PostgreSQL",
         "MongoDB",
-        "Redis",
-        "AWS",
-        "Docker",
-        "Kubernetes"
+        "Redis"
       ],
       "annual_from": 5,
       "annual_to": 11
@@ -4871,9 +3955,7 @@
     {
       "id": 349397,
       "title": "웹개발자",
-      "langs": [
-        "TypeScript"
-      ],
+      "langs": [],
       "annual_from": 2,
       "annual_to": 7
     },
@@ -4916,13 +3998,7 @@
         "JPA",
         "Node.js",
         "TypeORM",
-        "AWS",
-        "GCP",
-        "Kubernetes",
-        "Terraform",
-        "gRPC",
-        "LangChain",
-        "LangGraph"
+        "gRPC"
       ],
       "annual_from": 3,
       "annual_to": 15
@@ -4931,18 +4007,11 @@
       "id": 349393,
       "title": "백엔드 개발 (5년 이상)",
       "langs": [
-        "Kotlin",
         "NestJS",
         "TypeORM",
         "MySQL",
         "MongoDB",
         "Redis",
-        "Kafka",
-        "RabbitMQ",
-        "AWS",
-        "EC2",
-        "RDS",
-        "Docker",
         "Kubernetes"
       ],
       "annual_from": 5,
@@ -4953,10 +4022,7 @@
       "title": "Backend Developer, Marvelous Designer",
       "langs": [
         ".NET",
-        "MSSQL",
-        "MongoDB",
-        "AWS",
-        "Datadog"
+        "MSSQL"
       ],
       "annual_from": 3,
       "annual_to": 10
@@ -4969,13 +4035,9 @@
         "Kotlin",
         "Spring",
         "JPA",
-        "MongoDB",
-        "Redis",
-        "Elasticsearch",
         "Kafka",
         "SQS",
-        "SNS",
-        "AWS"
+        "SNS"
       ],
       "annual_from": 5,
       "annual_to": 100
@@ -4984,13 +4046,7 @@
       "id": 325333,
       "title": "[Tech] Python Backend Developer (3년 이상)",
       "langs": [
-        "Kafka",
-        "SQS",
-        "SNS",
-        "AWS",
-        "Docker",
-        "Kubernetes",
-        "OpenAI"
+        "Kubernetes"
       ],
       "annual_from": 3,
       "annual_to": 7
@@ -5012,14 +4068,26 @@
       "id": 349186,
       "title": "파이썬 백엔드 개발자",
       "langs": [
-        "Java",
         "Python",
-        "Spring Boot",
-        "PostgreSQL",
-        "Docker"
+        "PostgreSQL"
       ],
       "annual_from": 2,
       "annual_to": 5
+    },
+    {
+      "id": 291963,
+      "title": "Back-end Software Engineer (4년 이상)",
+      "langs": [
+        "TypeScript",
+        "Node.js",
+        "MySQL",
+        "SQS",
+        "SNS",
+        "AWS",
+        "GitHub Actions"
+      ],
+      "annual_from": 4,
+      "annual_to": 7
     },
     {
       "id": 291969,
@@ -5036,21 +4104,6 @@
       ],
       "annual_from": 8,
       "annual_to": 30
-    },
-    {
-      "id": 291963,
-      "title": "Back-end Software Engineer (4년 이상)",
-      "langs": [
-        "TypeScript",
-        "Node.js",
-        "MySQL",
-        "SQS",
-        "SNS",
-        "AWS",
-        "GitHub Actions"
-      ],
-      "annual_from": 4,
-      "annual_to": 7
     },
     {
       "id": 336248,
@@ -5075,11 +4128,7 @@
     {
       "id": 349046,
       "title": "앱 및 웹 개발자",
-      "langs": [
-        "MySQL",
-        "PostgreSQL",
-        "AWS"
-      ],
+      "langs": [],
       "annual_from": 4,
       "annual_to": 100
     },
@@ -5096,8 +4145,7 @@
         "Azure",
         "Docker",
         "GitHub Actions",
-        "Datadog",
-        "LangChain"
+        "Datadog"
       ],
       "annual_from": 5,
       "annual_to": 11
@@ -5136,11 +4184,8 @@
       "title": "백엔드 개발자",
       "langs": [
         "Java",
-        "Kotlin",
         "PHP",
-        "Spring",
-        "Spring Boot",
-        "AWS"
+        "Spring Boot"
       ],
       "annual_from": 2,
       "annual_to": 10
@@ -5162,8 +4207,7 @@
         "Redis",
         "Elasticsearch",
         "AWS",
-        "Lambda",
-        "Kubernetes"
+        "Lambda"
       ],
       "annual_from": 7,
       "annual_to": 14
@@ -5174,8 +4218,6 @@
       "langs": [
         "Python",
         "Go",
-        "PyTorch",
-        "Spark",
         "AWS",
         "GCP",
         "Azure",
@@ -5238,14 +4280,9 @@
         "JavaScript",
         "MySQL",
         "PostgreSQL",
-        "Kafka",
-        "SQS",
-        "SNS",
         "AWS",
         "GCP",
-        "Azure",
-        "Lambda",
-        "Docker"
+        "Azure"
       ],
       "annual_from": 5,
       "annual_to": 100
@@ -5303,13 +4340,10 @@
         "Java",
         "Spring Boot",
         "JPA",
-        "Redis",
-        "BigQuery",
         "Kafka",
         "AWS",
         "GCP",
-        "Kubernetes",
-        "Datadog"
+        "Kubernetes"
       ],
       "annual_from": 5,
       "annual_to": 10
@@ -5322,15 +4356,11 @@
         "Kotlin",
         "Spring",
         "JPA",
-        "Hibernate",
         "MySQL",
         "MongoDB",
         "Redis",
         "Elasticsearch",
         "Aurora",
-        "Kafka",
-        "SQS",
-        "SNS",
         "AWS"
       ],
       "annual_from": 5,
@@ -5374,18 +4404,14 @@
       "title": "Backend Engineer (Kotlin/Spring)",
       "langs": [
         "Java",
-        "Python",
         "Kotlin",
-        "TypeScript",
         "Spring",
         "Spring Boot",
         "NestJS",
         "MySQL",
         "Elasticsearch",
         "Neo4j",
-        "RabbitMQ",
-        "AWS",
-        "GCP"
+        "RabbitMQ"
       ],
       "annual_from": 2,
       "annual_to": 10
@@ -5409,18 +4435,8 @@
       "title": "[챌린저스] 백엔드 개발자",
       "langs": [
         "Java",
-        "Python",
         "Kotlin",
-        "Go",
-        "FastAPI",
-        "MySQL",
-        "PostgreSQL",
-        "Redis",
-        "Elasticsearch",
-        "Docker",
-        "Kubernetes",
-        "Istio",
-        "ArgoCD"
+        "Go"
       ],
       "annual_from": 3,
       "annual_to": 10
@@ -5440,12 +4456,7 @@
       "langs": [
         "Java",
         "Kotlin",
-        "Spring",
-        "AWS",
-        "EKS",
-        "Kubernetes",
-        "Helm",
-        "Terraform"
+        "Spring"
       ],
       "annual_from": 5,
       "annual_to": 5
@@ -5454,10 +4465,7 @@
       "id": 286706,
       "title": "메인넷 백엔드 개발자",
       "langs": [
-        "Python",
-        "TypeScript",
-        "Rust",
-        "AWS"
+        "Rust"
       ],
       "annual_from": 3,
       "annual_to": 9
@@ -5482,19 +4490,13 @@
       "title": "Back End 개발자 (5년이상)",
       "langs": [
         "Java",
-        "Python",
         "Kotlin",
         "Spring",
         "Spring Boot",
         "Spring Data",
         "Gradle",
-        "FastAPI",
         "MySQL",
-        "Redis",
-        "Kafka",
-        "EKS",
-        "Kubernetes",
-        "ArgoCD"
+        "Kafka"
       ],
       "annual_from": 5,
       "annual_to": 17
@@ -5507,14 +4509,7 @@
         "TypeScript",
         "Spring Boot",
         "MySQL",
-        "PostgreSQL",
-        "AWS",
-        "GCP",
-        "Naver Cloud",
-        "Docker",
-        "Grafana",
-        "Prometheus",
-        "ELK"
+        "PostgreSQL"
       ],
       "annual_from": 3,
       "annual_to": 10
@@ -5524,11 +4519,7 @@
       "title": "[전문연구요원] 클라우드 개발자 (백엔드/DevOps)",
       "langs": [
         "Python",
-        "Go",
-        "Kubernetes",
-        "Jenkins",
-        "ArgoCD",
-        "Ansible"
+        "Go"
       ],
       "annual_from": 0,
       "annual_to": 1
@@ -5628,8 +4619,7 @@
         "Docker",
         "Jenkins",
         "GitHub Actions",
-        "Datadog",
-        "WebSocket"
+        "Datadog"
       ],
       "annual_from": 0,
       "annual_to": 3
@@ -5639,34 +4629,13 @@
       "title": "Java 백엔드 개발자",
       "langs": [
         "Java",
-        "Kotlin",
-        "Spring",
         "Spring Boot",
-        "Spring Data",
-        "Spring Security",
-        "JPA",
-        "Hibernate",
-        "QueryDSL",
-        "WebFlux",
-        "MySQL",
-        "MongoDB",
-        "Redis",
         "Elasticsearch",
         "Kafka",
-        "SQS",
         "AWS",
-        "EC2",
-        "RDS",
-        "EKS",
-        "CloudWatch",
-        "ElastiCache",
         "Kubernetes",
-        "GitHub Actions",
-        "Grafana",
         "GraphQL",
-        "gRPC",
-        "JWT",
-        "OpenAI"
+        "gRPC"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -5680,12 +4649,9 @@
         "MyBatis",
         "MySQL",
         "MariaDB",
-        "Elasticsearch",
-        "Neo4j",
         "AWS",
         "GCP",
         "Naver Cloud",
-        "Kubernetes",
         "Jenkins"
       ],
       "annual_from": 5,
@@ -5752,9 +4718,7 @@
       "langs": [
         "Java",
         "Python",
-        "Node.js",
-        "AWS",
-        "Azure"
+        "Node.js"
       ],
       "annual_from": 1,
       "annual_to": 5
@@ -5776,31 +4740,10 @@
         "Jenkins",
         "GitLab CI",
         "Sentry",
-        "GraphQL",
-        "JWT"
+        "GraphQL"
       ],
       "annual_from": 0,
       "annual_to": 4
-    },
-    {
-      "id": 274162,
-      "title": "[Consumer Commerce] Backend Engineer (3년 이상)",
-      "langs": [
-        "Java",
-        "Kotlin",
-        "Spring",
-        "JPA",
-        "Celery",
-        "MongoDB",
-        "Redis",
-        "Elasticsearch",
-        "Kafka",
-        "RabbitMQ",
-        "Docker",
-        "Kubernetes"
-      ],
-      "annual_from": 3,
-      "annual_to": 8
     },
     {
       "id": 273728,
@@ -5809,18 +4752,22 @@
         "Java",
         "Kotlin",
         "Spring",
-        "JPA",
-        "Celery",
-        "MongoDB",
-        "Redis",
-        "Elasticsearch",
-        "Kafka",
-        "RabbitMQ",
-        "Docker",
-        "Kubernetes"
+        "JPA"
       ],
       "annual_from": 0,
       "annual_to": 3
+    },
+    {
+      "id": 274162,
+      "title": "[Consumer Commerce] Backend Engineer (3년 이상)",
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "JPA"
+      ],
+      "annual_from": 3,
+      "annual_to": 8
     },
     {
       "id": 346641,
@@ -5832,31 +4779,9 @@
         "FastAPI",
         "MySQL",
         "PostgreSQL",
-        "AWS",
-        "Azure",
-        "EC2",
-        "Lambda",
-        "GitHub Actions",
-        "Terraform",
-        "JWT",
-        "JUnit",
-        "OpenAI"
+        "AWS"
       ],
       "annual_from": 1,
-      "annual_to": 5
-    },
-    {
-      "id": 332240,
-      "title": "[웰컴페이먼츠] 서버 및 솔루션 담당(5년 이하)",
-      "langs": [
-        "Python",
-        "Go",
-        "AWS",
-        "GCP",
-        "Azure",
-        "Grafana"
-      ],
-      "annual_from": 3,
       "annual_to": 5
     },
     {
@@ -5902,11 +4827,8 @@
         "DynamoDB",
         "Elasticsearch",
         "OpenSearch",
-        "SQS",
         "AWS",
-        "GCP",
         "Lambda",
-        "EKS",
         "Kubernetes",
         "WebSocket"
       ],
@@ -5936,11 +4858,7 @@
         "Kotlin",
         "Spring Boot",
         "MySQL",
-        "Redis",
-        "Elasticsearch",
-        "Kafka",
-        "AWS",
-        "Datadog"
+        "Kafka"
       ],
       "annual_from": 5,
       "annual_to": 14
@@ -5948,11 +4866,7 @@
     {
       "id": 343272,
       "title": "백엔드 엔지니어 (Backend Part Lead)",
-      "langs": [
-        "Redis",
-        "Kafka",
-        "RabbitMQ"
-      ],
+      "langs": [],
       "annual_from": 7,
       "annual_to": 14
     },
@@ -5986,8 +4900,7 @@
         "Jenkins",
         "GitLab CI",
         "Sentry",
-        "GraphQL",
-        "JWT"
+        "GraphQL"
       ],
       "annual_from": 2,
       "annual_to": 100
@@ -6024,19 +4937,13 @@
       "title": "백엔드 개발자 (Junior Backend Engineer)",
       "langs": [
         "Java",
-        "Python",
         "Kotlin",
         "Spring",
         "Spring Boot",
         "Spring Security",
         "JPA",
         "QueryDSL",
-        "FastAPI",
-        "Flask",
         "MySQL",
-        "Kafka",
-        "RabbitMQ",
-        "Kinesis",
         "SQS",
         "AWS",
         "EC2",
@@ -6045,9 +4952,7 @@
         "ECS",
         "EKS",
         "Docker",
-        "Jenkins",
         "GitHub Actions",
-        "Terraform",
         "Swagger",
         "OpenAPI",
         "JWT",
@@ -6063,9 +4968,7 @@
         "Java",
         "Kotlin",
         "C++",
-        "Spring",
-        "Redis",
-        "Kafka"
+        "Spring"
       ],
       "annual_from": 7,
       "annual_to": 100
@@ -6074,14 +4977,11 @@
       "id": 345804,
       "title": "호텔(B2B) 시스템 Back-end 개발",
       "langs": [
-        "Kotlin",
         "Spring",
         "MySQL",
         "Aurora",
-        "AWS",
         "Lambda",
-        "ECS",
-        "OpenAI"
+        "ECS"
       ],
       "annual_from": 2,
       "annual_to": 5
@@ -6093,17 +4993,14 @@
         "Java",
         "Kotlin",
         "Spring Boot",
-        "Spring Batch",
         "QueryDSL",
-        "Gradle",
         "PostgreSQL",
         "MongoDB",
         "Kafka",
         "AWS",
         "Kubernetes",
         "Prometheus",
-        "Datadog",
-        "WebSocket"
+        "Datadog"
       ],
       "annual_from": 4,
       "annual_to": 100
@@ -6118,9 +5015,7 @@
         "Spring Boot",
         "Spring Batch",
         "JPA",
-        "Django",
         "FastAPI",
-        "Flask",
         "Celery",
         "Airflow",
         "SQLAlchemy",
@@ -6140,7 +5035,6 @@
         "Fargate",
         "CloudFront",
         "Docker",
-        "Kubernetes",
         "Jenkins",
         "GitHub Actions",
         "Swagger",
@@ -6187,7 +5081,6 @@
         "MySQL",
         "PostgreSQL",
         "Redis",
-        "Kafka",
         "AWS",
         "Docker",
         "Kubernetes"
@@ -6202,8 +5095,7 @@
         "Node.js",
         "Express",
         "MySQL",
-        "PostgreSQL",
-        "AWS"
+        "PostgreSQL"
       ],
       "annual_from": 3,
       "annual_to": 7
@@ -6212,7 +5104,6 @@
       "id": 335131,
       "title": "클라우드 인프라/서버/네트워크 3년 이상",
       "langs": [
-        "Python",
         "AWS",
         "Azure"
       ],
@@ -6235,9 +5126,7 @@
       "langs": [
         "PHP",
         "Laravel",
-        "MySQL",
-        "AWS",
-        "Docker"
+        "MySQL"
       ],
       "annual_from": 2,
       "annual_to": 10
@@ -6245,20 +5134,14 @@
     {
       "id": 333606,
       "title": "Backend Software Engineer",
-      "langs": [
-        "Java",
-        "Go",
-        "C++"
-      ],
+      "langs": [],
       "annual_from": 5,
       "annual_to": 100
     },
     {
       "id": 334587,
       "title": "AI 카메라 임베디드 웹서버 개발자",
-      "langs": [
-        "AWS"
-      ],
+      "langs": [],
       "annual_from": 3,
       "annual_to": 7
     },
@@ -6269,10 +5152,7 @@
         "Java",
         "MySQL",
         "MariaDB",
-        "Elasticsearch",
-        "Kafka",
-        "Docker",
-        "Kubernetes"
+        "Elasticsearch"
       ],
       "annual_from": 4,
       "annual_to": 100
@@ -6280,11 +5160,7 @@
     {
       "id": 214338,
       "title": "Backend Engineer I (산업기능요원 전직, 보충역 신규 가능)",
-      "langs": [
-        "Python",
-        "TypeScript",
-        "Django"
-      ],
+      "langs": [],
       "annual_from": 0,
       "annual_to": 1
     },
@@ -6293,10 +5169,7 @@
       "title": "백엔드 개발자 (Java/팀원)",
       "langs": [
         "Java",
-        "Spring",
-        "Spring Boot",
-        "AWS",
-        "Jenkins"
+        "Spring"
       ],
       "annual_from": 3,
       "annual_to": 15
@@ -6306,10 +5179,7 @@
       "title": "Software Engineer (Backend)_신입",
       "langs": [
         "Java",
-        "Kotlin",
-        "TypeScript",
-        "AWS",
-        "GCP"
+        "Kotlin"
       ],
       "annual_from": 0,
       "annual_to": 2
@@ -6324,9 +5194,7 @@
         "MySQL",
         "PostgreSQL",
         "Kafka",
-        "RabbitMQ",
-        "AWS",
-        "GCP"
+        "RabbitMQ"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -6349,38 +5217,12 @@
         "Python",
         "TypeScript",
         "JavaScript",
-        "Airflow",
         "Node.js",
         "Express",
-        "MySQL",
-        "Docker",
-        "Kubernetes"
+        "MySQL"
       ],
       "annual_from": 2,
       "annual_to": 4
-    },
-    {
-      "id": 344669,
-      "title": "개발자 백엔드(API, 2년 이상)(GraphQL, typescript)",
-      "langs": [
-        "TypeScript",
-        "JavaScript",
-        "PHP",
-        "Node.js",
-        "MySQL",
-        "MariaDB",
-        "Redis",
-        "Elasticsearch",
-        "AWS",
-        "GCP",
-        "Docker",
-        "Jenkins",
-        "GitLab CI",
-        "Sentry",
-        "GraphQL"
-      ],
-      "annual_from": 2,
-      "annual_to": 10
     },
     {
       "id": 46260,
@@ -6388,11 +5230,7 @@
       "langs": [
         "Python",
         "TypeScript",
-        "JavaScript",
-        "Django",
-        "Flask",
-        "Docker",
-        "Kubernetes"
+        "JavaScript"
       ],
       "annual_from": 5,
       "annual_to": 10
@@ -6401,8 +5239,6 @@
       "id": 295915,
       "title": "[인턴] [SW] 백엔드 개발자",
       "langs": [
-        "Python",
-        "TypeScript",
         "JavaScript",
         "Node.js",
         "Express"
@@ -6419,12 +5255,7 @@
         "Spring Boot",
         "JPA",
         "MySQL",
-        "Redis",
-        "DynamoDB",
-        "OpenSearch",
-        "Kafka",
-        "AWS",
-        "Datadog"
+        "AWS"
       ],
       "annual_from": 5,
       "annual_to": 100
@@ -6438,8 +5269,6 @@
         "PostgreSQL",
         "MongoDB",
         "AWS",
-        "GCP",
-        "Azure",
         "Docker",
         "Kubernetes"
       ],
@@ -6501,10 +5330,7 @@
         "Node.js",
         "NestJS",
         "TypeORM",
-        "PostgreSQL",
-        "RabbitMQ",
-        "Spark",
-        "Kubernetes"
+        "PostgreSQL"
       ],
       "annual_from": 0,
       "annual_to": 4
@@ -6526,11 +5352,9 @@
       "id": 343614,
       "title": "Backend Application Engineer",
       "langs": [
-        "Java",
         "Python",
         "Django",
-        "Flask",
-        "gRPC"
+        "Flask"
       ],
       "annual_from": 3,
       "annual_to": 7
@@ -6543,14 +5367,10 @@
         "Python",
         "Kotlin",
         "TypeScript",
-        "Spring",
         "Spring Boot",
-        "JPA",
-        "MyBatis",
         "NestJS",
         "MySQL",
-        "PostgreSQL",
-        "JUnit"
+        "PostgreSQL"
       ],
       "annual_from": 5,
       "annual_to": 10
@@ -6598,7 +5418,6 @@
         "PostgreSQL",
         "MongoDB",
         "Redis",
-        "Kafka",
         "RabbitMQ",
         "Jenkins"
       ],
@@ -6609,8 +5428,6 @@
       "id": 343182,
       "title": "백엔드 개발자",
       "langs": [
-        "TypeScript",
-        "FastAPI",
         "Node.js",
         "NestJS",
         "MySQL",
@@ -6618,16 +5435,8 @@
         "MongoDB",
         "Redis",
         "Docker",
-        "Kubernetes",
-        "Helm",
-        "Jenkins",
-        "ArgoCD",
-        "Sentry",
-        "WebSocket",
         "Swagger",
-        "OpenAPI",
-        "LangChain",
-        "LangGraph"
+        "OpenAPI"
       ],
       "annual_from": 3,
       "annual_to": 10
@@ -6655,9 +5464,6 @@
         "Go",
         "PostgreSQL",
         "MongoDB",
-        "AWS",
-        "GCP",
-        "Azure",
         "Docker"
       ],
       "annual_from": 7,
@@ -6674,8 +5480,7 @@
         "Node.js",
         "MySQL",
         "Redis",
-        "Elasticsearch",
-        "AWS"
+        "Elasticsearch"
       ],
       "annual_from": 3,
       "annual_to": 12
@@ -6686,11 +5491,9 @@
       "langs": [
         "Go",
         "PHP",
-        "Node.js",
         "MySQL",
         "Redis",
-        "Elasticsearch",
-        "AWS"
+        "Elasticsearch"
       ],
       "annual_from": 3,
       "annual_to": 12
@@ -6702,9 +5505,7 @@
         "Java",
         "Python",
         "Spring Boot",
-        "Node.js",
-        "Redis",
-        "Kafka"
+        "Node.js"
       ],
       "annual_from": 4,
       "annual_to": 100
@@ -6714,12 +5515,8 @@
       "title": "Web & Server Developer",
       "langs": [
         "Java",
-        "JavaScript",
         "Spring Boot",
-        "MySQL",
-        "AWS",
-        "Docker",
-        "GitHub Actions"
+        "MySQL"
       ],
       "annual_from": 5,
       "annual_to": 100
@@ -6730,13 +5527,9 @@
       "langs": [
         "Spring",
         "Spring Boot",
-        "Kafka",
-        "RabbitMQ",
-        "SQS",
         "AWS",
         "GCP",
-        "Azure",
-        "Kubernetes"
+        "Azure"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -6747,7 +5540,6 @@
       "langs": [
         "Python",
         "Go",
-        "PyTorch",
         "Spark",
         "AWS",
         "GCP",
@@ -6764,16 +5556,11 @@
       "langs": [
         "Python",
         "Go",
-        "DRF",
         "FastAPI",
         "PostgreSQL",
         "Kubernetes",
-        "Helm",
-        "ArgoCD",
-        "Terraform",
         "gRPC",
-        "JWT",
-        "LangChain"
+        "JWT"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -6785,7 +5572,6 @@
         "Python",
         "PostgreSQL",
         "MongoDB",
-        "Elasticsearch",
         "Docker"
       ],
       "annual_from": 3,
@@ -6806,8 +5592,7 @@
         "Lambda",
         "RDS",
         "ECS",
-        "Fargate",
-        "gRPC"
+        "Fargate"
       ],
       "annual_from": 3,
       "annual_to": 10
@@ -6821,15 +5606,7 @@
         "Spring Boot",
         "JPA",
         "Hibernate",
-        "MySQL",
-        "Redis",
-        "Elasticsearch",
-        "Kafka",
-        "RabbitMQ",
-        "AWS",
-        "GCP",
-        "Docker",
-        "Kubernetes"
+        "MySQL"
       ],
       "annual_from": 7,
       "annual_to": 14
@@ -6840,10 +5617,7 @@
       "langs": [
         "Python",
         "Django",
-        "DRF",
-        "PostgreSQL",
-        "Redis",
-        "Kafka"
+        "DRF"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -6854,10 +5628,7 @@
       "langs": [
         "Python",
         "Airflow",
-        "PyTorch",
         "PostgreSQL",
-        "AWS",
-        "GCP",
         "Docker",
         "Kubernetes"
       ],
@@ -6891,8 +5662,6 @@
         "AWS",
         "GCP",
         "Azure",
-        "Kubernetes",
-        "Istio",
         "Jenkins",
         "GitHub Actions",
         "WebSocket"
@@ -6920,7 +5689,6 @@
       "langs": [
         "Kotlin",
         "Spring",
-        "Node.js",
         "PostgreSQL",
         "Redis",
         "AWS",
@@ -6935,17 +5703,9 @@
       "id": 328596,
       "title": "Server(배민외식업광장)",
       "langs": [
-        "Java",
         "Spring",
         "Spring Boot",
-        "JPA",
-        "Hibernate",
-        "MySQL",
-        "Redis",
-        "Elasticsearch",
-        "Aurora",
-        "Kafka",
-        "AWS"
+        "MySQL"
       ],
       "annual_from": 7,
       "annual_to": 100
@@ -7003,11 +5763,7 @@
         "Java",
         "Python",
         "Kafka",
-        "RabbitMQ",
-        "AWS",
-        "GCP",
-        "Azure",
-        "LangChain"
+        "AWS"
       ],
       "annual_from": 2,
       "annual_to": 100
@@ -7065,13 +5821,10 @@
         "Spring Boot",
         "MySQL",
         "PostgreSQL",
-        "Redis",
         "Kafka",
         "Kinesis",
         "AWS",
-        "Docker",
-        "Grafana",
-        "Prometheus"
+        "Docker"
       ],
       "annual_from": 5,
       "annual_to": 100
@@ -7091,17 +5844,9 @@
         "NestJS",
         "Express",
         "MongoDB",
-        "Redis",
-        "Kafka",
-        "RabbitMQ",
-        "SQS",
         "AWS",
         "GCP",
-        "Azure",
-        "Kubernetes",
-        "Datadog",
-        "New Relic",
-        "WebSocket"
+        "Azure"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -7134,9 +5879,7 @@
         "FastAPI",
         "PostgreSQL",
         "Redis",
-        "Kafka",
         "Docker",
-        "Kubernetes",
         "gRPC"
       ],
       "annual_from": 3,
@@ -7147,14 +5890,7 @@
       "title": "[개발팀] 백엔드 개발자",
       "langs": [
         "Java",
-        "Kotlin",
-        "Spring",
-        "JPA",
-        "Hibernate",
-        "MySQL",
-        "MongoDB",
-        "Redis",
-        "Kafka"
+        "Kotlin"
       ],
       "annual_from": 3,
       "annual_to": 7
@@ -7164,7 +5900,6 @@
       "title": "K8s 기반 인증·인가 시스템 백엔드 엔지니어",
       "langs": [
         "Java",
-        "Spark",
         "Kubernetes"
       ],
       "annual_from": 5,
@@ -7193,8 +5928,7 @@
         "Kotlin",
         "Spring Boot",
         "JPA",
-        "Hibernate",
-        "AWS"
+        "Hibernate"
       ],
       "annual_from": 7,
       "annual_to": 100
@@ -7202,10 +5936,7 @@
     {
       "id": 339238,
       "title": "Product Engineer (Backend)",
-      "langs": [
-        "AWS",
-        "GCP"
-      ],
+      "langs": [],
       "annual_from": 5,
       "annual_to": 12
     },
@@ -7214,14 +5945,10 @@
       "title": "[콜로소] 백엔드 개발자",
       "langs": [
         "JavaScript",
-        "Celery",
         "Node.js",
         "NestJS",
         "TypeORM",
-        "Redis",
-        "Kafka",
-        "GCP",
-        "GitHub Actions"
+        "GCP"
       ],
       "annual_from": 1,
       "annual_to": 3
@@ -7298,17 +6025,7 @@
       "title": "백엔드 개발자 3년 이상",
       "langs": [
         "TypeScript",
-        "Node.js",
-        "NestJS",
-        "Express",
-        "TypeORM",
-        "Redis",
-        "Kafka",
-        "AWS",
-        "Azure",
-        "Naver Cloud",
-        "Docker",
-        "GitHub Actions"
+        "Node.js"
       ],
       "annual_from": 3,
       "annual_to": 20
@@ -7333,13 +6050,9 @@
       "title": "Backend Developer (C#)",
       "langs": [
         "C#",
-        "Airflow",
         "ASP.NET",
         ".NET",
-        "MSSQL",
-        "MongoDB",
-        "Kafka",
-        "Datadog"
+        "MSSQL"
       ],
       "annual_from": 5,
       "annual_to": 11
@@ -7349,7 +6062,6 @@
       "title": "3D/AI 기반 SaaS형 ERP 및 이커머스 Back-End(Web)(신입~8년차",
       "langs": [
         "TypeScript",
-        "Node.js",
         "NestJS",
         "MySQL",
         "AWS",
@@ -7371,13 +6083,8 @@
         "C++",
         "PHP",
         "Spring",
-        "Django",
         "FastAPI",
-        "Node.js",
-        "AWS",
-        "GCP",
-        "Docker",
-        "Terraform"
+        "Node.js"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -7391,7 +6098,6 @@
         "SQLAlchemy",
         "PostgreSQL",
         "Oracle",
-        "BigQuery",
         "AWS",
         "GCP",
         "IAM",
@@ -7405,11 +6111,7 @@
     {
       "id": 169285,
       "title": "Sr. Backend Engineer",
-      "langs": [
-        "Python",
-        "TypeScript",
-        "Django"
-      ],
+      "langs": [],
       "annual_from": 5,
       "annual_to": 17
     },
@@ -7446,7 +6148,6 @@
       "title": "백엔드 개발자",
       "langs": [
         "Java",
-        "Kotlin",
         "Spring",
         "AWS"
       ],
@@ -7466,8 +6167,7 @@
         "RDS",
         "ECS",
         "CloudWatch",
-        "WebSocket",
-        "OpenAI"
+        "WebSocket"
       ],
       "annual_from": 5,
       "annual_to": 18
@@ -7485,12 +6185,7 @@
     {
       "id": 336636,
       "title": "백엔드 개발자",
-      "langs": [
-        "PostgreSQL",
-        "Redis",
-        "Azure",
-        "Docker"
-      ],
+      "langs": [],
       "annual_from": 5,
       "annual_to": 11
     },
@@ -7500,7 +6195,6 @@
       "langs": [
         "Python",
         "AWS",
-        "GCP",
         "Azure"
       ],
       "annual_from": 3,
@@ -7517,15 +6211,7 @@
         "JPA",
         "PostgreSQL",
         "MariaDB",
-        "Redis",
-        "Kafka",
-        "AWS",
-        "GCP",
-        "Azure",
-        "Docker",
-        "Kubernetes",
-        "Terraform",
-        "Ansible"
+        "Docker"
       ],
       "annual_from": 3,
       "annual_to": 20
@@ -7543,36 +6229,11 @@
         "Rails",
         "PostgreSQL",
         "Redis",
-        "Elasticsearch",
         "Kafka",
-        "AWS",
-        "Kubernetes",
-        "ELK",
-        "Kibana"
+        "Kubernetes"
       ],
       "annual_from": 7,
       "annual_to": 100
-    },
-    {
-      "id": 336772,
-      "title": "백엔드 개발 엔지니어 (시니어급/8년)",
-      "langs": [
-        "Java",
-        "JPA",
-        "QueryDSL",
-        "Node.js",
-        "MySQL",
-        "MariaDB",
-        "Kafka",
-        "RabbitMQ",
-        "AWS",
-        "GCP",
-        "Docker",
-        "Kubernetes",
-        "JUnit"
-      ],
-      "annual_from": 8,
-      "annual_to": 12
     },
     {
       "id": 309611,
@@ -7581,19 +6242,28 @@
         "Java",
         "JPA",
         "QueryDSL",
-        "Node.js",
         "MySQL",
         "MariaDB",
-        "Kafka",
-        "RabbitMQ",
-        "AWS",
-        "GCP",
         "Docker",
-        "Kubernetes",
-        "JUnit"
+        "Kubernetes"
       ],
       "annual_from": 5,
       "annual_to": 10
+    },
+    {
+      "id": 336772,
+      "title": "백엔드 개발 엔지니어 (시니어급/8년)",
+      "langs": [
+        "Java",
+        "JPA",
+        "QueryDSL",
+        "MySQL",
+        "MariaDB",
+        "Docker",
+        "Kubernetes"
+      ],
+      "annual_from": 8,
+      "annual_to": 12
     },
     {
       "id": 336807,
@@ -7609,10 +6279,7 @@
         "Redis",
         "RabbitMQ",
         "EKS",
-        "Docker",
-        "Kubernetes",
         "ArgoCD",
-        "Prometheus",
         "GraphQL"
       ],
       "annual_from": 3,
@@ -7667,7 +6334,6 @@
       "id": 215761,
       "title": "백엔드 개발자 (Spring Framework)",
       "langs": [
-        "Kotlin",
         "PHP",
         "Spring",
         "AWS",
@@ -7683,10 +6349,6 @@
       "langs": [
         "Java",
         "Spring",
-        "Elasticsearch",
-        "Kafka",
-        "AWS",
-        "Azure",
         "Kubernetes"
       ],
       "annual_from": 0,
@@ -7697,10 +6359,7 @@
       "title": "[아이디어스] 백엔드 개발자 (Java/PHP)",
       "langs": [
         "Java",
-        "Spring",
-        "JPA",
-        "Hibernate",
-        "Kubernetes"
+        "Spring"
       ],
       "annual_from": 4,
       "annual_to": 5
@@ -7725,12 +6384,9 @@
       "id": 335619,
       "title": "백엔드개발 (Sonix서비스)",
       "langs": [
-        "Java",
         "Spring",
         "Spring Boot",
-        "MySQL",
-        "Docker",
-        "Kubernetes"
+        "MySQL"
       ],
       "annual_from": 5,
       "annual_to": 11
@@ -7741,11 +6397,7 @@
       "langs": [
         "Java",
         "MySQL",
-        "MariaDB",
-        "Kafka",
-        "RabbitMQ",
-        "SQS",
-        "AWS"
+        "MariaDB"
       ],
       "annual_from": 3,
       "annual_to": 20
@@ -7754,8 +6406,7 @@
       "id": 321958,
       "title": "[Mnet Plus] Backend Engineer",
       "langs": [
-        "Java",
-        "AWS"
+        "Java"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -7779,7 +6430,6 @@
       "langs": [
         "Python",
         "Go",
-        "PHP",
         "Django",
         "DRF",
         "MySQL",
@@ -7792,13 +6442,8 @@
       "id": 277345,
       "title": "[병역특례] 백엔드개발 산업기능요원(Node.js)",
       "langs": [
-        "Node.js",
-        "NestJS",
         "MySQL",
-        "PostgreSQL",
-        "AWS",
-        "Docker",
-        "GraphQL"
+        "PostgreSQL"
       ],
       "annual_from": 0,
       "annual_to": 3
@@ -7846,8 +6491,6 @@
         "PostgreSQL",
         "MongoDB",
         "Redis",
-        "AWS",
-        "Azure",
         "Kubernetes"
       ],
       "annual_from": 5,
@@ -7865,8 +6508,7 @@
         "AWS",
         "Docker",
         "WebSocket",
-        "Swagger",
-        "JWT"
+        "Swagger"
       ],
       "annual_from": 3,
       "annual_to": 8
@@ -7890,11 +6532,9 @@
       "id": 333847,
       "title": "백엔드 엔지니어",
       "langs": [
-        "Go",
         "TypeScript",
         "NestJS",
-        "Kafka",
-        "gRPC"
+        "Kafka"
       ],
       "annual_from": 3,
       "annual_to": 7
@@ -7905,14 +6545,9 @@
       "langs": [
         "Java",
         "Python",
-        "TypeScript",
         "FastAPI",
         "AWS",
-        "GCP",
-        "Docker",
-        "Kubernetes",
-        "LangChain",
-        "LangGraph"
+        "GCP"
       ],
       "annual_from": 1,
       "annual_to": 5
@@ -7992,8 +6627,8 @@
       "annual_to": 15
     },
     {
-      "id": 325722,
-      "title": "[병역특례] Backend Developer(산업기능요원/보충역/전직)",
+      "id": 325718,
+      "title": "Backend Developer",
       "langs": [
         "Java",
         "Python",
@@ -8019,8 +6654,8 @@
       "annual_to": 10
     },
     {
-      "id": 325718,
-      "title": "Backend Developer",
+      "id": 325722,
+      "title": "[병역특례] Backend Developer(산업기능요원/보충역/전직)",
       "langs": [
         "Java",
         "Python",
@@ -8069,9 +6704,7 @@
         "MongoDB",
         "Redis",
         "AWS",
-        "RDS",
-        "Docker",
-        "Kubernetes"
+        "RDS"
       ],
       "annual_from": 3,
       "annual_to": 100
@@ -8105,11 +6738,7 @@
     {
       "id": 252452,
       "title": "Backend Engineer II",
-      "langs": [
-        "Python",
-        "TypeScript",
-        "Django"
-      ],
+      "langs": [],
       "annual_from": 3,
       "annual_to": 10
     },
@@ -8118,13 +6747,7 @@
       "title": "Backend Software Engineer",
       "langs": [
         "Java",
-        "Kotlin",
-        "Spring",
-        "Kinesis",
-        "AWS",
-        "EC2",
-        "RDS",
-        "EKS"
+        "Kotlin"
       ],
       "annual_from": 4,
       "annual_to": 100
@@ -8134,17 +6757,10 @@
       "title": "백엔드 개발자",
       "langs": [
         "Python",
-        "PHP",
         "Django",
         "DRF",
         "MySQL",
         "PostgreSQL",
-        "AWS",
-        "GCP",
-        "Azure",
-        "Jenkins",
-        "GitHub Actions",
-        "GitLab CI",
         "Swagger",
         "OpenAPI"
       ],
@@ -8236,7 +6852,6 @@
         "EC2",
         "RDS",
         "ECS",
-        "Docker",
         "Swagger",
         "OpenAPI"
       ],
@@ -8276,8 +6891,7 @@
         "RDS",
         "ECS",
         "Fargate",
-        "IAM",
-        "WebSocket"
+        "IAM"
       ],
       "annual_from": 5,
       "annual_to": 15
@@ -8290,23 +6904,6 @@
         "Kotlin",
         "Spring",
         "JPA",
-        "Hibernate",
-        "Gradle",
-        "MySQL",
-        "MongoDB",
-        "DynamoDB",
-        "Kafka",
-        "SQS",
-        "SNS",
-        "AWS",
-        "EC2",
-        "RDS",
-        "ElastiCache",
-        "Docker",
-        "Jenkins",
-        "GitLab CI",
-        "Grafana",
-        "Prometheus",
         "JUnit"
       ],
       "annual_from": 7,
@@ -8334,7 +6931,6 @@
         "Python",
         "Kotlin",
         "Go",
-        "AWS",
         "Kubernetes"
       ],
       "annual_from": 10,
@@ -8347,7 +6943,6 @@
         "Python",
         "PostgreSQL",
         "MongoDB",
-        "Elasticsearch",
         "Docker"
       ],
       "annual_from": 3,
@@ -8382,7 +6977,6 @@
         "Spring Boot",
         "JPA",
         "MySQL",
-        "AWS",
         "Docker"
       ],
       "annual_from": 5,
@@ -8396,10 +6990,6 @@
         "Spring",
         "Spring Boot",
         "JPA",
-        "Redis",
-        "Kafka",
-        "AWS",
-        "Kubernetes",
         "JUnit"
       ],
       "annual_from": 7,
@@ -8409,7 +6999,6 @@
       "id": 206209,
       "title": "백엔드 개발자 (Rust)",
       "langs": [
-        "TypeScript",
         "Rust",
         "PostgreSQL",
         "AWS",
@@ -8428,16 +7017,7 @@
       "langs": [
         "Java",
         "Kotlin",
-        "Spring",
-        "MongoDB",
-        "Redis",
-        "Elasticsearch",
-        "Kafka",
-        "Kinesis",
-        "SQS",
-        "AWS",
-        "Docker",
-        "Kubernetes"
+        "Spring"
       ],
       "annual_from": 5,
       "annual_to": 15
@@ -8472,10 +7052,6 @@
       "langs": [
         "Java",
         "Spring",
-        "Elasticsearch",
-        "Kafka",
-        "AWS",
-        "Azure",
         "Kubernetes"
       ],
       "annual_from": 3,
@@ -8532,8 +7108,6 @@
         "NestJS",
         "PostgreSQL",
         "Redis",
-        "AWS",
-        "GCP",
         "Azure",
         "OpenAI"
       ],
@@ -8547,14 +7121,9 @@
         "Java",
         "Kotlin",
         "Spring",
-        "Kafka",
-        "RabbitMQ",
         "AWS",
         "GCP",
-        "Azure",
-        "Kubernetes",
-        "Jenkins",
-        "Prometheus"
+        "Azure"
       ],
       "annual_from": 1,
       "annual_to": 4
@@ -8564,8 +7133,7 @@
       "title": "[인턴] 백엔드 개발자(Node.js)",
       "langs": [
         "TypeScript",
-        "Node.js",
-        "AWS"
+        "Node.js"
       ],
       "annual_from": 0,
       "annual_to": 1
@@ -8582,10 +7150,7 @@
       "title": "Software Engineer (Back-end) - 10년 이상",
       "langs": [
         "Java",
-        "Spring",
-        "AWS",
-        "Docker",
-        "Kubernetes"
+        "Spring"
       ],
       "annual_from": 10,
       "annual_to": 100
@@ -8607,16 +7172,7 @@
       "langs": [
         "TypeScript",
         "Node.js",
-        "NestJS",
-        "TypeORM",
-        "Redis",
-        "Kafka",
-        "SQS",
-        "AWS",
-        "Terraform",
-        "GraphQL",
-        "WebSocket",
-        "OpenAPI"
+        "AWS"
       ],
       "annual_from": 0,
       "annual_to": 10
@@ -8626,18 +7182,9 @@
       "title": "백엔드 개발자",
       "langs": [
         "Java",
-        "Python",
         "Spring Boot",
         "MySQL",
-        "PostgreSQL",
-        "Redis",
-        "Elasticsearch",
-        "AWS",
-        "GCP",
-        "Docker",
-        "Kubernetes",
-        "Jenkins",
-        "GitHub Actions"
+        "PostgreSQL"
       ],
       "annual_from": 5,
       "annual_to": 15
@@ -8648,8 +7195,6 @@
       "langs": [
         "Spring",
         "JPA",
-        "QueryDSL",
-        "WebFlux",
         "RDS"
       ],
       "annual_from": 5,
@@ -8671,24 +7216,6 @@
       "annual_to": 1
     },
     {
-      "id": 307715,
-      "title": "백엔드 엔지니어 (SM)",
-      "langs": [
-        "Java",
-        "Python",
-        "JavaScript",
-        "Node.js",
-        "PostgreSQL",
-        "AWS",
-        "GCP",
-        "Azure",
-        "Jenkins",
-        "GitHub Actions"
-      ],
-      "annual_from": 0,
-      "annual_to": 1
-    },
-    {
       "id": 296984,
       "title": "백엔드 개발자",
       "langs": [
@@ -8697,10 +7224,6 @@
         "Express",
         "MongoDB",
         "Redis",
-        "Kafka",
-        "Kinesis",
-        "SQS",
-        "SNS",
         "AWS",
         "EC2",
         "S3",
@@ -8742,9 +7265,7 @@
       "langs": [
         "Java",
         "Kotlin",
-        "Spring",
-        "Rails",
-        "GCP"
+        "Spring"
       ],
       "annual_from": 6,
       "annual_to": 9
@@ -8781,11 +7302,8 @@
         "PostgreSQL",
         "Redis",
         "Elasticsearch",
-        "Kafka",
-        "RabbitMQ",
         "Docker",
         "Kubernetes",
-        "Grafana",
         "Prometheus",
         "GraphQL",
         "gRPC",
@@ -8824,9 +7342,7 @@
       "title": "[쿠키런: 오븐스매시] 컨텐츠 서버 엔지니어",
       "langs": [
         "Go",
-        "MongoDB",
         "Redis",
-        "DynamoDB",
         "Kafka",
         "Helm",
         "GitHub Actions",
@@ -8878,13 +7394,7 @@
         "Python",
         "Go",
         "JavaScript",
-        "C++",
-        "MongoDB",
-        "AWS",
-        "GCP",
-        "Docker",
-        "Kubernetes",
-        "Terraform"
+        "C++"
       ],
       "annual_from": 3,
       "annual_to": 3
@@ -8911,13 +7421,7 @@
         "Go",
         "Rust",
         "Spring",
-        "Node.js",
-        "AWS",
-        "GCP",
-        "Azure",
-        "Docker",
-        "Kubernetes",
-        "WebSocket"
+        "Node.js"
       ],
       "annual_from": 5,
       "annual_to": 15
@@ -8931,7 +7435,6 @@
         "NestJS",
         "PostgreSQL",
         "MongoDB",
-        "Redis",
         "AWS",
         "S3",
         "RDS",
@@ -8950,13 +7453,8 @@
       "langs": [
         "Java",
         "Kotlin",
-        "Spring",
-        "Spring Boot",
-        "WebFlux",
-        "MySQL",
         "AWS",
-        "GCP",
-        "Kubernetes"
+        "GCP"
       ],
       "annual_from": 2,
       "annual_to": 10
@@ -8970,12 +7468,7 @@
         "Rust",
         "Kafka",
         "Spark",
-        "AWS",
-        "GCP",
-        "Azure",
-        "Kubernetes",
-        "OpenAI",
-        "LangChain"
+        "Kubernetes"
       ],
       "annual_from": 3,
       "annual_to": 10
@@ -8985,8 +7478,7 @@
       "title": "백엔드 개발자 (5년 이상)",
       "langs": [
         "Spring Boot",
-        "PostgreSQL",
-        "GitLab CI"
+        "PostgreSQL"
       ],
       "annual_from": 5,
       "annual_to": 18
@@ -9023,9 +7515,7 @@
         "Java",
         "Spring",
         "Node.js",
-        "MySQL",
-        "MariaDB",
-        "Redis"
+        "MySQL"
       ],
       "annual_from": 7,
       "annual_to": 20

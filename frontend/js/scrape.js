@@ -1,3 +1,178 @@
+let selectedLang = null;
+let latestResultsByLang = new Map();
+
+function formatCareerRange(job) {
+  const from = Number(job.annual_from || 0);
+  const to = Number(job.annual_to ?? 10);
+
+  if (from <= 0 && to >= 100) return '경력 전체';
+  if (from <= 0) return `${to}년 이하`;
+  if (to >= 100) return `${from}년 이상`;
+  if (from === to) return `${from}년`;
+  return `${from}년 ~ ${to}년`;
+}
+
+function buildJobListPanel(result) {
+  const panel = document.createElement('div');
+  panel.className = 'job-list-box';
+
+  const header = document.createElement('div');
+  header.className = 'job-list-header';
+
+  const headingWrap = document.createElement('div');
+  const kicker = document.createElement('p');
+  kicker.className = 'job-list-kicker';
+  kicker.textContent = '선택한 기술';
+
+  const title = document.createElement('h2');
+  title.className = 'job-list-title';
+
+  const jobs = result.jobs || [];
+  title.textContent = `${result.lang} 포함 공고 ${jobs.length.toLocaleString()}개`;
+
+  headingWrap.append(kicker, title);
+
+  const close = document.createElement('button');
+  close.className = 'job-list-close';
+  close.type = 'button';
+  close.setAttribute('aria-label', '공고 목록 닫기');
+  close.textContent = '✕';
+  close.addEventListener('click', closeJobList);
+
+  header.append(headingWrap, close);
+
+  const body = document.createElement('div');
+  body.className = 'job-list-body';
+
+  if (jobs.length === 0) {
+    const empty = document.createElement('p');
+    empty.className = 'job-list-empty';
+    empty.textContent = '표시할 공고가 없습니다.';
+    body.appendChild(empty);
+  } else {
+    jobs.forEach((job, index) => {
+      const item = document.createElement('a');
+      item.className = 'job-list-item';
+      item.href = job.url;
+      item.target = '_blank';
+      item.rel = 'noopener noreferrer';
+      item.setAttribute('aria-label', `${job.title} 공고 열기`);
+
+      const number = document.createElement('span');
+      number.className = 'job-index';
+      number.textContent = String(index + 1);
+
+      const content = document.createElement('span');
+      content.className = 'job-content';
+
+      const jobTitle = document.createElement('span');
+      jobTitle.className = 'job-title';
+      jobTitle.textContent = job.title;
+
+      const meta = document.createElement('span');
+      meta.className = 'job-meta';
+      meta.textContent = formatCareerRange(job);
+
+      const openIcon = document.createElement('span');
+      openIcon.className = 'job-open-icon';
+      openIcon.setAttribute('aria-hidden', 'true');
+      openIcon.textContent = '↗';
+
+      content.append(jobTitle, meta);
+      item.append(number, content, openIcon);
+      body.appendChild(item);
+    });
+  }
+
+  panel.append(header, body);
+  return panel;
+}
+
+function closeJobList() {
+  selectedLang = null;
+
+  document.querySelectorAll('#result-body tr').forEach(row => {
+    row.classList.remove('selected-lang-row');
+    row.children[1]?.setAttribute('aria-pressed', 'false');
+  });
+  document.querySelectorAll('.job-list-inline-row').forEach(row => row.remove());
+
+  const box = document.getElementById('job-list-box');
+  if (box) box.style.display = 'none';
+
+  window.dispatchEvent(new CustomEvent('language:selected', {
+    detail: { lang: null }
+  }));
+}
+
+function renderLanguageJobs(lang, selectedRow = null) {
+  const result = lang ? latestResultsByLang.get(lang) : null;
+
+  document.querySelectorAll('.job-list-inline-row').forEach(row => row.remove());
+  if (!result) {
+    const box = document.getElementById('job-list-box');
+    if (box) box.style.display = 'none';
+    selectedLang = null;
+    return;
+  }
+
+  if (selectedRow) {
+    const inlineRow = document.createElement('tr');
+    inlineRow.className = 'job-list-inline-row';
+
+    const cell = document.createElement('td');
+    cell.colSpan = 4;
+    cell.appendChild(buildJobListPanel(result));
+
+    inlineRow.appendChild(cell);
+    selectedRow.after(inlineRow);
+    return;
+  }
+
+  const box = document.getElementById('job-list-box');
+  if (box) {
+    box.replaceChildren(...buildJobListPanel(result).childNodes);
+    box.style.display = 'block';
+  }
+}
+
+function selectLanguage(lang, tbody) {
+  selectedLang = selectedLang === lang ? null : lang;
+  let selectedRow = null;
+
+  tbody.querySelectorAll('tr:not(.job-list-inline-row)').forEach(row => {
+    const active = row.dataset.lang === selectedLang;
+    row.classList.toggle('selected-lang-row', active);
+    row.children[1]?.setAttribute('aria-pressed', String(active));
+    if (active) selectedRow = row;
+  });
+
+  window.dispatchEvent(new CustomEvent('language:selected', {
+    detail: { lang: selectedLang }
+  }));
+
+  renderLanguageJobs(selectedLang, selectedRow);
+}
+
+function bindLanguageTable(tbody) {
+  tbody.onclick = event => {
+    const cell = event.target.closest('td.lang-cell');
+    if (!cell || !tbody.contains(cell)) return;
+
+    selectLanguage(cell.parentElement.dataset.lang, tbody);
+  };
+
+  tbody.onkeydown = event => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+
+    const cell = event.target.closest('td.lang-cell');
+    if (!cell || !tbody.contains(cell)) return;
+
+    event.preventDefault();
+    selectLanguage(cell.parentElement.dataset.lang, tbody);
+  };
+}
+
 function startScrape(refresh = false) {
   const btn      = document.getElementById('btn');
   const btnText  = document.getElementById('btn-text');
@@ -6,6 +181,7 @@ function startScrape(refresh = false) {
   const resultBox  = document.getElementById('result-box');
   const errorBox   = document.getElementById('error-box');
   const summaryBox = document.getElementById('summary-box');
+  const jobListBox = document.getElementById('job-list-box');
 
   btn.disabled = true;
   btnRefresh.disabled = true;
@@ -16,6 +192,7 @@ function startScrape(refresh = false) {
   resultBox.style.display  = 'none';
   errorBox.style.display   = 'none';
   summaryBox.style.display = 'none';
+  jobListBox.style.display = 'none';
 
   document.getElementById('result-body').innerHTML    = '';
   document.getElementById('progress-bar').style.width = '0%';
@@ -90,23 +267,63 @@ function startScrape(refresh = false) {
       const medalClass = ['gold', 'silver', 'bronze'];
       const maxCount   = data.results[0]?.count || 1;
       const tbody      = document.getElementById('result-body');
+      latestResultsByLang = new Map(data.results.map(row => [row.lang, row]));
 
       data.results.forEach(row => {
         const medal   = row.rank <= 3 ? medalClass[row.rank - 1] : '';
         const barPct  = Math.round(row.count / maxCount * 100);
-        tbody.innerHTML += `
-          <tr>
-            <td><span class="rank-badge ${medal}">${row.rank}</span></td>
-            <td><span class="lang-name">${row.lang}</span></td>
-            <td class="count-cell">${row.count.toLocaleString()}</td>
-            <td>
-              <div class="bar-cell">
-                <div class="bar-wrap"><div class="bar ${medal}" style="width:${barPct}%"></div></div>
-                <span class="pct">${row.ratio}%</span>
-              </div>
-            </td>
-          </tr>`;
+
+        const tr = document.createElement('tr');
+        tr.dataset.lang = row.lang;
+        tr.classList.toggle('selected-lang-row', row.lang === selectedLang);
+
+        const rankCell = document.createElement('td');
+        const rankBadge = document.createElement('span');
+        rankBadge.className = ['rank-badge', medal].filter(Boolean).join(' ');
+        rankBadge.textContent = row.rank;
+        rankCell.appendChild(rankBadge);
+
+        const langCell = document.createElement('td');
+        langCell.className = 'lang-cell';
+        langCell.tabIndex = 0;
+        langCell.setAttribute('role', 'button');
+        langCell.setAttribute('aria-pressed', String(row.lang === selectedLang));
+        langCell.setAttribute('aria-label', `${row.lang} 선택`);
+
+        const langName = document.createElement('span');
+        langName.className = 'lang-name';
+        langName.textContent = row.lang;
+        langCell.appendChild(langName);
+
+        const countCell = document.createElement('td');
+        countCell.className = 'count-cell';
+        countCell.textContent = row.count.toLocaleString();
+
+        const ratioCell = document.createElement('td');
+        const barCell = document.createElement('div');
+        barCell.className = 'bar-cell';
+
+        const barWrap = document.createElement('div');
+        barWrap.className = 'bar-wrap';
+
+        const bar = document.createElement('div');
+        bar.className = ['bar', medal].filter(Boolean).join(' ');
+        bar.style.width = `${barPct}%`;
+        barWrap.appendChild(bar);
+
+        const pct = document.createElement('span');
+        pct.className = 'pct';
+        pct.textContent = `${row.ratio}%`;
+
+        barCell.append(barWrap, pct);
+        ratioCell.appendChild(barCell);
+
+        tr.append(rankCell, langCell, countCell, ratioCell);
+        tbody.appendChild(tr);
       });
+
+      bindLanguageTable(tbody);
+      renderLanguageJobs(selectedLang);
 
       if (data.ts) {
         const timeStr = new Date(data.ts * 1000).toLocaleString('ko-KR', {
