@@ -1,0 +1,1307 @@
+{
+  "schema_version": 1,
+  "generated_from": "모든공고md/*.md",
+  "excluded_lines": [
+    "- 기술: ..."
+  ],
+  "document_count": 530,
+  "keyword_count": 162,
+  "keywords": [
+    {
+      "name": "Java",
+      "category": "언어",
+      "pattern": "\\bjava\\b(?!script)",
+      "document_count": 256,
+      "occurrence_count": 383,
+      "enabled": true
+    },
+    {
+      "name": "Python",
+      "category": "언어",
+      "pattern": "\\bpython\\b",
+      "document_count": 193,
+      "occurrence_count": 304,
+      "enabled": true
+    },
+    {
+      "name": "Kotlin",
+      "category": "언어",
+      "pattern": "\\bkotlin\\b",
+      "document_count": 145,
+      "occurrence_count": 213,
+      "enabled": true
+    },
+    {
+      "name": "Go",
+      "category": "언어",
+      "pattern": "\\bgolang\\b|(?<![A-Za-z])(?-i:Go)(?![A-Za-z])",
+      "document_count": 69,
+      "occurrence_count": 107,
+      "enabled": true
+    },
+    {
+      "name": "TypeScript",
+      "category": "언어",
+      "pattern": "\\btypescript\\b",
+      "document_count": 103,
+      "occurrence_count": 136,
+      "enabled": true
+    },
+    {
+      "name": "JavaScript",
+      "category": "언어",
+      "pattern": "\\bjavascript\\b",
+      "document_count": 44,
+      "occurrence_count": 47,
+      "enabled": true
+    },
+    {
+      "name": "C#",
+      "category": "언어",
+      "pattern": "c#",
+      "document_count": 19,
+      "occurrence_count": 27,
+      "enabled": true
+    },
+    {
+      "name": "C++",
+      "category": "언어",
+      "pattern": "c\\+\\+",
+      "document_count": 22,
+      "occurrence_count": 29,
+      "enabled": true
+    },
+    {
+      "name": "PHP",
+      "category": "언어",
+      "pattern": "\\bphp\\b",
+      "document_count": 25,
+      "occurrence_count": 38,
+      "enabled": true
+    },
+    {
+      "name": "Rust",
+      "category": "언어",
+      "pattern": "\\brust\\b",
+      "document_count": 15,
+      "occurrence_count": 20,
+      "enabled": true
+    },
+    {
+      "name": "Ruby",
+      "category": "언어",
+      "pattern": "\\bruby\\b(?!\\s*on)",
+      "document_count": 7,
+      "occurrence_count": 7,
+      "enabled": true
+    },
+    {
+      "name": "Scala",
+      "category": "언어",
+      "pattern": "\\bscala\\b",
+      "document_count": 2,
+      "occurrence_count": 2,
+      "enabled": true
+    },
+    {
+      "name": "Spring",
+      "category": "JVM",
+      "pattern": "\\bspring\\b(?!\\s*(?:boot|cloud|security|batch|data|mvc))",
+      "document_count": 152,
+      "occurrence_count": 211,
+      "enabled": true
+    },
+    {
+      "name": "Spring Boot",
+      "category": "JVM",
+      "pattern": "\\bspring\\s*boot\\b",
+      "document_count": 136,
+      "occurrence_count": 180,
+      "enabled": true
+    },
+    {
+      "name": "Spring Cloud",
+      "category": "JVM",
+      "pattern": "\\bspring\\s*cloud\\b",
+      "document_count": 6,
+      "occurrence_count": 6,
+      "enabled": true
+    },
+    {
+      "name": "Spring Batch",
+      "category": "JVM",
+      "pattern": "\\bspring\\s*batch\\b",
+      "document_count": 10,
+      "occurrence_count": 12,
+      "enabled": true
+    },
+    {
+      "name": "Spring Data",
+      "category": "JVM",
+      "pattern": "\\bspring\\s*data\\b",
+      "document_count": 8,
+      "occurrence_count": 10,
+      "enabled": true
+    },
+    {
+      "name": "Spring Security",
+      "category": "JVM",
+      "pattern": "\\bspring\\s*security\\b",
+      "document_count": 6,
+      "occurrence_count": 9,
+      "enabled": true
+    },
+    {
+      "name": "Spring MVC",
+      "category": "JVM",
+      "pattern": "\\bspring\\s*mvc\\b",
+      "document_count": 4,
+      "occurrence_count": 4,
+      "enabled": true
+    },
+    {
+      "name": "JPA",
+      "category": "JVM",
+      "pattern": "\\bjpa\\b",
+      "document_count": 63,
+      "occurrence_count": 82,
+      "enabled": true
+    },
+    {
+      "name": "Hibernate",
+      "category": "JVM",
+      "pattern": "\\bhibernate\\b",
+      "document_count": 17,
+      "occurrence_count": 20,
+      "enabled": true
+    },
+    {
+      "name": "MyBatis",
+      "category": "JVM",
+      "pattern": "\\bmybatis\\b",
+      "document_count": 14,
+      "occurrence_count": 15,
+      "enabled": true
+    },
+    {
+      "name": "QueryDSL",
+      "category": "JVM",
+      "pattern": "\\bquerydsl\\b",
+      "document_count": 12,
+      "occurrence_count": 16,
+      "enabled": true
+    },
+    {
+      "name": "WebFlux",
+      "category": "JVM",
+      "pattern": "\\bwebflux\\b",
+      "document_count": 16,
+      "occurrence_count": 20,
+      "enabled": true
+    },
+    {
+      "name": "Netty",
+      "category": "JVM",
+      "pattern": "\\bnetty\\b",
+      "document_count": 5,
+      "occurrence_count": 5,
+      "enabled": true
+    },
+    {
+      "name": "Gradle",
+      "category": "JVM",
+      "pattern": "\\bgradle\\b",
+      "document_count": 9,
+      "occurrence_count": 9,
+      "enabled": true
+    },
+    {
+      "name": "Maven",
+      "category": "JVM",
+      "pattern": "\\bmaven\\b",
+      "document_count": 3,
+      "occurrence_count": 4,
+      "enabled": true
+    },
+    {
+      "name": "Flyway",
+      "category": "JVM",
+      "pattern": "\\bflyway\\b",
+      "document_count": 1,
+      "occurrence_count": 1,
+      "enabled": true
+    },
+    {
+      "name": "Liquibase",
+      "category": "JVM",
+      "pattern": "\\bliquibase\\b",
+      "document_count": 1,
+      "occurrence_count": 1,
+      "enabled": true
+    },
+    {
+      "name": "Django",
+      "category": "Python",
+      "pattern": "\\bdjango\\b",
+      "document_count": 60,
+      "occurrence_count": 87,
+      "enabled": true
+    },
+    {
+      "name": "DRF",
+      "category": "Python",
+      "pattern": "\\bdrf\\b|\\bdjango\\s*rest\\s*framework\\b",
+      "document_count": 10,
+      "occurrence_count": 15,
+      "enabled": true
+    },
+    {
+      "name": "FastAPI",
+      "category": "Python",
+      "pattern": "\\bfastapi\\b",
+      "document_count": 76,
+      "occurrence_count": 114,
+      "enabled": true
+    },
+    {
+      "name": "Flask",
+      "category": "Python",
+      "pattern": "\\bflask\\b",
+      "document_count": 19,
+      "occurrence_count": 19,
+      "enabled": true
+    },
+    {
+      "name": "Celery",
+      "category": "Python",
+      "pattern": "\\bcelery\\b",
+      "document_count": 19,
+      "occurrence_count": 24,
+      "enabled": true
+    },
+    {
+      "name": "Airflow",
+      "category": "Python",
+      "pattern": "\\bairflow\\b",
+      "document_count": 26,
+      "occurrence_count": 35,
+      "enabled": true
+    },
+    {
+      "name": "SQLAlchemy",
+      "category": "Python",
+      "pattern": "\\bsqlalchemy\\b",
+      "document_count": 4,
+      "occurrence_count": 6,
+      "enabled": true
+    },
+    {
+      "name": "Pydantic",
+      "category": "Python",
+      "pattern": "\\bpydantic\\b",
+      "document_count": 5,
+      "occurrence_count": 6,
+      "enabled": true
+    },
+    {
+      "name": "Uvicorn",
+      "category": "Python",
+      "pattern": "\\buvicorn\\b",
+      "document_count": 2,
+      "occurrence_count": 2,
+      "enabled": true
+    },
+    {
+      "name": "pytest",
+      "category": "Python",
+      "pattern": "\\bpytest\\b",
+      "document_count": 1,
+      "occurrence_count": 1,
+      "enabled": true
+    },
+    {
+      "name": "Node.js",
+      "category": "Node.js",
+      "pattern": "\\bnode\\.?js\\b",
+      "document_count": 107,
+      "occurrence_count": 157,
+      "enabled": true
+    },
+    {
+      "name": "NestJS",
+      "category": "Node.js",
+      "pattern": "\\bnest\\.?js\\b",
+      "document_count": 67,
+      "occurrence_count": 103,
+      "enabled": true
+    },
+    {
+      "name": "Express",
+      "category": "Node.js",
+      "pattern": "\\bexpress(?:\\.?js)?\\b",
+      "document_count": 18,
+      "occurrence_count": 19,
+      "enabled": true
+    },
+    {
+      "name": "Fastify",
+      "category": "Node.js",
+      "pattern": "\\bfastify\\b",
+      "document_count": 5,
+      "occurrence_count": 6,
+      "enabled": true
+    },
+    {
+      "name": "Bun",
+      "category": "Node.js",
+      "pattern": "\\bbun(?:js|\\.js)?\\b",
+      "document_count": 2,
+      "occurrence_count": 3,
+      "enabled": true
+    },
+    {
+      "name": "TypeORM",
+      "category": "Node.js",
+      "pattern": "\\btypeorm\\b",
+      "document_count": 11,
+      "occurrence_count": 11,
+      "enabled": true
+    },
+    {
+      "name": "Prisma",
+      "category": "Node.js",
+      "pattern": "\\bprisma\\b",
+      "document_count": 6,
+      "occurrence_count": 11,
+      "enabled": true
+    },
+    {
+      "name": "Sequelize",
+      "category": "Node.js",
+      "pattern": "\\bsequelize\\b",
+      "document_count": 1,
+      "occurrence_count": 1,
+      "enabled": true
+    },
+    {
+      "name": "Mongoose",
+      "category": "Node.js",
+      "pattern": "\\bmongoose\\b",
+      "document_count": 3,
+      "occurrence_count": 3,
+      "enabled": true
+    },
+    {
+      "name": "BullMQ",
+      "category": "Node.js",
+      "pattern": "\\bbullmq\\b",
+      "document_count": 4,
+      "occurrence_count": 5,
+      "enabled": true
+    },
+    {
+      "name": "Rails",
+      "category": "프레임워크",
+      "pattern": "\\b(?:ruby\\s*on\\s*rails|rails)\\b",
+      "document_count": 7,
+      "occurrence_count": 8,
+      "enabled": true
+    },
+    {
+      "name": "ASP.NET",
+      "category": "프레임워크",
+      "pattern": "\\basp\\.?net\\b",
+      "document_count": 4,
+      "occurrence_count": 6,
+      "enabled": true
+    },
+    {
+      "name": ".NET",
+      "category": "프레임워크",
+      "pattern": "\\.net\\b",
+      "document_count": 14,
+      "occurrence_count": 25,
+      "enabled": true
+    },
+    {
+      "name": "Laravel",
+      "category": "프레임워크",
+      "pattern": "\\blaravel\\b",
+      "document_count": 2,
+      "occurrence_count": 3,
+      "enabled": true
+    },
+    {
+      "name": "Gin",
+      "category": "프레임워크",
+      "pattern": "\\bgin\\b",
+      "document_count": 5,
+      "occurrence_count": 8,
+      "enabled": true
+    },
+    {
+      "name": "Echo",
+      "category": "프레임워크",
+      "pattern": "\\becho\\b",
+      "document_count": 4,
+      "occurrence_count": 4,
+      "enabled": true
+    },
+    {
+      "name": "Axum",
+      "category": "프레임워크",
+      "pattern": "\\baxum\\b",
+      "document_count": 1,
+      "occurrence_count": 1,
+      "enabled": true
+    },
+    {
+      "name": "MySQL",
+      "category": "데이터베이스",
+      "pattern": "\\bmysql\\b",
+      "document_count": 170,
+      "occurrence_count": 199,
+      "enabled": true
+    },
+    {
+      "name": "PostgreSQL",
+      "category": "데이터베이스",
+      "pattern": "\\b(?:postgresql|postgres)\\b",
+      "document_count": 159,
+      "occurrence_count": 203,
+      "enabled": true
+    },
+    {
+      "name": "MariaDB",
+      "category": "데이터베이스",
+      "pattern": "\\bmariadb\\b",
+      "document_count": 21,
+      "occurrence_count": 28,
+      "enabled": true
+    },
+    {
+      "name": "Oracle",
+      "category": "데이터베이스",
+      "pattern": "\\boracle\\b",
+      "document_count": 20,
+      "occurrence_count": 21,
+      "enabled": true
+    },
+    {
+      "name": "MSSQL",
+      "category": "데이터베이스",
+      "pattern": "\\b(?:mssql|sql\\s*server)\\b",
+      "document_count": 10,
+      "occurrence_count": 10,
+      "enabled": true
+    },
+    {
+      "name": "SQLite",
+      "category": "데이터베이스",
+      "pattern": "\\bsqlite\\b",
+      "document_count": 1,
+      "occurrence_count": 2,
+      "enabled": true
+    },
+    {
+      "name": "MongoDB",
+      "category": "데이터베이스",
+      "pattern": "\\bmongodb\\b",
+      "document_count": 81,
+      "occurrence_count": 95,
+      "enabled": true
+    },
+    {
+      "name": "DynamoDB",
+      "category": "데이터베이스",
+      "pattern": "\\bdynamodb\\b",
+      "document_count": 14,
+      "occurrence_count": 17,
+      "enabled": true
+    },
+    {
+      "name": "Cassandra",
+      "category": "데이터베이스",
+      "pattern": "\\bcassandra\\b",
+      "document_count": 5,
+      "occurrence_count": 6,
+      "enabled": true
+    },
+    {
+      "name": "CockroachDB",
+      "category": "데이터베이스",
+      "pattern": "\\bcockroachdb\\b",
+      "document_count": 2,
+      "occurrence_count": 2,
+      "enabled": true
+    },
+    {
+      "name": "Redis",
+      "category": "캐시",
+      "pattern": "\\bredis\\b",
+      "document_count": 173,
+      "occurrence_count": 212,
+      "enabled": true
+    },
+    {
+      "name": "Memcached",
+      "category": "캐시",
+      "pattern": "\\bmemcached\\b",
+      "document_count": 2,
+      "occurrence_count": 2,
+      "enabled": true
+    },
+    {
+      "name": "Elasticsearch",
+      "category": "검색",
+      "pattern": "\\belasticsearch\\b",
+      "document_count": 57,
+      "occurrence_count": 66,
+      "enabled": true
+    },
+    {
+      "name": "OpenSearch",
+      "category": "검색",
+      "pattern": "\\bopensearch\\b",
+      "document_count": 22,
+      "occurrence_count": 26,
+      "enabled": true
+    },
+    {
+      "name": "ClickHouse",
+      "category": "데이터베이스",
+      "pattern": "\\bclickhouse\\b",
+      "document_count": 4,
+      "occurrence_count": 4,
+      "enabled": true
+    },
+    {
+      "name": "Neo4j",
+      "category": "데이터베이스",
+      "pattern": "\\bneo4j\\b",
+      "document_count": 6,
+      "occurrence_count": 6,
+      "enabled": true
+    },
+    {
+      "name": "BigQuery",
+      "category": "데이터베이스",
+      "pattern": "\\bbigquery\\b",
+      "document_count": 11,
+      "occurrence_count": 12,
+      "enabled": true
+    },
+    {
+      "name": "Snowflake",
+      "category": "데이터베이스",
+      "pattern": "\\bsnowflake\\b",
+      "document_count": 11,
+      "occurrence_count": 14,
+      "enabled": true
+    },
+    {
+      "name": "Redshift",
+      "category": "데이터베이스",
+      "pattern": "\\bredshift\\b",
+      "document_count": 3,
+      "occurrence_count": 3,
+      "enabled": true
+    },
+    {
+      "name": "Aurora",
+      "category": "데이터베이스",
+      "pattern": "\\baurora\\b",
+      "document_count": 13,
+      "occurrence_count": 16,
+      "enabled": true
+    },
+    {
+      "name": "InfluxDB",
+      "category": "데이터베이스",
+      "pattern": "\\binfluxdb\\b",
+      "document_count": 4,
+      "occurrence_count": 4,
+      "enabled": true
+    },
+    {
+      "name": "TimescaleDB",
+      "category": "데이터베이스",
+      "pattern": "\\btimescaledb\\b",
+      "document_count": 3,
+      "occurrence_count": 4,
+      "enabled": true
+    },
+    {
+      "name": "Milvus",
+      "category": "벡터DB",
+      "pattern": "\\bmilvus\\b",
+      "document_count": 4,
+      "occurrence_count": 6,
+      "enabled": true
+    },
+    {
+      "name": "Pinecone",
+      "category": "벡터DB",
+      "pattern": "\\bpinecone\\b",
+      "document_count": 4,
+      "occurrence_count": 4,
+      "enabled": true
+    },
+    {
+      "name": "Weaviate",
+      "category": "벡터DB",
+      "pattern": "\\bweaviate\\b",
+      "document_count": 5,
+      "occurrence_count": 6,
+      "enabled": true
+    },
+    {
+      "name": "Qdrant",
+      "category": "벡터DB",
+      "pattern": "\\bqdrant\\b",
+      "document_count": 6,
+      "occurrence_count": 9,
+      "enabled": true
+    },
+    {
+      "name": "pgvector",
+      "category": "벡터DB",
+      "pattern": "\\bpgvector\\b",
+      "document_count": 3,
+      "occurrence_count": 4,
+      "enabled": true
+    },
+    {
+      "name": "Kafka",
+      "category": "메시징",
+      "pattern": "\\bkafka\\b",
+      "document_count": 138,
+      "occurrence_count": 170,
+      "enabled": true
+    },
+    {
+      "name": "RabbitMQ",
+      "category": "메시징",
+      "pattern": "\\brabbitmq\\b",
+      "document_count": 55,
+      "occurrence_count": 61,
+      "enabled": true
+    },
+    {
+      "name": "NATS",
+      "category": "메시징",
+      "pattern": "\\bnats\\b",
+      "document_count": 5,
+      "occurrence_count": 5,
+      "enabled": true
+    },
+    {
+      "name": "ActiveMQ",
+      "category": "메시징",
+      "pattern": "\\bactivemq\\b",
+      "document_count": 1,
+      "occurrence_count": 1,
+      "enabled": true
+    },
+    {
+      "name": "Kinesis",
+      "category": "메시징",
+      "pattern": "\\bkinesis\\b",
+      "document_count": 4,
+      "occurrence_count": 5,
+      "enabled": true
+    },
+    {
+      "name": "SQS",
+      "category": "메시징",
+      "pattern": "\\bsqs\\b",
+      "document_count": 35,
+      "occurrence_count": 48,
+      "enabled": true
+    },
+    {
+      "name": "SNS",
+      "category": "메시징",
+      "pattern": "\\bsns\\b",
+      "document_count": 13,
+      "occurrence_count": 18,
+      "enabled": true
+    },
+    {
+      "name": "Pub/Sub",
+      "category": "메시징",
+      "pattern": "\\bpub\\s*/\\s*sub\\b|\\bgoogle\\s+pubsub\\b",
+      "document_count": 4,
+      "occurrence_count": 4,
+      "enabled": true
+    },
+    {
+      "name": "Temporal",
+      "category": "메시징",
+      "pattern": "\\btemporal\\b",
+      "document_count": 5,
+      "occurrence_count": 7,
+      "enabled": true
+    },
+    {
+      "name": "Spark",
+      "category": "데이터처리",
+      "pattern": "\\bspark\\b",
+      "document_count": 19,
+      "occurrence_count": 27,
+      "enabled": true
+    },
+    {
+      "name": "Flink",
+      "category": "데이터처리",
+      "pattern": "\\bflink\\b",
+      "document_count": 2,
+      "occurrence_count": 3,
+      "enabled": true
+    },
+    {
+      "name": "Hadoop",
+      "category": "데이터처리",
+      "pattern": "\\bhadoop\\b",
+      "document_count": 9,
+      "occurrence_count": 12,
+      "enabled": true
+    },
+    {
+      "name": "dbt",
+      "category": "데이터처리",
+      "pattern": "\\bdbt\\b",
+      "document_count": 1,
+      "occurrence_count": 1,
+      "enabled": true
+    },
+    {
+      "name": "Trino",
+      "category": "데이터처리",
+      "pattern": "\\btrino\\b",
+      "document_count": 1,
+      "occurrence_count": 1,
+      "enabled": true
+    },
+    {
+      "name": "AWS",
+      "category": "클라우드",
+      "pattern": "\\baws\\b|\\bamazon\\s+web\\s+services\\b",
+      "document_count": 323,
+      "occurrence_count": 526,
+      "enabled": true
+    },
+    {
+      "name": "GCP",
+      "category": "클라우드",
+      "pattern": "\\bgcp\\b|\\bgoogle\\s+cloud\\b",
+      "document_count": 97,
+      "occurrence_count": 114,
+      "enabled": true
+    },
+    {
+      "name": "Azure",
+      "category": "클라우드",
+      "pattern": "\\bazure\\b",
+      "document_count": 48,
+      "occurrence_count": 65,
+      "enabled": true
+    },
+    {
+      "name": "Naver Cloud",
+      "category": "클라우드",
+      "pattern": "\\b(?:ncp|naver\\s*cloud)\\b|네이버\\s*클라우드",
+      "document_count": 5,
+      "occurrence_count": 12,
+      "enabled": true
+    },
+    {
+      "name": "EC2",
+      "category": "AWS",
+      "pattern": "\\bec2\\b",
+      "document_count": 34,
+      "occurrence_count": 39,
+      "enabled": true
+    },
+    {
+      "name": "S3",
+      "category": "AWS",
+      "pattern": "\\bs3\\b",
+      "document_count": 52,
+      "occurrence_count": 66,
+      "enabled": true
+    },
+    {
+      "name": "Lambda",
+      "category": "AWS",
+      "pattern": "\\b(?:aws\\s*)?lambda\\b",
+      "document_count": 33,
+      "occurrence_count": 39,
+      "enabled": true
+    },
+    {
+      "name": "RDS",
+      "category": "AWS",
+      "pattern": "\\brds\\b",
+      "document_count": 53,
+      "occurrence_count": 62,
+      "enabled": true
+    },
+    {
+      "name": "ECS",
+      "category": "AWS",
+      "pattern": "\\becs\\b",
+      "document_count": 47,
+      "occurrence_count": 64,
+      "enabled": true
+    },
+    {
+      "name": "EKS",
+      "category": "AWS",
+      "pattern": "\\beks\\b",
+      "document_count": 40,
+      "occurrence_count": 46,
+      "enabled": true
+    },
+    {
+      "name": "ECR",
+      "category": "AWS",
+      "pattern": "\\becr\\b",
+      "document_count": 6,
+      "occurrence_count": 7,
+      "enabled": true
+    },
+    {
+      "name": "Fargate",
+      "category": "AWS",
+      "pattern": "\\bfargate\\b",
+      "document_count": 5,
+      "occurrence_count": 8,
+      "enabled": true
+    },
+    {
+      "name": "CloudFront",
+      "category": "AWS",
+      "pattern": "\\bcloudfront\\b",
+      "document_count": 11,
+      "occurrence_count": 12,
+      "enabled": true
+    },
+    {
+      "name": "CloudWatch",
+      "category": "AWS",
+      "pattern": "\\bcloudwatch\\b",
+      "document_count": 14,
+      "occurrence_count": 20,
+      "enabled": true
+    },
+    {
+      "name": "ElastiCache",
+      "category": "AWS",
+      "pattern": "\\belasticache\\b",
+      "document_count": 8,
+      "occurrence_count": 9,
+      "enabled": true
+    },
+    {
+      "name": "API Gateway",
+      "category": "AWS",
+      "pattern": "\\bapi\\s*gateway\\b",
+      "document_count": 16,
+      "occurrence_count": 19,
+      "enabled": true
+    },
+    {
+      "name": "IAM",
+      "category": "AWS",
+      "pattern": "\\biam\\b",
+      "document_count": 7,
+      "occurrence_count": 10,
+      "enabled": true
+    },
+    {
+      "name": "Cloud Run",
+      "category": "GCP",
+      "pattern": "\\bcloud\\s*run\\b",
+      "document_count": 2,
+      "occurrence_count": 3,
+      "enabled": true
+    },
+    {
+      "name": "Linux",
+      "category": "인프라",
+      "pattern": "\\blinux\\b",
+      "document_count": 61,
+      "occurrence_count": 71,
+      "enabled": true
+    },
+    {
+      "name": "Nginx",
+      "category": "인프라",
+      "pattern": "\\bnginx\\b",
+      "document_count": 12,
+      "occurrence_count": 14,
+      "enabled": true
+    },
+    {
+      "name": "Tomcat",
+      "category": "인프라",
+      "pattern": "\\btomcat\\b",
+      "document_count": 4,
+      "occurrence_count": 4,
+      "enabled": true
+    },
+    {
+      "name": "Envoy",
+      "category": "인프라",
+      "pattern": "\\benvoy\\b",
+      "document_count": 1,
+      "occurrence_count": 1,
+      "enabled": true
+    },
+    {
+      "name": "Docker",
+      "category": "컨테이너",
+      "pattern": "\\bdocker\\b",
+      "document_count": 192,
+      "occurrence_count": 226,
+      "enabled": true
+    },
+    {
+      "name": "Kubernetes",
+      "category": "컨테이너",
+      "pattern": "\\b(?:kubernetes|k8s)\\b",
+      "document_count": 178,
+      "occurrence_count": 249,
+      "enabled": true
+    },
+    {
+      "name": "Helm",
+      "category": "컨테이너",
+      "pattern": "\\bhelm\\b",
+      "document_count": 8,
+      "occurrence_count": 8,
+      "enabled": true
+    },
+    {
+      "name": "Istio",
+      "category": "컨테이너",
+      "pattern": "\\bistio\\b",
+      "document_count": 9,
+      "occurrence_count": 9,
+      "enabled": true
+    },
+    {
+      "name": "Jenkins",
+      "category": "CI/CD",
+      "pattern": "\\bjenkins\\b",
+      "document_count": 37,
+      "occurrence_count": 37,
+      "enabled": true
+    },
+    {
+      "name": "GitHub Actions",
+      "category": "CI/CD",
+      "pattern": "\\bgithub\\s*actions\\b",
+      "document_count": 50,
+      "occurrence_count": 53,
+      "enabled": true
+    },
+    {
+      "name": "GitLab CI",
+      "category": "CI/CD",
+      "pattern": "\\bgitlab\\s*(?:ci|ci/cd)\\b",
+      "document_count": 7,
+      "occurrence_count": 7,
+      "enabled": true
+    },
+    {
+      "name": "CircleCI",
+      "category": "CI/CD",
+      "pattern": "\\bcircleci\\b",
+      "document_count": 5,
+      "occurrence_count": 5,
+      "enabled": true
+    },
+    {
+      "name": "ArgoCD",
+      "category": "CI/CD",
+      "pattern": "\\bargo\\s*cd\\b|\\bargocd\\b",
+      "document_count": 36,
+      "occurrence_count": 39,
+      "enabled": true
+    },
+    {
+      "name": "Terraform",
+      "category": "IaC",
+      "pattern": "\\bterraform\\b",
+      "document_count": 34,
+      "occurrence_count": 44,
+      "enabled": true
+    },
+    {
+      "name": "Ansible",
+      "category": "IaC",
+      "pattern": "\\bansible\\b",
+      "document_count": 3,
+      "occurrence_count": 5,
+      "enabled": true
+    },
+    {
+      "name": "Grafana",
+      "category": "관측성",
+      "pattern": "\\bgrafana\\b",
+      "document_count": 46,
+      "occurrence_count": 46,
+      "enabled": true
+    },
+    {
+      "name": "Prometheus",
+      "category": "관측성",
+      "pattern": "\\bprometheus\\b",
+      "document_count": 33,
+      "occurrence_count": 37,
+      "enabled": true
+    },
+    {
+      "name": "Datadog",
+      "category": "관측성",
+      "pattern": "\\bdatadog\\b",
+      "document_count": 40,
+      "occurrence_count": 43,
+      "enabled": true
+    },
+    {
+      "name": "New Relic",
+      "category": "관측성",
+      "pattern": "\\bnew\\s*relic\\b",
+      "document_count": 7,
+      "occurrence_count": 7,
+      "enabled": true
+    },
+    {
+      "name": "Sentry",
+      "category": "관측성",
+      "pattern": "\\bsentry\\b",
+      "document_count": 25,
+      "occurrence_count": 28,
+      "enabled": true
+    },
+    {
+      "name": "ELK",
+      "category": "관측성",
+      "pattern": "\\belk\\b",
+      "document_count": 18,
+      "occurrence_count": 18,
+      "enabled": true
+    },
+    {
+      "name": "Kibana",
+      "category": "관측성",
+      "pattern": "\\bkibana\\b",
+      "document_count": 2,
+      "occurrence_count": 2,
+      "enabled": true
+    },
+    {
+      "name": "OpenTelemetry",
+      "category": "관측성",
+      "pattern": "\\bopentelemetry\\b|\\botel\\b",
+      "document_count": 9,
+      "occurrence_count": 11,
+      "enabled": true
+    },
+    {
+      "name": "Loki",
+      "category": "관측성",
+      "pattern": "\\bloki\\b",
+      "document_count": 7,
+      "occurrence_count": 7,
+      "enabled": true
+    },
+    {
+      "name": "Jaeger",
+      "category": "관측성",
+      "pattern": "\\bjaeger\\b",
+      "document_count": 1,
+      "occurrence_count": 1,
+      "enabled": true
+    },
+    {
+      "name": "REST API",
+      "category": "API",
+      "pattern": "\\brest(?:ful)?[\\s-]*api\\b",
+      "document_count": 204,
+      "occurrence_count": 252,
+      "enabled": true
+    },
+    {
+      "name": "GraphQL",
+      "category": "API",
+      "pattern": "\\bgraphql\\b",
+      "document_count": 22,
+      "occurrence_count": 28,
+      "enabled": true
+    },
+    {
+      "name": "gRPC",
+      "category": "API",
+      "pattern": "\\bgrpc\\b",
+      "document_count": 19,
+      "occurrence_count": 21,
+      "enabled": true
+    },
+    {
+      "name": "WebSocket",
+      "category": "API",
+      "pattern": "\\bweb\\s*socket\\b|\\bwebsocket\\b",
+      "document_count": 25,
+      "occurrence_count": 31,
+      "enabled": true
+    },
+    {
+      "name": "Socket.IO",
+      "category": "API",
+      "pattern": "\\bsocket\\.io\\b",
+      "document_count": 4,
+      "occurrence_count": 4,
+      "enabled": true
+    },
+    {
+      "name": "Swagger",
+      "category": "API",
+      "pattern": "\\bswagger\\b",
+      "document_count": 11,
+      "occurrence_count": 13,
+      "enabled": true
+    },
+    {
+      "name": "OpenAPI",
+      "category": "API",
+      "pattern": "\\bopenapi\\b",
+      "document_count": 10,
+      "occurrence_count": 11,
+      "enabled": true
+    },
+    {
+      "name": "JWT",
+      "category": "인증",
+      "pattern": "\\bjwt\\b",
+      "document_count": 18,
+      "occurrence_count": 22,
+      "enabled": true
+    },
+    {
+      "name": "OAuth",
+      "category": "인증",
+      "pattern": "\\boauth2?\\b",
+      "document_count": 27,
+      "occurrence_count": 30,
+      "enabled": true
+    },
+    {
+      "name": "OIDC",
+      "category": "인증",
+      "pattern": "\\boidc\\b|\\bopen\\s*id\\s*connect\\b",
+      "document_count": 9,
+      "occurrence_count": 11,
+      "enabled": true
+    },
+    {
+      "name": "MSA",
+      "category": "아키텍처",
+      "pattern": "\\bmsa\\b|\\bmicroservices?\\b|마이크로서비스",
+      "document_count": 147,
+      "occurrence_count": 235,
+      "enabled": true
+    },
+    {
+      "name": "DDD",
+      "category": "아키텍처",
+      "pattern": "\\bddd\\b|도메인\\s*주도\\s*설계",
+      "document_count": 32,
+      "occurrence_count": 47,
+      "enabled": true
+    },
+    {
+      "name": "CQRS",
+      "category": "아키텍처",
+      "pattern": "\\bcqrs\\b",
+      "document_count": 5,
+      "occurrence_count": 7,
+      "enabled": true
+    },
+    {
+      "name": "Event Driven",
+      "category": "아키텍처",
+      "pattern": "\\bevent[\\s-]*driven\\b|이벤트\\s*기반",
+      "document_count": 60,
+      "occurrence_count": 73,
+      "enabled": true
+    },
+    {
+      "name": "JUnit",
+      "category": "테스트",
+      "pattern": "\\bjunit\\b",
+      "document_count": 7,
+      "occurrence_count": 10,
+      "enabled": true
+    },
+    {
+      "name": "Mockito",
+      "category": "테스트",
+      "pattern": "\\bmockito\\b",
+      "document_count": 3,
+      "occurrence_count": 5,
+      "enabled": true
+    },
+    {
+      "name": "Jest",
+      "category": "테스트",
+      "pattern": "\\bjest\\b",
+      "document_count": 6,
+      "occurrence_count": 6,
+      "enabled": true
+    },
+    {
+      "name": "PyTorch",
+      "category": "AI",
+      "pattern": "\\bpytorch\\b",
+      "document_count": 6,
+      "occurrence_count": 7,
+      "enabled": true
+    },
+    {
+      "name": "OpenAI",
+      "category": "AI",
+      "pattern": "\\bopenai\\b",
+      "document_count": 28,
+      "occurrence_count": 33,
+      "enabled": true
+    },
+    {
+      "name": "LangChain",
+      "category": "AI",
+      "pattern": "\\blangchain\\b",
+      "document_count": 20,
+      "occurrence_count": 21,
+      "enabled": true
+    },
+    {
+      "name": "LangGraph",
+      "category": "AI",
+      "pattern": "\\blanggraph\\b",
+      "document_count": 13,
+      "occurrence_count": 22,
+      "enabled": true
+    },
+    {
+      "name": "LlamaIndex",
+      "category": "AI",
+      "pattern": "\\bllamaindex\\b",
+      "document_count": 6,
+      "occurrence_count": 6,
+      "enabled": true
+    }
+  ]
+}

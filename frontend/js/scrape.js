@@ -1,5 +1,33 @@
 let selectedLang = null;
 let latestResultsByLang = new Map();
+let selectedSource = 'all';
+
+const SOURCE_LABELS = {
+  all: '전체',
+  wanted: 'Wanted',
+  jobkorea: '잡코리아'
+};
+
+const SOURCE_DESCRIPTIONS = {
+  all: 'Wanted와 잡코리아 백엔드 공고를 통합 분석',
+  wanted: '데이터·AI·인프라 공고 제외 — 백엔드 공고만 실시간 분석',
+  jobkorea: '전국 · 백엔드개발자 전체 공고를 분석하고 캐시에서 빠르게 조회'
+};
+
+function selectSource(source) {
+  selectedSource = source;
+  selectedLang = null;
+
+  document.querySelectorAll('.source-option').forEach(option => {
+    const active = option.dataset.source === source;
+    option.classList.toggle('active', active);
+    option.setAttribute('aria-pressed', String(active));
+  });
+
+  document.getElementById('source-description').textContent = SOURCE_DESCRIPTIONS[source];
+
+  closeJobList();
+}
 
 function formatCareerRange(job) {
   const from = Number(job.annual_from || 0);
@@ -71,7 +99,7 @@ function buildJobListPanel(result) {
 
       const meta = document.createElement('span');
       meta.className = 'job-meta';
-      meta.textContent = formatCareerRange(job);
+      meta.textContent = [job.company, formatCareerRange(job)].filter(Boolean).join(' · ');
 
       const openIcon = document.createElement('span');
       openIcon.className = 'job-open-icon';
@@ -191,6 +219,7 @@ function startScrape(refresh = false) {
   statusBox.style.display  = 'block';
   resultBox.style.display  = 'none';
   errorBox.style.display   = 'none';
+  errorBox.classList.remove('warning');
   summaryBox.style.display = 'none';
   jobListBox.style.display = 'none';
 
@@ -201,10 +230,12 @@ function startScrape(refresh = false) {
   document.getElementById('btn-dismiss').style.display = 'none';
 
   let startTime = null;
+  let progressSource = null;
+  const warnings = [];
   const scrapeStart = Date.now();
 
   const { years_min, years_max } = (typeof getCareerParams === 'function') ? getCareerParams() : { years_min: 0, years_max: 10 };
-  const params = new URLSearchParams({ years_min, years_max });
+  const params = new URLSearchParams({ years_min, years_max, source: selectedSource });
   if (refresh) params.set('refresh', 'true');
   const es = new EventSource(`/scrape?${params}`);
 
@@ -213,23 +244,29 @@ function startScrape(refresh = false) {
 
     if (data.type === 'cached') {
       const age = Math.round((Date.now() / 1000 - data.ts) / 60);
-      document.getElementById('status-text').textContent = `캐시된 데이터 불러오는 중... (${age}분 전 분석)`;
+      document.getElementById('status-text').textContent = `${SOURCE_LABELS[selectedSource]} 캐시된 데이터 불러오는 중... (${age}분 전 분석)`;
     }
 
     else if (data.type === 'status') {
       document.getElementById('status-text').textContent = data.msg;
       if (data.total) {
+        startTime = null;
+        progressSource = null;
+        document.getElementById('progress-bar').style.width = '0%';
         document.getElementById('meta-text').textContent = `총 ${data.total.toLocaleString()}개 공고`;
       }
     }
 
     else if (data.type === 'progress') {
-      if (!startTime) startTime = Date.now();
+      if (!startTime || progressSource !== data.source) {
+        startTime = Date.now();
+        progressSource = data.source;
+      }
 
       const pct = Math.round(data.done / data.total * 100);
       document.getElementById('progress-bar').style.width = pct + '%';
       document.getElementById('status-text').textContent =
-        `상세 분석 중... ${data.done.toLocaleString()} / ${data.total.toLocaleString()} (${pct}%)`;
+        `${data.source_label ? data.source_label + ' ' : ''}상세 분석 중... ${data.done.toLocaleString()} / ${data.total.toLocaleString()} (${pct}%)`;
       document.getElementById('meta-text').textContent =
         `${data.done.toLocaleString()} / ${data.total.toLocaleString()}개`;
 
@@ -244,19 +281,34 @@ function startScrape(refresh = false) {
       }
     }
 
+    else if (data.type === 'warning') {
+      warnings.push(data.msg);
+      errorBox.textContent = '주의: ' + warnings.join(' / ');
+      errorBox.classList.add('warning');
+      errorBox.style.display = 'block';
+    }
+
     else if (data.type === 'complete') {
       const elapsed = ((Date.now() - scrapeStart) / 1000).toFixed(1);
       const fromCache = elapsed < 2;
 
       document.getElementById('progress-bar').style.width = '100%';
-      document.getElementById('status-text').textContent  = '새로고침 완료!';
+      const completionWarnings = data.warnings || warnings;
+      document.getElementById('status-text').textContent = completionWarnings.length
+        ? '일부 사이트는 기존 캐시로 대체했습니다.'
+        : '새로고침 완료!';
       document.getElementById('eta-text').textContent     = '';
       document.getElementById('meta-text').textContent = `총 ${data.analyzed.toLocaleString()}개 분석 완료`;
       const refreshedAt = data.ts
         ? new Date(data.ts * 1000).toLocaleString('ko-KR', { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })
         : '';
       summaryBox.innerHTML = `
+        <span class="summary-item">소스 <strong>${SOURCE_LABELS[data.source || selectedSource]}</strong></span>
         <span class="summary-item">분석 공고 <strong>${data.analyzed.toLocaleString()}개</strong></span>
+        ${completionWarnings.length
+          ? `<span class="summary-item">캐시 대체 <strong>${completionWarnings.length}개 사이트</strong></span>`
+          : ''
+        }
         ${fromCache
           ? `<span class="summary-item">캐시 데이터 · 마지막 분석 <strong>${refreshedAt}</strong></span>`
           : `<span class="summary-item">소요 시간 <strong>${elapsed}초</strong></span><span class="summary-item">분석 시각 <strong>${refreshedAt}</strong></span>`
@@ -349,6 +401,7 @@ function startScrape(refresh = false) {
 
     else if (data.type === 'error') {
       errorBox.textContent    = '오류: ' + data.msg;
+      errorBox.classList.remove('warning');
       errorBox.style.display  = 'block';
       statusBox.style.display = 'none';
       btn.disabled = false;

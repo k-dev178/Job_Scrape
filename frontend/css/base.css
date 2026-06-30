@@ -97,6 +97,40 @@ h1 {
   line-height: 1.65;
 }
 
+.source-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px;
+  margin-bottom: 16px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.source-option {
+  min-width: 84px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #6b7280;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+}
+
+.source-option:hover {
+  color: #4361ee;
+}
+
+.source-option.active {
+  background: #fff;
+  color: #4361ee;
+  box-shadow: 0 1px 4px rgba(67, 97, 238, 0.14);
+}
+
 /* 버튼 행 */
 .btn-row {
   display: flex;
@@ -132,6 +166,11 @@ h1 {
   border-radius: 12px;
   font-size: 0.9rem;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+}
+
+#error-box.warning {
+  color: #92400e;
+  border-top-color: #f59e0b;
 }
 
 /* Summary */
@@ -194,6 +233,16 @@ h1 {
   .subtitle {
     font-size: 0.83rem;
     margin-bottom: 20px;
+  }
+
+  .source-toggle {
+    display: flex;
+    width: 100%;
+  }
+
+  .source-option {
+    flex: 1;
+    min-width: 0;
   }
 
   #summary-box {
