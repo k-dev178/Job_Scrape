@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *.pyo
+backend/cache*.json.tmp
 *.pyd
 .Python
 *.egg-info/
