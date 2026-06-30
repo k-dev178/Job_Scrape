@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/371161
 - 공고번호: 371161
 - 기술: Java, Spring, MongoDB
+- 분야: backend, system
+- 마감: 상시 또는 정보 없음
 - 지역: 경기 성남시 수정구 금토로80번길 56, 위든타워 D동 5층
 
 ## 회사 소개

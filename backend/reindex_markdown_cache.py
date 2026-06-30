@@ -4,7 +4,9 @@ import json
 import re
 from pathlib import Path
 
+from .job_record import classify_categories, deadline_timestamp, is_expired
 from .keyword_catalog import COMPILED, STACK_KEYWORD_SCOPE
+from .wanted_scraper import CACHE_SCOPE as WANTED_CACHE_SCOPE
 from .jobkorea_scraper import CACHE_SCOPE as JOBKOREA_CACHE_SCOPE
 from .saramin_scraper import CACHE_SCOPE as SARAMIN_CACHE_SCOPE
 
@@ -16,7 +18,7 @@ SOURCES = {
     "wanted": {
         "prefix": "원티드",
         "cache_file": Path(__file__).parent / "cache.json",
-        "cache_scope": f"wanted:{STACK_KEYWORD_SCOPE}",
+        "cache_scope": f"{WANTED_CACHE_SCOPE}:{STACK_KEYWORD_SCOPE}",
     },
     "jobkorea": {
         "prefix": "잡코리아",
@@ -68,14 +70,35 @@ def reindex_source(source: str) -> dict:
                 name for name in job.get("langs", [])
                 if name in allowed_keywords
             ]
+            content = str(updated.get("content") or "")
+            updated["content"] = content
+            updated["categories"] = classify_categories(
+                str(updated.get("title") or ""),
+                content,
+                " ".join(updated.get("keywords") or []) + " " + str(updated.get("sectors") or ""),
+            )
+            updated["deadline"] = str(updated.get("deadline") or "")
+            updated["status"] = str(updated.get("status") or "active")
+            updated["deadline_at"] = deadline_timestamp(updated.get("deadline"))
+            updated["is_expired"] = is_expired(updated)
             reindexed_jobs.append(updated)
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
         text = re.sub(r"(?m)^- 기술:.*$", "", text)
         updated = dict(job)
+        updated["content"] = text
         updated["langs"] = [
             name for name, pattern in COMPILED.items() if pattern.search(text)
         ]
+        updated["categories"] = classify_categories(
+            str(updated.get("title") or ""),
+            text,
+            " ".join(updated.get("keywords") or []) + " " + str(updated.get("sectors") or ""),
+        )
+        updated["deadline"] = str(updated.get("deadline") or "")
+        updated["status"] = str(updated.get("status") or "active")
+        updated["deadline_at"] = deadline_timestamp(updated.get("deadline"))
+        updated["is_expired"] = is_expired(updated)
         reindexed_jobs.append(updated)
         matched += 1
 
@@ -88,19 +111,23 @@ def reindex_source(source: str) -> dict:
         "mode": "full" if coverage >= MIN_COVERAGE else "filtered",
         "updated": False,
     }
-    required_base_scope = {
-        "jobkorea": JOBKOREA_CACHE_SCOPE,
-        "saramin": SARAMIN_CACHE_SCOPE,
-    }.get(source)
+    required_base_scope = (
+        WANTED_CACHE_SCOPE
+        if source == "wanted"
+        else JOBKOREA_CACHE_SCOPE if source == "jobkorea"
+        else SARAMIN_CACHE_SCOPE if source == "saramin" else None
+    )
     base_scope_is_compatible = (
         required_base_scope is None
         or str(cache.get("scope", "")).startswith(required_base_scope)
     )
-    if not jobs or not base_scope_is_compatible:
+    if not jobs:
         return result
 
     cache["jobs"] = reindexed_jobs
-    cache["scope"] = config["cache_scope"]
+    cache["schema_version"] = 2
+    if base_scope_is_compatible:
+        cache["scope"] = config["cache_scope"]
     cache_file.write_text(
         json.dumps(cache, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",

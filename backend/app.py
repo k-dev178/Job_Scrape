@@ -11,7 +11,10 @@ from fastapi.staticfiles import StaticFiles
 
 from .analytics import aggregate_results
 from .keyword_catalog import STACK_KEYWORD_SCOPE
+from .job_filter import CATEGORIES as JOB_CATEGORIES, filter_jobs
+from .job_record import build_record_fields
 from .wanted_scraper import (
+    CACHE_SCOPE as WANTED_CACHE_SCOPE,
     MAX_WORKERS,
     collect_all_jobs,
     init_session,
@@ -40,7 +43,8 @@ CACHE_FILES = {
 SCRAPERS = {
     "wanted": {
         "label": "Wanted",
-        "cache_scope": f"wanted:{STACK_KEYWORD_SCOPE}",
+        "collection_scope": "it_all",
+        "cache_scope": f"{WANTED_CACHE_SCOPE}:{STACK_KEYWORD_SCOPE}",
         "export_markdown": True,
         "max_workers": MAX_WORKERS,
         "init": init_session,
@@ -49,6 +53,7 @@ SCRAPERS = {
     },
     "jobkorea": {
         "label": "잡코리아",
+        "collection_scope": "it_all",
         "export_markdown": True,
         "reuse_cached_jobs": True,
         "min_refresh_interval": 60 * 60,
@@ -58,19 +63,19 @@ SCRAPERS = {
         "collect": collect_jobkorea_jobs,
         "process": process_jobkorea_job,
     },
-    "saramin": {
-        "label": "사람인",
-        "export_markdown": True,
-        "reuse_cached_jobs": True,
-        "min_refresh_interval": 6 * 60 * 60,
-        "cache_scope": f"{SARAMIN_CACHE_SCOPE}:{STACK_KEYWORD_SCOPE}",
-        "max_workers": SARAMIN_MAX_WORKERS,
-        "init": lambda: None,
-        "collect": collect_saramin_jobs,
-        "process": process_saramin_job,
-    },
 }
-ALL_SOURCES = ("wanted", "jobkorea", "saramin")
+SCRAPERS["saramin"] = {
+    "label": "사람인",
+    "collection_scope": "it_all",
+    "export_markdown": True,
+    "reuse_cached_jobs": True,
+    "min_refresh_interval": 6 * 60 * 60,
+    "cache_scope": f"{SARAMIN_CACHE_SCOPE}:{STACK_KEYWORD_SCOPE}",
+    "max_workers": SARAMIN_MAX_WORKERS,
+    "init": lambda: None,
+    "collect": collect_saramin_jobs,
+    "process": process_saramin_job,
+}
 
 # 캐시 구조: {"ts": float, "scope"?: str, "jobs": [{annual_from, annual_to, langs: [...]}, ...]}
 _caches: dict[str, dict] = {source: {} for source in CACHE_FILES}
@@ -100,6 +105,11 @@ def cache_is_valid(source: str) -> bool:
     return bool(cache.get("jobs")) and (
         cache_scope is None or cache.get("scope") == cache_scope
     )
+
+
+def cache_source_for_read(source: str) -> str | None:
+    """분석 조회는 범위가 오래됐더라도 가진 캐시를 우선 사용한다."""
+    return source if _caches[source].get("jobs") else None
 
 
 def scrape_source(source: str, q: queue.Queue) -> tuple[list[dict], float]:
@@ -135,20 +145,29 @@ def scrape_source(source: str, q: queue.Queue) -> tuple[list[dict], float]:
 
         job_metas = scraper["collect"](progress_cb=list_progress)
         cached_by_id = {}
-        if scraper.get("reuse_cached_jobs") and cache_is_valid(source):
-            cached_by_id = {
-                int(job["id"]): job
-                for job in cache.get("jobs", [])
-            }
+        if scraper.get("reuse_cached_jobs"):
+            for cached_job in cache.get("jobs", []):
+                cached_by_id[int(cached_job["id"])] = cached_job
 
         pending_jobs = []
         reused = 0
         for job_meta in job_metas:
             cached_job = cached_by_id.get(int(job_meta["id"]))
-            if cached_job is None or "langs" not in cached_job:
+            if cached_job is None or not cached_job.get("content"):
                 pending_jobs.append(job_meta)
                 continue
+            content = str(cached_job.get("content") or "")
             job_meta["langs"] = list(cached_job.get("langs", []))
+            job_meta.update(build_record_fields(
+                title=str(job_meta.get("title") or cached_job.get("title") or ""),
+                content=content,
+                hints=(
+                    " ".join(job_meta.get("keywords") or [])
+                    + " " + str(job_meta.get("sectors") or "")
+                ),
+                deadline=job_meta.get("deadline") or cached_job.get("deadline"),
+                status=str(cached_job.get("status") or "active"),
+            ))
             reused += 1
 
         q.put({
@@ -180,7 +199,11 @@ def scrape_source(source: str, q: queue.Queue) -> tuple[list[dict], float]:
                 detail_markdown = processed.pop("_detail_markdown", "")
                 job_meta.update(processed)
                 if scraper.get("export_markdown"):
-                    write_job_markdown(source, job_meta, detail_markdown)
+                    write_job_markdown(
+                        scraper.get("markdown_source", source),
+                        job_meta,
+                        detail_markdown,
+                    )
                 done += 1
                 if done % 10 == 0 or done == len(job_metas):
                     q.put({
@@ -193,7 +216,12 @@ def scrape_source(source: str, q: queue.Queue) -> tuple[list[dict], float]:
 
         timestamp = time.time()
         cache.clear()
-        cache.update({"ts": timestamp, "jobs": job_metas})
+        cache.update({
+            "schema_version": 2,
+            "collection_scope": scraper.get("collection_scope", ""),
+            "ts": timestamp,
+            "jobs": job_metas,
+        })
         cache_scope = scraper.get("cache_scope")
         if cache_scope:
             cache["scope"] = cache_scope
@@ -206,41 +234,59 @@ def scrape_source(source: str, q: queue.Queue) -> tuple[list[dict], float]:
 app = FastAPI()
 
 
-@app.get("/scrape-status")
-def scrape_status(source: str = "wanted"):
-    """SSE 연결이 끊겼을 때 진행 작업과 캐시 완료 여부를 복구한다."""
-    if source != "all" and source not in SCRAPERS:
+def requested_sources(source: str, category: str) -> tuple[str, ...]:
+    if category not in JOB_CATEGORIES:
+        raise HTTPException(status_code=400, detail=f"지원하지 않는 category: {category}")
+    if source == "all":
+        return "wanted", "jobkorea", "saramin"
+    if source not in SCRAPERS:
         raise HTTPException(status_code=400, detail=f"지원하지 않는 source: {source}")
-    requested_sources = ALL_SOURCES if source == "all" else (source,)
-    valid = all(cache_is_valid(item) for item in requested_sources)
-    running = any(_locks[item].locked() for item in requested_sources)
+    return (source,)
+
+
+@app.get("/scrape-status")
+def scrape_status(source: str = "wanted", category: str = "all_it"):
+    """SSE 연결이 끊겼을 때 진행 작업과 캐시 완료 여부를 복구한다."""
+    sources = requested_sources(source, category)
+    valid = all(cache_is_valid(item) for item in sources)
+    running = any(_locks[item].locked() for item in sources)
     return {
         "source": source,
         "running": running,
         "valid": valid,
-        "jobs": sum(len(_caches[item].get("jobs", [])) for item in requested_sources),
+        "jobs": sum(len(_caches[item].get("jobs", [])) for item in sources),
         "ts": min(
-            (_caches[item].get("ts", 0) for item in requested_sources),
+            (_caches[item].get("ts", 0) for item in sources),
             default=0,
         ) if valid else 0,
     }
 
 
 @app.get("/scrape")
-def scrape(refresh: bool = False, years_min: int = 0, years_max: int = 10, source: str = "wanted"):
-    if source != "all" and source not in SCRAPERS:
-        raise HTTPException(status_code=400, detail=f"지원하지 않는 source: {source}")
-
-    requested_sources = ALL_SOURCES if source == "all" else (source,)
+def scrape(
+    refresh: bool = False,
+    years_min: int = 0,
+    years_max: int = 10,
+    source: str = "wanted",
+    category: str = "all_it",
+    include_expired: bool = False,
+):
+    sources = requested_sources(source, category)
 
     # 요청한 모든 사이트의 유효 캐시가 있으면 합쳐서 즉시 재집계한다.
-    if not refresh and all(cache_is_valid(item) for item in requested_sources):
+    read_sources = {item: cache_source_for_read(item) for item in sources}
+    if not refresh and all(read_sources.values()):
         jobs = [
             job
-            for item in requested_sources
-            for job in _caches[item]["jobs"]
+            for item in sources
+            for job in filter_jobs(
+                read_sources[item],
+                _caches[read_sources[item]]["jobs"],
+                category,
+                include_expired,
+            )
         ]
-        timestamp = min(_caches[item]["ts"] for item in requested_sources)
+        timestamp = min(_caches[read_sources[item]]["ts"] for item in sources)
         results, analyzed = aggregate_results(jobs, years_min, years_max)
 
         def generate_cached():
@@ -260,19 +306,20 @@ def scrape(refresh: bool = False, years_min: int = 0, years_max: int = 10, sourc
             combined_jobs = []
             timestamps = []
             warnings = []
-            for item in requested_sources:
-                if not refresh and cache_is_valid(item):
+            for item in sources:
+                read_source = cache_source_for_read(item)
+                if not refresh and read_source:
                     q.put({
                         "type": "status",
-                        "msg": f"{SCRAPERS[item]['label']} 유효 캐시 사용 중...",
+                        "msg": f"{SCRAPERS[item]['label']} 기존 캐시 사용 중...",
                     })
-                    jobs = _caches[item]["jobs"]
-                    timestamp = _caches[item]["ts"]
+                    jobs = _caches[read_source]["jobs"]
+                    timestamp = _caches[read_source]["ts"]
                 else:
                     try:
                         jobs, timestamp = scrape_source(item, q)
                     except Exception as error:
-                        if not cache_is_valid(item):
+                        if not _caches[item].get("jobs"):
                             raise
                         warning = (
                             f"{SCRAPERS[item]['label']} 새로고침 실패: {error} "
@@ -282,7 +329,12 @@ def scrape(refresh: bool = False, years_min: int = 0, years_max: int = 10, sourc
                         q.put({"type": "warning", "msg": warning, "source": item})
                         jobs = _caches[item]["jobs"]
                         timestamp = _caches[item]["ts"]
-                combined_jobs.extend(jobs)
+                combined_jobs.extend(filter_jobs(
+                    read_source or item,
+                    jobs,
+                    category,
+                    include_expired,
+                ))
                 timestamps.append(timestamp)
 
             timestamp = min(timestamps)

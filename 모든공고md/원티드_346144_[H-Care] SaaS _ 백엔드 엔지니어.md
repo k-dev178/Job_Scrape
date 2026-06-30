@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/346144
 - 공고번호: 346144
 - 기술: Node.js, AWS, REST API
+- 분야: backend, system
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 용산구 원효로90길 11, 13층 주식회사 휴로틱스
 
 ## 회사 소개

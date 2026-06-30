@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/361321
 - 공고번호: 361321
 - 기술: Python, Kotlin, Spring, FastAPI, SQLAlchemy, MySQL, AWS, EC2, S3, RDS, ECS, EKS, ArgoCD
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울시 강남구 선릉로90길38, 현민타워 3층
 
 ## 회사 소개

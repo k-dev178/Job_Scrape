@@ -60,6 +60,8 @@ def write_job_markdown(
         f"- 원문: {url}",
         f"- 공고번호: {job_id}",
         f"- 기술: {', '.join(job.get('langs') or []) or '감지 기술 없음'}",
+        f"- 분야: {', '.join(job.get('categories') or []) or '미분류'}",
+        f"- 마감: {job.get('deadline') or '상시 또는 정보 없음'}",
     ]
     location = str(job.get("location") or "").strip()
     if location:

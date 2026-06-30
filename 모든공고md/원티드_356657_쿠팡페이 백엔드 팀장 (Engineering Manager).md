@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/356657
 - 공고번호: 356657
 - 기술: Java, Kotlin, Spring, JPA
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울특별시 송파구 송파대로 570
 
 ## 회사 소개

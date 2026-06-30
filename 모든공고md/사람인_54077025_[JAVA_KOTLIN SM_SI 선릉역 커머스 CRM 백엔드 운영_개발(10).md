@@ -5,7 +5,7 @@
 - 경력: 5년 이상
 - 원문: https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54077025
 - 공고번호: 54077025
-- 기술: Java, Kotlin, Spring, Spring Boot, Spring Data, JPA, MyBatis, QueryDSL, MySQL, PostgreSQL, Oracle, DynamoDB, Redis, OpenSearch, SQS, SNS, AWS, Lambda, IAM, Kubernetes, REST API
+- 기술: Java, Kotlin, Spring, Spring Boot, Spring Data, JPA, MyBatis, QueryDSL, MySQL, PostgreSQL, Oracle, DynamoDB, Redis, OpenSearch, SQS, SNS, AWS, Lambda, EventBridge, IAM, Kubernetes, REST API
 - 지역: 서울 강남구
 
 ## 공고 내용

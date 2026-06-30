@@ -1,6 +1,7 @@
 let selectedLang = null;
 let latestResultsByLang = new Map();
 let selectedSource = 'all';
+let selectedJobCategory = 'all_it';
 
 const SOURCE_LABELS = {
   all: '전체',
@@ -10,11 +11,22 @@ const SOURCE_LABELS = {
 };
 
 const SOURCE_DESCRIPTIONS = {
-  all: 'Wanted·잡코리아·사람인 백엔드 공고를 통합 분석',
-  wanted: '데이터·AI·인프라 공고 제외 — 백엔드 공고만 실시간 분석',
-  jobkorea: '전국 · 백엔드개발자 전체 공고를 분석하고 캐시에서 빠르게 조회',
-  saramin: 'IT개발·데이터 직업별 목록의 백엔드 공고를 저속 수집 후 캐시에서 조회'
+  all: 'Wanted·잡코리아·사람인의 IT 전체 캐시를 통합 분석',
+  wanted: 'Wanted IT 전체 공고를 저장하고 선택한 분야만 분석',
+  jobkorea: '잡코리아 전국 AI·개발·데이터 공고를 저장하고 선택한 분야만 분석',
+  saramin: '사람인 IT개발·데이터 전체 공고를 저속 수집하고 선택한 분야만 분석'
 };
+
+const CATEGORY_LABELS = {
+  backend: '백엔드',
+  system: '시스템 소프트웨어',
+  all_it: '전체'
+};
+
+function updateSourceDescription() {
+  document.getElementById('source-description').textContent =
+    `${SOURCE_DESCRIPTIONS[selectedSource]} · 분야: ${CATEGORY_LABELS[selectedJobCategory]}`;
+}
 
 function selectSource(source) {
   selectedSource = source;
@@ -26,8 +38,26 @@ function selectSource(source) {
     option.setAttribute('aria-pressed', String(active));
   });
 
-  document.getElementById('source-description').textContent = SOURCE_DESCRIPTIONS[source];
+  updateSourceDescription();
 
+  closeJobList();
+}
+
+function selectJobCategory(category) {
+  selectedJobCategory = category;
+  selectedLang = null;
+  updateSourceDescription();
+  document.getElementById('result-box').style.display = 'none';
+  document.getElementById('summary-box').style.display = 'none';
+  document.getElementById('btn-refresh').style.display = 'none';
+  closeJobList();
+}
+
+function onExpiredFilterChange() {
+  selectedLang = null;
+  document.getElementById('result-box').style.display = 'none';
+  document.getElementById('summary-box').style.display = 'none';
+  document.getElementById('btn-refresh').style.display = 'none';
   closeJobList();
 }
 
@@ -40,6 +70,18 @@ function formatCareerRange(job) {
   if (to >= 100) return `${from}년 이상`;
   if (from === to) return `${from}년`;
   return `${from}년 ~ ${to}년`;
+}
+
+function formatJobCategories(job) {
+  const labels = { backend: '백엔드', system: '시스템 SW' };
+  return (job.categories || []).map(category => labels[category] || category).join(', ');
+}
+
+function formatDeadline(job) {
+  if (!job.deadline_at) return job.deadline || '상시';
+  const expired = Number(job.deadline_at) * 1000 < Date.now();
+  const date = new Date(Number(job.deadline_at) * 1000).toLocaleDateString('ko-KR');
+  return expired ? `마감 ${date}` : `~ ${date}`;
 }
 
 function buildJobListPanel(result) {
@@ -101,7 +143,12 @@ function buildJobListPanel(result) {
 
       const meta = document.createElement('span');
       meta.className = 'job-meta';
-      meta.textContent = [job.company, formatCareerRange(job)].filter(Boolean).join(' · ');
+      meta.textContent = [
+        job.company,
+        formatJobCategories(job),
+        formatCareerRange(job),
+        formatDeadline(job)
+      ].filter(Boolean).join(' · ');
 
       const openIcon = document.createElement('span');
       openIcon.className = 'job-open-icon';
@@ -205,6 +252,8 @@ function bindLanguageTable(tbody) {
 
 function startScrape(refresh = false) {
   const requestSource = selectedSource;
+  const requestCategory = selectedJobCategory;
+  const includeExpired = document.getElementById('include-expired').checked;
   const btn      = document.getElementById('btn');
   const btnText  = document.getElementById('btn-text');
   const btnRefresh = document.getElementById('btn-refresh');
@@ -238,7 +287,13 @@ function startScrape(refresh = false) {
   const scrapeStart = Date.now();
 
   const { years_min, years_max } = (typeof getCareerParams === 'function') ? getCareerParams() : { years_min: 0, years_max: 10 };
-  const params = new URLSearchParams({ years_min, years_max, source: requestSource });
+  const params = new URLSearchParams({
+    years_min,
+    years_max,
+    source: requestSource,
+    category: requestCategory,
+    include_expired: includeExpired
+  });
   if (refresh) params.set('refresh', 'true');
   const es = new EventSource(`/scrape?${params}`);
 
@@ -423,7 +478,11 @@ function startScrape(refresh = false) {
 
     const recover = async () => {
       try {
-        const response = await fetch(`/scrape-status?source=${encodeURIComponent(requestSource)}`, {
+        const statusParams = new URLSearchParams({
+          source: requestSource,
+          category: requestCategory
+        });
+        const response = await fetch(`/scrape-status?${statusParams}`, {
           cache: 'no-store'
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);

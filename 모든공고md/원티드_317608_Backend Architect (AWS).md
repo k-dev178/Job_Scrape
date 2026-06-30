@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/317608
 - 공고번호: 317608
 - 기술: Java, Spring, Spring Boot, AWS
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울특별시 영등포구 양평로25길 8
 
 ## 회사 소개

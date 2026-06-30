@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/359810
 - 공고번호: 359810
 - 기술: Python, Go, Django, Airflow, MySQL, DynamoDB, Redis, Spark, Kubernetes, ArgoCD, Grafana, Prometheus, Datadog, Sentry, Loki
+- 분야: backend
+- 마감: 2026-07-31
 - 지역: 서울특별시 송파구 석촌호수로 272 MY빌딩 2~5층
 
 ## 회사 소개

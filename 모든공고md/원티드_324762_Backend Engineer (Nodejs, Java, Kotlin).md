@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/324762
 - 공고번호: 324762
 - 기술: Java, Kotlin, Go, TypeScript, Spring Boot, JPA, Hibernate, Node.js, NestJS, TypeORM, MySQL, MongoDB, Redis, Kafka, ECS, Linux, Terraform, gRPC, MSA
+- 분야: backend, system
+- 마감: 상시 또는 정보 없음
 - 지역: 마포구 동교동 연희로 11, 4층 오누이
 
 ## 회사 소개

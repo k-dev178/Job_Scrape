@@ -6,7 +6,8 @@ import threading
 import requests
 from playwright.sync_api import sync_playwright
 
-from .keyword_catalog import INCLUDE_TITLE_KEYWORDS, extract_keywords
+from .job_record import build_record_fields
+from .keyword_catalog import extract_keywords
 
 BASE_URL = "https://www.wanted.co.kr/api/v4/jobs"
 LIST_URL = (
@@ -27,6 +28,7 @@ HEADERS = {
 }
 
 CATEGORY = 518
+CACHE_SCOPE = "wanted:category-518:all-it:v2"
 
 MAX_WORKERS = 10
 
@@ -103,8 +105,7 @@ def collect_all_jobs(progress_cb=None) -> list[dict]:
         if jid in seen:
             continue
         seen.add(jid)
-        if INCLUDE_TITLE_KEYWORDS.search(title):
-            jobs.append({"id": jid, "title": title})
+        jobs.append({"id": jid, "title": title})
     return jobs
 
 
@@ -207,6 +208,12 @@ def process_job(job_id: int) -> dict:
     annual_to = job.get("annual_to")
     if annual_to is None or annual_to < 0:
         annual_to = 10
+    content = _wanted_detail_markdown(job)
+    hints = " ".join(
+        tag.get("title", "")
+        for tag in [*(job.get("tags") or []), *(job.get("skill_tags") or [])]
+        if isinstance(tag, dict)
+    )
     return {
         "title":       job.get("position") or job.get("title") or "제목 없음",
         "company":     company.get("name", ""),
@@ -215,6 +222,12 @@ def process_job(job_id: int) -> dict:
         "langs":       extract_langs(detail),
         "annual_from": annual_from,
         "annual_to":   annual_to,
-        "_detail_markdown": _wanted_detail_markdown(job),
+        **build_record_fields(
+            title=job.get("position") or job.get("title") or "제목 없음",
+            content=content,
+            hints=hints,
+            deadline=job.get("due_time"),
+            status=job.get("status") or "active",
+        ),
+        "_detail_markdown": content,
     }
-

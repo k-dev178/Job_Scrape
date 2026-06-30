@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/371406
 - 공고번호: 371406
 - 기술: Python, REST API
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 강남구 테헤란로 217, 3층
 
 ## 회사 소개
@@ -33,7 +35,6 @@ ZETIC의 SaaS 를 받쳐주는 서비스를 직접 설계하고 운영할 Backen
 
 ## 자격 요건
 
-모델 학습을 넘어 ML 추론 또는 성능 최적화 문제를 다뤄보신 분
 • Production 서비스를 운영해 본 경험 3년 이상 의 backend engineer
 • Python 에 능숙하고, modern web framework 실무 경험
 • 클라우드 환경 활용 및 운영 경험

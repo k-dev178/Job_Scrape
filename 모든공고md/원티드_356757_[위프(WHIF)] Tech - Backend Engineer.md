@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/356757
 - 공고번호: 356757
 - 기술: Python, TypeScript, FastAPI, Node.js, Fastify, Prisma, Docker, GitHub Actions, New Relic, REST API, Swagger, OpenAPI, JWT
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 강남구 논현로87길 19, 10층 BUNKERKIDS
 
 ## 회사 소개

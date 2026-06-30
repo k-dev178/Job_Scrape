@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/364960
 - 공고번호: 364960
 - 기술: Java, Kotlin, Spring, MSA
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 선릉역 부근 HJ타워
 
 ## 회사 소개

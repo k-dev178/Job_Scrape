@@ -5,7 +5,7 @@
 - 경력: 경력 무관
 - 원문: https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=50846359&adsCategoryItem=effect_bold&
 - 공고번호: 50846359
-- 기술: Python, C++, FastAPI, Node.js, NestJS, Express, MySQL, PostgreSQL, Redis, OpenSearch, InfluxDB, AWS, Linux, Docker, Kubernetes, Jenkins, GitHub Actions, GitLab CI, Grafana, REST API, gRPC
+- 기술: Python, C++, C, FastAPI, Node.js, NestJS, Express, MySQL, PostgreSQL, Redis, OpenSearch, InfluxDB, AWS, Linux, RTOS, MCU, STM32, Yocto, Docker, Kubernetes, Jenkins, GitHub Actions, GitLab CI, Grafana, REST API, gRPC
 - 지역: 서울 영등포구 외
 
 ## 공고 내용

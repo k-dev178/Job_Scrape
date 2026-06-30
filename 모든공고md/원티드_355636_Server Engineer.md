@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/355636
 - 공고번호: 355636
 - 기술: Java, Kotlin, Spring, MySQL, Redis, Elasticsearch, Kafka
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 강남구 테헤란로98길 8, KT&G 코스모 대치타워
 
 ## 회사 소개

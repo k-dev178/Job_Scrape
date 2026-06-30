@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/317565
 - 공고번호: 317565
 - 기술: Spring Boot, GraphQL
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 마포구 마포대로 122, 17층
 
 ## 회사 소개

@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/370998
 - 공고번호: 370998
 - 기술: Java, Kotlin, PHP, Spring Boot, MySQL, PostgreSQL, AWS
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 상원12길 1, 유앤아이빌딩 3층
 
 ## 회사 소개

@@ -2,11 +2,11 @@ import html
 import random
 import re
 import time
-from pathlib import Path
 from urllib.parse import urljoin
 
 import requests
 
+from .job_record import build_record_fields
 from .keyword_catalog import extract_keywords
 
 BASE_URL = "https://www.saramin.co.kr"
@@ -15,10 +15,9 @@ SEARCH_URL = (
     "?cat_mcls=2&panel_type=&search_optional_item=n&search_done=y"
     "&panel_count=y&preview=y&page_count=50&sort=RL"
 )
-CACHE_SCOPE = "saramin:job-category:cat-mcls-2:backend:v1"
-KEYWORD_FILE = Path(__file__).parent / "data" / "backend" / "backend_title_keywords.txt"
+CACHE_SCOPE = "saramin:job-category:cat-mcls-2:all-it:v4"
 MAX_WORKERS = 1
-MAX_LIST_PAGES = 10
+MAX_LIST_PAGES = 100
 LIST_DELAY_RANGE = (6.0, 10.0)
 DETAIL_DELAY_RANGE = (4.0, 8.0)
 BLOCK_COOLDOWN_SECONDS = 30 * 60
@@ -33,7 +32,6 @@ HEADERS = {
 }
 
 BLOCK_TEXT_PAT = re.compile(r"(captcha|보안문자|비정상|자동\s*접속|접근이\s*제한)", re.IGNORECASE)
-BACKEND_SECTOR_PAT = re.compile(r"백엔드|서버\s*개발", re.IGNORECASE)
 EXPERIENCE_PATTERNS = (
     re.compile(r"경력\s*무관"),
     re.compile(r"신입"),
@@ -43,13 +41,6 @@ EXPERIENCE_PATTERNS = (
 )
 
 
-def _load_title_keywords() -> re.Pattern:
-    with open(KEYWORD_FILE, encoding="utf-8") as f:
-        keywords = [line.strip() for line in f if line.strip()]
-    return re.compile("|".join(re.escape(k) for k in keywords), re.IGNORECASE)
-
-
-INCLUDE_TITLE_KEYWORDS = _load_title_keywords()
 _blocked_until = 0.0
 
 
@@ -165,6 +156,11 @@ def _parse_list_page(source: str) -> list[dict]:
             block,
             re.IGNORECASE | re.DOTALL,
         )
+        deadline_match = re.search(
+            r'class="support_detail".*?class="date"[^>]*>(.*?)</span>',
+            block,
+            re.IGNORECASE | re.DOTALL,
+        )
         if title and href:
             jobs.append({
                 "id": job_id,
@@ -174,12 +170,13 @@ def _parse_list_page(source: str) -> list[dict]:
                 "career": _html_text(career_match.group(1)) if career_match else "",
                 "location": _html_text(location_match.group(1)) if location_match else "",
                 "sectors": _html_text(sector_match.group(1)) if sector_match else "",
+                "deadline": _html_text(deadline_match.group(1)) if deadline_match else "",
             })
     return jobs
 
 
 def collect_all_jobs(progress_cb=None) -> list[dict]:
-    """사람인 IT개발·데이터 직업별 목록에서 백엔드 공고를 수집한다."""
+    """사람인 IT개발·데이터 목록 전체 공고를 수집한다."""
     seen: set[int] = set()
     jobs: list[dict] = []
     for page_no in range(1, MAX_LIST_PAGES + 1):
@@ -190,22 +187,18 @@ def collect_all_jobs(progress_cb=None) -> list[dict]:
         for item in found:
             if item["id"] in seen:
                 continue
-            title = item["title"]
-            if not (
-                INCLUDE_TITLE_KEYWORDS.search(title)
-                or BACKEND_SECTOR_PAT.search(item["sectors"])
-            ):
-                continue
             seen.add(item["id"])
             annual_from, annual_to = _parse_experience(item["career"])
             jobs.append({
                 "id": item["id"],
-                "title": title,
+                "title": item["title"],
                 "company": item["company"],
                 "location": item["location"],
                 "annual_from": annual_from,
                 "annual_to": annual_to,
                 "url": _absolute_url(item["href"]),
+                "sectors": item["sectors"],
+                "deadline": item["deadline"],
             })
         if progress_cb and len(jobs) != before:
             progress_cb(len(jobs))
@@ -258,6 +251,12 @@ def process_job(job_meta: dict) -> dict:
     annual_from = job_meta.get("annual_from", 0)
     annual_to = job_meta.get("annual_to", 10)
     full_text = " ".join([title, company, detail_text])
+    record_fields = build_record_fields(
+        title=title,
+        content=detail_text,
+        hints=job_meta.get("sectors", ""),
+        deadline=job_meta.get("deadline"),
+    )
 
     return {
         "title": title,
@@ -265,5 +264,6 @@ def process_job(job_meta: dict) -> dict:
         "annual_from": annual_from,
         "annual_to": annual_to,
         "langs": extract_langs(full_text),
+        **record_fields,
         "_detail_markdown": "## 공고 내용\n\n" + detail_text,
     }

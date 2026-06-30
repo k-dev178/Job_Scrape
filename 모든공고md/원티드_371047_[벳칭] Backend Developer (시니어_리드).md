@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/371047
 - 공고번호: 371047
 - 기술: Go, TypeScript, NestJS, Express, PostgreSQL, MongoDB, Redis, Kafka, RabbitMQ, AWS, Docker, Terraform, Grafana, Prometheus, OpenTelemetry, Loki, GraphQL, gRPC, WebSocket, Event Driven
+- 분야: backend
+- 마감: 2026-07-31
 - 지역: 서울특별시 서초구 강남대로407, 13층(오퍼스407)x
 
 ## 회사 소개

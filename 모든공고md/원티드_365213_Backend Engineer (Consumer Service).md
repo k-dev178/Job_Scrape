@@ -2,10 +2,12 @@
 
 - 출처: 원티드
 - 회사: 이베이재팬(eBay)
-- 경력: 4~8년
+- 경력: 3~6년
 - 원문: https://www.wanted.co.kr/wd/365213
 - 공고번호: 365213
-- 기술: Java, JavaScript, Spring, Spring Boot, ASP.NET, .NET, REST API
+- 기술: Java, JavaScript, Spring, Spring Boot, JPA, Hibernate, ASP.NET, .NET, REST API
+- 분야: backend
+- 마감: 2026-07-14
 - 지역: 서울 강남구 테헤란로 142
 
 ## 회사 소개
@@ -22,18 +24,24 @@ Backend Engineer (Consumer Service) 는 고객과 셀러가 직접 사용하는 
 
 ## 자격 요건
 
-• 최소 3년 이상의 웹 또는 백엔드 개발 경험을 보유하신 분
-• Java 혹은 ASP.NET 기반 서버 개발 경험이 있는 분
-• Spring Framework (Spring boot) 기반 서비스 개발 경험이 풍부하신 분
-• RDBMS 설계 및 SQL 작성 경험이 있는 분
-• RESTful API 설계 및 협업 개발 경험을 보유하신 분
-• 기본적인 Javascript 및 HTML 프론트엔드 개발 경험 있는 분
+• 3년 이상의 웹 또는 백엔드 서비스 개발 경험을 보유하신 분
+• Java 또는 ASP.NET 기반의 서버 애플리케이션 개발 경험이 있으신 분
+• Spring Framework(Spring Boot) 기반의 서비스 개발 경험이 풍부하신 분
+• JPA(Hibernate) 또는 Entity Framework 등 ORM(Object-Relational Mapping) 프레임워크를 활용한 개발 경험이 있으신 분
+• RDBMS 설계 및 SQL 작성에 기본적인 개념이 있으신 분
+• RESTful API 설계 및 다양한 직군과의 협업 개발 경험을 보유하신 분
+• JavaScript, HTML 등 기본적인 프론트엔드 개발 경험이 있으신 분
 
 ## 우대 사항
 
-• 커머스 혹은 마켓플레이스에서 서비스 개발 경험이 풍부하신 분
-• 대규모 트래픽 또는 대용량 처리 경험이 있는 분
-• 클라우드 혹은 MSA 환경에서 서비스 구축, 운영 경험을 가지고 있는 분
+• 대규모 트래픽을 처리하는 서비스 개발 및 운영 경험이 있으신 분
+• MSA (Microservice Architecture) 기반 서비스 개발 또는 운영 경험이 있으신 분
+• AWS, Azure, GCP 등 클라우드 환경에서 서비스를 개발하거나 운영한 경험이 있으신 분
+• Docker, Kubernetes 등 컨테이너 기반 환경에서의 개발 또는 운영 경험이 있으신 분
+• CI/CD 구축 및 DevOps 문화에 대한 이해와 실무 경험이 있으신 분
+• 테스트 자동화 (Unit Test, Integration Test) 및 코드 품질 관리에 관심이 많으신 분
+• AI 기반 Pair Programming을 적극 활용하며, AI Engineering (또는 Agentic Engineering)에 대한 경험 또는 높은 관심을 보유하신 분
+• 비즈니스 요구사항을 빠르게 이해하고 다양한 직군과 원활하게 협업할 수 있는 커뮤니케이션 역량을 갖추신 분
 
 ## 혜택 및 복지
 

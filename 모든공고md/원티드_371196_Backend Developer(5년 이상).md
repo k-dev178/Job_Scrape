@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/371196
 - 공고번호: 371196
 - 기술: Java, Go, C#, Rust, Aurora, AWS, RDS, ECS, REST API, MSA
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울특별시 서초구 강남대로 337 9층
 
 ## 회사 소개

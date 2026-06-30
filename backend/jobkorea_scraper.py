@@ -5,12 +5,19 @@ import time
 
 import requests
 
+from .job_record import build_record_fields
 from .keyword_catalog import extract_keywords
 
 BASE_URL = "https://www.jobkorea.co.kr"
 SEARCH_API_URL = f"{BASE_URL}/Search/api/display/v2/jobs"
-BACKEND_JOB_CODE = "1000229"
-CACHE_SCOPE = "jobkorea:nationwide:backend-developer:v1"
+IT_JOB_CODES = (
+    "1000229", "1000230", "1000231", "1000232", "1000233", "1000234",
+    "1000235", "1000236", "1000237", "1000238", "1000239", "1000240",
+    "1000241", "1000242", "1000243", "1000244", "1000245", "1000246",
+    "1000247", "1000417", "1000418", "1000419", "1000420", "1000421",
+    "1000422", "1000423",
+)
+CACHE_SCOPE = "jobkorea:nationwide:ai-development-data:all-it:v2"
 PAGE_SIZE = 100
 MAX_WORKERS = 1
 REQUEST_INTERVAL_SECONDS = 4.0
@@ -24,7 +31,7 @@ HEADERS = {
     ),
     "Accept": "application/json, text/plain, */*",
     "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
-    "Referer": f"{BASE_URL}/Search?duty={BACKEND_JOB_CODE}",
+    "Referer": f"{BASE_URL}/Search?duty={','.join(IT_JOB_CODES)}",
 }
 
 _local = threading.local()
@@ -120,7 +127,7 @@ def _search_payload(page: int) -> dict:
         "sortProperty": "2",
         "sortDirection": "DESC",
         "keyword": "",
-        "jobClassificationCodeList": [BACKEND_JOB_CODE],
+        "jobClassificationCodeList": list(IT_JOB_CODES),
         "jobClassificationSubCodeList": [],
         "industryCodeList": [],
         "industrySubCodeList": [],
@@ -178,7 +185,7 @@ def _experience_from_api(item: dict) -> tuple[int, int]:
 
 
 def collect_all_jobs(progress_cb=None) -> list[dict]:
-    """전국 백엔드개발자 공고를 잡코리아 검색 API의 모든 페이지에서 수집한다."""
+    """전국 AI·개발·데이터 직군 공고를 검색 API의 모든 페이지에서 수집한다."""
     first_page = _fetch_job_page(0)
     total_pages = int(first_page.get("totalPages") or 0)
     seen: set[int] = set()
@@ -191,6 +198,7 @@ def collect_all_jobs(progress_cb=None) -> list[dict]:
                 continue
             seen.add(job_id)
             annual_from, annual_to = _experience_from_api(item)
+            application_period = item.get("applicationPeriod") or {}
             jobs.append({
                 "id": job_id,
                 "title": _normalize_space(item.get("title", "")) or "제목 없음",
@@ -201,6 +209,15 @@ def collect_all_jobs(progress_cb=None) -> list[dict]:
                 "annual_to": annual_to,
                 "url": f"{BASE_URL}/Recruit/GI_Read/{job_id}",
                 "keywords": item.get("_internal_keywordList") or [],
+                "sectors": item.get("jobClassificationOrIndustry") or "",
+                "deadline": (
+                    application_period.get("end")
+                    or item.get("deadline")
+                    or item.get("endDate")
+                    or item.get("applicationEndDate")
+                    or item.get("endDt")
+                    or ""
+                ),
             })
         if progress_cb:
             progress_cb(len(jobs))
@@ -260,6 +277,7 @@ def process_job(job_meta: dict) -> dict:
     title = job_meta.get("title", "제목 없음")
     company = job_meta.get("company", "")
     keyword_text = " ".join(job_meta.get("keywords", []))
+    sector_text = str(job_meta.get("sectors") or "")
     try:
         detail_text = _fetch_detail_text(job_meta["url"])
     except requests.RequestException:
@@ -272,13 +290,20 @@ def process_job(job_meta: dict) -> dict:
         if (parsed_from, parsed_to) != (0, 10):
             annual_from, annual_to = parsed_from, parsed_to
 
-    full_text = " ".join([title, company, keyword_text, detail_text])
+    full_text = " ".join([title, company, keyword_text, sector_text, detail_text])
+    record_fields = build_record_fields(
+        title=title,
+        content=detail_text,
+        hints=f"{keyword_text} {sector_text}",
+        deadline=job_meta.get("deadline"),
+    )
     return {
         "title": title,
         "company": company,
         "annual_from": annual_from,
         "annual_to": annual_to,
         "langs": extract_langs(full_text),
+        **record_fields,
         "_detail_markdown": (
             f"## 공고 내용\n\n{detail_text}"
             if detail_text

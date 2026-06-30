@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/371500
 - 공고번호: 371500
 - 기술: Python, Django, DRF, Celery, MySQL, PostgreSQL, Docker, REST API
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 금천구 서부샛길 606, 대성디폴리스 A동 1606-1607호
 
 ## 회사 소개

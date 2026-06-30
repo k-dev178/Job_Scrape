@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/366442
 - 공고번호: 366442
 - 기술: PostgreSQL, Redis, AWS, GCP, Azure, Docker, Kubernetes, REST API, MSA
+- 분야: backend, system
+- 마감: 2026-07-07
 - 지역: 서울특별시 서초구 서초대로38길 12 마제스타시티 타워2 6층 (주)코그넥스코리아
 
 ## 회사 소개

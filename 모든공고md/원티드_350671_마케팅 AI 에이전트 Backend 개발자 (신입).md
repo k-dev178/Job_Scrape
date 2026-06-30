@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/350671
 - 공고번호: 350671
 - 기술: Python, FastAPI, AWS, S3, RDS, EKS, ECR, Docker, Terraform
+- 분야: backend, system
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 강남구 테헤란로83길 21, 4층
 
 ## 회사 소개

@@ -97,12 +97,20 @@ h1 {
   line-height: 1.65;
 }
 
+.filter-toolbar {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
 .source-toggle {
   display: inline-flex;
   align-items: center;
   gap: 3px;
   padding: 3px;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   background: #f3f4f6;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
@@ -131,6 +139,40 @@ h1 {
   box-shadow: 0 1px 4px rgba(67, 97, 238, 0.14);
 }
 
+.category-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 4px 3px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f8f9fb;
+  color: #8b94a3;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.category-select-wrap select {
+  min-width: 190px;
+  padding: 8px 30px 8px 11px;
+  border: 0;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+  color: #374151;
+  font: inherit;
+  font-size: 0.82rem;
+  letter-spacing: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.category-select-wrap:focus-within {
+  border-color: #aebcff;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
 /* 버튼 행 */
 .btn-row {
   display: flex;
@@ -142,6 +184,27 @@ h1 {
   margin-top: 10px;
   font-size: 0.78rem;
   color: #b0b7c3;
+}
+
+.expired-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid #e1e5ec;
+  border-radius: 9px;
+  background: #fff;
+  color: #687386;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.expired-toggle input {
+  width: 15px;
+  height: 15px;
+  accent-color: #4361ee;
 }
 
 /* 주의사항 */
@@ -235,6 +298,11 @@ h1 {
     margin-bottom: 20px;
   }
 
+  .filter-toolbar {
+    flex-direction: column;
+    gap: 8px;
+  }
+
   .source-toggle {
     display: flex;
     width: 100%;
@@ -243,6 +311,15 @@ h1 {
   .source-option {
     flex: 1;
     min-width: 0;
+  }
+
+  .category-select-wrap {
+    justify-content: space-between;
+    padding-left: 14px;
+  }
+
+  .category-select-wrap select {
+    width: min(72%, 260px);
   }
 
   #summary-box {

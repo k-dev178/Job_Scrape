@@ -12,3 +12,15 @@ server
 Web Developer
 Web Develop
 플랫폼 엔지니어
+시스템 소프트웨어
+시스템소프트웨어
+시스템 개발
+시스템개발
+소프트웨어 개발
+소프트웨어개발
+SW 개발
+S/W
+임베디드
+Embedded
+펌웨어
+Firmware

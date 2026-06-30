@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/347509
 - 공고번호: 347509
 - 기술: Java, Kotlin, Spring, Kafka, API Gateway, ELK
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 서초구 강남대로 459, 토스 신논현 오피스 4,5층
 
 ## 회사 소개

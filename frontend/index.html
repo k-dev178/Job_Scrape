@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/base.css?v=3">
+  <link rel="stylesheet" href="/css/base.css?v=4">
   <link rel="stylesheet" href="/css/components/button.css?v=2">
   <link rel="stylesheet" href="/css/components/progress.css?v=2">
   <link rel="stylesheet" href="/css/components/modal.css?v=2">
@@ -19,12 +19,22 @@
   <header class="hero">
     <div class="hero-badge">백엔드 채용공고</div>
     <h1>기술 스택 트렌드 분석</h1>
-    <p id="source-description" class="subtitle">Wanted·잡코리아·사람인 백엔드 공고를 통합 분석</p>
-    <div class="source-toggle" role="group" aria-label="분석 소스">
-      <button type="button" class="source-option active" data-source="all" aria-pressed="true" onclick="selectSource('all')">전체</button>
-      <button type="button" class="source-option" data-source="wanted" aria-pressed="false" onclick="selectSource('wanted')">Wanted</button>
-      <button type="button" class="source-option" data-source="jobkorea" aria-pressed="false" onclick="selectSource('jobkorea')">잡코리아</button>
-      <button type="button" class="source-option" data-source="saramin" aria-pressed="false" onclick="selectSource('saramin')">사람인</button>
+    <p id="source-description" class="subtitle">Wanted·잡코리아·사람인의 IT 전체 공고를 통합 분석</p>
+    <div class="filter-toolbar">
+      <div class="source-toggle" role="group" aria-label="분석 소스">
+        <button type="button" class="source-option active" data-source="all" aria-pressed="true" onclick="selectSource('all')">전체</button>
+        <button type="button" class="source-option" data-source="wanted" aria-pressed="false" onclick="selectSource('wanted')">Wanted</button>
+        <button type="button" class="source-option" data-source="jobkorea" aria-pressed="false" onclick="selectSource('jobkorea')">잡코리아</button>
+        <button type="button" class="source-option" data-source="saramin" aria-pressed="false" onclick="selectSource('saramin')">사람인</button>
+      </div>
+      <label class="category-select-wrap" for="job-category">
+        <span>분야</span>
+        <select id="job-category" onchange="selectJobCategory(this.value)">
+          <option value="backend">백엔드</option>
+          <option value="system">시스템 소프트웨어</option>
+          <option value="all_it" selected>전체</option>
+        </select>
+      </label>
     </div>
     <div class="btn-row">
       <button id="btn" onclick="startScrape(false)">
@@ -37,6 +47,10 @@
         <span id="btn-career-text">경력 전체</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
+      <label class="expired-toggle">
+        <input id="include-expired" type="checkbox" onchange="onExpiredFilterChange()">
+        <span>마감 공고 포함</span>
+      </label>
     </div>
     <p id="last-refreshed" class="last-refreshed" style="display:none">최근 새로고침: <strong id="last-refreshed-time"></strong></p>
 
@@ -112,7 +126,7 @@
   </section>
 </div>
 
-<script src="/js/scrape.js?v=4"></script>
+<script src="/js/scrape.js?v=5"></script>
 <script src="/js/career.js?v=2"></script>
 </body>
 </html>

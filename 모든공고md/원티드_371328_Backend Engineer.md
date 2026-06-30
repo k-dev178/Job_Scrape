@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/371328
 - 공고번호: 371328
 - 기술: Java, Kotlin, Spring, Spring Boot, JPA, Hibernate, MySQL, PostgreSQL, Redis, Kafka, SQS, AWS, Kubernetes, Jenkins, ArgoCD, Grafana, Datadog, ELK, MSA, Event Driven
+- 분야: backend
+- 마감: 2026-07-31
 - 지역: 서울특별시 서초구 강남대로 577 HY빌딩 3층/4층
 
 ## 회사 소개

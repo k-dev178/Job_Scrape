@@ -26,6 +26,10 @@ def aggregate_results(
                 "annual_from": job.get("annual_from", 0),
                 "annual_to": job.get("annual_to", 10),
                 "url": job.get("url") or f"https://www.wanted.co.kr/wd/{job.get('id')}",
+                "categories": job.get("categories", []),
+                "deadline": job.get("deadline", ""),
+                "deadline_at": job.get("deadline_at"),
+                "is_expired": job.get("is_expired", False),
             })
 
     results = [
