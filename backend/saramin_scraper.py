@@ -1,24 +1,27 @@
+import html
+import random
 import re
 import time
-import zlib
 from pathlib import Path
-from urllib.parse import quote, urljoin
+from urllib.parse import urljoin
 
-from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
-from playwright.sync_api import sync_playwright
+import requests
 
 from .keyword_catalog import extract_keywords
 
 BASE_URL = "https://www.saramin.co.kr"
-SEARCH_KEYWORD = "백엔드"
 SEARCH_URL = (
-    f"{BASE_URL}/zf_user/search/recruit"
-    f"?searchType=search&searchword={quote(SEARCH_KEYWORD)}&recruitSort=reg_dt"
+    f"{BASE_URL}/zf_user/jobs/list/job-category"
+    "?cat_mcls=2&panel_type=&search_optional_item=n&search_done=y"
+    "&panel_count=y&preview=y&page_count=50&sort=RL"
 )
+CACHE_SCOPE = "saramin:job-category:cat-mcls-2:backend:v1"
 KEYWORD_FILE = Path(__file__).parent / "data" / "backend" / "backend_title_keywords.txt"
-MAX_WORKERS = 3
-MAX_LIST_PAGES = 3
-DETAIL_DELAY_SECONDS = 0.6
+MAX_WORKERS = 1
+MAX_LIST_PAGES = 10
+LIST_DELAY_RANGE = (6.0, 10.0)
+DETAIL_DELAY_RANGE = (4.0, 8.0)
+BLOCK_COOLDOWN_SECONDS = 30 * 60
 
 HEADERS = {
     "User-Agent": (
@@ -30,7 +33,7 @@ HEADERS = {
 }
 
 BLOCK_TEXT_PAT = re.compile(r"(captcha|보안문자|비정상|자동\s*접속|접근이\s*제한)", re.IGNORECASE)
-JOB_ID_PAT = re.compile(r"(?:rec_idx|recIdx|view/)(\d+)")
+BACKEND_SECTOR_PAT = re.compile(r"백엔드|서버\s*개발", re.IGNORECASE)
 EXPERIENCE_PATTERNS = (
     re.compile(r"경력\s*무관"),
     re.compile(r"신입"),
@@ -47,21 +50,33 @@ def _load_title_keywords() -> re.Pattern:
 
 
 INCLUDE_TITLE_KEYWORDS = _load_title_keywords()
+_blocked_until = 0.0
+
+
+def _traffic_pause(delay_range: tuple[float, float]):
+    """연속 요청을 피하기 위해 지정 범위 안에서 충분히 대기한다."""
+    remaining = _blocked_until - time.monotonic()
+    if remaining > 0:
+        minutes = max(1, int(remaining / 60) + 1)
+        raise RuntimeError(f"사람인 접근 제한 대기 중입니다. 약 {minutes}분 후 다시 시도하세요.")
+    time.sleep(random.uniform(*delay_range))
 
 
 def _absolute_url(url: str) -> str:
     return urljoin(BASE_URL, url)
 
 
-def _job_id_from_url(url: str) -> int:
-    match = JOB_ID_PAT.search(url)
-    if match:
-        return int(match.group(1))
-    return zlib.adler32(url.encode("utf-8"))
-
-
 def _normalize_space(text: str) -> str:
     return re.sub(r"\s+", " ", text or "").strip()
+
+
+def _html_text(source: str) -> str:
+    return _normalize_space(html.unescape(re.sub(r"<[^>]+>", " ", source or "")))
+
+
+def _attribute(tag: str, name: str) -> str:
+    match = re.search(rf'\b{re.escape(name)}="([^"]*)"', tag, re.IGNORECASE)
+    return html.unescape(html.unescape(match.group(1))) if match else ""
 
 
 def _parse_experience(text: str) -> tuple[int, int]:
@@ -69,6 +84,8 @@ def _parse_experience(text: str) -> tuple[int, int]:
     if not text:
         return 0, 10
     if EXPERIENCE_PATTERNS[0].search(text):
+        return 0, 10
+    if "신입" in text and "경력" in text:
         return 0, 10
     if EXPERIENCE_PATTERNS[1].search(text):
         return 0, 0
@@ -86,106 +103,147 @@ def _parse_experience(text: str) -> tuple[int, int]:
 
 
 def _raise_if_blocked(text: str):
+    global _blocked_until
     if BLOCK_TEXT_PAT.search(text):
+        _blocked_until = time.monotonic() + BLOCK_COOLDOWN_SECONDS
         raise RuntimeError("사람인 접근 제한 또는 보안 확인 화면이 감지되어 수집을 중단했습니다.")
 
 
-def collect_all_jobs(progress_cb=None) -> list[dict]:
-    """사람인 공개 검색 결과에서 백엔드 관련 공고 URL을 수집한다."""
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        context = browser.new_context(
-            user_agent=HEADERS["User-Agent"],
-            locale="ko-KR",
-            viewport={"width": 1440, "height": 900},
+def _fetch_list_page(page_no: int) -> str:
+    url = f"{SEARCH_URL}&page={page_no}"
+    for attempt in range(3):
+        _traffic_pause(LIST_DELAY_RANGE if attempt == 0 else (20.0, 40.0))
+        try:
+            response = requests.get(url, headers=HEADERS, timeout=30)
+            if response.status_code == 429:
+                time.sleep(60 * (attempt + 1))
+                continue
+            response.raise_for_status()
+            _raise_if_blocked(response.text)
+            return response.text
+        except requests.RequestException:
+            if attempt == 2:
+                raise
+    return ""
+
+
+def _parse_list_page(source: str) -> list[dict]:
+    """서버 렌더링 목록 HTML에서 공고 메타데이터를 추출한다."""
+    starts = list(re.finditer(r'<div id="rec-(\d+)" class="list_item[^\"]*">', source))
+    jobs = []
+    for index, start in enumerate(starts):
+        end = starts[index + 1].start() if index + 1 < len(starts) else len(source)
+        block = source[start.start():end]
+        job_id = int(start.group(1))
+        anchor_match = re.search(
+            rf'<a\b[^>]*\bid="rec_link_{job_id}"[^>]*>',
+            block,
+            re.IGNORECASE,
         )
-        page = context.new_page()
-        seen: set[str] = set()
-        jobs: list[dict] = []
-
-        for page_no in range(1, MAX_LIST_PAGES + 1):
-            url = f"{SEARCH_URL}&recruitPage={page_no}"
-            page.goto(url, wait_until="domcontentloaded", timeout=60000)
-            try:
-                page.wait_for_load_state("networkidle", timeout=10000)
-            except PlaywrightTimeoutError:
-                pass
-
-            body_text = page.locator("body").inner_text(timeout=10000)
-            _raise_if_blocked(body_text)
-
-            found = page.evaluate(
-                r"""
-                () => {
-                    const cards = [
-                        ...document.querySelectorAll('.item_recruit, .list_item, [class*="item_recruit"]')
-                    ];
-                    const roots = cards.length ? cards : [document.body];
-                    const out = [];
-                    roots.forEach(root => {
-                        root.querySelectorAll('a[href*="/zf_user/jobs/relay/view"]').forEach(a => {
-                            const href = a.getAttribute('href');
-                            const title = (a.getAttribute('title') || a.innerText || '').trim();
-                            const card = a.closest('.item_recruit, .list_item, li, tr, article, div');
-                            const company = card?.querySelector('.corp_name, .company_nm, [class*="corp"]')?.innerText?.trim() || '';
-                            const career = card?.querySelector('.job_condition, .career, [class*="condition"]')?.innerText?.trim() || '';
-                            if (href && title) out.push({href, title, company, career});
-                        });
-                    });
-                    return out;
-                }
-                """
-            )
-
-            before = len(jobs)
-            for item in found:
-                url = _absolute_url(item["href"])
-                if url in seen:
-                    continue
-                title = _normalize_space(item.get("title", ""))
-                if not INCLUDE_TITLE_KEYWORDS.search(title):
-                    continue
-                seen.add(url)
-                annual_from, annual_to = _parse_experience(item.get("career", ""))
-                jobs.append({
-                    "id": _job_id_from_url(url),
-                    "title": title,
-                    "company": _normalize_space(item.get("company", "")),
-                    "annual_from": annual_from,
-                    "annual_to": annual_to,
-                    "url": url,
-                })
-
-            if progress_cb and len(jobs) != before:
-                progress_cb(len(jobs))
-            if page_no > 1 and len(jobs) == before:
-                break
-
-        browser.close()
+        if not anchor_match:
+            continue
+        anchor = anchor_match.group(0)
+        title = _normalize_space(_attribute(anchor, "title"))
+        href = _attribute(anchor, "href")
+        company_match = re.search(
+            r'class="col company_nm".*?<a\b[^>]*>(.*?)</a>',
+            block,
+            re.IGNORECASE | re.DOTALL,
+        )
+        career_match = re.search(
+            r'class="career"[^>]*>(.*?)</p>',
+            block,
+            re.IGNORECASE | re.DOTALL,
+        )
+        location_match = re.search(
+            r'class="work_place"[^>]*>(.*?)</p>',
+            block,
+            re.IGNORECASE | re.DOTALL,
+        )
+        sector_match = re.search(
+            r'class="job_sector"[^>]*>(.*?)</span>\s*</div>',
+            block,
+            re.IGNORECASE | re.DOTALL,
+        )
+        if title and href:
+            jobs.append({
+                "id": job_id,
+                "href": href,
+                "title": title,
+                "company": _html_text(company_match.group(1)) if company_match else "",
+                "career": _html_text(career_match.group(1)) if career_match else "",
+                "location": _html_text(location_match.group(1)) if location_match else "",
+                "sectors": _html_text(sector_match.group(1)) if sector_match else "",
+            })
     return jobs
 
 
-def _extract_detail_text(page) -> dict:
-    return page.evaluate(
-        r"""
-        () => {
-            const pick = selectors => {
-                for (const selector of selectors) {
-                    const el = document.querySelector(selector);
-                    const text = el?.innerText?.trim();
-                    if (text) return text;
-                }
-                return '';
-            };
-            return {
-                title: pick(['h1', '.tit_job', '.job_tit', '[class*="tit_job"]']),
-                company: pick(['.corp_name', '.company_nm', '[class*="corp_name"]']),
-                career: pick(['.job_condition', '.cont .career', '[class*="condition"]']),
-                detail: pick(['.job_view', '.wrap_jv_cont', '.jv_cont', 'main']) || document.body.innerText
-            };
-        }
-        """
+def collect_all_jobs(progress_cb=None) -> list[dict]:
+    """사람인 IT개발·데이터 직업별 목록에서 백엔드 공고를 수집한다."""
+    seen: set[int] = set()
+    jobs: list[dict] = []
+    for page_no in range(1, MAX_LIST_PAGES + 1):
+        found = _parse_list_page(_fetch_list_page(page_no))
+        if not found:
+            break
+        before = len(jobs)
+        for item in found:
+            if item["id"] in seen:
+                continue
+            title = item["title"]
+            if not (
+                INCLUDE_TITLE_KEYWORDS.search(title)
+                or BACKEND_SECTOR_PAT.search(item["sectors"])
+            ):
+                continue
+            seen.add(item["id"])
+            annual_from, annual_to = _parse_experience(item["career"])
+            jobs.append({
+                "id": item["id"],
+                "title": title,
+                "company": item["company"],
+                "location": item["location"],
+                "annual_from": annual_from,
+                "annual_to": annual_to,
+                "url": _absolute_url(item["href"]),
+            })
+        if progress_cb and len(jobs) != before:
+            progress_cb(len(jobs))
+    return jobs
+
+
+def _detail_text_from_html(source: str) -> str:
+    source = re.sub(r"<(?:script|style)\b[^>]*>.*?</(?:script|style)>", " ", source, flags=re.I | re.S)
+    source = re.sub(r"<br\s*/?>|</(?:p|div|li|tr|td|th|h[1-6])>", "\n", source, flags=re.I)
+    source = re.sub(r"<[^>]+>", " ", source)
+    lines = [
+        _normalize_space(html.unescape(html.unescape(line)))
+        for line in source.splitlines()
+    ]
+    return "\n".join(line for line in lines if line)
+
+
+def _fetch_detail(job_meta: dict) -> str:
+    detail_url = (
+        f"{BASE_URL}/zf_user/jobs/relay/view-detail"
+        f"?rec_idx={job_meta['id']}&rec_seq=0"
+        "&t_category=non-logged_relay_view&t_content=view_detail"
     )
+    headers = {**HEADERS, "Referer": job_meta["url"]}
+    for attempt in range(3):
+        _traffic_pause(DETAIL_DELAY_RANGE if attempt == 0 else (20.0, 40.0))
+        try:
+            response = requests.get(detail_url, headers=headers, timeout=30)
+            if response.status_code == 429:
+                time.sleep(60 * (attempt + 1))
+                continue
+            response.raise_for_status()
+            _raise_if_blocked(response.text)
+            return _detail_text_from_html(response.text)
+        except requests.RequestException:
+            if attempt == 2:
+                raise
+    return ""
 
 
 def extract_langs(text: str) -> list[str]:
@@ -194,35 +252,12 @@ def extract_langs(text: str) -> list[str]:
 
 def process_job(job_meta: dict) -> dict:
     """사람인 상세 페이지에서 본문을 읽고 기술스택과 경력 정보를 보강한다."""
-    time.sleep(DETAIL_DELAY_SECONDS)
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        context = browser.new_context(
-            user_agent=HEADERS["User-Agent"],
-            locale="ko-KR",
-            viewport={"width": 1280, "height": 900},
-        )
-        page = context.new_page()
-        page.goto(job_meta["url"], wait_until="domcontentloaded", timeout=60000)
-        try:
-            page.wait_for_load_state("networkidle", timeout=10000)
-        except PlaywrightTimeoutError:
-            pass
-
-        body_text = page.locator("body").inner_text(timeout=10000)
-        _raise_if_blocked(body_text)
-        detail = _extract_detail_text(page)
-        browser.close()
-
-    title = _normalize_space(detail.get("title")) or job_meta.get("title", "제목 없음")
-    company = _normalize_space(detail.get("company")) or job_meta.get("company", "")
-    career_text = detail.get("career")
-    if career_text:
-        annual_from, annual_to = _parse_experience(career_text)
-    else:
-        annual_from = job_meta.get("annual_from", 0)
-        annual_to = job_meta.get("annual_to", 10)
-    full_text = " ".join([title, company, detail.get("career", ""), detail.get("detail", "")])
+    detail_text = _fetch_detail(job_meta)
+    title = job_meta.get("title", "제목 없음")
+    company = job_meta.get("company", "")
+    annual_from = job_meta.get("annual_from", 0)
+    annual_to = job_meta.get("annual_to", 10)
+    full_text = " ".join([title, company, detail_text])
 
     return {
         "title": title,
@@ -230,4 +265,5 @@ def process_job(job_meta: dict) -> dict:
         "annual_from": annual_from,
         "annual_to": annual_to,
         "langs": extract_langs(full_text),
+        "_detail_markdown": "## 공고 내용\n\n" + detail_text,
     }

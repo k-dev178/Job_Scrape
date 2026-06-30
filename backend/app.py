@@ -23,12 +23,19 @@ from .jobkorea_scraper import (
     collect_all_jobs as collect_jobkorea_jobs,
     process_job as process_jobkorea_job,
 )
+from .saramin_scraper import (
+    CACHE_SCOPE as SARAMIN_CACHE_SCOPE,
+    MAX_WORKERS as SARAMIN_MAX_WORKERS,
+    collect_all_jobs as collect_saramin_jobs,
+    process_job as process_saramin_job,
+)
 from .markdown_export import write_job_markdown
 
 FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
 CACHE_FILES = {
     "wanted": Path(__file__).parent / "cache.json",
     "jobkorea": Path(__file__).parent / "cache_jobkorea.json",
+    "saramin": Path(__file__).parent / "cache_saramin.json",
 }
 SCRAPERS = {
     "wanted": {
@@ -51,8 +58,19 @@ SCRAPERS = {
         "collect": collect_jobkorea_jobs,
         "process": process_jobkorea_job,
     },
+    "saramin": {
+        "label": "사람인",
+        "export_markdown": True,
+        "reuse_cached_jobs": True,
+        "min_refresh_interval": 6 * 60 * 60,
+        "cache_scope": f"{SARAMIN_CACHE_SCOPE}:{STACK_KEYWORD_SCOPE}",
+        "max_workers": SARAMIN_MAX_WORKERS,
+        "init": lambda: None,
+        "collect": collect_saramin_jobs,
+        "process": process_saramin_job,
+    },
 }
-ALL_SOURCES = ("wanted", "jobkorea")
+ALL_SOURCES = ("wanted", "jobkorea", "saramin")
 
 # 캐시 구조: {"ts": float, "scope"?: str, "jobs": [{annual_from, annual_to, langs: [...]}, ...]}
 _caches: dict[str, dict] = {source: {} for source in CACHE_FILES}
@@ -186,6 +204,26 @@ def scrape_source(source: str, q: queue.Queue) -> tuple[list[dict], float]:
 
 
 app = FastAPI()
+
+
+@app.get("/scrape-status")
+def scrape_status(source: str = "wanted"):
+    """SSE 연결이 끊겼을 때 진행 작업과 캐시 완료 여부를 복구한다."""
+    if source != "all" and source not in SCRAPERS:
+        raise HTTPException(status_code=400, detail=f"지원하지 않는 source: {source}")
+    requested_sources = ALL_SOURCES if source == "all" else (source,)
+    valid = all(cache_is_valid(item) for item in requested_sources)
+    running = any(_locks[item].locked() for item in requested_sources)
+    return {
+        "source": source,
+        "running": running,
+        "valid": valid,
+        "jobs": sum(len(_caches[item].get("jobs", [])) for item in requested_sources),
+        "ts": min(
+            (_caches[item].get("ts", 0) for item in requested_sources),
+            default=0,
+        ) if valid else 0,
+    }
 
 
 @app.get("/scrape")

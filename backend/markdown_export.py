@@ -6,6 +6,7 @@ OUTPUT_DIR = Path(__file__).parent.parent / "모든공고md"
 SOURCE_LABELS = {
     "wanted": "원티드",
     "jobkorea": "잡코리아",
+    "saramin": "사람인",
 }
 
 
@@ -39,11 +40,12 @@ def write_job_markdown(
     source_label = SOURCE_LABELS[source]
     title = str(job.get("title") or "제목 없음").strip()
     job_id = job.get("id")
-    url = job.get("url") or (
-        f"https://www.wanted.co.kr/wd/{job_id}"
-        if source == "wanted"
-        else f"https://www.jobkorea.co.kr/Recruit/GI_Read/{job_id}"
-    )
+    fallback_urls = {
+        "wanted": f"https://www.wanted.co.kr/wd/{job_id}",
+        "jobkorea": f"https://www.jobkorea.co.kr/Recruit/GI_Read/{job_id}",
+        "saramin": f"https://www.saramin.co.kr/zf_user/jobs/relay/view?rec_idx={job_id}",
+    }
+    url = job.get("url") or fallback_urls[source]
     output_dir.mkdir(parents=True, exist_ok=True)
     output_path = output_dir / (
         f"{source_label}_{job_id}_{_safe_filename(title)}.md"

@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .keyword_catalog import COMPILED, STACK_KEYWORD_SCOPE
 from .jobkorea_scraper import CACHE_SCOPE as JOBKOREA_CACHE_SCOPE
+from .saramin_scraper import CACHE_SCOPE as SARAMIN_CACHE_SCOPE
 
 
 PROJECT_DIR = Path(__file__).parent.parent
@@ -21,6 +22,11 @@ SOURCES = {
         "prefix": "잡코리아",
         "cache_file": Path(__file__).parent / "cache_jobkorea.json",
         "cache_scope": f"{JOBKOREA_CACHE_SCOPE}:{STACK_KEYWORD_SCOPE}",
+    },
+    "saramin": {
+        "prefix": "사람인",
+        "cache_file": Path(__file__).parent / "cache_saramin.json",
+        "cache_scope": f"{SARAMIN_CACHE_SCOPE}:{STACK_KEYWORD_SCOPE}",
     },
 }
 
@@ -38,6 +44,15 @@ def _markdown_index(prefix: str) -> dict[int, Path]:
 def reindex_source(source: str) -> dict:
     config = SOURCES[source]
     cache_file = config["cache_file"]
+    if not cache_file.exists():
+        return {
+            "source": source,
+            "jobs": 0,
+            "matched": 0,
+            "coverage": 0,
+            "mode": "filtered",
+            "updated": False,
+        }
     cache = json.loads(cache_file.read_text(encoding="utf-8"))
     jobs = cache.get("jobs", [])
     markdown_by_id = _markdown_index(config["prefix"])
@@ -73,9 +88,13 @@ def reindex_source(source: str) -> dict:
         "mode": "full" if coverage >= MIN_COVERAGE else "filtered",
         "updated": False,
     }
+    required_base_scope = {
+        "jobkorea": JOBKOREA_CACHE_SCOPE,
+        "saramin": SARAMIN_CACHE_SCOPE,
+    }.get(source)
     base_scope_is_compatible = (
-        source != "jobkorea"
-        or str(cache.get("scope", "")).startswith(JOBKOREA_CACHE_SCOPE)
+        required_base_scope is None
+        or str(cache.get("scope", "")).startswith(required_base_scope)
     )
     if not jobs or not base_scope_is_compatible:
         return result

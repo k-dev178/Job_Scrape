@@ -19,11 +19,12 @@
   <header class="hero">
     <div class="hero-badge">백엔드 채용공고</div>
     <h1>기술 스택 트렌드 분석</h1>
-    <p id="source-description" class="subtitle">Wanted와 잡코리아 백엔드 공고를 통합 분석</p>
+    <p id="source-description" class="subtitle">Wanted·잡코리아·사람인 백엔드 공고를 통합 분석</p>
     <div class="source-toggle" role="group" aria-label="분석 소스">
       <button type="button" class="source-option active" data-source="all" aria-pressed="true" onclick="selectSource('all')">전체</button>
       <button type="button" class="source-option" data-source="wanted" aria-pressed="false" onclick="selectSource('wanted')">Wanted</button>
       <button type="button" class="source-option" data-source="jobkorea" aria-pressed="false" onclick="selectSource('jobkorea')">잡코리아</button>
+      <button type="button" class="source-option" data-source="saramin" aria-pressed="false" onclick="selectSource('saramin')">사람인</button>
     </div>
     <div class="btn-row">
       <button id="btn" onclick="startScrape(false)">

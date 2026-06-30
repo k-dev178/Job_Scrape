@@ -1,0 +1,1649 @@
+{
+  "ts": 1782797161.606718,
+  "jobs": [
+    {
+      "id": 54136037,
+      "title": "(주)플레이랭귀지에서 자동화·클라우드·서버 운영 담당자를",
+      "company": "(주)플레이랭귀지",
+      "location": "서울 마포구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54136037",
+      "langs": []
+    },
+    {
+      "id": 54142770,
+      "title": "2026년 3분기 분야별 공개 채용",
+      "company": "(주)레이저발테크놀러지",
+      "location": "경기 수원시 권선구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54142770",
+      "langs": [
+        "C#",
+        "C++",
+        "AWS",
+        "Azure",
+        "Linux"
+      ]
+    },
+    {
+      "id": 54117396,
+      "title": "S/W Test & QA Engineer 신입 및 경력 채용",
+      "company": "컴즈(주)",
+      "location": "서울 구로구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54117396&adsCategoryItem=effect_bold&",
+      "langs": []
+    },
+    {
+      "id": 54190726,
+      "title": "Product Designer(Enterprise Solution 기획 설계)",
+      "company": "(주)클러쉬",
+      "location": "서울 강남구",
+      "annual_from": 5,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54190726&adsCategoryItem=effect_bold&",
+      "langs": []
+    },
+    {
+      "id": 54258646,
+      "title": "[IT정보보안/사세확장] 부문별 채용 (네트워크보안,인사)",
+      "company": "엔큐리티(주)",
+      "location": "경기 성남시 분당구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54258646&adsCategoryItem=effect_bold&",
+      "langs": []
+    },
+    {
+      "id": 54245698,
+      "title": "[강남본사] 각 부문 신입/경력직 채용",
+      "company": "(주)성원아이북랜드",
+      "location": "서울 서초구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54245698&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Java",
+        "JavaScript",
+        "PHP",
+        "MySQL"
+      ]
+    },
+    {
+      "id": 54063147,
+      "title": "[솔탑] 2026년 위성·항공·경영 분야 부문별 신입/경력 채용",
+      "company": "(주)솔탑",
+      "location": "세종 세종특별자치시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54063147&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Java",
+        "Python",
+        "C#",
+        "C++",
+        ".NET"
+      ]
+    },
+    {
+      "id": 54268603,
+      "title": "싸이몬 2026년 하반기 공개 채용",
+      "company": "(주)싸이몬",
+      "location": "경기 용인시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54268603&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Java",
+        "Python",
+        "JavaScript",
+        "C#",
+        "C++",
+        "Linux",
+        "Docker",
+        "REST API"
+      ]
+    },
+    {
+      "id": 54077025,
+      "title": "[JAVA/KOTLIN SM/SI 선릉역 커머스 CRM 백엔드 운영/개발(10)",
+      "company": "(주)제이투이",
+      "location": "서울 강남구",
+      "annual_from": 5,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54077025",
+      "langs": [
+        "Java",
+        "Kotlin",
+        "Spring",
+        "Spring Boot",
+        "Spring Data",
+        "JPA",
+        "MyBatis",
+        "QueryDSL",
+        "MySQL",
+        "PostgreSQL",
+        "Oracle",
+        "DynamoDB",
+        "Redis",
+        "OpenSearch",
+        "SQS",
+        "SNS",
+        "AWS",
+        "Lambda",
+        "IAM",
+        "Kubernetes",
+        "REST API"
+      ]
+    },
+    {
+      "id": 54322392,
+      "title": "웹 개발자 채용 공고",
+      "company": "(주)스마트큐브",
+      "location": "전남 나주시",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54322392",
+      "langs": []
+    },
+    {
+      "id": 54322350,
+      "title": "Java 백엔드 개발자(8-15년)/판교",
+      "company": "(주)와따에이아이",
+      "location": "경기 성남시 분당구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54322350",
+      "langs": [
+        "Java",
+        "Python",
+        "Spring",
+        "Spring Boot",
+        "Node.js",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "AWS",
+        "EC2",
+        "S3",
+        "Linux",
+        "Kubernetes",
+        "Jenkins",
+        "GitHub Actions",
+        "REST API"
+      ]
+    },
+    {
+      "id": 54322347,
+      "title": "[아랑소프트]SI개발&웹개발&백엔드/서버개발 외 정규직 채용",
+      "company": "(주)아랑소프트",
+      "location": "서울 구로구",
+      "annual_from": 0,
+      "annual_to": 0,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54322347",
+      "langs": []
+    },
+    {
+      "id": 54322332,
+      "title": "[티에이시스템(주)] Vision System 개발자 모집 (경력무관)",
+      "company": "티에이시스템 주식회사",
+      "location": "울산 동구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54322332",
+      "langs": [
+        "Python",
+        "C#",
+        ".NET",
+        "MariaDB",
+        "MSSQL"
+      ]
+    },
+    {
+      "id": 54206292,
+      "title": "[취업연계] 국비교육생 모집 (AI.SW개발/클라우드서버/웹디자인/전기자동제어)",
+      "company": "(재)부산인재개발원",
+      "location": "부산 수영구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54206292&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Java",
+        "JavaScript",
+        "Spring",
+        "Node.js",
+        "MySQL",
+        "AWS",
+        "Linux"
+      ]
+    },
+    {
+      "id": 54312351,
+      "title": "2026년 상반기 상시채용 모집",
+      "company": "(주)티엑스알로보틱스",
+      "location": "서울 강서구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54312351&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Python",
+        "JavaScript",
+        "C++",
+        "Spring Boot",
+        "Node.js",
+        "Kafka",
+        "RabbitMQ",
+        "SNS",
+        "gRPC",
+        "WebSocket",
+        "OpenAI"
+      ]
+    },
+    {
+      "id": 54322261,
+      "title": "00증권 업무 개발 및 운영 / 자바, 웹스퀘어 / 여의도",
+      "company": "(주)이에스티소프트",
+      "location": "서울 영등포구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54322261",
+      "langs": [
+        "Java"
+      ]
+    },
+    {
+      "id": 54322258,
+      "title": "[대기업] 교육 플랫폼 운영 Python 풀스택 개발자 채용",
+      "company": "(주)아이이에이",
+      "location": "서울 강서구",
+      "annual_from": 6,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54322258",
+      "langs": [
+        "Python",
+        "TypeScript",
+        "JavaScript",
+        "FastAPI",
+        "SQLAlchemy"
+      ]
+    },
+    {
+      "id": 54322230,
+      "title": "oo기업 생성형 AI Agent 서비스 구축 / Python / 시청",
+      "company": "(주)이에스티소프트",
+      "location": "서울 중구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54322230",
+      "langs": [
+        "Python",
+        "Elasticsearch",
+        "Kafka",
+        "S3",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": 54322225,
+      "title": "금융 업무 시스템 개발 및 운영 / JAVA, Oracle / 청라",
+      "company": "(주)이에스티소프트",
+      "location": "인천 서구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54322225",
+      "langs": [
+        "Java",
+        "Oracle"
+      ]
+    },
+    {
+      "id": 54013556,
+      "title": "토스플레이스 자회사 [iShopCARE] 대규모 채용｜ 영업·마케팅·전략·CX·물류·AS·MD 外",
+      "company": "(주)아이샵케어",
+      "location": "서울 강남구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54013556&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Java",
+        "Go",
+        "TypeScript",
+        "JavaScript",
+        "Node.js",
+        "MySQL",
+        "PostgreSQL",
+        "MSSQL",
+        "SQLite",
+        "AWS",
+        "GCP",
+        "Azure",
+        "Docker",
+        "REST API"
+      ]
+    },
+    {
+      "id": 54191129,
+      "title": "AI R&D 개발자를 모집 중입니다.",
+      "company": "(주)클레비",
+      "location": "경기 화성시",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54191129",
+      "langs": []
+    },
+    {
+      "id": 54322148,
+      "title": "oo기업 프로젝트 / 자바, 리액트/ 이천 / 개발자",
+      "company": "(주)이에스티소프트",
+      "location": "경기 성남시 분당구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54322148",
+      "langs": []
+    },
+    {
+      "id": 54270742,
+      "title": "건축/토목/CS/인사총무/개발자/증권트레이너/농작인/분양관리 채용",
+      "company": "(주)우남건설",
+      "location": "경기 화성시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54270742&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Java",
+        "Node.js",
+        "MySQL",
+        "Oracle",
+        "Docker"
+      ]
+    },
+    {
+      "id": 54273381,
+      "title": "[팀스파르타/KANT] 오프라인 AI 과정 학습 멘토링 튜터 모집",
+      "company": "팀스파르타(주)",
+      "location": "서울 구로구",
+      "annual_from": 3,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54273381",
+      "langs": [
+        "Python"
+      ]
+    },
+    {
+      "id": 54322049,
+      "title": "[(주)이에스티소프트] IT 분야별 신입/경력 채용",
+      "company": "(주)이에스티소프트",
+      "location": "서울 영등포구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54322049",
+      "langs": []
+    },
+    {
+      "id": 54089087,
+      "title": "[코스닥상장사] (주)브이씨 부문별 경력직 채용",
+      "company": "(주)브이씨",
+      "location": "서울 강남구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54089087",
+      "langs": [
+        "C++"
+      ]
+    },
+    {
+      "id": 54227332,
+      "title": "(주)컨텍 정규직 채용",
+      "company": "(주)컨텍",
+      "location": "대전 유성구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54227332&adsCategoryItem=effect_bold&",
+      "langs": [
+        "C#",
+        "C++"
+      ]
+    },
+    {
+      "id": 54281716,
+      "title": "굿모닝아이텍㈜ 각 부문별 인재 모집합니다.",
+      "company": "굿모닝아이텍(주)",
+      "location": "경기 고양시 덕양구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54281716&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Snowflake",
+        "Spark",
+        "AWS",
+        "GCP",
+        "Azure",
+        "Naver Cloud",
+        "REST API"
+      ]
+    },
+    {
+      "id": 54201323,
+      "title": "응용 소프트웨어 개발자 신입 및 경력 채용",
+      "company": "(주)아이에이엠",
+      "location": "서울 금천구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54201323&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Java",
+        "Python",
+        "JavaScript",
+        "MySQL"
+      ]
+    },
+    {
+      "id": 54228338,
+      "title": "[㈜용산] 부문별 채용 진행 (사업장별 모집)",
+      "company": "(주)용산",
+      "location": "충남 아산시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54228338&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Python"
+      ]
+    },
+    {
+      "id": 54218413,
+      "title": "2026년 하반기 경력사원 공개채용",
+      "company": "덕일산업(주)",
+      "location": "경기 평택시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54218413&adsCategoryItem=effect_bold&",
+      "langs": [
+        "C++"
+      ]
+    },
+    {
+      "id": 54174454,
+      "title": "[주식회사 흰곰] 웹 서버 개발자 (5년 이상 ~ 10년 이하)",
+      "company": "(주)흰곰",
+      "location": "서울 금천구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54174454",
+      "langs": [
+        "Java",
+        "Spring",
+        "PostgreSQL",
+        "Oracle",
+        "REST API"
+      ]
+    },
+    {
+      "id": 54246706,
+      "title": "강림중공업, 강림인슈 신입/경력 채용",
+      "company": "강림중공업(주)",
+      "location": "경남 창원시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54246706&adsCategoryItem=effect_bold&",
+      "langs": []
+    },
+    {
+      "id": 54311800,
+      "title": "클라우드 엔지니어 (3년~5년)",
+      "company": "(주)디지털포토",
+      "location": "서울 서초구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54311800",
+      "langs": [
+        "Python",
+        "PHP",
+        "Oracle",
+        "Linux",
+        "Nginx"
+      ]
+    },
+    {
+      "id": 54199962,
+      "title": "[NC 자회사] ㈜NC ITS 시스템 엔지니어 채용",
+      "company": "(주)엔씨아이티에스",
+      "location": "서울 금천구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54199962&adsCategoryItem=effect_bold&",
+      "langs": []
+    },
+    {
+      "id": 54305605,
+      "title": "[NICE정보통신] 백엔드 서버 개발자(경력)",
+      "company": "나이스정보통신(주)",
+      "location": "서울 영등포구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54305605",
+      "langs": [
+        "Java",
+        "Spring Boot",
+        "Oracle",
+        "Redis",
+        "Kafka"
+      ]
+    },
+    {
+      "id": 54281148,
+      "title": "[NC 자회사] ㈜NC ITS 보안관제 인력 채용",
+      "company": "(주)엔씨아이티에스",
+      "location": "경기 성남시 분당구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54281148&adsCategoryItem=effect_bold&",
+      "langs": []
+    },
+    {
+      "id": 54304353,
+      "title": "[수시채용] Data Engineer (경력)",
+      "company": "(주)에프앤코",
+      "location": "서울 강남구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54304353",
+      "langs": [
+        "Python",
+        "TypeScript",
+        "Airflow",
+        "NestJS",
+        "PostgreSQL",
+        "Snowflake",
+        "Redshift",
+        "dbt",
+        "AWS",
+        "S3",
+        "Lambda",
+        "ECS",
+        "OpenAI",
+        "LangChain"
+      ]
+    },
+    {
+      "id": 54310950,
+      "title": "PG 시스템 개발 및 운영",
+      "company": "(주)이오스페이먼츠",
+      "location": "경기 안양시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54310950",
+      "langs": [
+        "Java",
+        "Spring Boot",
+        "JPA",
+        "Netty",
+        "MySQL",
+        "AWS",
+        "Naver Cloud",
+        "Docker",
+        "REST API"
+      ]
+    },
+    {
+      "id": 54311816,
+      "title": "클라우드 엔지니어 (6년~8년)",
+      "company": "(주)디지털포토",
+      "location": "서울 서초구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54311816",
+      "langs": [
+        "Python",
+        "PHP",
+        "Oracle",
+        "Linux",
+        "Nginx"
+      ]
+    },
+    {
+      "id": 53489648,
+      "title": "2026년 해커스 교육그룹 [신입/경력] 각 부문별 채용공고",
+      "company": "해커스교육그룹",
+      "location": "서울 서초구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=53489648",
+      "langs": [
+        "SNS"
+      ]
+    },
+    {
+      "id": 54308752,
+      "title": "백엔드 개발자",
+      "company": "(주)이너버스",
+      "location": "서울 영등포구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54308752",
+      "langs": [
+        "Java",
+        "Python",
+        "Go",
+        "Gradle",
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Elasticsearch",
+        "InfluxDB",
+        "TimescaleDB",
+        "Kafka",
+        "Linux",
+        "Docker",
+        "Kubernetes",
+        "gRPC",
+        "Swagger",
+        "OpenAPI",
+        "MSA"
+      ]
+    },
+    {
+      "id": 54314492,
+      "title": "AI 채용솔루션(ATS) 백엔드 엔지니어",
+      "company": "(주)인딥에이아이",
+      "location": "서울 서초구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54314492",
+      "langs": [
+        "Python",
+        "Node.js",
+        "NestJS",
+        "MongoDB",
+        "Redis",
+        "AWS",
+        "Azure",
+        "Docker",
+        "REST API",
+        "LangChain"
+      ]
+    },
+    {
+      "id": 54309100,
+      "title": "백엔드 엔지니어",
+      "company": "한국딥러닝(주)",
+      "location": "서울 서초구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54309100",
+      "langs": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Kafka",
+        "RabbitMQ",
+        "Linux",
+        "Docker",
+        "GitHub Actions",
+        "Grafana",
+        "Prometheus",
+        "MSA",
+        "DDD"
+      ]
+    },
+    {
+      "id": 54310557,
+      "title": "[BRILS] 개발·R&D 분야 경력직 수시채용",
+      "company": "(주)브릴스",
+      "location": "인천 연수구",
+      "annual_from": 3,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54310557",
+      "langs": []
+    },
+    {
+      "id": 54296231,
+      "title": "메일 시스템 서버 개발",
+      "company": "(주)다우기술",
+      "location": "경기 성남시 분당구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54296231",
+      "langs": [
+        "Java",
+        "Python",
+        "C++",
+        "Spring",
+        "MyBatis",
+        "PostgreSQL",
+        "SQLite",
+        "Linux"
+      ]
+    },
+    {
+      "id": 54217541,
+      "title": "2026년 ㈜시스메이트 서버소프트웨어개발, 서비스 분석, 품질관리 채용",
+      "company": "(주)시스메이트",
+      "location": "대전 유성구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54217541&adsCategoryItem=effect_bold&",
+      "langs": [
+        "C++"
+      ]
+    },
+    {
+      "id": 54307225,
+      "title": "이커머스 풀스택 팀장 앱·웹 채용",
+      "company": "이커머스 풀스택 팀장 앱·웹 채용",
+      "location": "서울 마포구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54307225",
+      "langs": [
+        "Java",
+        "Python",
+        "Kotlin",
+        "TypeScript",
+        "Spring Boot",
+        "Django",
+        "FastAPI",
+        "PostgreSQL",
+        "Redis",
+        "SQS",
+        "AWS",
+        "GCP",
+        "EKS",
+        "CloudFront",
+        "ArgoCD"
+      ]
+    },
+    {
+      "id": 54281011,
+      "title": "신입공채-컨설턴트/사업/경영지원/SW개발",
+      "company": "(주)파수에이아이",
+      "location": "서울 마포구 외",
+      "annual_from": 0,
+      "annual_to": 0,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54281011",
+      "langs": [
+        "Java",
+        "Python",
+        "JavaScript",
+        "C#",
+        "C++",
+        "Scala",
+        "Spring",
+        "Spring Boot",
+        "MyBatis",
+        "Maven",
+        "Node.js",
+        "MySQL",
+        "MariaDB",
+        "MSSQL",
+        "AWS",
+        "Linux",
+        "REST API"
+      ]
+    },
+    {
+      "id": 54224161,
+      "title": "2026년도 각 부문 신입 및 경력사원 채용",
+      "company": "(주)인텍에프에이",
+      "location": "경기 용인시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54224161&adsCategoryItem=effect_bold&",
+      "langs": []
+    },
+    {
+      "id": 54296223,
+      "title": "Web Application PM/PL",
+      "company": "(주)다우기술",
+      "location": "경기 성남시 분당구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54296223",
+      "langs": [
+        "Java",
+        "Python",
+        "JavaScript",
+        "Spring Boot",
+        "MyBatis",
+        "QueryDSL"
+      ]
+    },
+    {
+      "id": 54029894,
+      "title": "2026 엔젤로보틱스 각 분야 채용 공고",
+      "company": "(주)엔젤로보틱스",
+      "location": "서울 광진구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54029894",
+      "langs": [
+        "C++",
+        "AWS",
+        "EC2",
+        "ECS",
+        "EKS",
+        "Docker",
+        "Terraform"
+      ]
+    },
+    {
+      "id": 54307162,
+      "title": "Python 백엔드 개발자 채용",
+      "company": "Python 백엔드 개발자 채용",
+      "location": "서울 마포구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54307162",
+      "langs": [
+        "Java",
+        "Python",
+        "Kotlin",
+        "TypeScript",
+        "Spring Boot",
+        "Django",
+        "FastAPI",
+        "PostgreSQL",
+        "Redis",
+        "SQS",
+        "AWS",
+        "GCP",
+        "EKS",
+        "CloudFront",
+        "ArgoCD"
+      ]
+    },
+    {
+      "id": 54205897,
+      "title": "2026 엔젤로보틱스 대전연구소 연구원 채용 (전문연구요원-병역특례 가능)",
+      "company": "(주)엔젤로보틱스",
+      "location": "대전 대덕구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54205897",
+      "langs": [
+        "Python",
+        "C++",
+        "PyTorch"
+      ]
+    },
+    {
+      "id": 54291199,
+      "title": "(수료축하금) 지능형 앱 개발자 양성과정 6기",
+      "company": "에스케이쉴더스(주)",
+      "location": "서울전체 외",
+      "annual_from": 0,
+      "annual_to": 0,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54291199",
+      "langs": [
+        "Java",
+        "Python",
+        "JavaScript",
+        "Spring",
+        "Spring Boot",
+        "JPA",
+        "MySQL",
+        "PostgreSQL",
+        "MSSQL",
+        "SQLite",
+        "AWS",
+        "Docker"
+      ]
+    },
+    {
+      "id": 54228113,
+      "title": "'26년 상반기 각 부문 정규직 채용",
+      "company": "(주)로봇앤드디자인",
+      "location": "경기 용인시 처인구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54228113&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Python",
+        "C#",
+        "C++"
+      ]
+    },
+    {
+      "id": 54305585,
+      "title": "중급 백엔드 개발자 (8~10년)",
+      "company": "티투엘(주)",
+      "location": "경기 고양시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54305585",
+      "langs": [
+        "Java"
+      ]
+    },
+    {
+      "id": 54307186,
+      "title": "Python 백엔드 개발자_6년~8년 채용",
+      "company": "Python 백엔드 개발자_6년~8년 채용",
+      "location": "서울 마포구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54307186",
+      "langs": [
+        "Python",
+        "PHP",
+        "MySQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 54293976,
+      "title": "2026 3분기 신입사원 채용",
+      "company": "현대오토에버(주)",
+      "location": "전국",
+      "annual_from": 0,
+      "annual_to": 0,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54293976",
+      "langs": []
+    },
+    {
+      "id": 54307751,
+      "title": "QA",
+      "company": "(주)센트비",
+      "location": "서울 영등포구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54307751",
+      "langs": [
+        "Java",
+        "Python",
+        "JavaScript",
+        "Jenkins"
+      ]
+    },
+    {
+      "id": 54071195,
+      "title": "[3M] 한국쓰리엠 신입/경력사원 모집 안내",
+      "company": "[3M] 한국쓰리엠 신입/경력사원 모집 안내",
+      "location": "서울 영등포구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54071195",
+      "langs": []
+    },
+    {
+      "id": 54305603,
+      "title": "고급 백엔드 설계 개발자(13~15년)",
+      "company": "티투엘(주)",
+      "location": "경기 고양시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54305603",
+      "langs": [
+        "Java"
+      ]
+    },
+    {
+      "id": 50846359,
+      "title": "[NARA SPACE] 각 부문별 직원모집",
+      "company": "(주)나라스페이스테크놀로지",
+      "location": "서울 영등포구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=50846359&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Python",
+        "C++",
+        "FastAPI",
+        "Node.js",
+        "NestJS",
+        "Express",
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "OpenSearch",
+        "InfluxDB",
+        "AWS",
+        "Linux",
+        "Docker",
+        "Kubernetes",
+        "Jenkins",
+        "GitHub Actions",
+        "GitLab CI",
+        "Grafana",
+        "REST API",
+        "gRPC"
+      ]
+    },
+    {
+      "id": 54296301,
+      "title": "클라우드/AI 플랫폼 엔지니어",
+      "company": "(주)다우기술",
+      "location": "서울 마포구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54296301",
+      "langs": [
+        "AWS",
+        "Azure",
+        "Linux",
+        "Kubernetes",
+        "Terraform",
+        "Ansible",
+        "Grafana",
+        "Prometheus",
+        "Loki"
+      ]
+    },
+    {
+      "id": 54290748,
+      "title": "다우기술 경력사원 대규모 인재영입",
+      "company": "(주)다우기술",
+      "location": "경기 성남시 외",
+      "annual_from": 2,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54290748",
+      "langs": [
+        "Java",
+        "Python",
+        "Kotlin",
+        "Go",
+        "TypeScript",
+        "JavaScript",
+        "C#",
+        "C++",
+        "PHP",
+        "Ruby",
+        "Scala",
+        "Spring",
+        "Spring Boot",
+        "JPA",
+        "MyBatis",
+        "Maven",
+        "Django",
+        "Flask",
+        "Node.js",
+        "ASP.NET",
+        ".NET",
+        "MySQL",
+        "PostgreSQL",
+        "MariaDB",
+        "MSSQL",
+        "SQLite",
+        "MongoDB",
+        "Redis",
+        "Kafka",
+        "Spark",
+        "Hadoop",
+        "AWS",
+        "GCP",
+        "Azure",
+        "Linux",
+        "Nginx",
+        "Tomcat",
+        "Docker",
+        "Kubernetes",
+        "Jenkins",
+        "REST API",
+        "GraphQL",
+        "PyTorch"
+      ]
+    },
+    {
+      "id": 54305595,
+      "title": "고급 백엔드 설계 개발자(10~12년)",
+      "company": "티투엘(주)",
+      "location": "경기 고양시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54305595",
+      "langs": [
+        "Java"
+      ]
+    },
+    {
+      "id": 54305573,
+      "title": "중급 백엔드 개발자 (5~7년)",
+      "company": "티투엘(주)",
+      "location": "경기 고양시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54305573",
+      "langs": [
+        "Java"
+      ]
+    },
+    {
+      "id": 54258136,
+      "title": "비상교육 개발직무 인재 영입",
+      "company": "(주)비상교육",
+      "location": "경기 과천시",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54258136",
+      "langs": [
+        "Java",
+        "JavaScript",
+        "C#",
+        "C++",
+        "PHP",
+        "SQLite"
+      ]
+    },
+    {
+      "id": 54255160,
+      "title": "[파주본사] 인사팀/영업팀/전산팀 경력•신입 채용",
+      "company": "코스틱폼텍(주)",
+      "location": "경기 파주시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54255160&adsCategoryItem=effect_bold&",
+      "langs": []
+    },
+    {
+      "id": 54305614,
+      "title": "고급 백엔드 설계 개발자(16~18년)",
+      "company": "티투엘(주)",
+      "location": "경기 고양시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54305614",
+      "langs": [
+        "Java"
+      ]
+    },
+    {
+      "id": 54307262,
+      "title": "Python 백엔드 개발자_9년이상",
+      "company": "Python 백엔드 개발자_9년이상",
+      "location": "서울 마포구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54307262",
+      "langs": [
+        "Python",
+        "PHP",
+        "MySQL",
+        "AWS"
+      ]
+    },
+    {
+      "id": 54296257,
+      "title": "소프트웨어 아키텍트",
+      "company": "(주)다우기술",
+      "location": "서울 마포구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54296257",
+      "langs": [
+        "Java",
+        "JavaScript",
+        "Spring",
+        "MySQL",
+        "Oracle",
+        "Linux"
+      ]
+    },
+    {
+      "id": 54296236,
+      "title": "원장 개발",
+      "company": "(주)다우기술",
+      "location": "서울 마포구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54296236",
+      "langs": [
+        "C++",
+        "Oracle",
+        "Linux"
+      ]
+    },
+    {
+      "id": 53947304,
+      "title": "(주)이포넷 AI 연구개발 연구원 경력/신입 채용",
+      "company": "(주)이포넷",
+      "location": "서울 강남구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=53947304",
+      "langs": []
+    },
+    {
+      "id": 54290253,
+      "title": "2026년 하반기 부문별 수시채용",
+      "company": "(주)이디야",
+      "location": "서울 강남구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54290253",
+      "langs": []
+    },
+    {
+      "id": 54321708,
+      "title": "Full Stack Developer 채용",
+      "company": "한국퀀텀컴퓨팅(주)",
+      "location": "서울 강남구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54321708",
+      "langs": []
+    },
+    {
+      "id": 54321402,
+      "title": "Java 웹개발자(SI·SM/신규·경력/개발·운영) 채용 [와플원]",
+      "company": "(주)와플원",
+      "location": "서울 성동구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54321402",
+      "langs": [
+        "Java",
+        "PHP",
+        "Spring",
+        "Spring Boot",
+        "ASP.NET",
+        ".NET",
+        "MariaDB",
+        "Oracle",
+        "REST API"
+      ]
+    },
+    {
+      "id": 54321358,
+      "title": "JAVA 웹프로그래밍 개발자 모집",
+      "company": "(주)인터모프",
+      "location": "서울 구로구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54321358",
+      "langs": [
+        "Java"
+      ]
+    },
+    {
+      "id": 54281572,
+      "title": "솔루션 개발 및 운영지원 경력직 채용",
+      "company": "감프정보기술(주)",
+      "location": "서울 금천구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54281572&adsCategoryItem=effect_bold&",
+      "langs": [
+        "TypeScript",
+        "C#",
+        "ASP.NET",
+        ".NET",
+        "MSSQL",
+        "AWS",
+        "Azure",
+        "REST API",
+        "OpenAPI",
+        "OAuth"
+      ]
+    },
+    {
+      "id": 54102946,
+      "title": "AI시대의 취업역량 마스터 - 청년취업사관학교 은평캠퍼스 4기 교육생 모집",
+      "company": "AI시대의 취업역량 마스터 - 청년취업사관학교 은평캠퍼스 4기 교육생 모집",
+      "location": "서울전체 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54102946&adsCategoryItem=effect_bold&",
+      "langs": []
+    },
+    {
+      "id": 54310198,
+      "title": "[인천/송도/전환가능] Cytiva 소프트웨어 개발자 (1Y)",
+      "company": "(주)맨파워그룹코리아",
+      "location": "인천 연수구",
+      "annual_from": 3,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54310198",
+      "langs": [
+        "JavaScript",
+        "C#",
+        ".NET",
+        "AWS",
+        "Azure",
+        "REST API"
+      ]
+    },
+    {
+      "id": 54245714,
+      "title": "(주)드림텍 2026년 2분기 상시 채용",
+      "company": "(주)드림텍",
+      "location": "경기 성남시 분당구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54245714&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Java",
+        "C#",
+        "Oracle"
+      ]
+    },
+    {
+      "id": 54192891,
+      "title": "(주)아이씨디 ERP · MES 시스템 개발자 채용",
+      "company": "(주)아이씨디",
+      "location": "경기 안성시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54192891",
+      "langs": []
+    },
+    {
+      "id": 53914062,
+      "title": "2026년 (주)아이웨이 개발(JAVA개발자) 경력 및 신입 모집 공고",
+      "company": "(주)아이웨이",
+      "location": "경기 안양시 동안구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=53914062",
+      "langs": [
+        "Java"
+      ]
+    },
+    {
+      "id": 54321072,
+      "title": "콜브릿지(상담콜) 백엔드 개발자 경력직 채용 (2-7년)",
+      "company": "(주)블룸에이아이",
+      "location": "서울 중구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54321072",
+      "langs": [
+        "Java",
+        "PHP",
+        "Spring Boot",
+        "Laravel",
+        "MySQL",
+        "Elasticsearch",
+        "Kafka",
+        "RabbitMQ",
+        "Linux",
+        "Nginx",
+        "Docker",
+        "Kubernetes",
+        "Jenkins",
+        "REST API",
+        "gRPC",
+        "WebSocket",
+        "MSA"
+      ]
+    },
+    {
+      "id": 54320926,
+      "title": "(주)세스코 AI Engineer 담당자 채용",
+      "company": "(주)세스코",
+      "location": "서울 강동구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54320926",
+      "langs": [
+        "Python",
+        "AWS",
+        "GCP",
+        "LangChain"
+      ]
+    },
+    {
+      "id": 54267924,
+      "title": "[대전/서울] 로봇 개발 채용공고(소프트웨어)",
+      "company": "(주)라이온로보틱스",
+      "location": "대전 유성구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54267924",
+      "langs": []
+    },
+    {
+      "id": 54320773,
+      "title": "[파인원커뮤니케이션즈]Back-end 경력 개발자 채용",
+      "company": "(주)파인원커뮤니케이션즈",
+      "location": "서울 금천구",
+      "annual_from": 8,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54320773",
+      "langs": [
+        "Hibernate",
+        "Kafka",
+        "Pub/Sub",
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "GraphQL"
+      ]
+    },
+    {
+      "id": 54024128,
+      "title": "Dental 장비 SW 개발 채용",
+      "company": "(주)휴비츠",
+      "location": "경기 안양시 동안구 외",
+      "annual_from": 5,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54024128",
+      "langs": [
+        "C++"
+      ]
+    },
+    {
+      "id": 54320645,
+      "title": "(주)세스코 시스템 개발/운영 담당자 채용",
+      "company": "(주)세스코",
+      "location": "서울 강동구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54320645",
+      "langs": [
+        "Java",
+        "C#",
+        "Spring",
+        "Spring Boot",
+        "MySQL",
+        "Oracle",
+        "MSSQL",
+        "Redis",
+        "Elasticsearch",
+        "Kafka",
+        "RabbitMQ",
+        "AWS",
+        "GCP",
+        "Azure",
+        "Docker",
+        "Kubernetes",
+        "Jenkins",
+        "Grafana",
+        "Prometheus",
+        "ELK",
+        "REST API",
+        "Swagger",
+        "OpenAPI",
+        "JWT",
+        "OAuth",
+        "MSA",
+        "JUnit",
+        "Mockito"
+      ]
+    },
+    {
+      "id": 54229122,
+      "title": "[로지스팟] 2026년 상반기 각 부문별 직원 채용",
+      "company": "로지스팟(주)",
+      "location": "서울 강남구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54229122&adsCategoryItem=effect_bold&",
+      "langs": [
+        "GitHub Actions"
+      ]
+    },
+    {
+      "id": 54267659,
+      "title": "AICC AI Agent 개발자 채용",
+      "company": "(주)메타엠",
+      "location": "서울 중구",
+      "annual_from": 5,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54267659",
+      "langs": [
+        "Docker",
+        "LangChain",
+        "LangGraph"
+      ]
+    },
+    {
+      "id": 54320444,
+      "title": "메인보드 바이오스 업데이트 작업 및 메인보드 조립 아르바이트",
+      "company": "어드밴텍케이알(주)",
+      "location": "인천 부평구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54320444",
+      "langs": []
+    },
+    {
+      "id": 54313652,
+      "title": "[경기 의정부] 기술연구소(H/W) 경력 사원 모집",
+      "company": "(주)엠피지오",
+      "location": "경기 의정부시 외",
+      "annual_from": 3,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54313652",
+      "langs": []
+    },
+    {
+      "id": 53885902,
+      "title": "[대전] 풀스택 웹 개발자 채용공고",
+      "company": "(주)라이온로보틱스",
+      "location": "대전 유성구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=53885902",
+      "langs": []
+    },
+    {
+      "id": 54320293,
+      "title": "[티빙] Discovery Product Lead 경력채용",
+      "company": "(주)티빙",
+      "location": "서울 강남구",
+      "annual_from": 10,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54320293",
+      "langs": []
+    },
+    {
+      "id": 54320279,
+      "title": "(주)서우컴퍼니 SI/SM 신입 웹개발자(JAVA,JSP) 모집",
+      "company": "주식회사 서우컴퍼니",
+      "location": "서울 구로구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54320279",
+      "langs": [
+        "Java"
+      ]
+    },
+    {
+      "id": 54281497,
+      "title": "ERP 개발·운영 담당자 / 개발자 / 신입 / 정규직 / 서울",
+      "company": "(주)인프라시스템",
+      "location": "서울 영등포구",
+      "annual_from": 0,
+      "annual_to": 0,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54281497",
+      "langs": []
+    },
+    {
+      "id": 54047984,
+      "title": "[서울/교대역] (주)이비엠 개발자 경력 모집",
+      "company": "(주)이비엠",
+      "location": "서울 서초구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54047984",
+      "langs": [
+        "Java",
+        "JavaScript",
+        "Spring"
+      ]
+    },
+    {
+      "id": 54320237,
+      "title": "[티빙] Platform Product Lead 경력채용",
+      "company": "(주)티빙",
+      "location": "서울 강남구",
+      "annual_from": 10,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54320237",
+      "langs": [
+        "MSA"
+      ]
+    },
+    {
+      "id": 53489418,
+      "title": "신입 및 경력직원 채용공고",
+      "company": "(주)유엔에이엔지니어링",
+      "location": "경기 군포시 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=53489418&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Java",
+        "Spring",
+        "Linux",
+        "Nginx",
+        "Tomcat"
+      ]
+    },
+    {
+      "id": 54048324,
+      "title": "(주)서린바이오사이언스 각 부문 신입/경력 채용",
+      "company": "(주)서린바이오사이언스",
+      "location": "경기 화성시 동탄구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54048324&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Linux"
+      ]
+    },
+    {
+      "id": 54137797,
+      "title": "금융 솔루션 경력직 개발자 모집",
+      "company": "(주)이엘온소프트",
+      "location": "서울 구로구",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54137797",
+      "langs": []
+    },
+    {
+      "id": 53660011,
+      "title": "2026 각 부문 신입/경력 수시채용",
+      "company": "파크시스템스(주)",
+      "location": "경기 수원시 영통구 외",
+      "annual_from": 0,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=53660011&adsCategoryItem=effect_bold&",
+      "langs": [
+        "Go",
+        "C#",
+        "C++",
+        "SNS",
+        "PyTorch"
+      ]
+    },
+    {
+      "id": 54319794,
+      "title": "[(주)씨에스파트너스그룹] 개발자 채용공고",
+      "company": "(주)씨에스파트너스그룹",
+      "location": "서울 강남구",
+      "annual_from": 2,
+      "annual_to": 10,
+      "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?view_type=list&rec_idx=54319794",
+      "langs": []
+    }
+  ],
+  "scope": "saramin:job-category:cat-mcls-2:backend:v1:backend-keywords:4d29fefd1b971842"
+}

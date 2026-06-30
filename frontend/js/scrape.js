@@ -5,13 +5,15 @@ let selectedSource = 'all';
 const SOURCE_LABELS = {
   all: '전체',
   wanted: 'Wanted',
-  jobkorea: '잡코리아'
+  jobkorea: '잡코리아',
+  saramin: '사람인'
 };
 
 const SOURCE_DESCRIPTIONS = {
-  all: 'Wanted와 잡코리아 백엔드 공고를 통합 분석',
+  all: 'Wanted·잡코리아·사람인 백엔드 공고를 통합 분석',
   wanted: '데이터·AI·인프라 공고 제외 — 백엔드 공고만 실시간 분석',
-  jobkorea: '전국 · 백엔드개발자 전체 공고를 분석하고 캐시에서 빠르게 조회'
+  jobkorea: '전국 · 백엔드개발자 전체 공고를 분석하고 캐시에서 빠르게 조회',
+  saramin: 'IT개발·데이터 직업별 목록의 백엔드 공고를 저속 수집 후 캐시에서 조회'
 };
 
 function selectSource(source) {
@@ -202,6 +204,7 @@ function bindLanguageTable(tbody) {
 }
 
 function startScrape(refresh = false) {
+  const requestSource = selectedSource;
   const btn      = document.getElementById('btn');
   const btnText  = document.getElementById('btn-text');
   const btnRefresh = document.getElementById('btn-refresh');
@@ -235,7 +238,7 @@ function startScrape(refresh = false) {
   const scrapeStart = Date.now();
 
   const { years_min, years_max } = (typeof getCareerParams === 'function') ? getCareerParams() : { years_min: 0, years_max: 10 };
-  const params = new URLSearchParams({ years_min, years_max, source: selectedSource });
+  const params = new URLSearchParams({ years_min, years_max, source: requestSource });
   if (refresh) params.set('refresh', 'true');
   const es = new EventSource(`/scrape?${params}`);
 
@@ -414,9 +417,40 @@ function startScrape(refresh = false) {
 
   es.onerror = () => {
     es.close();
-    btn.disabled = false;
-    btnRefresh.disabled = false;
-    btn.classList.remove('loading');
-    btnText.textContent = '다시 시도';
+    document.getElementById('status-text').textContent =
+      '화면 연결이 끊겼습니다. 서버 작업 완료 여부 확인 중...';
+    document.getElementById('eta-text').textContent = '';
+
+    const recover = async () => {
+      try {
+        const response = await fetch(`/scrape-status?source=${encodeURIComponent(requestSource)}`, {
+          cache: 'no-store'
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const status = await response.json();
+        if (status.running) {
+          document.getElementById('meta-text').textContent =
+            `서버에서 계속 분석 중 · 현재 캐시 ${status.jobs.toLocaleString()}개`;
+          window.setTimeout(recover, 5000);
+          return;
+        }
+        if (status.valid) {
+          selectSource(requestSource);
+          startScrape(false);
+          return;
+        }
+        throw new Error('완료된 캐시가 없습니다.');
+      } catch (error) {
+        errorBox.textContent = `연결 복구 실패: ${error.message}`;
+        errorBox.classList.remove('warning');
+        errorBox.style.display = 'block';
+        btn.disabled = false;
+        btnRefresh.disabled = false;
+        btn.classList.remove('loading');
+        btnText.textContent = '다시 시도';
+      }
+    };
+
+    window.setTimeout(recover, 1500);
   };
 }

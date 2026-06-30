@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *.pyo
 backend/cache*.json.tmp
+saramin_screenshot.png
 *.pyd
 .Python
 *.egg-info/
