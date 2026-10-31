@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 
 from .job_record import classify_categories, deadline_timestamp, is_expired
-from .keyword_catalog import COMPILED, STACK_KEYWORD_SCOPE
+from .keyword_catalog import STACK_KEYWORD_SCOPE, extract_keywords
 from .wanted_scraper import CACHE_SCOPE as WANTED_CACHE_SCOPE
 from .jobkorea_scraper import CACHE_SCOPE as JOBKOREA_CACHE_SCOPE
 from .saramin_scraper import CACHE_SCOPE as SARAMIN_CACHE_SCOPE
@@ -60,17 +60,17 @@ def reindex_source(source: str) -> dict:
     markdown_by_id = _markdown_index(config["prefix"])
     matched = 0
     reindexed_jobs = []
-    allowed_keywords = set(COMPILED)
 
     for job in jobs:
         path = markdown_by_id.get(int(job["id"]))
         if not path:
             updated = dict(job)
-            updated["langs"] = [
-                name for name in job.get("langs", [])
-                if name in allowed_keywords
-            ]
             content = str(updated.get("content") or "")
+            updated["langs"] = extract_keywords(" ".join([
+                str(updated.get("title") or ""), content,
+                " ".join(updated.get("keywords") or []),
+                str(updated.get("sectors") or ""),
+            ]))
             updated["content"] = content
             updated["categories"] = classify_categories(
                 str(updated.get("title") or ""),
@@ -79,7 +79,7 @@ def reindex_source(source: str) -> dict:
             )
             updated["deadline"] = str(updated.get("deadline") or "")
             updated["status"] = str(updated.get("status") or "active")
-            updated["deadline_at"] = deadline_timestamp(updated.get("deadline"))
+            updated["deadline_at"] = deadline_timestamp(updated.get("deadline"), reference_time=cache.get("ts"))
             updated["is_expired"] = is_expired(updated)
             reindexed_jobs.append(updated)
             continue
@@ -87,9 +87,11 @@ def reindex_source(source: str) -> dict:
         text = re.sub(r"(?m)^- 기술:.*$", "", text)
         updated = dict(job)
         updated["content"] = text
-        updated["langs"] = [
-            name for name, pattern in COMPILED.items() if pattern.search(text)
-        ]
+        updated["langs"] = extract_keywords(" ".join([
+            str(updated.get("title") or ""), text,
+            " ".join(updated.get("keywords") or []),
+            str(updated.get("sectors") or ""),
+        ]))
         updated["categories"] = classify_categories(
             str(updated.get("title") or ""),
             text,
@@ -97,7 +99,7 @@ def reindex_source(source: str) -> dict:
         )
         updated["deadline"] = str(updated.get("deadline") or "")
         updated["status"] = str(updated.get("status") or "active")
-        updated["deadline_at"] = deadline_timestamp(updated.get("deadline"))
+        updated["deadline_at"] = deadline_timestamp(updated.get("deadline"), reference_time=cache.get("ts"))
         updated["is_expired"] = is_expired(updated)
         reindexed_jobs.append(updated)
         matched += 1

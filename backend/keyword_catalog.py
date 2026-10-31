@@ -49,4 +49,6 @@ INCLUDE_TITLE_KEYWORDS = _load_title_keywords()
 
 def extract_keywords(text: str) -> list[str]:
     """카탈로그에 등록된 기술 중 본문에 등장하는 기술만 반환한다."""
+    # Markdown 내 자동 생성 메타데이터를 다시 기술 근거로 사용하지 않는다.
+    text = re.sub(r"(?m)^- (?:출처|회사|경력|원문|공고번호|기술|분야|마감|지역):.*$", "", text)
     return [name for name, pattern in COMPILED.items() if pattern.search(text)]

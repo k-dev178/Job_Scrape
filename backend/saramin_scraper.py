@@ -250,7 +250,7 @@ def process_job(job_meta: dict) -> dict:
     company = job_meta.get("company", "")
     annual_from = job_meta.get("annual_from", 0)
     annual_to = job_meta.get("annual_to", 10)
-    full_text = " ".join([title, company, detail_text])
+    full_text = " ".join([title, detail_text, str(job_meta.get("sectors") or "")])
     record_fields = build_record_fields(
         title=title,
         content=detail_text,

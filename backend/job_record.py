@@ -12,13 +12,14 @@ BACKEND_PATTERN = re.compile(
 SYSTEM_PATTERN = re.compile(
     r"시스템\s*(?:소프트웨어|개발|엔지니어)|system\s*(?:software|engineer)|"
     r"(?:^|\s)S/W(?:\s|$)|embedded|firmware|미들웨어|임베디드|펌웨어|"
-    r"RTOS|FreeRTOS|MCU|STM32|AUTOSAR|Yocto|POSIX|MFC|Qt",
+    r"\b(?:RTOS|FreeRTOS|MCU|STM32|AUTOSAR|Yocto|POSIX|MFC|Qt)\b",
     re.IGNORECASE,
 )
 KST = timezone(timedelta(hours=9))
 
 
 def classify_categories(title: str, content: str = "", hints: str = "") -> list[str]:
+    content = re.sub(r"(?m)^- (?:기술|분야):.*$", "", content or "")
     text = " ".join([title or "", content or "", hints or ""])
     categories = []
     if BACKEND_PATTERN.search(text):
@@ -28,7 +29,7 @@ def classify_categories(title: str, content: str = "", hints: str = "") -> list[
     return categories
 
 
-def deadline_timestamp(value) -> float | None:
+def deadline_timestamp(value, *, reference_time: float | None = None) -> float | None:
     if value in (None, "", 0, "0"):
         return None
     if isinstance(value, (int, float)):
@@ -37,7 +38,7 @@ def deadline_timestamp(value) -> float | None:
     text = str(value).strip()
     if re.search(r"상시|채용시|수시", text):
         return None
-    now_kst = datetime.now(KST)
+    now_kst = datetime.now(KST) if reference_time is None else datetime.fromtimestamp(reference_time, KST)
     relative_match = re.search(r"D-(\d+)", text, re.IGNORECASE)
     if relative_match:
         target = now_kst + timedelta(days=int(relative_match.group(1)))
@@ -48,6 +49,9 @@ def deadline_timestamp(value) -> float | None:
         target = now_kst + timedelta(days=1)
         return target.replace(hour=23, minute=59, second=59, microsecond=0).timestamp()
     try:
+        if re.fullmatch(r"\d{4}[./-]\d{1,2}[./-]\d{1,2}", text):
+            year, month, day = map(int, re.split(r"[./-]", text))
+            return datetime(year, month, day, 23, 59, 59, tzinfo=KST).timestamp()
         parsed = datetime.fromisoformat(text.replace("Z", "+00:00"))
         if parsed.tzinfo is None:
             parsed = parsed.replace(tzinfo=KST)
@@ -56,23 +60,31 @@ def deadline_timestamp(value) -> float | None:
         pass
     match = re.search(r"(20\d{2})[./-](\d{1,2})[./-](\d{1,2})", text)
     if match:
-        return datetime(
-            int(match.group(1)), int(match.group(2)), int(match.group(3)),
-            23, 59, 59, tzinfo=KST,
-        ).timestamp()
+        try:
+            return datetime(
+                int(match.group(1)), int(match.group(2)), int(match.group(3)),
+                23, 59, 59, tzinfo=KST,
+            ).timestamp()
+        except ValueError:
+            return None
     match = re.search(r"(?:~\s*)?(\d{1,2})[./-](\d{1,2})", text)
     if match:
         now = now_kst
         month, day = int(match.group(1)), int(match.group(2))
         year = now.year + (1 if month < now.month - 6 else 0)
-        return datetime(year, month, day, 23, 59, 59, tzinfo=KST).timestamp()
+        try:
+            return datetime(year, month, day, 23, 59, 59, tzinfo=KST).timestamp()
+        except ValueError:
+            return None
     return None
 
 
 def is_expired(job: dict, now: float | None = None) -> bool:
+    if str(job.get("status") or "").strip().lower() in {"closed", "expired", "ended"}:
+        return True
     deadline_at = job.get("deadline_at")
     if deadline_at is None:
-        return str(job.get("status") or "").lower() in {"closed", "expired", "ended"}
+        return False
     current = datetime.now(timezone.utc).timestamp() if now is None else now
     return float(deadline_at) < current
 

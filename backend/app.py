@@ -5,12 +5,12 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
 from .analytics import aggregate_results
-from .keyword_catalog import STACK_KEYWORD_SCOPE
+from .keyword_catalog import STACK_KEYWORD_SCOPE, extract_keywords
 from .job_filter import CATEGORIES as JOB_CATEGORIES, filter_jobs
 from .job_record import build_record_fields
 from .wanted_scraper import (
@@ -89,11 +89,11 @@ for source, cache_file in CACHE_FILES.items():
             cache_file.unlink()  # 깨진 캐시 파일 삭제
 
 
-def save_cache(source: str):
+def save_cache(source: str, cache: dict):
     cache_file = CACHE_FILES[source]
     temporary_file = cache_file.with_suffix(cache_file.suffix + ".tmp")
     with temporary_file.open("w", encoding="utf-8") as file:
-        json.dump(_caches[source], file, ensure_ascii=False, indent=2)
+        json.dump(cache, file, ensure_ascii=False, indent=2)
         file.write("\n")
     temporary_file.replace(cache_file)
 
@@ -112,28 +112,35 @@ def cache_source_for_read(source: str) -> str | None:
     return source if _caches[source].get("jobs") else None
 
 
+def cache_warnings(source: str) -> list[str]:
+    cache = _caches[source]
+    label = SCRAPERS[source]["label"]
+    warnings = []
+    if not cache_is_valid(source):
+        warnings.append(f"{label}: 캐시의 수집 범위 또는 키워드 기준이 현재와 다릅니다. 새로고침이 필요합니다.")
+    if time.time() - cache.get("ts", 0) > 24 * 60 * 60:
+        warnings.append(f"{label}: 수집한 지 24시간이 지난 데이터입니다. 현재 채용 현황과 다를 수 있습니다.")
+    jobs = cache.get("jobs", [])
+    missing = sum(not str(job.get("content") or "").strip() for job in jobs)
+    if missing:
+        warnings.append(f"{label}: {len(jobs):,}개 중 {missing:,}개는 본문이 없어 제목·직무 정보만으로 집계합니다.")
+    return warnings
+
+
 def scrape_source(source: str, q: queue.Queue) -> tuple[list[dict], float]:
     """단일 사이트를 새로 크롤링하고 Markdown과 사이트별 캐시를 갱신한다."""
     scraper = SCRAPERS[source]
-    cache = _caches[source]
-    min_refresh_interval = scraper.get("min_refresh_interval", 0)
-    if (
-        min_refresh_interval
-        and cache_is_valid(source)
-        and time.time() - cache["ts"] < min_refresh_interval
-    ):
-        remaining = max(
-            1,
-            int((min_refresh_interval - (time.time() - cache["ts"])) / 60) + 1,
-        )
-        raise RuntimeError(
-            f"트래픽 보호를 위해 약 {remaining}분 후 새로고침할 수 있습니다."
-        )
     lock = _locks[source]
     if not lock.acquire(blocking=False):
         raise RuntimeError(f"{scraper['label']} 분석이 이미 실행 중입니다.")
 
     try:
+        cache = _caches[source]
+        min_refresh_interval = scraper.get("min_refresh_interval", 0)
+        elapsed = time.time() - cache.get("ts", 0)
+        if min_refresh_interval and cache.get("jobs") and elapsed < min_refresh_interval:
+            remaining = max(1, int((min_refresh_interval - elapsed) / 60) + 1)
+            raise RuntimeError(f"트래픽 보호를 위해 약 {remaining}분 후 새로고침할 수 있습니다.")
         scraper["init"]()
         q.put({"type": "status", "msg": f"{scraper['label']} 공고 목록 수집 중..."})
 
@@ -144,6 +151,8 @@ def scrape_source(source: str, q: queue.Queue) -> tuple[list[dict], float]:
             })
 
         job_metas = scraper["collect"](progress_cb=list_progress)
+        if not job_metas:
+            raise RuntimeError(f"{scraper['label']} 공고 목록이 비어 있어 기존 캐시를 보존합니다.")
         cached_by_id = {}
         if scraper.get("reuse_cached_jobs"):
             for cached_job in cache.get("jobs", []):
@@ -157,7 +166,11 @@ def scrape_source(source: str, q: queue.Queue) -> tuple[list[dict], float]:
                 pending_jobs.append(job_meta)
                 continue
             content = str(cached_job.get("content") or "")
-            job_meta["langs"] = list(cached_job.get("langs", []))
+            job_meta["langs"] = extract_keywords(" ".join([
+                str(job_meta.get("title") or cached_job.get("title") or ""), content,
+                " ".join(job_meta.get("keywords") or []),
+                str(job_meta.get("sectors") or ""),
+            ]))
             job_meta.update(build_record_fields(
                 title=str(job_meta.get("title") or cached_job.get("title") or ""),
                 content=content,
@@ -215,17 +228,17 @@ def scrape_source(source: str, q: queue.Queue) -> tuple[list[dict], float]:
                     })
 
         timestamp = time.time()
-        cache.clear()
-        cache.update({
+        new_cache = {
             "schema_version": 2,
             "collection_scope": scraper.get("collection_scope", ""),
             "ts": timestamp,
             "jobs": job_metas,
-        })
+        }
         cache_scope = scraper.get("cache_scope")
         if cache_scope:
-            cache["scope"] = cache_scope
-        save_cache(source)
+            new_cache["scope"] = cache_scope
+        save_cache(source, new_cache)
+        _caches[source] = new_cache
         return job_metas, timestamp
     finally:
         lock.release()
@@ -265,15 +278,17 @@ def scrape_status(source: str = "wanted", category: str = "all_it"):
 @app.get("/scrape")
 def scrape(
     refresh: bool = False,
-    years_min: int = 0,
-    years_max: int = 10,
+    years_min: int = Query(default=0, ge=0, le=10),
+    years_max: int = Query(default=10, ge=0, le=10),
     source: str = "wanted",
     category: str = "all_it",
     include_expired: bool = False,
 ):
     sources = requested_sources(source, category)
+    if years_min > years_max:
+        raise HTTPException(status_code=400, detail="years_min은 years_max보다 클 수 없습니다.")
 
-    # 요청한 모든 사이트의 유효 캐시가 있으면 합쳐서 즉시 재집계한다.
+    # 기존 캐시는 범위가 오래됐어도 주의사항과 함께 조회한다.
     read_sources = {item: cache_source_for_read(item) for item in sources}
     if not refresh and all(read_sources.values()):
         jobs = [
@@ -288,10 +303,11 @@ def scrape(
         ]
         timestamp = min(_caches[read_sources[item]]["ts"] for item in sources)
         results, analyzed = aggregate_results(jobs, years_min, years_max)
+        warnings = [warning for item in sources for warning in cache_warnings(item)]
 
         def generate_cached():
             yield f"data: {json.dumps({'type': 'cached', 'ts': timestamp, 'source': source}, ensure_ascii=False)}\n\n"
-            yield f"data: {json.dumps({'type': 'complete', 'results': results, 'analyzed': analyzed, 'ts': timestamp, 'source': source}, ensure_ascii=False)}\n\n"
+            yield f"data: {json.dumps({'type': 'complete', 'results': results, 'analyzed': analyzed, 'ts': timestamp, 'source': source, 'warnings': warnings}, ensure_ascii=False)}\n\n"
 
         return StreamingResponse(
             generate_cached(),
@@ -336,6 +352,7 @@ def scrape(
                     include_expired,
                 ))
                 timestamps.append(timestamp)
+                warnings.extend(cache_warnings(item))
 
             timestamp = min(timestamps)
             results, analyzed = aggregate_results(
@@ -361,7 +378,11 @@ def scrape(
 
     def generate():
         while True:
-            item = q.get()
+            try:
+                item = q.get(timeout=15)
+            except queue.Empty:
+                yield ": keep-alive\n\n"
+                continue
             if item is None:
                 break
             yield f"data: {json.dumps(item, ensure_ascii=False)}\n\n"

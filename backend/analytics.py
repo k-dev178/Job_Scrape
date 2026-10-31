@@ -11,13 +11,14 @@ def aggregate_results(
     filtered = [
         job
         for job in jobs
-        if job["annual_from"] <= years_max and job["annual_to"] >= years_min
+        if (years_max == 10 or job["annual_from"] <= years_max)
+        and job["annual_to"] >= years_min
     ]
 
     counts: dict[str, int] = defaultdict(int)
     jobs_by_keyword: dict[str, list[dict]] = defaultdict(list)
     for job in filtered:
-        for keyword in job.get("langs", []):
+        for keyword in dict.fromkeys(job.get("langs", [])):
             counts[keyword] += 1
             jobs_by_keyword[keyword].append({
                 "id": job.get("id"),

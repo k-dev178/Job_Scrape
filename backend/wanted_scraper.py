@@ -155,21 +155,12 @@ def _scrape_list_pairs(progress_cb=None) -> list[tuple[int, str]]:
 
 
 def extract_langs(detail_data: dict) -> list[str]:
-    """공고 상세에서 감지된 언어/기술 목록 반환"""
-    job = detail_data.get("job", {})
-    parts = [job.get("position") or job.get("title", "")]
-
-    for tag in job.get("tags", []):
-        parts.append(tag.get("title", ""))
-
-    detail = job.get("detail", {})
-    for field in ("intro", "main_tasks", "requirements", "benefits"):
-        text = detail.get(field, "") or ""
-        text = re.sub(r"<[^>]+>", " ", text)
-        parts.append(text)
-
-    full_text = " ".join(parts)
-    return extract_keywords(full_text)
+    """저장 및 재분석과 동일하게 제목과 정제된 본문에서 기술을 추출한다."""
+    job = detail_data.get("job") or {}
+    return extract_keywords(" ".join([
+        job.get("position") or job.get("title") or "",
+        _wanted_detail_markdown(job),
+    ]))
 
 
 def _clean_detail_text(value: str) -> str:
@@ -202,6 +193,8 @@ def process_job(job_id: int) -> dict:
     리스트는 Playwright라 연차 정보가 없어 여기서 상세 API로 채운다."""
     detail = fetch_job_detail(job_id)
     job = detail.get("job", {})
+    if not job:
+        raise RuntimeError(f"원티드 공고 {job_id} 상세를 가져오지 못했습니다.")
     company = job.get("company") or {}
     address = job.get("address") or {}
     annual_from = job.get("annual_from") or 0

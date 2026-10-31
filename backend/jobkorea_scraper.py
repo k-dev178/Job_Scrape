@@ -235,8 +235,10 @@ def extract_langs(text: str) -> list[str]:
 def _detail_text_from_html(source: str) -> str:
     start = source.find('id="details-section"')
     end = source.find('id="company-section"', start + 1)
-    if start >= 0:
-        source = source[start:end if end >= 0 else None]
+    if start < 0 or end < 0:
+        # 페이지 전체를 대체 본문으로 사용하면 추천 공고/사이트 스크립트가 통계에 섞인다.
+        return ""
+    source = source[start:end]
     source = re.sub(r"<script\b[^>]*>.*?</script>", " ", source, flags=re.I | re.S)
     source = re.sub(r"<style\b[^>]*>.*?</style>", " ", source, flags=re.I | re.S)
     source = re.sub(r"<br\s*/?>|</(?:p|div|li|h[1-6])>", "\n", source, flags=re.I)
@@ -290,7 +292,7 @@ def process_job(job_meta: dict) -> dict:
         if (parsed_from, parsed_to) != (0, 10):
             annual_from, annual_to = parsed_from, parsed_to
 
-    full_text = " ".join([title, company, keyword_text, sector_text, detail_text])
+    full_text = " ".join([title, keyword_text, sector_text, detail_text])
     record_fields = build_record_fields(
         title=title,
         content=detail_text,

@@ -39,7 +39,10 @@ function selectSource(source) {
   });
 
   updateSourceDescription();
-
+  document.getElementById('result-box').style.display = 'none';
+  document.getElementById('summary-box').style.display = 'none';
+  document.getElementById('btn-refresh').style.display = 'none';
+  document.getElementById('last-refreshed').style.display = 'none';
   closeJobList();
 }
 
@@ -65,9 +68,10 @@ function formatCareerRange(job) {
   const from = Number(job.annual_from || 0);
   const to = Number(job.annual_to ?? 10);
 
-  if (from <= 0 && to >= 100) return '경력 전체';
+  if (from === 0 && to === 0) return '신입';
+  if (from <= 0 && to >= 10) return '경력 전체';
   if (from <= 0) return `${to}년 이하`;
-  if (to >= 100) return `${from}년 이상`;
+  if (to >= 10) return `${from}년 이상`;
   if (from === to) return `${from}년`;
   return `${from}년 ~ ${to}년`;
 }
@@ -78,6 +82,9 @@ function formatJobCategories(job) {
 }
 
 function formatDeadline(job) {
+  if (job.is_expired) return job.deadline_at
+    ? `마감 ${new Date(Number(job.deadline_at) * 1000).toLocaleDateString('ko-KR')}`
+    : '마감';
   if (!job.deadline_at) return job.deadline || '상시';
   const expired = Number(job.deadline_at) * 1000 < Date.now();
   const date = new Date(Number(job.deadline_at) * 1000).toLocaleDateString('ko-KR');
@@ -250,6 +257,11 @@ function bindLanguageTable(tbody) {
   };
 }
 
+function setAnalysisFiltersDisabled(disabled) {
+  document.querySelectorAll('.source-option, #job-category, #include-expired, #btn-career, #btn-apply')
+    .forEach(control => { control.disabled = disabled; });
+}
+
 function startScrape(refresh = false) {
   const requestSource = selectedSource;
   const requestCategory = selectedJobCategory;
@@ -264,6 +276,7 @@ function startScrape(refresh = false) {
   const jobListBox = document.getElementById('job-list-box');
 
   btn.disabled = true;
+  setAnalysisFiltersDisabled(true);
   btnRefresh.disabled = true;
   btn.classList.add('loading');
   btnText.textContent = '분석 중...';
@@ -285,6 +298,7 @@ function startScrape(refresh = false) {
   let progressSource = null;
   const warnings = [];
   const scrapeStart = Date.now();
+  let fromCache = false;
 
   const { years_min, years_max } = (typeof getCareerParams === 'function') ? getCareerParams() : { years_min: 0, years_max: 10 };
   const params = new URLSearchParams({
@@ -301,6 +315,7 @@ function startScrape(refresh = false) {
     const data = JSON.parse(e.data);
 
     if (data.type === 'cached') {
+      fromCache = true;
       const age = Math.round((Date.now() / 1000 - data.ts) / 60);
       document.getElementById('status-text').textContent = `${SOURCE_LABELS[selectedSource]} 캐시된 데이터 불러오는 중... (${age}분 전 분석)`;
     }
@@ -348,12 +363,16 @@ function startScrape(refresh = false) {
 
     else if (data.type === 'complete') {
       const elapsed = ((Date.now() - scrapeStart) / 1000).toFixed(1);
-      const fromCache = elapsed < 2;
 
       document.getElementById('progress-bar').style.width = '100%';
       const completionWarnings = data.warnings || warnings;
+      if (completionWarnings.length) {
+        errorBox.textContent = '주의: ' + completionWarnings.join(' / ');
+        errorBox.classList.add('warning');
+        errorBox.style.display = 'block';
+      }
       document.getElementById('status-text').textContent = completionWarnings.length
-        ? '일부 사이트는 기존 캐시로 대체했습니다.'
+        ? '분석 완료 · 데이터 주의사항을 확인하세요.'
         : '새로고침 완료!';
       document.getElementById('eta-text').textContent     = '';
       document.getElementById('meta-text').textContent = `총 ${data.analyzed.toLocaleString()}개 분석 완료`;
@@ -364,7 +383,7 @@ function startScrape(refresh = false) {
         <span class="summary-item">소스 <strong>${SOURCE_LABELS[data.source || selectedSource]}</strong></span>
         <span class="summary-item">분석 공고 <strong>${data.analyzed.toLocaleString()}개</strong></span>
         ${completionWarnings.length
-          ? `<span class="summary-item">캐시 대체 <strong>${completionWarnings.length}개 사이트</strong></span>`
+          ? `<span class="summary-item">데이터 주의사항 <strong>${completionWarnings.length}건</strong></span>`
           : ''
         }
         ${fromCache
@@ -450,6 +469,7 @@ function startScrape(refresh = false) {
       }
       resultBox.style.display = 'block';
       btn.disabled = false;
+      setAnalysisFiltersDisabled(false);
       btnRefresh.disabled = false;
       btnRefresh.style.display = 'inline-block';
       btn.classList.remove('loading');
@@ -463,6 +483,7 @@ function startScrape(refresh = false) {
       errorBox.style.display  = 'block';
       statusBox.style.display = 'none';
       btn.disabled = false;
+      setAnalysisFiltersDisabled(false);
       btnRefresh.disabled = false;
       btn.classList.remove('loading');
       btnText.textContent = '다시 시도';
@@ -504,6 +525,7 @@ function startScrape(refresh = false) {
         errorBox.classList.remove('warning');
         errorBox.style.display = 'block';
         btn.disabled = false;
+        setAnalysisFiltersDisabled(false);
         btnRefresh.disabled = false;
         btn.classList.remove('loading');
         btnText.textContent = '다시 시도';
