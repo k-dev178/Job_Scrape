@@ -5,7 +5,9 @@
 - 경력: 5년 이상
 - 원문: https://www.wanted.co.kr/wd/337437
 - 공고번호: 337437
-- 기술: Java, Kotlin, Spring, JPA, Hibernate, REST API, MSA
+- 기술: Java, Kotlin, Spring, Spring Boot, JPA, Hibernate, Kafka, Docker, Kubernetes, REST API, MSA
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울특별시 용산구 한강대로 372, 24층
 
 ## 회사 소개

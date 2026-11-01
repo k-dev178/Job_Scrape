@@ -5,9 +5,9 @@
 - 경력: 7년 이상
 - 원문: https://www.wanted.co.kr/wd/366442
 - 공고번호: 366442
-- 기술: PostgreSQL, Redis, AWS, GCP, Azure, Docker, Kubernetes, REST API, MSA
+- 기술: Python, FastAPI, Pydantic, PostgreSQL, Redis, Kafka, RabbitMQ, AWS, GCP, Azure, Docker, Kubernetes, Helm, Terraform, Datadog, OpenTelemetry, REST API, MSA
 - 분야: backend, system
-- 마감: 2026-07-07
+- 마감: 2026-11-20
 - 지역: 서울특별시 서초구 서초대로38길 12 마제스타시티 타워2 6층 (주)코그넥스코리아
 
 ## 회사 소개
@@ -35,6 +35,8 @@
 • Principal 또는 senior individual contributor로서 복잡한 backend system을 주도적으로 설계/개발/운영해 본 경험이 있으신 분
 • Cloud 기반 web application backend 개발에 대한 깊은 hands-on 경험이 있으신 분
 • Docker, Kubernetes, AWS/Azure/GCP 중 하나 이상의 cloud/container 환경에서 production 서비스를 개발 또는 운영해 본 경험이 있으신 분
+• 해외 엔지니어와 영어로 기술적인 내용에 대한 커뮤니케이션을 하는데 큰 어려움이 없는 분
+•
 • REST API, microservice architecture, asynchronous processing, distributed system 설계에 대한 이해와 실무 경험이 있으신 분
 • Database schema design, transaction, indexing, migration, concurrency control에 대한 실무 이해가 있으신 분
 • Message queue, worker service, retry, idempotency, backpressure, failure recovery 등 production backend의 reliability pattern을 이해하고 적용해 본 경험이 있으신 분

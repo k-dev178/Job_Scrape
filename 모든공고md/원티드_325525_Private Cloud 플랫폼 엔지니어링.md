@@ -5,7 +5,9 @@
 - 경력: 7년 이상
 - 원문: https://www.wanted.co.kr/wd/325525
 - 공고번호: 325525
-- 기술: Kubernetes, Helm, ArgoCD, Prometheus
+- 기술: Python, Go, Kubernetes, Helm, ArgoCD, Prometheus
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 강남구 테헤란로38길 8
 
 ## 회사 소개

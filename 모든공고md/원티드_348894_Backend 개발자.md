@@ -5,7 +5,9 @@
 - 경력: 3년 이상
 - 원문: https://www.wanted.co.kr/wd/348894
 - 공고번호: 348894
-- 기술: Java, Kotlin, Spring Boot, Spring Batch, MySQL, REST API, MSA
+- 기술: Java, Kotlin, Spring Boot, Spring Batch, MySQL, Kafka, RabbitMQ, Kubernetes, REST API, MSA
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 경기 성남시 분당구 불정로 6, 11층 (그린팩토리)
 
 ## 회사 소개

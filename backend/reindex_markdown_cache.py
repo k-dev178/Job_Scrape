@@ -4,11 +4,10 @@ import json
 import re
 from pathlib import Path
 
-from .job_record import classify_categories, deadline_timestamp, is_expired
-from .keyword_catalog import STACK_KEYWORD_SCOPE, extract_keywords
+from .job_record import deadline_timestamp, is_expired, matches_backend_role
+from .keyword_catalog import STACK_KEYWORD_SCOPE, extract_job_keywords
 from .wanted_scraper import CACHE_SCOPE as WANTED_CACHE_SCOPE
-from .jobkorea_scraper import CACHE_SCOPE as JOBKOREA_CACHE_SCOPE
-from .saramin_scraper import CACHE_SCOPE as SARAMIN_CACHE_SCOPE
+from .jumpit_scraper import CACHE_SCOPE as JUMPIT_CACHE_SCOPE
 
 
 PROJECT_DIR = Path(__file__).parent.parent
@@ -17,18 +16,15 @@ MIN_COVERAGE = 0.9
 SOURCES = {
     "wanted": {
         "prefix": "원티드",
-        "cache_file": Path(__file__).parent / "cache.json",
+        "cache_file": Path(__file__).parent / "cache_wanted_backend.json",
         "cache_scope": f"{WANTED_CACHE_SCOPE}:{STACK_KEYWORD_SCOPE}",
+        "base_scope": WANTED_CACHE_SCOPE,
     },
-    "jobkorea": {
-        "prefix": "잡코리아",
-        "cache_file": Path(__file__).parent / "cache_jobkorea.json",
-        "cache_scope": f"{JOBKOREA_CACHE_SCOPE}:{STACK_KEYWORD_SCOPE}",
-    },
-    "saramin": {
-        "prefix": "사람인",
-        "cache_file": Path(__file__).parent / "cache_saramin.json",
-        "cache_scope": f"{SARAMIN_CACHE_SCOPE}:{STACK_KEYWORD_SCOPE}",
+    "jumpit": {
+        "prefix": "점핏",
+        "cache_file": Path(__file__).parent / "cache_jumpit.json",
+        "cache_scope": f"{JUMPIT_CACHE_SCOPE}:{STACK_KEYWORD_SCOPE}",
+        "base_scope": JUMPIT_CACHE_SCOPE,
     },
 }
 
@@ -39,7 +35,10 @@ def _markdown_index(prefix: str) -> dict[int, Path]:
     for path in MARKDOWN_DIR.glob(f"{prefix}_*.md"):
         match = pattern.match(path.name)
         if match:
-            index[int(match.group(1))] = path
+            job_id = int(match.group(1))
+            previous = index.get(job_id)
+            if previous is None or (path.stat().st_mtime_ns, path.name) > (previous.stat().st_mtime_ns, previous.name):
+                index[job_id] = path
     return index
 
 
@@ -63,46 +62,22 @@ def reindex_source(source: str) -> dict:
 
     for job in jobs:
         path = markdown_by_id.get(int(job["id"]))
-        if not path:
-            updated = dict(job)
-            content = str(updated.get("content") or "")
-            updated["langs"] = extract_keywords(" ".join([
-                str(updated.get("title") or ""), content,
-                " ".join(updated.get("keywords") or []),
-                str(updated.get("sectors") or ""),
-            ]))
-            updated["content"] = content
-            updated["categories"] = classify_categories(
-                str(updated.get("title") or ""),
-                content,
-                " ".join(updated.get("keywords") or []) + " " + str(updated.get("sectors") or ""),
-            )
-            updated["deadline"] = str(updated.get("deadline") or "")
-            updated["status"] = str(updated.get("status") or "active")
-            updated["deadline_at"] = deadline_timestamp(updated.get("deadline"), reference_time=cache.get("ts"))
-            updated["is_expired"] = is_expired(updated)
-            reindexed_jobs.append(updated)
-            continue
-        text = path.read_text(encoding="utf-8", errors="ignore")
-        text = re.sub(r"(?m)^- 기술:.*$", "", text)
         updated = dict(job)
-        updated["content"] = text
-        updated["langs"] = extract_keywords(" ".join([
-            str(updated.get("title") or ""), text,
-            " ".join(updated.get("keywords") or []),
-            str(updated.get("sectors") or ""),
-        ]))
-        updated["categories"] = classify_categories(
-            str(updated.get("title") or ""),
-            text,
-            " ".join(updated.get("keywords") or []) + " " + str(updated.get("sectors") or ""),
-        )
+        if path:
+            matched += 1
+            if not updated.get("content") or path.stat().st_mtime >= updated.get("detail_fetched_at", 0):
+                text = path.read_text(encoding="utf-8", errors="ignore")
+                updated["content"] = re.sub(r"(?m)^- 기술:.*$", "", text)
+        updated["content"] = str(updated.get("content") or "")
+        updated["langs"] = extract_job_keywords(updated)
+        updated["categories"] = ["backend"] if matches_backend_role(
+            str(updated.get("title") or ""), str(updated.get("job_role") or ""),
+        ) else []
         updated["deadline"] = str(updated.get("deadline") or "")
         updated["status"] = str(updated.get("status") or "active")
         updated["deadline_at"] = deadline_timestamp(updated.get("deadline"), reference_time=cache.get("ts"))
         updated["is_expired"] = is_expired(updated)
         reindexed_jobs.append(updated)
-        matched += 1
 
     coverage = matched / len(jobs) if jobs else 0
     result = {
@@ -113,12 +88,7 @@ def reindex_source(source: str) -> dict:
         "mode": "full" if coverage >= MIN_COVERAGE else "filtered",
         "updated": False,
     }
-    required_base_scope = (
-        WANTED_CACHE_SCOPE
-        if source == "wanted"
-        else JOBKOREA_CACHE_SCOPE if source == "jobkorea"
-        else SARAMIN_CACHE_SCOPE if source == "saramin" else None
-    )
+    required_base_scope = config.get("base_scope")
     base_scope_is_compatible = (
         required_base_scope is None
         or str(cache.get("scope", "")).startswith(required_base_scope)

@@ -5,7 +5,9 @@
 - 경력: 3년 이상
 - 원문: https://www.wanted.co.kr/wd/342471
 - 공고번호: 342471
-- 기술: Python, PostgreSQL, MongoDB, Docker, REST API
+- 기술: Python, FastAPI, PostgreSQL, MongoDB, Redis, Elasticsearch, InfluxDB, Linux, Docker, Kubernetes, REST API, PyTorch
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 울산 중구 종가6길 7, 10층
 
 ## 회사 소개

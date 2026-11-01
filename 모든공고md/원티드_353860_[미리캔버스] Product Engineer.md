@@ -5,9 +5,9 @@
 - 경력: 1년 이상
 - 원문: https://www.wanted.co.kr/wd/353860
 - 공고번호: 353860
-- 기술: TypeScript, PostgreSQL
+- 기술: TypeScript, PostgreSQL, Docker, OpenAI
 - 분야: backend
-- 마감: 2026-07-24
+- 마감: 2026-11-20
 - 지역: 서울 구로구 디지털로31길 12, 8층, 13층, 14층, 17층
 
 ## 회사 소개

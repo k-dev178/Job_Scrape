@@ -5,7 +5,9 @@
 - 경력: 5년 이상
 - 원문: https://www.wanted.co.kr/wd/230448
 - 공고번호: 230448
-- 기술: Java, Kotlin, Spring Boot, Spring Batch, JPA, MyBatis, QueryDSL, Gradle, MySQL, AWS, RDS, ECS, Docker, Jenkins, GitHub Actions, Datadog, REST API, DDD
+- 기술: Java, Kotlin, TypeScript, JavaScript, Spring Boot, Spring Batch, JPA, MyBatis, QueryDSL, Gradle, MySQL, AWS, RDS, ECS, Docker, Jenkins, GitHub Actions, Datadog, REST API, MSA, DDD
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 강남구 영동대로 424, 3-4층
 
 ## 회사 소개
@@ -20,12 +22,13 @@
 : 축적된 물류데이터를 기반으로 지능화 물류솔루션 COLO를 고도화합니다.
 국내를 넘어 글로벌 시장에서 인정받고 있습니다.
 : 중소기업벤처부의 글로벌 강소기업 1000+에 선정 됐습니다.
-: 2024년에는 아기유니콘플러스에 선정돼 기술기반 창업기업으로서 역량을 지속 인정받고 있습니다.
+: 24년에는 아기유니콘플러스, 25년 예비유니콘에 선정돼 기술기반기업으로서 역량을 지속 인정받고 있습니다.
 콜로세움은 이렇게 구성되어 있습니다.
-• Product & Engineering Division: COLO시스템 기획/개발/운영
-• Sales & Operation Division: 영업, 서비스 운영 및 사업 기획
-• Product Marketing Division: 프로덕트 마케팅, 브랜드 관리
-• Business Management Division: 경영관리 (Finance, HR/GA)
+- Product & Engineering Division: COLO시스템 기획/개발/운영
+- Sales & Operation Division: 국내 영업, 서비스 운영 및 사업 기획
+- Product Marketing Division: 프로덕트 마케팅, 브랜드 관리
+- Business Management Division: 경영관리
+- Global Business Divsion: 글로벌 영업, 서비스 운영 및 사업 기획
 
 ## 주요 업무
 
@@ -43,14 +46,14 @@
 2. 바쁘고 현실적인 제약 속에서 느리더라도 꾸준히 더 나은 방법을 모색하며 개선을 이어가시는 분
 3. 새로운 기술과 도메인 지식을 학습하며 지속적으로 성장하시는 분
 4. 다양한 직군과 원활히 협업하실 수 있는 분
+5. 해외 출장에 결격 사유가 없는 분
 ■ 직무 역량
 1. 실무 경력 5년 이상
-2. 소규모 팀(2~5명) 또는 프로젝트 단위 운영 및 리딩 경험
+2. 물류 도메인(OMS, WMS, LMS) 서비스 개발 경험
 3. Confluence, JIRA, Slack 등 협업 도구 활용 경험
-4. 해외 출장에 결격 사유가 없는 분
-5. AWS 인프라 환경에서 서비스 개발 및 운영 경험
-6. 다양한 서비스의 REST API 연동 및 통합 시스템 개발 경험
-7. 비즈니스 요구 사항을 이해하고 데이터 모델·API를 능숙하게 설계할 수 있는 역량
+4. AWS 인프라 환경에서 서비스 개발 및 운영 경험
+5. 다양한 서비스의 REST API 연동 및 통합 시스템 개발 경험
+6. 비즈니스 요구 사항을 이해하고 데이터 모델·API를 능숙하게 설계할 수 있는 역량
 ■ 추가 역량 및 태도
 - 지속적으로 성장하며 문제 해결을 즐기는 태도
 - OOP, DDD 및 테스트 코드 작성에 대한 높은 관심과 실천
@@ -61,9 +64,8 @@
 
 ## 우대 사항
 
-- 물류 도메인(OMS, WMS, LMS) 서비스 개발 경험
 - 모놀리식 시스템에서 MSA 전환 등 아키텍처 개선 경험
-- 대규모 서비스 환경에서 복잡한 우선순위를 조율하고 팀을 리딩한 경험
+- 서비스의 복잡한 우선순위를 조율하고 팀을 리딩해본 경험
 - DDD 기반 설계 및 구현 경험
 
 ## 혜택 및 복지
@@ -80,7 +82,7 @@
 - 해피아워: 매월 3주차 금요일 조기 퇴근
 - 롱런데이: 매월 1회 2시간 점심 시간 지원
 ■ 객관적인 성과 보상 및 개인 역량 향상 지원
-- 연 1회 이상 성장/성과에 따른 인센티브 지급
+- 연 1회 이상 성과 평가 결과에 따른 연봉 인상
 - 근무 년수 및 평가 등급에 따른 스톡옵션 부여
 - 추가근무시 식대 및 교통비 지원
 - 직무 관련 컨퍼런스 및 외부 세미나, 교육 참여 지원

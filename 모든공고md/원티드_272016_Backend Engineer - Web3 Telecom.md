@@ -5,7 +5,9 @@
 - 경력: 5년 이상
 - 원문: https://www.wanted.co.kr/wd/272016
 - 공고번호: 272016
-- 기술: Java, Python, Go, Rust, Spring, Node.js, REST API
+- 기술: Java, Python, Go, Rust, Spring, Node.js, NestJS, AWS, GCP, Azure, Docker, Kubernetes, REST API, WebSocket, Socket.IO
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 서초구 강남대로 311
 
 ## 회사 소개

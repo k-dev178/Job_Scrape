@@ -5,7 +5,9 @@
 - 경력: 7년 이상
 - 원문: https://www.wanted.co.kr/wd/336834
 - 공고번호: 336834
-- 기술: Python, Go, Ruby, FastAPI, Flask, Airflow, Rails, PostgreSQL, Redis, Kafka, Kubernetes, REST API, MSA
+- 기술: Python, Go, TypeScript, Ruby, FastAPI, Flask, Airflow, Rails, PostgreSQL, Redis, Elasticsearch, Kafka, AWS, Kubernetes, ELK, Kibana, REST API, MSA
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 드림플러스 강남점 14층 (강남역 인근)
 
 ## 회사 소개

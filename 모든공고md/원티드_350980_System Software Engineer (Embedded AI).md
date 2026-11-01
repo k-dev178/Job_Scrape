@@ -5,10 +5,10 @@
 - 경력: 경력 무관
 - 원문: https://www.wanted.co.kr/wd/350980
 - 공고번호: 350980
-- 기술: Linux
+- 기술: Linux, Embedded Linux, Yocto
 - 분야: system
 - 마감: 상시 또는 정보 없음
-- 지역: 서울 성동구 왕십리로 125
+- 지역: 서울 중구 퇴계로 325-9, 4층
 
 ## 회사 소개
 

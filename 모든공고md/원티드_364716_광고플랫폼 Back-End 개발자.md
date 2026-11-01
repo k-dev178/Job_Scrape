@@ -5,7 +5,9 @@
 - 경력: 3년 이상
 - 원문: https://www.wanted.co.kr/wd/364716
 - 공고번호: 364716
-- 기술: Java, Spring, Spring Boot, JPA, WebFlux, MySQL, Redis, Kafka, REST API, OAuth
+- 기술: Java, Spring, Spring Boot, JPA, WebFlux, Node.js, NestJS, Express, MySQL, Redis, Kafka, AWS, GCP, ArgoCD, REST API, GraphQL, OAuth, MSA, Event Driven
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울시 영등포구 여의대로 108 파크원타워2 46층
 
 ## 회사 소개

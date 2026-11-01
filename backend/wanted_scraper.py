@@ -1,17 +1,12 @@
 import html
 import re
-import time
-import threading
-
-import requests
-from playwright.sync_api import sync_playwright
-
-from .job_record import build_record_fields
-from .keyword_catalog import extract_keywords
+from .job_record import build_record_fields, is_expired, matches_backend_role
+from .keyword_catalog import extract_job_keywords
+from .scrape_http import JobDetailUnavailable, JsonClient, SourceUnavailable
 
 BASE_URL = "https://www.wanted.co.kr/api/v4/jobs"
 LIST_URL = (
-    "https://www.wanted.co.kr/wdlist/518"
+    "https://www.wanted.co.kr/wdlist/518/872"
     "?country=kr&job_sort=job.latest_order&years=-1&locations=all"
 )
 HEADERS = {
@@ -22,36 +17,19 @@ HEADERS = {
     ),
     "Accept": "application/json, text/plain, */*",
     "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
-    "Referer": "https://www.wanted.co.kr/wdlist/518?country=kr&job_sort=job.latest_order&years=-1&locations=all",
+    "Referer": LIST_URL,
     "Origin": "https://www.wanted.co.kr",
     "x-wanted-platform": "pcweb",
 }
 
-CATEGORY = 518
-CACHE_SCOPE = "wanted:category-518:all-it:v2"
+CATEGORY = 872  # 원티드의 '서버 개발자' 직무
+CACHE_SCOPE = "wanted:role-872:web-backend:v3"
 
-MAX_WORKERS = 10
-
-_local = threading.local()
-
-
-def get_session() -> requests.Session:
-    if not hasattr(_local, "session"):
-        s = requests.Session()
-        s.headers.update(HEADERS)
-        _local.session = s
-    return _local.session
-
+MAX_WORKERS = 1
+_client = JsonClient("Wanted", HEADERS)
 
 def init_session():
-    """메인 페이지를 먼저 방문해 쿠키 획득"""
-    try:
-        get_session().get(
-            "https://www.wanted.co.kr/wdlist/518?country=kr&job_sort=job.latest_order&years=-1&locations=all",
-            timeout=10,
-        )
-    except requests.RequestException:
-        pass
+    _client.check_available()
 
 
 def fetch_job_list(offset: int, limit: int = 100) -> dict:
@@ -60,107 +38,62 @@ def fetch_job_list(offset: int, limit: int = 100) -> dict:
         "years":     -1,
         "country":   "kr",
         "locations": "all",
-        "category":  CATEGORY,
+        "tag_type_ids": CATEGORY,
         "limit":     limit,
         "offset":    offset,
     }
-    for attempt in range(3):
-        try:
-            resp = get_session().get(BASE_URL, params=params, timeout=10)
-            if resp.status_code == 429:
-                time.sleep(5)
-                continue
-            resp.raise_for_status()
-            return resp.json()
-        except requests.RequestException:
-            if attempt == 2:
-                raise
-            time.sleep(2)
-    return {}
+    data = _client.get(BASE_URL, params=params)
+    if not isinstance(data.get("data"), list) or not isinstance(data.get("links"), dict):
+        raise SourceUnavailable("Wanted: 공고 목록 응답 형식이 변경되었습니다.")
+    return data
 
 
 def fetch_job_detail(job_id: int) -> dict:
-    url = f"{BASE_URL}/{job_id}"
-    for attempt in range(2):
-        try:
-            resp = get_session().get(url, timeout=10)
-            if resp.status_code == 429:
-                time.sleep(5)
-                continue
-            if resp.status_code != 200:
-                return {}
-            return resp.json()
-        except requests.RequestException:
-            time.sleep(1)
-    return {}
+    return _client.get(f"{BASE_URL}/{job_id}")
 
 
 def collect_all_jobs(progress_cb=None) -> list[dict]:
-    """Playwright로 /wdlist/518 스크롤 수집 → 키워드 매칭 공고 (id, title) 반환.
-    프로모션/추천 공고까지 포함. annual_from/to는 상세 API에서 채워짐(process_job)."""
-    pairs = _scrape_list_pairs(progress_cb)
+    """서버 개발자 직무 목록을 끝까지 읽고, 웹 백엔드 공고만 상세 조회한다."""
     seen: set[int] = set()
     jobs: list[dict] = []
-    for jid, title in pairs:
-        if jid in seen:
-            continue
-        seen.add(jid)
-        jobs.append({"id": jid, "title": title})
-    return jobs
-
-
-def _scrape_list_pairs(progress_cb=None) -> list[tuple[int, str]]:
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        context = browser.new_context(
-            user_agent=HEADERS["User-Agent"],
-            viewport={"width": 1440, "height": 900},
-        )
-        page = context.new_page()
-        page.goto(LIST_URL, wait_until="domcontentloaded", timeout=60000)
-        page.wait_for_selector('[data-cy="job-card"]', timeout=15000)
-
-        prev_count = 0
-        stable = 0
-        while True:
-            page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-            page.wait_for_timeout(1500)
-            count = page.locator('[data-cy="job-card"]').count()
-            if progress_cb and count != prev_count:
-                progress_cb(count)
-            if count == prev_count:
-                stable += 1
-                if stable >= 2:
-                    break
-            else:
-                stable = 0
-            prev_count = count
-
-        raw = page.evaluate(r"""
-            () => {
-                const out = [];
-                document.querySelectorAll('[data-cy="job-card"]').forEach(card => {
-                    const btn = card.querySelector('button[data-position-name]');
-                    const a = card.querySelector('a[href*="/wd/"]');
-                    if (!btn || !a) return;
-                    const title = btn.getAttribute('data-position-name');
-                    const m = a.getAttribute('href').match(/\/wd\/(\d+)/);
-                    if (title && m) out.push([parseInt(m[1], 10), title]);
-                });
-                return out;
-            }
-        """)
-        browser.close()
-    return [(int(jid), t) for jid, t in raw]
+    offset = 0
+    while True:
+        data = fetch_job_list(offset)
+        items = data["data"]
+        new_ids = {int(item["id"]) for item in items} - seen
+        if not new_ids and data["links"].get("next"):
+            raise SourceUnavailable("Wanted: 같은 목록 페이지가 반복되어 수집을 중단했습니다.")
+        for item in items:
+            job_id = int(item["id"])
+            if job_id in seen:
+                continue
+            seen.add(job_id)
+            title = item.get("position") or item.get("title") or ""
+            categories = {tag.get("id") for tag in item.get("category_tags", [])}
+            if CATEGORY not in categories or not matches_backend_role(title, "backend"):
+                continue
+            record = _record_from_job(item)
+            if not is_expired(record):
+                jobs.append({"id": job_id, **record})
+        if progress_cb:
+            progress_cb(len(jobs))
+        if not data["links"].get("next"):
+            return jobs
+        offset += len(items)
 
 
 def extract_langs(detail_data: dict) -> list[str]:
     """저장 및 재분석과 동일하게 제목과 정제된 본문에서 기술을 추출한다."""
     job = detail_data.get("job") or {}
-    return extract_keywords(" ".join([
-        job.get("position") or job.get("title") or "",
-        _wanted_detail_markdown(job),
-    ]))
+    return extract_job_keywords({
+        "title": job.get("position") or job.get("title") or "",
+        "content": _wanted_detail_markdown(job), "tech_stacks": _tech_stacks(job),
+    })
+
+
+def _tech_stacks(job: dict) -> list[str]:
+    return [str(tag.get("title") or tag.get("name") or "")
+            for tag in (job.get("skill_tags") or []) if isinstance(tag, dict)]
 
 
 def _clean_detail_text(value: str) -> str:
@@ -189,12 +122,20 @@ def _wanted_detail_markdown(job: dict) -> str:
 
 
 def process_job(job_id: int) -> dict:
-    """공고 상세를 가져와 langs, annual_from, annual_to 반환.
-    리스트는 Playwright라 연차 정보가 없어 여기서 상세 API로 채운다."""
+    """직무로 선별된 공고의 상세 본문을 가져온다."""
     detail = fetch_job_detail(job_id)
     job = detail.get("job", {})
     if not job:
-        raise RuntimeError(f"원티드 공고 {job_id} 상세를 가져오지 못했습니다.")
+        raise JobDetailUnavailable(f"원티드 공고 {job_id} 상세를 가져오지 못했습니다.")
+    record = _record_from_job(job)
+    if not record["content"]:
+        raise JobDetailUnavailable(f"원티드 공고 {job_id} 상세 본문이 없습니다.")
+    record["url"] = f"https://www.wanted.co.kr/wd/{job_id}"
+    record["_detail_markdown"] = record["content"]
+    return record
+
+
+def _record_from_job(job: dict) -> dict:
     company = job.get("company") or {}
     address = job.get("address") or {}
     annual_from = job.get("annual_from") or 0
@@ -208,11 +149,14 @@ def process_job(job_id: int) -> dict:
         if isinstance(tag, dict)
     )
     return {
+        "source":      "wanted",
+        "job_role":    "backend",
         "title":       job.get("position") or job.get("title") or "제목 없음",
         "company":     company.get("name", ""),
         "location":    address.get("full_location") or address.get("location", ""),
-        "url":         f"https://www.wanted.co.kr/wd/{job_id}",
-        "langs":       extract_langs(detail),
+        "url":         f"https://www.wanted.co.kr/wd/{job.get('id')}",
+        "langs":       extract_langs({"job": job}),
+        "tech_stacks": _tech_stacks(job),
         "annual_from": annual_from,
         "annual_to":   annual_to,
         **build_record_fields(
@@ -222,5 +166,5 @@ def process_job(job_id: int) -> dict:
             deadline=job.get("due_time"),
             status=job.get("status") or "active",
         ),
-        "_detail_markdown": content,
+        "categories": ["backend"],
     }

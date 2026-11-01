@@ -5,7 +5,9 @@
 - 경력: 5년 이상
 - 원문: https://www.wanted.co.kr/wd/362687
 - 공고번호: 362687
-- 기술: Java, Spring
+- 기술: Java, Python, Spring, Spring Boot, Django, PostgreSQL, RabbitMQ, AWS, GCP, Docker, Kubernetes
+- 분야: backend
+- 마감: 2026-10-31
 - 지역: 서울특별시 영등포구 은행로 30 (여의도동) 중소기업중앙회 8층
 
 ## 회사 소개

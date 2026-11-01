@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/366990
 - 공고번호: 366990
 - 기술: Java, Kotlin, Spring Boot, Elasticsearch, OpenSearch, REST API, MSA
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울특별시 용산구 한강대로 372, 24층
 
 ## 회사 소개

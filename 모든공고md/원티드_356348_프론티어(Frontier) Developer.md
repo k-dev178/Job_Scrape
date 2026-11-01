@@ -5,7 +5,7 @@
 - 경력: 7년 이상
 - 원문: https://www.wanted.co.kr/wd/356348
 - 공고번호: 356348
-- 기술: Java, Python, Go, Node.js, MySQL, MongoDB, Redis, Docker, Jenkins
+- 기술: Java, Python, Go, Django, FastAPI, Node.js, MySQL, MongoDB, Redis, Elasticsearch, ClickHouse, Docker, Jenkins, Grafana, Sentry, Kibana, MSA, Event Driven
 - 분야: backend
 - 마감: 상시 또는 정보 없음
 - 지역: 서울특별시 강남구 학동로7길 22 크로스이엔에프

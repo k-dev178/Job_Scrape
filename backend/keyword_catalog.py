@@ -52,3 +52,32 @@ def extract_keywords(text: str) -> list[str]:
     # Markdown 내 자동 생성 메타데이터를 다시 기술 근거로 사용하지 않는다.
     text = re.sub(r"(?m)^- (?:출처|회사|경력|원문|공고번호|기술|분야|마감|지역):.*$", "", text)
     return [name for name, pattern in COMPILED.items() if pattern.search(text)]
+
+
+def technical_content(content: str) -> str:
+    """분리된 공고 본문에서는 업무·자격·우대 사항만 기술 근거로 사용한다."""
+    include = {"주요업무", "자격요건", "우대사항", "공고내용"}
+    exclude = {"회사소개", "혜택및복지", "복지및혜택"}
+    sections = include | exclude
+    lines = str(content or "").splitlines()
+    headings = [re.match(r"^##\s+(.+?)\s*$", line) for line in lines]
+    if not any(match and re.sub(r"\s", "", match.group(1)) in sections for match in headings):
+        return content
+    selected = []
+    keep = False
+    for line, heading in zip(lines, headings):
+        if heading:
+            name = re.sub(r"\s", "", heading.group(1))
+            if name in sections:
+                keep = name in include
+        if keep:
+            selected.append(line)
+    return "\n".join(selected)
+
+
+def extract_job_keywords(job: dict) -> list[str]:
+    return extract_keywords(" ".join([
+        str(job.get("title") or ""),
+        technical_content(str(job.get("content") or "")),
+        " ".join(job.get("tech_stacks") or []),
+    ]))

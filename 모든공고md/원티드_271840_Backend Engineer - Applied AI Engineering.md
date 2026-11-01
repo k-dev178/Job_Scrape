@@ -5,7 +5,9 @@
 - 경력: 3년 이상
 - 원문: https://www.wanted.co.kr/wd/271840
 - 공고번호: 271840
-- 기술: Java, Python, Docker, OpenAI, LangChain
+- 기술: Java, Python, Go, Rust, Node.js, NestJS, Docker, Kubernetes, REST API, OpenAI, LangChain
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 서초구 강남대로 311
 
 ## 회사 소개

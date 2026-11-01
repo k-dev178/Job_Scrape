@@ -30,14 +30,14 @@ function updateSliderUI() {
   document.getElementById('career-label').textContent = careerText(min, max);
 }
 
-function onRangeChange() {
+function onRangeChange(changedInput) {
   const minEl = document.getElementById('range-min');
   const maxEl = document.getElementById('range-max');
   let min = parseInt(minEl.value);
   let max = parseInt(maxEl.value);
 
   if (min > max) {
-    if (this === minEl) { minEl.value = max; min = max; }
+    if (changedInput === minEl) { minEl.value = max; min = max; }
     else                { maxEl.value = min; max = min; }
   }
 

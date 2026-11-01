@@ -5,7 +5,9 @@
 - 경력: 5년 이상
 - 원문: https://www.wanted.co.kr/wd/51700
 - 공고번호: 51700
-- 기술: Java, Kotlin, Spring
+- 기술: Java, Kotlin, Spring, JPA, MongoDB, Redis, Elasticsearch, Kafka, Kinesis, SQS, AWS, Docker, Kubernetes, MSA
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 서초구 강남대로 241, 5층
 
 ## 회사 소개

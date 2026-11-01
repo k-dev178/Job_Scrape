@@ -5,7 +5,9 @@
 - 경력: 7년 이상
 - 원문: https://www.wanted.co.kr/wd/116149
 - 공고번호: 116149
-- 기술: Java, Spring, Node.js, MySQL, REST API
+- 기술: Java, JavaScript, Spring, Node.js, MySQL, MariaDB, Redis, AWS, Linux, REST API
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 강남구 학동로6길7 301호(논현동)
 
 ## 회사 소개

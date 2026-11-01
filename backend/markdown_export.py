@@ -7,6 +7,7 @@ SOURCE_LABELS = {
     "wanted": "원티드",
     "jobkorea": "잡코리아",
     "saramin": "사람인",
+    "jumpit": "점핏",
 }
 
 
@@ -44,6 +45,7 @@ def write_job_markdown(
         "wanted": f"https://www.wanted.co.kr/wd/{job_id}",
         "jobkorea": f"https://www.jobkorea.co.kr/Recruit/GI_Read/{job_id}",
         "saramin": f"https://www.saramin.co.kr/zf_user/jobs/relay/view?rec_idx={job_id}",
+        "jumpit": f"https://jumpit.saramin.co.kr/position/{job_id}",
     }
     url = job.get("url") or fallback_urls[source]
     output_dir.mkdir(parents=True, exist_ok=True)

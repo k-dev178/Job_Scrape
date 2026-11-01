@@ -6,6 +6,8 @@
 - 원문: https://www.wanted.co.kr/wd/308908
 - 공고번호: 308908
 - 기술: Python, FastAPI, Node.js, PostgreSQL, MongoDB, AWS, GCP, S3, Kubernetes
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 서초구 서초대로74길 14, 삼성화재 서초타워 18층 NAVER D2SF 강남
 
 ## 회사 소개

@@ -1,31 +1,38 @@
 let selectedLang = null;
 let latestResultsByLang = new Map();
 let selectedSource = 'all';
-let selectedJobCategory = 'all_it';
+let selectedJobCategory = 'backend';
+let activeAnalysis = 0;
 
 const SOURCE_LABELS = {
   all: '전체',
   wanted: 'Wanted',
-  jobkorea: '잡코리아',
-  saramin: '사람인'
+  jumpit: '점핏'
 };
 
 const SOURCE_DESCRIPTIONS = {
-  all: 'Wanted·잡코리아·사람인의 IT 전체 캐시를 통합 분석',
-  wanted: 'Wanted IT 전체 공고를 저장하고 선택한 분야만 분석',
-  jobkorea: '잡코리아 전국 AI·개발·데이터 공고를 저장하고 선택한 분야만 분석',
-  saramin: '사람인 IT개발·데이터 전체 공고를 저속 수집하고 선택한 분야만 분석'
+  all: 'Wanted·점핏의 웹 백엔드·서버 개발 공고를 통합 분석',
+  wanted: 'Wanted 서버 개발자 직무의 웹 백엔드 공고 분석',
+  jumpit: '점핏 서버/백엔드 개발자 직무의 웹 백엔드 공고 분석'
 };
 
 const CATEGORY_LABELS = {
-  backend: '백엔드',
-  system: '시스템 소프트웨어',
-  all_it: '전체'
+  backend: '웹 백엔드·서버 개발'
 };
 
 function updateSourceDescription() {
   document.getElementById('source-description').textContent =
     `${SOURCE_DESCRIPTIONS[selectedSource]} · 분야: ${CATEGORY_LABELS[selectedJobCategory]}`;
+}
+
+function clearAnalysisView() {
+  selectedLang = null;
+  latestResultsByLang = new Map();
+  ['result-box', 'summary-box', 'btn-refresh', 'last-refreshed',
+   'collection-notice', 'error-box', 'status-box'].forEach(id => {
+    document.getElementById(id).style.display = 'none';
+  });
+  closeJobList();
 }
 
 function selectSource(source) {
@@ -39,29 +46,18 @@ function selectSource(source) {
   });
 
   updateSourceDescription();
-  document.getElementById('result-box').style.display = 'none';
-  document.getElementById('summary-box').style.display = 'none';
-  document.getElementById('btn-refresh').style.display = 'none';
-  document.getElementById('last-refreshed').style.display = 'none';
-  closeJobList();
+  clearAnalysisView();
 }
 
 function selectJobCategory(category) {
   selectedJobCategory = category;
   selectedLang = null;
   updateSourceDescription();
-  document.getElementById('result-box').style.display = 'none';
-  document.getElementById('summary-box').style.display = 'none';
-  document.getElementById('btn-refresh').style.display = 'none';
-  closeJobList();
+  clearAnalysisView();
 }
 
 function onExpiredFilterChange() {
-  selectedLang = null;
-  document.getElementById('result-box').style.display = 'none';
-  document.getElementById('summary-box').style.display = 'none';
-  document.getElementById('btn-refresh').style.display = 'none';
-  closeJobList();
+  clearAnalysisView();
 }
 
 function formatCareerRange(job) {
@@ -77,17 +73,17 @@ function formatCareerRange(job) {
 }
 
 function formatJobCategories(job) {
-  const labels = { backend: '백엔드', system: '시스템 SW' };
+  const labels = { backend: '백엔드·서버 개발' };
   return (job.categories || []).map(category => labels[category] || category).join(', ');
 }
 
 function formatDeadline(job) {
   if (job.is_expired) return job.deadline_at
-    ? `마감 ${new Date(Number(job.deadline_at) * 1000).toLocaleDateString('ko-KR')}`
+    ? `마감 ${new Date(Number(job.deadline_at) * 1000).toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' })}`
     : '마감';
   if (!job.deadline_at) return job.deadline || '상시';
   const expired = Number(job.deadline_at) * 1000 < Date.now();
-  const date = new Date(Number(job.deadline_at) * 1000).toLocaleDateString('ko-KR');
+  const date = new Date(Number(job.deadline_at) * 1000).toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' });
   return expired ? `마감 ${date}` : `~ ${date}`;
 }
 
@@ -152,6 +148,7 @@ function buildJobListPanel(result) {
       meta.className = 'job-meta';
       meta.textContent = [
         job.company,
+        (job.sources || [job.source]).map(source => SOURCE_LABELS[source]).filter(Boolean).join('·'),
         formatJobCategories(job),
         formatCareerRange(job),
         formatDeadline(job)
@@ -262,7 +259,8 @@ function setAnalysisFiltersDisabled(disabled) {
     .forEach(control => { control.disabled = disabled; });
 }
 
-function startScrape(refresh = false) {
+function startScrape(refresh = false, cacheOnly = false) {
+  const requestId = ++activeAnalysis;
   const requestSource = selectedSource;
   const requestCategory = selectedJobCategory;
   const includeExpired = document.getElementById('include-expired').checked;
@@ -272,8 +270,10 @@ function startScrape(refresh = false) {
   const statusBox  = document.getElementById('status-box');
   const resultBox  = document.getElementById('result-box');
   const errorBox   = document.getElementById('error-box');
+  const collectionNotice = document.getElementById('collection-notice');
   const summaryBox = document.getElementById('summary-box');
   const jobListBox = document.getElementById('job-list-box');
+  selectedLang = null;
 
   btn.disabled = true;
   setAnalysisFiltersDisabled(true);
@@ -285,6 +285,8 @@ function startScrape(refresh = false) {
   resultBox.style.display  = 'none';
   errorBox.style.display   = 'none';
   errorBox.classList.remove('warning');
+  collectionNotice.style.display = 'none';
+  collectionNotice.textContent = '';
   summaryBox.style.display = 'none';
   jobListBox.style.display = 'none';
 
@@ -296,9 +298,14 @@ function startScrape(refresh = false) {
 
   let startTime = null;
   let progressSource = null;
+  let progressStartDone = 0;
   const warnings = [];
+  const notices = [];
   const scrapeStart = Date.now();
   let fromCache = false;
+  let runId = null;
+  let settled = false;
+  let recovering = false;
 
   const { years_min, years_max } = (typeof getCareerParams === 'function') ? getCareerParams() : { years_min: 0, years_max: 10 };
   const params = new URLSearchParams({
@@ -309,24 +316,34 @@ function startScrape(refresh = false) {
     include_expired: includeExpired
   });
   if (refresh) params.set('refresh', 'true');
+  if (cacheOnly) params.set('cache_only', 'true');
   const es = new EventSource(`/scrape?${params}`);
 
-  es.onmessage = (e) => {
-    const data = JSON.parse(e.data);
+  const handleData = data => {
+    if (settled || requestId !== activeAnalysis) return;
 
-    if (data.type === 'cached') {
+    if (data.type === 'started') {
+      runId = data.run_id;
+    }
+
+    else if (data.type === 'cached') {
       fromCache = true;
       const age = Math.round((Date.now() / 1000 - data.ts) / 60);
-      document.getElementById('status-text').textContent = `${SOURCE_LABELS[selectedSource]} 캐시된 데이터 불러오는 중... (${age}분 전 분석)`;
+      document.getElementById('status-text').textContent = `${SOURCE_LABELS[requestSource]} 저장된 데이터 불러오는 중... (${age}분 전 수집)`;
     }
 
     else if (data.type === 'status') {
       document.getElementById('status-text').textContent = data.msg;
-      if (data.total) {
+      if (data.phase === 'listing' || data.phase === 'cached' || data.total !== undefined ||
+          (data.source && progressSource !== data.source)) {
         startTime = null;
-        progressSource = null;
+        progressSource = data.source || null;
+        progressStartDone = 0;
         document.getElementById('progress-bar').style.width = '0%';
-        document.getElementById('meta-text').textContent = `총 ${data.total.toLocaleString()}개 공고`;
+        document.getElementById('eta-text').textContent = '';
+        document.getElementById('meta-text').textContent = data.total !== undefined
+          ? `총 ${data.total.toLocaleString()}개 공고`
+          : '';
       }
     }
 
@@ -334,6 +351,7 @@ function startScrape(refresh = false) {
       if (!startTime || progressSource !== data.source) {
         startTime = Date.now();
         progressSource = data.source;
+        progressStartDone = data.done;
       }
 
       const pct = Math.round(data.done / data.total * 100);
@@ -344,14 +362,21 @@ function startScrape(refresh = false) {
         `${data.done.toLocaleString()} / ${data.total.toLocaleString()}개`;
 
       const elapsed   = (Date.now() - startTime) / 1000;
-      const rate      = data.done / elapsed;
+      const rate      = (data.done - progressStartDone) / elapsed;
       const remaining = Math.round((data.total - data.done) / rate);
+      document.getElementById('eta-text').textContent = '';
       if (remaining > 0 && isFinite(remaining)) {
         const m = Math.floor(remaining / 60);
         const s = remaining % 60;
         document.getElementById('eta-text').textContent =
           m > 0 ? `약 ${m}분 ${s}초 남음` : `약 ${s}초 남음`;
       }
+    }
+
+    else if (data.type === 'notice') {
+      notices.push(data.msg);
+      collectionNotice.textContent = notices.join('\n');
+      collectionNotice.style.display = 'block';
     }
 
     else if (data.type === 'warning') {
@@ -366,31 +391,68 @@ function startScrape(refresh = false) {
 
       document.getElementById('progress-bar').style.width = '100%';
       const completionWarnings = data.warnings || warnings;
+      const completionNotices = data.notices || notices;
+      if (completionNotices.length) {
+        collectionNotice.textContent = completionNotices.join('\n');
+        collectionNotice.style.display = 'block';
+      } else {
+        collectionNotice.style.display = 'none';
+      }
       if (completionWarnings.length) {
         errorBox.textContent = '주의: ' + completionWarnings.join(' / ');
         errorBox.classList.add('warning');
         errorBox.style.display = 'block';
+      } else {
+        errorBox.style.display = 'none';
       }
       document.getElementById('status-text').textContent = completionWarnings.length
         ? '분석 완료 · 데이터 주의사항을 확인하세요.'
-        : '새로고침 완료!';
+        : completionNotices.length
+          ? '분석 완료 · 이미 수집한 데이터를 사용했습니다.'
+          : fromCache ? '수집된 데이터 분석 완료' : '수집·분석 완료!';
       document.getElementById('eta-text').textContent     = '';
       document.getElementById('meta-text').textContent = `총 ${data.analyzed.toLocaleString()}개 분석 완료`;
-      const refreshedAt = data.ts
-        ? new Date(data.ts * 1000).toLocaleString('ko-KR', { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })
-        : '';
+      const analyzedAt = new Date((data.analyzed_at || Date.now() / 1000) * 1000).toLocaleString('ko-KR', {
+        year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Seoul'
+      });
       summaryBox.innerHTML = `
         <span class="summary-item">소스 <strong>${SOURCE_LABELS[data.source || selectedSource]}</strong></span>
         <span class="summary-item">분석 공고 <strong>${data.analyzed.toLocaleString()}개</strong></span>
+        ${data.deduplicated
+          ? `<span class="summary-item">중복 공고 통합 <strong>${data.deduplicated.toLocaleString()}개</strong></span>`
+          : ''
+        }
         ${completionWarnings.length
           ? `<span class="summary-item">데이터 주의사항 <strong>${completionWarnings.length}건</strong></span>`
           : ''
         }
         ${fromCache
-          ? `<span class="summary-item">캐시 데이터 · 마지막 분석 <strong>${refreshedAt}</strong></span>`
-          : `<span class="summary-item">소요 시간 <strong>${elapsed}초</strong></span><span class="summary-item">분석 시각 <strong>${refreshedAt}</strong></span>`
+          ? '<span class="summary-item">저장된 데이터로 분석</span>'
+          : `<span class="summary-item">소요 시간 <strong>${elapsed}초</strong></span>`
         }
+        <span class="summary-item">분석 시각 <strong>${analyzedAt}</strong></span>
       `;
+      const collectionTime = timestamp => new Date(timestamp * 1000).toLocaleString('ko-KR', {
+        month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Seoul'
+      });
+      Object.values(data.collection_info || {}).forEach(info => {
+        const item = document.createElement('span');
+        item.className = 'summary-item';
+        item.textContent = info.scope_current
+          ? `${info.label}: ${info.jobs.toLocaleString()}개 ${info.partial ? '저장 · 일부 상세 미확보' : '수집 완료'} · ${collectionTime(info.ts)} 수집`
+          : `${info.label}: 이전 범위 공고 ${info.jobs.toLocaleString()}개 저장 · ${collectionTime(info.ts)} 수집`;
+        if (info.next_refresh_at && info.next_refresh_at * 1000 > Date.now()) {
+          item.textContent += ` · ${collectionTime(info.next_refresh_at)}부터 재수집 가능`;
+        }
+        summaryBox.appendChild(item);
+      });
+      Object.entries(data.collection_stats || {}).forEach(([source, stats]) => {
+        const item = document.createElement('span');
+        item.className = 'summary-item';
+        item.textContent = `${SOURCE_LABELS[source] || source} 이번 요청: 새 상세 ${stats.succeeded.toLocaleString()}개 · ` +
+          `기존 본문 ${stats.reused.toLocaleString()}개 재사용 · 제외 ${stats.skipped.toLocaleString()}개`;
+        summaryBox.appendChild(item);
+      });
       summaryBox.style.display = 'flex';
 
       const medalClass = ['gold', 'silver', 'bronze'];
@@ -456,9 +518,12 @@ function startScrape(refresh = false) {
 
       if (data.ts) {
         const timeStr = new Date(data.ts * 1000).toLocaleString('ko-KR', {
-          year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'
+          year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Seoul'
         });
         document.getElementById('last-refreshed-time').textContent = timeStr;
+        document.getElementById('last-refreshed-label').textContent =
+          requestSource === 'all' && Object.keys(data.collection_info || {}).length > 1
+            ? '데이터 수집 시각(가장 이전):' : '데이터 수집 시각:';
         document.getElementById('last-refreshed').style.display = 'block';
       }
 
@@ -474,14 +539,19 @@ function startScrape(refresh = false) {
       btnRefresh.style.display = 'inline-block';
       btn.classList.remove('loading');
       btnText.textContent = '다시 분석';
+      settled = true;
       es.close();
     }
 
     else if (data.type === 'error') {
+      settled = true;
       errorBox.textContent    = '오류: ' + data.msg;
       errorBox.classList.remove('warning');
       errorBox.style.display  = 'block';
       statusBox.style.display = 'none';
+      summaryBox.style.display = 'none';
+      resultBox.style.display = 'none';
+      jobListBox.style.display = 'none';
       btn.disabled = false;
       setAnalysisFiltersDisabled(false);
       btnRefresh.disabled = false;
@@ -491,44 +561,54 @@ function startScrape(refresh = false) {
     }
   };
 
+  es.onmessage = event => {
+    try {
+      handleData(JSON.parse(event.data));
+    } catch (error) {
+      handleData({ type: 'error', msg: `서버 응답을 읽지 못했습니다: ${error.message}` });
+    }
+  };
+
   es.onerror = () => {
+    if (settled || recovering || requestId !== activeAnalysis) return;
+    recovering = true;
     es.close();
     document.getElementById('status-text').textContent =
       '화면 연결이 끊겼습니다. 서버 작업 완료 여부 확인 중...';
     document.getElementById('eta-text').textContent = '';
 
     const recover = async () => {
+      if (settled || requestId !== activeAnalysis) return;
       try {
         const statusParams = new URLSearchParams({
           source: requestSource,
           category: requestCategory
         });
+        if (runId) statusParams.set('run_id', runId);
         const response = await fetch(`/scrape-status?${statusParams}`, {
           cache: 'no-store'
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const status = await response.json();
+        if (settled || requestId !== activeAnalysis) return;
+        if (status.outcome) {
+          handleData(status.outcome);
+          return;
+        }
         if (status.running) {
           document.getElementById('meta-text').textContent =
             `서버에서 계속 분석 중 · 현재 캐시 ${status.jobs.toLocaleString()}개`;
           window.setTimeout(recover, 5000);
           return;
         }
-        if (status.valid) {
+        if (status.available || status.valid) {
           selectSource(requestSource);
-          startScrape(false);
+          startScrape(false, true);
           return;
         }
         throw new Error('완료된 캐시가 없습니다.');
       } catch (error) {
-        errorBox.textContent = `연결 복구 실패: ${error.message}`;
-        errorBox.classList.remove('warning');
-        errorBox.style.display = 'block';
-        btn.disabled = false;
-        setAnalysisFiltersDisabled(false);
-        btnRefresh.disabled = false;
-        btn.classList.remove('loading');
-        btnText.textContent = '다시 시도';
+        handleData({ type: 'error', msg: `연결 복구 실패: ${error.message}` });
       }
     };
 

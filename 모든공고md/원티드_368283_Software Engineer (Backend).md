@@ -5,7 +5,9 @@
 - 경력: 3년 이상
 - 원문: https://www.wanted.co.kr/wd/368283
 - 공고번호: 368283
-- 기술: Java, Kotlin, Spring Boot, MySQL, PostgreSQL, Kafka, RabbitMQ, REST API
+- 기술: Java, Kotlin, Spring Boot, MySQL, PostgreSQL, Kafka, RabbitMQ, AWS, GCP, REST API
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울특별시 강남대로53길 8, 5층
 
 ## 회사 소개

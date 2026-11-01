@@ -5,7 +5,9 @@
 - 경력: 2년 이상
 - 원문: https://www.wanted.co.kr/wd/307033
 - 공고번호: 307033
-- 기술: Java, Python, Kotlin, Spring, REST API
+- 기술: Java, Python, Kotlin, TypeScript, Spring, AWS, REST API
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 경기도 성남시 분당구 황새울로 258번길 4층 중앙빌딩
 
 ## 회사 소개

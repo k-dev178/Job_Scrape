@@ -5,7 +5,9 @@
 - 경력: 10년 이상
 - 원문: https://www.wanted.co.kr/wd/369738
 - 공고번호: 369738
-- 기술: Go, Kubernetes, Helm, ArgoCD, OAuth, OIDC
+- 기술: Go, Kubernetes, Helm, Istio, ArgoCD, OAuth, OIDC, PyTorch
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 서초구 강남대로 343, 12층
 
 ## 회사 소개

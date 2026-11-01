@@ -5,7 +5,9 @@
 - 경력: 3년 이상
 - 원문: https://www.wanted.co.kr/wd/328449
 - 공고번호: 328449
-- 기술: Python, PostgreSQL, MongoDB, Docker, REST API
+- 기술: Java, Python, Kotlin, Spring Boot, JPA, Hibernate, FastAPI, PostgreSQL, MongoDB, Redis, Elasticsearch, InfluxDB, Linux, Docker, Kubernetes, REST API, PyTorch
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 금천구 가산디지털1로 171 가산SKV1 센터 1001호
 
 ## 회사 소개
@@ -58,6 +60,10 @@ https://interxlab.com:48139/news
 • 비동기 (Thread) 사용 경험이 있으신 분
 • SQL 성능 최적화 경험이 있으신 분
 • Docker 경험이 있으신 분
+[DS R&D] [필수 경험과 역량]
+• Kotlin (또는 Java) 및 SpringBoot 기반의 백엔드 개발 경험이 있으신 분
+• JPA / Hibernate 프레임워크 및 트랜잭션, 동시성 처리에 대한 이해를 갖추신 분
+• Flyway를 이용한 데이터베이스 마이그레이션(Migration) 경험이 있으신 분
 
 ## 우대 사항
 

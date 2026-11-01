@@ -5,8 +5,8 @@
 - 경력: 5년 이상
 - 원문: https://www.wanted.co.kr/wd/291146
 - 공고번호: 291146
-- 기술: TypeScript, JavaScript, AWS
-- 분야: 미분류
+- 기술: TypeScript, JavaScript, Node.js, PostgreSQL, DynamoDB, AWS, EC2, S3, RDS
+- 분야: backend
 - 마감: 상시 또는 정보 없음
 - 지역: 서울 강남구 역삼로3길 11, 본관 4층
 
@@ -32,12 +32,13 @@
 
 [두부 팀이 사용하는 기술]
 • 언어: JavaScript, TypeScript
-• 클라이언트/웹: Next.js
-• 서버 / 미디어: Node js, WebRTC
-• 인프라: AWS
-• AI: Claude Code, Codex 등 AI 코딩 도구
+• 클라이언트 / 웹: Next.js
+• 서버 / 미디어: Node.js, WebRTC (우대)
+• 인프라: AWS EC2, Valkey, DynamoDB, RDS PostgreSQL, S3
+• 기타: Claude Code, Codex 등 AI 코딩 도구
 [이런 분을 찾고 있어요!]
-• 웹 프론트엔드 중심으로 5년 이상의 개발 경험을 갖고 계신 분
+• 5년 이상의 웹 개발 경험을 갖고 계신 분
+(DevOps, Next.js 개발, BFF 레이어 수준 이상의 백엔드 개발 포함)
 • 빠른 제품 릴리즈의 중요성을 이해하며, 품질과 속도의 균형을 맞춰본 경험이 있는 분
 • 요구사항 이면의 문제를 먼저 들여다보고자 하는 태도를 지닌 분
 • 문제 해결을 혼자서 떠안기보다는, 팀과 함께 방향을 찾고 실행하는 분

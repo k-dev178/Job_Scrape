@@ -236,6 +236,18 @@ h1 {
   border-top-color: #f59e0b;
 }
 
+#collection-notice {
+  display: none;
+  background: #eff6ff;
+  color: #1e40af;
+  border-top: 3px solid #4361ee;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
 /* Summary */
 #summary-box {
   display: none;

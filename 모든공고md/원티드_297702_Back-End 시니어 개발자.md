@@ -5,7 +5,9 @@
 - 경력: 7년 이상
 - 원문: https://www.wanted.co.kr/wd/297702
 - 공고번호: 297702
-- 기술: Java, PHP, Spring, Spring Boot, Spring Data, JPA, Laravel, MySQL, Redis, Kafka, RabbitMQ, AWS, Kubernetes, GitHub Actions, ArgoCD, Grafana, Datadog, Sentry, MSA
+- 기술: Java, PHP, Spring, Spring Boot, Spring Data, JPA, Node.js, NestJS, Express, Laravel, MySQL, Redis, Kafka, RabbitMQ, AWS, Kubernetes, GitHub Actions, ArgoCD, Grafana, Datadog, Sentry, GraphQL, MSA
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울시 영등포구 여의대로 108 파크원타워2 46층
 
 ## 회사 소개

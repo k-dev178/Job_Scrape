@@ -1,11 +1,11 @@
 import re
 
-from .job_record import classify_categories, deadline_timestamp, is_expired
-from .keyword_catalog import extract_keywords
+from .job_record import deadline_timestamp, is_expired, matches_backend_role
+from .keyword_catalog import extract_job_keywords
 
 """사이트 공통 채용 분야 필터."""
 
-CATEGORIES = ("backend", "system", "all_it")
+CATEGORIES = ("backend",)
 
 
 def filter_jobs(
@@ -22,19 +22,16 @@ def filter_jobs(
         job = dict(job)
         title = str(job.get("title") or "")
         content = str(job.get("content") or "")
-        hints = " ".join(job.get("keywords") or []) + " " + str(job.get("sectors") or "")
-        job["langs"] = extract_keywords(" ".join([title, content, hints]))
+        if not matches_backend_role(title, str(job.get("job_role") or "")) or not content.strip():
+            continue
+        job["langs"] = extract_job_keywords(job)
+        job["source"] = source
+        job["sources"] = [source]
         if re.fullmatch(r"\d{4}[./-]\d{1,2}[./-]\d{1,2}", str(job.get("deadline") or "").strip()):
             job["deadline_at"] = deadline_timestamp(job["deadline"])
         job["is_expired"] = is_expired(job)
         if not include_expired and is_expired(job):
             continue
-        categories = classify_categories(title, content, hints)
-        job["categories"] = categories
-        if category == "all_it":
-            filtered.append(job)
-        elif category == "backend" and "backend" in categories:
-            filtered.append(job)
-        elif category == "system" and "system" in categories:
-            filtered.append(job)
+        job["categories"] = ["backend"]
+        filtered.append(job)
     return filtered

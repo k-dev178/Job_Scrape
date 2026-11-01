@@ -85,7 +85,10 @@ def _raise_if_blocked(text: str):
     if BLOCK_TEXT_PAT.search(text):
         with _cooldown_lock:
             _blocked_until = time.monotonic() + BLOCK_COOLDOWN_SECONDS
-        raise RuntimeError("잡코리아 접근 제한 또는 보안 확인 화면이 감지되었습니다.")
+        raise RuntimeError(
+            "잡코리아 접근 제한 또는 보안 확인 화면이 감지되었습니다. "
+            "약 30분 후 다시 시도하세요."
+        )
 
 
 def _wait_for_request_slot():

@@ -5,7 +5,9 @@
 - 경력: 3~5년
 - 원문: https://www.wanted.co.kr/wd/283093
 - 공고번호: 283093
-- 기술: Java, Kotlin, AWS, EKS
+- 기술: Java, Kotlin, Spring, AWS, EKS, Event Driven
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 강남구 테헤란로14길 16, 7층, 8층
 
 ## 회사 소개

@@ -6,7 +6,19 @@ from datetime import datetime, timedelta, timezone
 
 BACKEND_PATTERN = re.compile(
     r"백\s*엔드|back[\s-]*end|서버\s*(?:개발|엔지니어)|"
-    r"server\s*(?:developer|engineer)|spring|django|fastapi|nestjs|node\.?js",
+    r"server[\s-]*(?:developer|engineer)",
+    re.IGNORECASE,
+)
+OTHER_ROLE_PATTERN = re.compile(
+    r"프론트[\s-]*엔드|front[\s-]*end|풀[\s-]*스택|full[\s-]*stack|"
+    r"게임|\bgame\b|devops|\bsre\b|인프라|infrastructure|"
+    r"임베디드|펌웨어|embedded|firmware|시스템\s*소프트웨어|system\s*software|"
+    r"데이터\s*(?:엔지니어|사이언티스트)|data\s*(?:engineer|scientist)|"
+    r"머신러닝|machine\s*learning|\bml\s*engineer|모델\s*(?:개발|학습)|"
+    r"\bQA\b|품질\s*(?:관리|보증)|기술\s*지원|technical\s*support|"
+    r"안드로이드|android|\bios\b|모바일|mobile|웹\s*퍼블리셔|"
+    r"robotics\s*engineer|로봇\s*(?:제어|엔지니어)|\bDBA\b|"
+    r"네트워크\s*엔지니어|network\s*engineer",
     re.IGNORECASE,
 )
 SYSTEM_PATTERN = re.compile(
@@ -16,6 +28,13 @@ SYSTEM_PATTERN = re.compile(
     re.IGNORECASE,
 )
 KST = timezone(timedelta(hours=9))
+
+
+def matches_backend_role(title: str, role: str = "") -> bool:
+    """기술 언급 없이 제목과 사이트의 직무 분류로 웹 백엔드를 선별한다."""
+    if OTHER_ROLE_PATTERN.search(title or ""):
+        return False
+    return bool(BACKEND_PATTERN.search(title or "") or role == "backend")
 
 
 def classify_categories(title: str, content: str = "", hints: str = "") -> list[str]:

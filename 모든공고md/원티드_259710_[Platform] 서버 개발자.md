@@ -5,7 +5,9 @@
 - 경력: 5년 이상
 - 원문: https://www.wanted.co.kr/wd/259710
 - 공고번호: 259710
-- 기술: Java, Kotlin, Go, TypeScript, JavaScript, NestJS, AWS, Kubernetes
+- 기술: Java, Kotlin, Go, TypeScript, JavaScript, Node.js, NestJS, AWS, Docker, Kubernetes, GitHub Actions
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울특별시 강남구 테헤란로328 (역삼동 708-1) 동우빌딩 16층
 
 ## 회사 소개

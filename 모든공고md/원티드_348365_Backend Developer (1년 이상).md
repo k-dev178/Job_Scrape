@@ -5,7 +5,9 @@
 - 경력: 1년 이상
 - 원문: https://www.wanted.co.kr/wd/348365
 - 공고번호: 348365
-- 기술: Python, Kotlin, Spring Boot, Django, DRF
+- 기술: Python, Kotlin, Spring Boot, Django, DRF, MySQL, SQS, AWS, Lambda, RDS, ECS, GitHub Actions, Datadog
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 서울 마포구 양화로 85, 동현빌딩 2층
 
 ## 회사 소개
@@ -60,7 +62,7 @@ https://career.planfit.ai/team/
 ## 혜택 및 복지
 
 • 개인 법카 (월 30만원, 운동비 지원시 최대 40만원)
-• 오전 9시~11시 유연근무제
+• 오전 9시~10시 유연근무제
 • 시간 단위 자유로운 휴가
 • 먹고 싶은 간식과 단백질(닭가슴살, 프로틴 쉐이크) 지원
 • 듣고 싶은 강의, 읽고 싶은 도서, 참여하고 싶은 세미나 자유롭게 지원

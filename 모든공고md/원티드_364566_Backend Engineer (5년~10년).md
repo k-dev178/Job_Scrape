@@ -5,7 +5,9 @@
 - 경력: 5년 이상
 - 원문: https://www.wanted.co.kr/wd/364566
 - 공고번호: 364566
-- 기술: Java, Python, Kotlin, Spring Boot, PostgreSQL, SQS, AWS, S3, Lambda, CloudWatch, IAM, GitHub Actions, Event Driven, OpenAI
+- 기술: Java, Python, Kotlin, Spring Boot, JPA, QueryDSL, PostgreSQL, AWS, EC2, S3, Lambda, CloudWatch, IAM, GitHub Actions, MSA, OpenAI
+- 분야: backend
+- 마감: 상시 또는 정보 없음
 - 지역: 테헤란로7길 22
 
 ## 회사 소개
@@ -47,34 +49,36 @@
 [스펙터에서 주도하시게 될 임팩트]
 1. 대규모 AI API 연동 및 비동기 아키텍처 설계 (Core Challenge)
 • OpenAI, Anthropic 등 LLM API를 제품 흐름에 맞게 연동하고, Rate Limit 및 대량 API 요청 상황을 완벽하게 오케스트레이션 합니다.
-• AWS SQS 등 메시지 브로커를 활용해 이벤트 기반의 비동기 처리 구조를 설계하며, Retry, DLQ, Backoff 등을 활용해 Queue 처리와 외부 API 연동의 무결성을 보장합니다.
+• 메시지 큐 기반의 이벤트 드리븐 비동기 처리 구조를 설계하며, Retry, DLQ, Backoff 등을 활용해 큐 처리와 외부 API 연동의 무결성을 보장합니다.
 2. B2B Enterprise SaaS 백엔드 설계 및 성능 고도화
-• Java, Kotlin, Python, Spring Boot를 기반으로 스펙터 코어 서비스 및 AI 프로덕트의 백엔드 아키텍처를 주도적으로 설계합니다.
-• 평판, 면접, 분석 리포트 등 핵심 데이터를 다루는 PostgreSQL 기반의 데이터 모델링을 수행하고, 복잡한 쿼리 최적화 및 성능 병목 현상을 해결합니다.
-3. Serverless 인프라 운영 및 개발 생산성 고도화
-• AWS 환경(Lambda, SQS, CloudWatch, IAM, S3 등)에서 Serverless 기반의 안정적인 서비스 운영, 모니터링, 장애 대응을 수행합니다.
+• Kotlin, Java, Spring Boot를 기반으로 스펙터 코어 서비스 및 AI 프로덕트의 백엔드 아키텍처를 주도적으로 설계합니다.
+• 평판, 면접, 분석 리포트 등 핵심 데이터를 다루는 PostgreSQL 기반의 데이터 모델링을 수행하고, JPA 기반 도메인 로직과 복잡한 쿼리를 최적화하며 성능 병목을 해결합니다.
+3. AWS 인프라 운영 및 개발 생산성 고도화
+• 클라우드 인스턴스 기반의 AWS 환경(EC2, CloudWatch, IAM, S3 등)에서 안정적인 서비스 운영, 모니터링, 장애 대응을 수행하며, 필요에 따라 Lambda 등 Serverless 구성 요소를 함께 활용합니다.
 • CI/CD 파이프라인 고도화, 코드 리뷰, 테스트 자동화를 통해 팀 전체의 엔지니어링 품질을 한 단계 끌어올립니다.
 
 ## 자격 요건
 
 [자격 요건]
-• Java, Kotlin, Spring Boot, Python 기반의 백엔드 실무 개발 경력이 5년+ 있으신 분
+• Kotlin 또는 Java와 Spring Boot 기반의 백엔드 실무 개발 경력이 5년 이상 있으신 분
 • PostgreSQL 등 RDBMS 환경에서 복잡한 데이터 모델링 및 쿼리 성능 최적화를 경험해 보신 분
-• AWS 기반 인프라(Lambda 등)를 활용한 Serverless 환경 개발 및 운영, 장애 대응 경험이 있으신 분
-• AWS SQS 등을 활용한 비동기 아키텍처 및 Queue 처리(Retry, DLQ 등) 경험이 있으신 분
-• OpenAI, Anthropic 등 외부 LLM API 연동 및 대규모 트래픽/장애 상황에 대응해 보신 분
+• JPA를 활용해 복잡한 도메인 로직과 데이터 조회 구조를 설계해 본 경험이 있으신 분
+• AWS 기반 인프라 환경에서 서비스를 개발·운영하고 장애에 대응해 보신 분
+• 메시지 큐 기반 비동기 아키텍처 설계 및 운영 경험이 있으신 분
 • 단순 API 개발을 넘어, 프론트엔드 엔지니어 및 PM과 함께 비즈니스 맥락을 논의하며 대안을 찾아가는 협업 역량을 갖추신 분
 [스펙터의 기술 스택 (Tech Stack)]
-• Backend: Java, Kotlin, Spring Boot, Python
+• Backend: Java, Kotlin, Spring Boot
 • Database: PostgreSQL
-• Infra: AWS (Lambda, SQS, S3, CloudWatch, IAM 등)
+• Infra: AWS
 • CI/CD & Collaboration: GitHub Actions, GitHub
 
 ## 우대 사항
 
 [우대 사항]
 • MSA(Microservices Architecture) 환경에서 서비스를 설계하거나 운영해 본 경험이 있으신 분
-• JPA, Querydsl을 활용해 복잡한 도메인 로직과 데이터 조회 구조를 설계해 본 경험이 있으신 분
+• Querydsl 등을 활용해 복잡한 데이터 조회 구조를 설계해 본 경험이 있으신 분
+• AWS Lambda 등 Serverless 환경에서 서비스를 개발·운영해 본 경험이 있으신 분
+• OpenAI, Anthropic 등 외부 LLM API를 서비스에 연동하고 대규모 트래픽/장애 상황에 대응해 보신 분
 • B2B SaaS 또는 HR Tech 제품 개발 경험이 있으신 분
 • 보안, 개인정보, 권한 관리 등 민감한 데이터를 다루는 엔터프라이즈급 서비스 개발 경험이 있으신 분
 
